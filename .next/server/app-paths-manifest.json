@@ -1,0 +1,10 @@
+{
+  "/page": "app/page.js",
+  "/design-studio/page": "app/design-studio/page.js",
+  "/hoa-compliance/page": "app/hoa-compliance/page.js",
+  "/service-areas/page": "app/service-areas/page.js",
+  "/[slug]/page": "app/[slug]/page.js",
+  "/services/page": "app/services/page.js",
+  "/services/[serviceSlug]/page": "app/services/[serviceSlug]/page.js",
+  "/calculator/page": "app/calculator/page.js"
+}
