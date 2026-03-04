@@ -13,20 +13,21 @@ export function generateLocalBusinessSchema(city?: CityData) {
     '@id': 'https://alpinefenceanddeck.com/#business',
     name: COMPANY.name,
     image: 'https://alpinefenceanddeck.com/images/logo.png',
-    telephone: COMPANY.phone,
+    telephone: '+1-801-471-3148',
     email: COMPANY.email,
+    description: 'Utah\'s premier composite fence and deck contractor. Expert refinishing, repair, and exclusive Compozen® composite fence and deck installations across 94 cities.',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '1234 Mountain View Dr',
-      addressLocality: 'Salt Lake City',
+      streetAddress: '4692 N 300 W Building 2, Ste 220B',
+      addressLocality: 'Provo',
       addressRegion: 'UT',
-      postalCode: '84101',
+      postalCode: '84604',
       addressCountry: 'US',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 40.7608,
-      longitude: -111.891,
+      latitude: 40.2338,
+      longitude: -111.6585,
     },
     url: 'https://alpinefenceanddeck.com',
     priceRange: '$$-$$$$',
@@ -34,14 +35,8 @@ export function generateLocalBusinessSchema(city?: CityData) {
       {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '07:00',
-        closes: '18:00',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Saturday',
         opens: '08:00',
-        closes: '15:00',
+        closes: '17:00',
       },
     ],
     areaServed: city
@@ -49,14 +44,14 @@ export function generateLocalBusinessSchema(city?: CityData) {
       : { '@type': 'State', name: 'Utah' },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Fence & Deck Services',
+      name: 'Composite Fence & Deck Services',
       itemListElement: [
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
             name: 'Deck & Fence Refinishing',
-            description: 'Professional refinishing services for wood decks and fences.',
+            description: 'Professional refinishing services for wood decks and fences in Utah.',
           },
         },
         {
@@ -64,7 +59,7 @@ export function generateLocalBusinessSchema(city?: CityData) {
           itemOffered: {
             '@type': 'Service',
             name: 'Fence & Deck Repair',
-            description: 'Expert repair services for damaged fences and decks.',
+            description: 'Expert fence and deck repair services. Upgrade path to composite available.',
           },
         },
         {
@@ -72,7 +67,7 @@ export function generateLocalBusinessSchema(city?: CityData) {
           itemOffered: {
             '@type': 'Service',
             name: 'Compozen® Composite Fence Installation',
-            description: 'Exclusive Compozen® composite fence installation.',
+            description: 'Exclusive Compozen® composite fence installation. Zero-maintenance composite fencing with 25-year warranty.',
           },
         },
         {
@@ -80,16 +75,34 @@ export function generateLocalBusinessSchema(city?: CityData) {
           itemOffered: {
             '@type': 'Service',
             name: 'Compozen® Composite Deck Installation',
-            description: 'Revolutionary Compozen® composite deck design and installation.',
+            description: 'Revolutionary Compozen® composite deck design and installation. Premium composite decking in Utah.',
           },
         },
       ],
     },
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '347',
+      ratingValue: String(COMPANY.googleRating),
       bestRating: '5',
+      reviewCount: '18',
+    },
+    sameAs: [
+      'https://www.google.com/maps/place/Alpine+Fence+and+Deck',
+    ],
+  };
+}
+
+export function generateWebSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Alpine Fence & Deck',
+    url: 'https://alpinefenceanddeck.com',
+    description: 'Utah\'s premier composite fence and deck contractor. Compozen® certified installer. Composite fencing, composite decking, refinishing & repair.',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://alpinefenceanddeck.com/service-areas?q={search_term_string}',
+      'query-input': 'required name=search_term_string',
     },
   };
 }
@@ -103,7 +116,7 @@ export function generateServiceSchema(serviceName: string, description: string, 
     provider: {
       '@type': 'LocalBusiness',
       name: COMPANY.name,
-      telephone: COMPANY.phone,
+      telephone: '+1-801-471-3148',
     },
     areaServed: {
       '@type': 'State',
@@ -118,11 +131,12 @@ export function generateProductSchema() {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: 'Compozen® Composite Fencing & Decking',
-    description: 'Revolutionary composite materials for zero-maintenance fences and decks. Exclusive to certified installers.',
+    description: 'Revolutionary composite materials for zero-maintenance fences and decks. Exclusive composite technology available only through certified installers in Utah.',
     brand: {
       '@type': 'Brand',
       name: 'Compozen®',
     },
+    category: 'Composite Fencing & Decking Materials',
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'USD',
@@ -130,20 +144,26 @@ export function generateProductSchema() {
       highPrice: '75000',
       offerCount: '4',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '89',
-      bestRating: '5',
-    },
   };
 }
 
-export default function SchemaMarkup({ city, pageType }: SchemaMarkupProps) {
-  const schemas = [generateLocalBusinessSchema(city)];
+export default function SchemaMarkup({ city, service, pageType }: SchemaMarkupProps) {
+  const schemas: object[] = [generateLocalBusinessSchema(city)];
 
-  if (pageType === 'home' || pageType === 'service') {
-    schemas.push(generateProductSchema() as unknown as ReturnType<typeof generateLocalBusinessSchema>);
+  if (pageType === 'home') {
+    schemas.push(generateWebSiteSchema());
+    schemas.push(generateProductSchema());
+  }
+
+  if (pageType === 'service') {
+    schemas.push(generateProductSchema());
+    if (service) {
+      schemas.push(generateServiceSchema(
+        service,
+        `Professional ${service.toLowerCase()} by Alpine Fence & Deck. Utah's trusted composite fence and deck contractor.`,
+        '$$-$$$$'
+      ));
+    }
   }
 
   return (

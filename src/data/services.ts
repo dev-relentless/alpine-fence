@@ -23,8 +23,8 @@ export const services: ServiceData[] = [
     slug: 'deck-refinishing',
     title: 'Deck & Fence Refinishing',
     shortTitle: 'Refinishing',
-    description: 'Professional deck and fence refinishing services that restore your outdoor living spaces to their original beauty. Sanding, staining, sealing, and weatherproofing.',
-    heroDescription: 'Restore your weathered deck or fence to its original beauty with our professional refinishing services. Expert sanding, staining, and sealing that protects your investment.',
+    description: 'Professional deck and fence refinishing services that restore your outdoor living spaces to their original beauty. Sanding, staining, sealing, and weatherproofing. Ask about upgrading to composite.',
+    heroDescription: 'Restore your weathered deck or fence to its original beauty with our professional refinishing services. Expert sanding, staining, and sealing that protects your investment. Consider a composite upgrade for zero maintenance.',
     icon: 'Paintbrush',
     features: [
       'Complete surface preparation & sanding',
@@ -53,8 +53,8 @@ export const services: ServiceData[] = [
     slug: 'fence-repair',
     title: 'Fence & Deck Repair',
     shortTitle: 'Repair',
-    description: 'Fast, reliable fence and deck repair services. From loose boards to structural damage, our team handles emergency and scheduled repairs across the Wasatch Front.',
-    heroDescription: 'Don\'t let damaged fences or decks compromise your property\'s safety and value. Our expert repair team provides fast, reliable service with a 2-hour callback guarantee.',
+    description: 'Fast, reliable fence and deck repair services. From loose boards to structural damage, our team handles emergency and scheduled repairs. Ask about composite upgrade options.',
+    heroDescription: 'Don\'t let damaged fences or decks compromise your property\'s safety and value. Our expert repair team provides fast, reliable service with a 2-hour callback guarantee. Composite upgrade paths available.',
     icon: 'Wrench',
     features: [
       'Emergency repair service',
@@ -70,7 +70,7 @@ export const services: ServiceData[] = [
       'Honest damage assessment',
       'Insurance claim assistance',
       'Warranty on all repairs',
-      'Upgrade path to Compozen',
+      'Upgrade path to Compozen® composite',
     ],
     priceRange: '$200 – $2,500',
     avgProjectValue: 800,
@@ -83,8 +83,8 @@ export const services: ServiceData[] = [
     slug: 'compozen-fence-installation',
     title: 'Compozen® Composite Fence Installation',
     shortTitle: 'Compozen Fence',
-    description: 'Transform your property with revolutionary Compozen® composite fencing. Zero maintenance, lifetime beauty, and exclusive designs only available through certified installers.',
-    heroDescription: 'Experience the future of fencing. Compozen® composite materials deliver stunning aesthetics with zero maintenance — backed by our exclusive certified installer guarantee.',
+    description: 'Transform your property with revolutionary Compozen® composite fencing. Zero maintenance composite fence, lasting beauty, and exclusive designs only available through certified composite installers.',
+    heroDescription: 'Experience the future of composite fencing. Compozen® composite materials deliver stunning aesthetics with zero maintenance — backed by our exclusive certified composite installer guarantee.',
     icon: 'Shield',
     features: [
       'Exclusive Compozen® composite material',
@@ -97,7 +97,7 @@ export const services: ServiceData[] = [
     benefits: [
       'Never stain, paint, or seal again',
       'Won\'t rot, warp, or splinter',
-      'Lifetime material warranty',
+      '25-year material warranty',
       '10x return vs. repeated refinishing',
       'Increases property value',
       'Eco-friendly recycled materials',
@@ -105,19 +105,19 @@ export const services: ServiceData[] = [
     priceRange: '$8,000 – $45,000',
     avgProjectValue: 25000,
     isCompozen: true,
-    ctaText: 'Design Your Compozen Fence',
-    ctaHref: '/design-studio?type=fence',
+    ctaText: 'Get a Free Estimate',
+    ctaHref: '/quote?service=compozen-fence',
   },
   {
     id: 'compozen-deck',
     slug: 'compozen-deck-installation',
     title: 'Compozen® Composite Deck Installation',
     shortTitle: 'Compozen Deck',
-    description: 'Elevate your outdoor living with a Compozen® composite deck. Revolutionary materials, breathtaking designs, and zero lifetime maintenance.',
-    heroDescription: 'Create the outdoor living space of your dreams. Compozen® composite decking delivers unmatched beauty, durability, and zero-maintenance living — designed exclusively for your home.',
+    description: 'Elevate your outdoor living with a Compozen® composite deck. Revolutionary composite materials, breathtaking designs, and zero maintenance for 25 years.',
+    heroDescription: 'Create the outdoor living space of your dreams. Compozen® composite decking delivers unmatched beauty, durability, and zero-maintenance living — the ultimate composite deck designed exclusively for your home.',
     icon: 'Home',
     features: [
-      'Full 3D deck design studio',
+      'Custom deck design consultation',
       'Premium Compozen® decking materials',
       'Multi-level & wrap-around designs',
       'Built-in lighting integration',
@@ -135,38 +135,8 @@ export const services: ServiceData[] = [
     priceRange: '$15,000 – $75,000',
     avgProjectValue: 35000,
     isCompozen: true,
-    ctaText: 'Design Your Dream Deck',
-    ctaHref: '/design-studio?type=deck',
-  },
-  {
-    id: 'hoa-compliance',
-    slug: 'hoa-compliance',
-    title: 'HOA Compliance Center',
-    shortTitle: 'HOA Help',
-    description: 'Navigate HOA regulations with confidence. We maintain a database of HOA requirements across Utah and provide pre-approved designs that guarantee compliance.',
-    heroDescription: 'Never worry about HOA violations again. Our compliance center provides pre-approved fence and deck designs for your specific HOA, guaranteed to pass architectural review.',
-    icon: 'CheckCircle',
-    features: [
-      'HOA requirement database by neighborhood',
-      'Pre-approved design library',
-      'Architectural review submission assistance',
-      'Compliance guarantee',
-      'Variance request support',
-      'Regulation update notifications',
-    ],
-    benefits: [
-      'Guaranteed HOA approval or we redesign free',
-      'Avoid costly violation fines',
-      'Streamlined approval process',
-      'Access to pre-approved Compozen designs',
-      'Expert HOA liaison services',
-      'Peace of mind for homeowners',
-    ],
-    priceRange: 'Included with installation',
-    avgProjectValue: 0,
-    isCompozen: false,
-    ctaText: 'Check Your HOA Requirements',
-    ctaHref: '/hoa-compliance',
+    ctaText: 'Get a Free Estimate',
+    ctaHref: '/quote?service=compozen-deck',
   },
 ];
 
@@ -179,5 +149,5 @@ export function getCompozenServices(): ServiceData[] {
 }
 
 export function getRefinishingServices(): ServiceData[] {
-  return services.filter((s) => !s.isCompozen && s.id !== 'hoa-compliance');
+  return services.filter((s) => !s.isCompozen);
 }

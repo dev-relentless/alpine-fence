@@ -1,10 +1,18 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { getAllCities, COUNTIES, type CityData } from '@/data/cities';
+import { getAllCities, COUNTIES, COMPANY, type CityData } from '@/data/cities';
 
 export const metadata: Metadata = {
-  title: 'Service Areas | 94 Cities Across Utah\'s Wasatch Front',
-  description: 'Alpine Fence & Deck serves 94 cities across Weber, Davis, Salt Lake, Utah, and surrounding counties. Find your city for local fence & deck services.',
+  title: 'Composite Fence & Deck Service Areas | 94 Utah Cities',
+  description: 'Alpine Fence & Deck serves 94 cities across Weber, Davis, Salt Lake, Utah, and surrounding counties with composite fence and deck installations. Find your city for local composite fencing & decking services.',
+  openGraph: {
+    title: 'Composite Fence & Deck Service Areas | 94 Utah Cities',
+    description: 'Find composite fence and deck services near you. Alpine Fence & Deck serves 94 cities across Utah\'s Wasatch Front.',
+    url: 'https://alpinefenceanddeck.com/service-areas',
+  },
+  alternates: {
+    canonical: 'https://alpinefenceanddeck.com/service-areas',
+  },
 };
 
 function groupByCounty(cities: CityData[]): Record<string, CityData[]> {
@@ -31,12 +39,13 @@ export default function ServiceAreasPage() {
         <div className="section-container py-16 lg:py-20">
           <div className="max-w-3xl">
             <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-6">
-              Our Service Areas
+              Composite Fence & Deck Service Areas
             </h1>
             <p className="text-lg text-stone-200 leading-relaxed">
-              Alpine Fence & Deck proudly serves <strong>94 cities</strong> across Utah&apos;s Wasatch Front.
+              Alpine Fence & Deck proudly serves <strong>94 cities</strong> across Utah&apos;s Wasatch Front
+              with composite fence and deck solutions.
               From Ogden to Payson, Park City to Tooele — we bring expert refinishing and exclusive 
-              Compozen® installations to your neighborhood.
+              Compozen® composite installations to your neighborhood.
             </p>
           </div>
         </div>
@@ -55,12 +64,12 @@ export default function ServiceAreasPage() {
               <div className="text-sm text-stone-500">Counties</div>
             </div>
             <div>
-              <div className="text-3xl font-heading font-bold text-alpine-800">2,500+</div>
+              <div className="text-3xl font-heading font-bold text-alpine-800">1,700+</div>
               <div className="text-sm text-stone-500">Projects Completed</div>
             </div>
             <div>
-              <div className="text-3xl font-heading font-bold text-alpine-800">4.9★</div>
-              <div className="text-sm text-stone-500">Average Rating</div>
+              <div className="text-3xl font-heading font-bold text-alpine-800">{COMPANY.googleRating}★</div>
+              <div className="text-sm text-stone-500">Google Rating</div>
             </div>
           </div>
         </div>
@@ -124,8 +133,8 @@ export default function ServiceAreasPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/quote" className="btn-compozen">Get Free Estimate</Link>
-            <a href="tel:+8015553325" className="btn-secondary !border-white/30 !text-white hover:!bg-white/10">
-              Call (801) 555-DECK
+            <a href="tel:+18014713148" className="btn-secondary border-white/30 text-white hover:bg-white/10">
+              Call (801) 471-3148
             </a>
           </div>
         </div>

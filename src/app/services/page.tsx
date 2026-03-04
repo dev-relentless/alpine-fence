@@ -3,8 +3,16 @@ import Link from 'next/link';
 import { services } from '@/data/services';
 
 export const metadata: Metadata = {
-  title: 'Fence & Deck Services | Refinishing, Repair & Compozen® Installation',
-  description: 'Complete fence and deck services: refinishing, repair, and exclusive Compozen® composite installations across 94 Utah cities. Free estimates.',
+  title: 'Composite Fence & Deck Services | Refinishing, Repair & Compozen® Installation',
+  description: 'Complete composite fence and deck services in Utah: refinishing, repair, and exclusive Compozen® composite installations across 94 cities. Free estimates for all composite projects.',
+  openGraph: {
+    title: 'Composite Fence & Deck Services | Alpine Fence & Deck',
+    description: 'Utah\'s full-service composite fence and deck contractor. Refinishing, repair & Compozen® composite installations.',
+    url: 'https://alpinefenceanddeck.com/services',
+  },
+  alternates: {
+    canonical: 'https://alpinefenceanddeck.com/services',
+  },
 };
 
 export default function ServicesIndex() {
@@ -15,11 +23,11 @@ export default function ServicesIndex() {
           <div className="max-w-3xl">
             <span className="badge-compozen mb-6">Full-Service Solutions</span>
             <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-6">
-              Our Fence & Deck Services
+              Our Composite Fence & Deck Services
             </h1>
             <p className="text-lg text-stone-200 leading-relaxed">
-              From expert refinishing to revolutionary Compozen® composite installations — 
-              we deliver complete outdoor living solutions backed by 15+ years of experience.
+              From expert refinishing to revolutionary Compozen® composite fence and deck installations — 
+              we deliver complete composite outdoor living solutions backed by 15+ years of experience.
             </p>
           </div>
         </div>

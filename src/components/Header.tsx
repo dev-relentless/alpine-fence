@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { COMPANY } from '@/data/cities';
 
 const navLinks = [
@@ -15,11 +16,11 @@ const navLinks = [
       { label: 'Compozen® Deck Installation', href: '/services/compozen-deck-installation' },
     ],
   },
-  { label: 'Design Studio', href: '/design-studio' },
-  { label: 'HOA Compliance', href: '/hoa-compliance' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'Service Areas', href: '/service-areas' },
   { label: 'Calculator', href: '/calculator' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export default function Header() {
@@ -28,6 +29,9 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-stone-200 shadow-sm">
+      {/* Accent line */}
+      <div className="h-1 bg-gradient-to-r from-compozen-400 via-compozen-500 to-alpine-600" />
+
       {/* Top bar */}
       <div className="bg-alpine-900 text-white text-sm">
         <div className="section-container flex items-center justify-between py-2">
@@ -53,20 +57,15 @@ export default function Header() {
       <nav className="section-container">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 lg:w-12 lg:h-12 bg-alpine-700 rounded-lg flex items-center justify-center shadow-md group-hover:bg-alpine-800 transition-colors">
-              <svg className="w-6 h-6 lg:w-7 lg:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-              </svg>
-            </div>
-            <div>
-              <h1 className="text-lg lg:text-xl font-heading font-bold text-alpine-900 leading-tight">
-                Alpine Fence & Deck
-              </h1>
-              <p className="text-[10px] lg:text-xs text-stone-500 leading-tight">
-                Compozen® Certified Installer
-              </p>
-            </div>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/images/Alpine Fence and Deck_Final File (3).png"
+              alt="Alpine Fence & Deck"
+              width={270}
+              height={90}
+              className="h-14 lg:h-20 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -108,7 +107,7 @@ export default function Header() {
 
           {/* CTA + Mobile toggle */}
           <div className="flex items-center gap-3">
-            <Link href="/quote" className="hidden sm:inline-flex btn-primary !py-2.5 !px-5 !text-sm">
+            <Link href="/contact" className="hidden sm:inline-flex btn-primary !py-2.5 !px-5 !text-sm">
               Free Estimate
             </Link>
             <button
@@ -154,7 +153,7 @@ export default function Header() {
               </div>
             ))}
             <div className="px-4 pt-4">
-              <Link href="/quote" className="btn-primary w-full text-center" onClick={() => setMobileOpen(false)}>
+              <Link href="/contact" className="btn-primary w-full text-center" onClick={() => setMobileOpen(false)}>
                 Get Free Estimate
               </Link>
             </div>

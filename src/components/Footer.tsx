@@ -9,20 +9,17 @@ export default function Footer() {
       <div className="bg-gradient-to-r from-alpine-800 to-mountain-900">
         <div className="section-container py-12 text-center">
           <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-4">
-            Ready to Transform Your Outdoor Living Space?
+            Ready to Transform Your Space with Composite?
           </h2>
           <p className="text-alpine-100 mb-8 max-w-2xl mx-auto">
-            Whether you need refinishing, repair, or are ready for a revolutionary Compozen® installation — 
-            we&apos;re here to help. Free estimates, guaranteed satisfaction.
+            Whether you need refinishing, repair, or are ready for a revolutionary Compozen® composite installation — 
+            we&apos;re here to help. Free composite fence and deck estimates, guaranteed satisfaction.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/quote" className="btn-primary !bg-white !text-alpine-900 hover:!bg-stone-100">
+            <Link href="/contact" className="btn-primary bg-white text-alpine-900 hover:bg-stone-100">
               Get Free Estimate
             </Link>
-            <Link href="/design-studio" className="btn-compozen">
-              Launch Design Studio
-            </Link>
-            <a href={COMPANY.phoneHref} className="btn-secondary !border-white !text-white hover:!bg-white/10">
+            <a href={COMPANY.phoneHref} className="btn-secondary border-white text-white hover:bg-white/10">
               Call {COMPANY.phone}
             </a>
           </div>
@@ -70,11 +67,7 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link href="/design-studio" className="text-sm text-compozen-400 hover:text-compozen-300 transition-colors font-medium">
-                  → Compozen Design Studio
-                </Link>
-              </li>
+
             </ul>
           </div>
 
@@ -110,13 +103,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/hoa-compliance" className="text-sm text-stone-400 hover:text-white transition-colors">
-                  HOA Compliance Center
+                <Link href="/gallery" className="text-sm text-stone-400 hover:text-white transition-colors">
+                  Project Gallery
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="text-sm text-stone-400 hover:text-white transition-colors">
-                  Project Gallery
+                <Link href="/contact" className="text-sm text-stone-400 hover:text-white transition-colors">
+                  Contact Us
                 </Link>
               </li>
               <li>

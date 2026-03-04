@@ -2,8 +2,16 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Project Gallery | Before & After Fence & Deck Transformations',
-  description: 'Browse before and after photos of our fence refinishing, deck repair, and Compozen® composite installations across Utah. See the Alpine Fence & Deck difference.',
+  title: 'Composite Fence & Deck Gallery | Before & After Transformations',
+  description: 'Browse before and after photos of composite fence installations, composite deck builds, refinishing, and repair projects across Utah. See the Compozen® composite difference.',
+  openGraph: {
+    title: 'Composite Fence & Deck Project Gallery | Alpine Fence & Deck',
+    description: 'Before & after composite fence and deck transformations across Utah. Compozen® composite installations, refinishing & repair.',
+    url: 'https://alpinefenceanddeck.com/gallery',
+  },
+  alternates: {
+    canonical: 'https://alpinefenceanddeck.com/gallery',
+  },
 };
 
 const projects = [
@@ -97,11 +105,11 @@ export default function GalleryPage() {
         <div className="section-container py-16 lg:py-20">
           <div className="max-w-3xl">
             <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-6">
-              Project Gallery
+              Composite Fence & Deck Project Gallery
             </h1>
             <p className="text-lg text-stone-200 leading-relaxed">
-              Browse our portfolio of fence refinishing, deck repairs, and stunning Compozen® composite 
-              installations across Utah. Every project tells a transformation story.
+              Browse our portfolio of composite fence installations, composite deck builds, refinishing, and repair projects 
+              across Utah. See real Compozen® composite transformations.
             </p>
           </div>
         </div>

@@ -3,8 +3,16 @@ import QuoteForm from '@/components/QuoteForm';
 import { COMPANY } from '@/data/cities';
 
 export const metadata: Metadata = {
-  title: 'Get a Free Estimate | Fence & Deck Services',
-  description: 'Request a free fence or deck estimate from Alpine Fence & Deck. Same-day response guaranteed. Refinishing, repair, and Compozen® installations across Utah.',
+  title: 'Get a Free Composite Fence & Deck Estimate | Utah',
+  description: 'Request a free composite fence or deck estimate from Alpine Fence & Deck. Same-day response guaranteed. Composite installations, refinishing & repair across 94 Utah cities. Compozen® certified.',
+  openGraph: {
+    title: 'Free Composite Fence & Deck Estimate | Alpine Fence & Deck',
+    description: 'Get a same-day estimate for composite fence and deck installation, refinishing, or repair in Utah.',
+    url: 'https://alpinefenceanddeck.com/quote',
+  },
+  alternates: {
+    canonical: 'https://alpinefenceanddeck.com/quote',
+  },
 };
 
 export default function QuotePage() {
@@ -14,11 +22,11 @@ export default function QuotePage() {
         <div className="section-container py-16 lg:py-20">
           <div className="max-w-3xl">
             <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-6">
-              Get Your Free Estimate
+              Get Your Free Composite Fence & Deck Estimate
             </h1>
             <p className="text-lg text-stone-200 leading-relaxed">
               Tell us about your project and get a detailed, no-obligation estimate the same day. 
-              Whether it&apos;s refinishing, repair, or a Compozen® installation — we&apos;re ready to help.
+              Whether it&apos;s refinishing, repair, or a Compozen® composite installation — we&apos;re ready to help.
             </p>
           </div>
         </div>
@@ -37,7 +45,7 @@ export default function QuotePage() {
                 <a href={COMPANY.phoneHref} className="text-2xl font-bold text-alpine-700 hover:text-alpine-800 transition-colors">
                   {COMPANY.phone}
                 </a>
-                <p className="text-sm text-stone-500 mt-2">Mon-Fri: 7am-6pm | Sat: 8am-3pm</p>
+                <p className="text-sm text-stone-500 mt-2">Mon–Fri: 8 AM – 5 PM</p>
               </div>
 
               {/* Trust signals */}
@@ -46,12 +54,12 @@ export default function QuotePage() {
                 <ul className="space-y-3 text-sm text-stone-600">
                   {[
                     `${COMPANY.yearsExperience}+ years experience`,
-                    'Exclusive Compozen® Certified Installer',
+                    'Exclusive Compozen® Composite Certified',
                     'Same-day estimates',
                     '2-hour emergency callback',
-                    '100% HOA approval guarantee',
-                    'Lifetime Compozen® warranty',
-                    '4.9★ rating (347+ reviews)',
+                    '100% satisfaction guarantee',
+                    '25-year composite material warranty',
+                    `${COMPANY.googleRating}★ Google rating`,
                     'Licensed, bonded & insured',
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2">

@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
     });
   } catch {
     return NextResponse.json(
-      { error: 'An error occurred. Please try again or call (801) 555-DECK.' },
+      { error: 'An error occurred. Please try again or call (801) 471-3148.' },
       { status: 500 }
     );
   }

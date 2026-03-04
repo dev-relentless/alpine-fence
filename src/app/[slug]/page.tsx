@@ -21,13 +21,19 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
   const city = getCityBySlug(citySlug);
   if (!city) return {};
 
+  const title = city.metaTitle.includes('Composite') ? city.metaTitle : city.metaTitle.replace('Fence & Deck', 'Composite Fence & Deck');
+  const description = city.metaDescription.includes('composite') ? city.metaDescription : city.metaDescription.replace('fence and deck', 'composite fence and deck');
+
   return {
-    title: city.metaTitle,
-    description: city.metaDescription,
+    title,
+    description,
     openGraph: {
-      title: city.metaTitle,
-      description: city.metaDescription,
+      title,
+      description,
       url: `https://alpinefenceanddeck.com/${params.slug}`,
+    },
+    alternates: {
+      canonical: `https://alpinefenceanddeck.com/${params.slug}`,
     },
   };
 }
@@ -56,7 +62,7 @@ export default function CityLandingPage({ params }: CityPageProps) {
                 </span>
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold leading-tight mb-6">
-                {city.name} Fence & Deck Contractor
+                {city.name} Composite Fence & Deck Contractor
               </h1>
               <p className="text-lg text-stone-200 mb-6 leading-relaxed">
                 {city.name}&apos;s trusted fence and deck experts. From professional refinishing and emergency repairs
@@ -72,7 +78,7 @@ export default function CityLandingPage({ params }: CityPageProps) {
                 <Link href="/quote" className="btn-compozen">
                   Free {city.name} Estimate
                 </Link>
-                <a href={COMPANY.phoneHref} className="btn-secondary !border-white/30 !text-white hover:!bg-white/10">
+                <a href={COMPANY.phoneHref} className="btn-secondary border-white/30 text-white hover:bg-white/10">
                   Call {COMPANY.phone}
                 </a>
               </div>
@@ -96,12 +102,12 @@ export default function CityLandingPage({ params }: CityPageProps) {
             Our Services in {city.name}
           </h2>
           <p className="text-stone-600 text-center max-w-2xl mx-auto mb-12">
-            Complete fence and deck solutions for {city.name} homeowners — from quick refinishing to 
+            Complete composite fence and deck solutions for {city.name} homeowners — from quick refinishing to 
             revolutionary Compozen® composite transformations.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {services.filter(s => s.id !== 'hoa-compliance').map((service) => (
+            {services.map((service) => (
               <Link
                 key={service.id}
                 href={`/services/${service.slug}`}
@@ -162,18 +168,18 @@ export default function CityLandingPage({ params }: CityPageProps) {
         <div className="section-container text-center max-w-3xl mx-auto">
           <span className="badge-compozen mb-6">Exclusive in {city.name}</span>
           <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-6">
-            {city.name}&apos;s Only Compozen® Certified Installer
+            {city.name}&apos;s Only Compozen® Composite Certified Installer
           </h2>
           <p className="text-stone-300 text-lg mb-8 leading-relaxed">
-            As {city.county} County&apos;s exclusive Compozen® certified installer, 
+            As {city.county} County&apos;s exclusive Compozen® certified composite installer, 
             Alpine Fence & Deck offers revolutionary composite materials and designs 
             unavailable from any other {city.name} contractor.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/design-studio" className="btn-compozen">
-              Launch Design Studio
+            <Link href="/quote" className="btn-compozen">
+              Get Free Estimate
             </Link>
-            <Link href="/calculator" className="btn-secondary !border-stone-600 !text-stone-200 hover:!bg-stone-800">
+            <Link href="/calculator" className="btn-secondary border-stone-600 text-stone-200 hover:bg-stone-800">
               Cost Calculator
             </Link>
           </div>
@@ -192,8 +198,8 @@ export default function CityLandingPage({ params }: CityPageProps) {
               <p className="text-stone-600">Years serving {city.county} County</p>
             </div>
             <div className="p-6">
-              <div className="text-4xl font-heading font-bold text-alpine-800 mb-2">4.9★</div>
-              <p className="text-stone-600">Average rating in {city.name}</p>
+              <div className="text-4xl font-heading font-bold text-alpine-800 mb-2">{COMPANY.googleRating}★</div>
+              <p className="text-stone-600">Google rating</p>
             </div>
             <div className="p-6">
               <div className="text-4xl font-heading font-bold text-alpine-800 mb-2">100%</div>

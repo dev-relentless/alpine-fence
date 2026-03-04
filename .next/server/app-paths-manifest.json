@@ -1,10 +1,8 @@
 {
   "/page": "app/page.js",
-  "/design-studio/page": "app/design-studio/page.js",
-  "/hoa-compliance/page": "app/hoa-compliance/page.js",
   "/service-areas/page": "app/service-areas/page.js",
-  "/[slug]/page": "app/[slug]/page.js",
-  "/services/page": "app/services/page.js",
-  "/services/[serviceSlug]/page": "app/services/[serviceSlug]/page.js",
-  "/calculator/page": "app/calculator/page.js"
+  "/contact/page": "app/contact/page.js",
+  "/about/page": "app/about/page.js",
+  "/quote/page": "app/quote/page.js",
+  "/_not-found/page": "app/_not-found/page.js"
 }

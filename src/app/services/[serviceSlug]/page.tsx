@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { getServiceBySlug, services } from '@/data/services';
 import { COMPANY } from '@/data/cities';
 import QuoteForm from '@/components/QuoteForm';
+import SchemaMarkup from '@/components/SchemaMarkup';
 
 interface ServicePageProps {
   params: { serviceSlug: string };
@@ -16,9 +17,18 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
   const service = getServiceBySlug(params.serviceSlug);
   if (!service) return {};
+  const titlePrefix = service.isCompozen ? `${service.title} | Composite` : service.title;
   return {
-    title: `${service.title} | Alpine Fence & Deck`,
-    description: service.heroDescription,
+    title: `${titlePrefix} | Utah's Composite Fence & Deck Contractor`,
+    description: `${service.heroDescription} Serving 94 Utah cities. Free composite fence and deck estimates. (801) 471-3148`,
+    openGraph: {
+      title: `${service.title} | Alpine Fence & Deck`,
+      description: service.heroDescription,
+      url: `https://alpinefenceanddeck.com/services/${params.serviceSlug}`,
+    },
+    alternates: {
+      canonical: `https://alpinefenceanddeck.com/services/${params.serviceSlug}`,
+    },
   };
 }
 
@@ -28,6 +38,8 @@ export default function ServicePage({ params }: ServicePageProps) {
 
   return (
     <>
+      <SchemaMarkup pageType="service" service={service.title} />
+
       {/* Hero */}
       <section className={service.isCompozen ? 'bg-gradient-to-br from-stone-900 via-alpine-950 to-stone-900 text-white' : 'bg-hero-gradient text-white'}>
         <div className="section-container py-16 lg:py-24">
@@ -44,7 +56,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                 <Link href={service.ctaHref} className={service.isCompozen ? 'btn-compozen' : 'btn-compozen'}>
                   {service.ctaText}
                 </Link>
-                <a href={COMPANY.phoneHref} className="btn-secondary !border-white/30 !text-white hover:!bg-white/10">
+                <a href={COMPANY.phoneHref} className="btn-secondary border-white/30 text-white hover:bg-white/10">
                   Call {COMPANY.phone}
                 </a>
               </div>
@@ -96,23 +108,23 @@ export default function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* Compozen upgrade section for non-Compozen services */}
-      {!service.isCompozen && service.id !== 'hoa-compliance' && (
+      {!service.isCompozen && (
         <section className="section-padding bg-gradient-to-br from-stone-900 to-alpine-950 text-white">
           <div className="section-container text-center max-w-3xl mx-auto">
-            <span className="badge-compozen mb-6">Permanent Solution</span>
+            <span className="badge-compozen mb-6">Permanent Composite Solution</span>
             <h2 className="text-3xl font-heading font-bold mb-6">
-              Ready for a Permanent Fix with Compozen®?
+              Ready for a Permanent Composite Fix?
             </h2>
             <p className="text-stone-300 text-lg mb-8">
               {service.id === 'deck-refinishing'
-                ? 'Tired of refinishing every 2-3 years? Compozen® composite materials deliver the same beautiful wood look with zero lifetime maintenance.'
-                : 'Instead of repeated repairs, upgrade to Compozen® composite that won\'t rot, warp, or need repairs again. One investment, lifetime beauty.'}
+                ? 'Tired of refinishing every 2-3 years? Compozen® composite materials deliver the same beautiful wood look with zero lifetime maintenance. Upgrade to composite today.'
+                : 'Instead of repeated repairs, upgrade to Compozen® composite that won\'t rot, warp, or need repairs again. One composite investment, lifetime beauty.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/services/compozen-fence-installation" className="btn-compozen">
                 Explore Compozen® Fences
               </Link>
-              <Link href="/services/compozen-deck-installation" className="btn-secondary !border-stone-600 !text-stone-200">
+              <Link href="/services/compozen-deck-installation" className="btn-secondary border-stone-600 text-stone-200">
                 Explore Compozen® Decks
               </Link>
             </div>
@@ -152,7 +164,7 @@ export default function ServicePage({ params }: ServicePageProps) {
             Explore Our Other Services
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.filter(s => s.id !== service.id && s.id !== 'hoa-compliance').map((s) => (
+            {services.filter(s => s.id !== service.id).map((s) => (
               <Link key={s.id} href={`/services/${s.slug}`} className="card group p-6">
                 <h3 className="font-heading font-bold text-stone-900 group-hover:text-alpine-700 transition-colors mb-2">
                   {s.title}

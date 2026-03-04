@@ -1,11 +1,26 @@
 import Link from 'next/link';
-import QuoteForm from '@/components/QuoteForm';
+import { Metadata } from 'next';
 import { COMPANY } from '@/data/cities';
 import { services } from '@/data/services';
+import SchemaMarkup from '@/components/SchemaMarkup';
+
+export const metadata: Metadata = {
+  title: 'Utah\'s #1 Composite Fence & Deck Contractor | Compozen® Certified | Alpine Fence & Deck',
+  description: 'Utah\'s premier composite fence and deck contractor. Expert refinishing, repair, and exclusive Compozen® composite installations across 94 cities. 25-year warranty. Free estimates. (801) 471-3148',
+  openGraph: {
+    title: 'Alpine Fence & Deck | Utah\'s #1 Composite Fence & Deck Contractor',
+    description: 'Composite fence and deck installations, refinishing & repair across 94 Utah cities. Compozen® certified. 25-year warranty. Free estimates.',
+    url: 'https://alpinefenceanddeck.com',
+  },
+  alternates: {
+    canonical: 'https://alpinefenceanddeck.com',
+  },
+};
 
 export default function HomePage() {
   return (
     <>
+      <SchemaMarkup pageType="home" />
       {/* ───── HERO ───── */}
       <section className="relative bg-hero-gradient text-white overflow-hidden">
         {/* decorative */}
@@ -14,30 +29,27 @@ export default function HomePage() {
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-mountain-400 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
         </div>
 
-        <div className="section-container relative z-10 py-20 lg:py-28">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* copy */}
-            <div className="max-w-xl">
-              <div className="badge-compozen mb-6">★ Exclusive Compozen® Certified Installer</div>
+        <div className="section-container relative z-10 py-24 lg:py-36">
+          <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6 text-balance">
-                Utah&apos;s Premier Fence & Deck{' '}
-                <span className="text-compozen-400">Transformation</span> Experts
+                Utah&apos;s Premier Composite Fence & Deck{' '}
+                <span className="text-compozen-400">Experts</span>
               </h1>
-              <p className="text-lg text-stone-200 mb-8 leading-relaxed">
+              <p className="text-lg lg:text-xl text-stone-200 mb-10 leading-relaxed max-w-2xl mx-auto">
                 From expert refinishing to revolutionary <strong className="text-compozen-300">Compozen® composite</strong> installations —
                 we deliver stunning outdoor living spaces across {COMPANY.serviceArea}. {COMPANY.yearsExperience}+ years of trusted craftsmanship.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
                 <Link href="/quote" className="btn-compozen text-lg">
-                  Get Free Estimate
+                  Request a Free Quote
                 </Link>
-                <Link href="/design-studio" className="btn-secondary !border-white/30 !text-white hover:!bg-white/10 text-lg">
-                  Launch Design Studio →
+                <Link href="/contact" className="btn-secondary border-white/30 text-white hover:bg-white/10 text-lg">
+                  Contact Us
                 </Link>
               </div>
 
-              <div className="flex flex-wrap items-center gap-6 text-sm text-stone-300">
+              <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-stone-300">
                 <span className="flex items-center gap-2">
                   <svg className="w-5 h-5 text-compozen-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -48,21 +60,15 @@ export default function HomePage() {
                   <svg className="w-5 h-5 text-compozen-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  HOA Approved
+                  Licensed & Insured
                 </span>
                 <span className="flex items-center gap-2">
                   <svg className="w-5 h-5 text-compozen-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  Lifetime Warranty
+                  25-Year Warranty
                 </span>
               </div>
-            </div>
-
-            {/* hero form */}
-            <div className="lg:pl-8">
-              <QuoteForm variant="compact" />
-            </div>
           </div>
         </div>
       </section>
@@ -74,8 +80,8 @@ export default function HomePage() {
             {[
               { value: `${COMPANY.yearsExperience}+`, label: 'Years Experience' },
               { value: '94', label: 'Cities Served' },
-              { value: '4.9★', label: 'Average Rating' },
-              { value: '2,500+', label: 'Projects Completed' },
+              { value: `${COMPANY.googleRating}★`, label: 'Google Rating' },
+              { value: '1,700+', label: 'Projects Completed' },
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="text-3xl font-heading font-bold text-alpine-800">{stat.value}</div>
@@ -91,16 +97,16 @@ export default function HomePage() {
         <div className="section-container">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-alpine-900 mb-4">
-              Complete Fence & Deck Solutions
+              Complete Composite Fence & Deck Solutions
             </h2>
             <p className="text-lg text-stone-600">
-              From quick refinishing to revolutionary Compozen® composite installations — 
-              we have the right solution for every outdoor living project.
+              From quick refinishing to revolutionary Compozen® composite fence and deck installations — 
+              we have the right composite solution for every outdoor living project.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {services.filter(s => s.id !== 'hoa-compliance').map((service) => (
+            {services.map((service) => (
               <Link
                 key={service.id}
                 href={`/services/${service.slug}`}
@@ -141,84 +147,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ───── COMPOZEN SPOTLIGHT ───── */}
-      <section className="bg-gradient-to-br from-stone-900 via-alpine-950 to-stone-900 text-white section-padding overflow-hidden relative">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-compozen-500 rounded-full blur-[128px]" />
-        </div>
-        <div className="section-container relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="badge-compozen mb-6">Exclusive Technology</span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-tight">
-                The <span className="text-compozen-400">Compozen®</span> Revolution
-              </h2>
-              <p className="text-lg text-stone-300 mb-8 leading-relaxed">
-                Stop the endless cycle of refinishing. Compozen® composite materials deliver stunning natural wood aesthetics 
-                with <strong className="text-white">zero lifetime maintenance</strong>. As Utah&apos;s exclusive certified installer, 
-                we offer designs and materials unavailable anywhere else.
-              </p>
 
-              <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                {[
-                  'Never stain or seal again',
-                  'Won\'t rot, warp, or splinter',
-                  'Lifetime material warranty',
-                  'Eco-friendly recycled materials',
-                  'Custom colors & textures',
-                  'Increases property value 70-80%',
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-compozen-400 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-sm text-stone-200">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/design-studio" className="btn-compozen">
-                  Launch Design Studio
-                </Link>
-                <Link href="/calculator" className="btn-secondary !border-stone-600 !text-stone-200 hover:!bg-stone-800">
-                  Refinish vs. Replace Calculator
-                </Link>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="aspect-[4/3] bg-gradient-to-br from-stone-800 to-stone-900 rounded-2xl border border-stone-700 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-20 h-20 bg-compozen-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-10 h-10 text-compozen-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-heading font-bold text-white mb-2">3D Design Studio</h3>
-                  <p className="text-stone-400 text-sm">
-                    Visualize your Compozen® installation in stunning 3D before a single board is placed.
-                  </p>
-                </div>
-              </div>
-              <div className="absolute -bottom-4 -right-4 bg-compozen-500 text-stone-900 rounded-xl px-6 py-3 font-bold shadow-xl">
-                10x Value vs. Refinishing
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ───── WHY CHOOSE US ───── */}
       <section className="section-padding bg-white">
         <div className="section-container">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-alpine-900 mb-4">
-              Why Utah Homeowners Choose Alpine
+              Why Utah Homeowners Choose Alpine for Composite
             </h2>
             <p className="text-lg text-stone-600">
-              We&apos;re not just contractors — we&apos;re your outdoor living transformation partners 
-              backed by {COMPANY.yearsExperience}+ years of trusted craftsmanship.
+              We&apos;re not just contractors — we&apos;re Utah&apos;s trusted composite fence and deck experts 
+              backed by {COMPANY.yearsExperience}+ years of craftsmanship.
             </p>
           </div>
 
@@ -230,13 +170,13 @@ export default function HomePage() {
                 icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
               },
               {
-                title: 'Exclusive Compozen® Access',
-                description: 'As a certified installer, we offer composite materials and designs unavailable from other contractors.',
+                title: 'Exclusive Compozen® Composite Access',
+                description: 'As a certified composite installer, we offer composite materials and designs unavailable from other contractors.',
                 icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
               },
               {
-                title: 'HOA Guarantee',
-                description: 'We guarantee HOA approval on every Compozen® installation or we redesign free of charge.',
+                title: 'Quality Guarantee',
+                description: 'We stand behind every project with our satisfaction guarantee and industry-leading warranties.',
                 icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
               },
               {
@@ -250,8 +190,8 @@ export default function HomePage() {
                 icon: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z',
               },
               {
-                title: 'Lifetime Warranty',
-                description: 'Compozen® installations come with a lifetime material warranty and our workmanship guarantee.',
+                title: '25-Year Composite Warranty',
+                description: 'Compozen® composite installations come with a 25-year composite material warranty and our workmanship guarantee.',
                 icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
               },
             ].map((item) => (
@@ -283,28 +223,28 @@ export default function HomePage() {
                 </svg>
               ))}
             </div>
-            <p className="text-stone-600">4.9/5 stars from 347+ verified reviews</p>
+            <p className="text-stone-600">{COMPANY.googleRating}/5 stars on Google</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: 'Sarah M.',
-                location: 'South Jordan (Daybreak)',
-                text: 'We started with deck refinishing and were so impressed we upgraded to a full Compozen fence. The design studio let us visualize everything before committing. Absolutely stunning results!',
-                service: 'Compozen® Fence',
+                name: 'Cynthia Dunford',
+                location: 'Utah',
+                text: 'Very professional! First, they repaired my fence and then I had them stain the entire fence. The owner, Chandler, kept me informed every step of the way. The end product was excellent!',
+                service: 'Fence Repair & Staining',
               },
               {
-                name: 'Mike T.',
-                location: 'Sandy',
-                text: 'Emergency fence repair after a storm — they called back in 45 minutes and had it fixed next day. Then they showed us Compozen options that won\'t blow down. Converting our entire yard next spring.',
-                service: 'Repair → Compozen®',
+                name: 'Scott Poppen',
+                location: 'Utah',
+                text: 'They repaired, stained, and sealed a 28-year-old fence, making it look like new. They also replaced an old worn-out gate. The crew were very professional and personable.',
+                service: 'Fence Staining & Gate Repair',
               },
               {
-                name: 'Jennifer L.',
-                location: 'Draper (SunCrest)',
-                text: 'HOA had super strict requirements. Alpine handled everything — submitted designs, got approval in 3 days, and the Compozen deck installation is absolutely gorgeous. Zero maintenance is a dream.',
-                service: 'Compozen® Deck',
+                name: 'Morgan Busch',
+                location: 'Utah',
+                text: 'Great communication all around! They power washed the fence and the staining looks gorgeous! Love the way it turned out. Would highly recommend Alpine Fence and Deck!',
+                service: 'Power Wash & Staining',
               },
             ].map((testimonial) => (
               <div key={testimonial.name} className="card p-6">
@@ -334,11 +274,11 @@ export default function HomePage() {
         <div className="section-container">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-alpine-900 mb-4">
-              The Smart Upgrade Path
+              The Smart Composite Upgrade Path
             </h2>
             <p className="text-lg text-stone-600">
               Every refinishing job reveals an opportunity. See why homeowners who start with refinishing 
-              end up choosing Compozen® for their permanent solution.
+              end up choosing Compozen® composite for their permanent solution.
             </p>
           </div>
 
@@ -353,13 +293,13 @@ export default function HomePage() {
               {
                 step: '2',
                 title: 'Design & Compare',
-                description: 'Use our 3D Design Studio to visualize a Compozen® upgrade. See the 10-year cost comparison side by side.',
+                description: 'Compare your options with our cost calculator. See the 10-year cost comparison side by side.',
                 detail: 'Free design consultation',
               },
               {
                 step: '3',
                 title: 'Transform Forever',
-                description: 'Upgrade to Compozen® when you\'re ready. Zero maintenance, lifetime warranty, stunning results.',
+                description: 'Upgrade to Compozen® when you\'re ready. Zero maintenance, 25-year warranty, stunning results.',
                 detail: 'Avg. project: $25,000',
               },
             ].map((step) => (
@@ -384,11 +324,11 @@ export default function HomePage() {
           <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-heading font-bold text-alpine-900 mb-4">
-                10-Year Cost: Refinishing vs. Compozen®
+                10-Year Cost: Refinishing vs. Compozen® Composite
               </h2>
               <p className="text-stone-600 mb-6">
                 The numbers speak for themselves. Repeated refinishing costs add up, while a single 
-                Compozen® installation pays for itself and adds lasting property value.
+                Compozen® composite installation pays for itself and adds lasting property value.
               </p>
               <Link href="/calculator" className="btn-primary">
                 Use Our Cost Calculator →
@@ -407,13 +347,13 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="flex justify-between text-sm mb-2">
-                  <span className="font-medium text-stone-700">One Compozen® Installation</span>
+                  <span className="font-medium text-stone-700">One Compozen® Composite Installation</span>
                   <span className="font-bold text-alpine-700">$15,000 – $35,000</span>
                 </div>
                 <div className="w-full bg-stone-200 rounded-full h-4">
                   <div className="bg-compozen-500 h-4 rounded-full" style={{ width: '55%' }} />
                 </div>
-                <p className="text-xs text-stone-500 mt-1">One-time investment + $0 maintenance forever</p>
+                <p className="text-xs text-stone-500 mt-1">One-time composite investment + $0 maintenance forever</p>
               </div>
             </div>
           </div>
@@ -428,7 +368,7 @@ export default function HomePage() {
           </h2>
           <p className="text-lg text-stone-600 mb-8 max-w-2xl mx-auto">
             From Ogden to Payson, Park City to Tooele — we bring expert refinishing and exclusive 
-            Compozen® installations to your city.
+            Compozen® composite fence and deck installations to your city.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             {['Salt Lake City', 'Provo', 'Orem', 'Sandy', 'South Jordan', 'Layton', 'Draper', 'Park City'].map((city) => (
@@ -447,14 +387,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ───── FINAL CTA ───── */}
-      <section className="section-padding bg-alpine-900 text-white">
-        <div className="section-container">
-          <div className="max-w-4xl mx-auto">
-            <QuoteForm />
-          </div>
-        </div>
-      </section>
     </>
   );
 }

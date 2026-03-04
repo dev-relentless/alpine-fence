@@ -1,13 +1,17 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Refinish vs. Replace Calculator | Alpine Fence & Deck',
+  title: 'Composite Fence & Gate Cost Estimator | Alpine Fence & Deck',
   description:
-    'Calculate the true 10-year cost of refinishing your wood fence or deck vs. upgrading to Compozen® composite. See your potential savings instantly.',
+    'Get an estimated price range for your composite fence and gate project. Compare composite vs. wood costs. Free on-site estimates available from Utah\'s Compozen® composite experts.',
   openGraph: {
-    title: 'Refinish vs. Replace Calculator | Alpine Fence & Deck',
+    title: 'Composite Fence & Gate Cost Estimator | Alpine Fence & Deck',
     description:
-      'Calculate the true 10-year cost of refinishing vs. upgrading to Compozen® composite.',
+      'Estimate your composite fence and gate project cost. Compare composite vs. wood pricing in Utah.',
+    url: 'https://alpinefenceanddeck.com/calculator',
+  },
+  alternates: {
+    canonical: 'https://alpinefenceanddeck.com/calculator',
   },
 };
 
