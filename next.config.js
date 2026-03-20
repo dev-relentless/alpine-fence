@@ -4,10 +4,17 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**',
+        hostname: 'book.housecallpro.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'online-booking.housecallpro.com',
       },
     ],
+    formats: ['image/avif', 'image/webp'],
   },
+  compress: true,
+  poweredByHeader: false,
   async headers() {
     return [
       {
@@ -37,7 +44,64 @@ const nextConfig = {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=(self)',
           },
+          // AI/LLM crawlers: explicitly allow indexing
+          {
+            key: 'X-Robots-Tag',
+            value: 'all, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+          },
         ],
+      },
+      // Cache control for static assets (SEO performance signal)
+      {
+        source: '/images/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // LLM discovery files — plain text, long cache
+      {
+        source: '/llms.txt',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/plain; charset=utf-8',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400',
+          },
+        ],
+      },
+      {
+        source: '/llms-full.txt',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/plain; charset=utf-8',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400',
+          },
+        ],
+      },
+    ];
+  },
+  async redirects() {
+    return [
+      // Redirect common SEO misspellings / old URLs
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/index',
+        destination: '/',
+        permanent: true,
       },
     ];
   },

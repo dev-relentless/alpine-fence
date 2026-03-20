@@ -48,7 +48,11 @@ export default function CityLandingPage({ params }: CityPageProps) {
 
   return (
     <>
-      <SchemaMarkup pageType="city" city={city} />
+      <SchemaMarkup pageType="city" city={city} breadcrumbs={[
+        { name: 'Home', url: 'https://alpinefenceanddeck.com' },
+        { name: 'Service Areas', url: 'https://alpinefenceanddeck.com/service-areas' },
+        { name: city.name, url: `https://alpinefenceanddeck.com/${params.slug}` },
+      ]} />
 
       {/* Hero */}
       <section className="bg-hero-gradient text-white">
@@ -90,7 +94,7 @@ export default function CityLandingPage({ params }: CityPageProps) {
               </div>
             </div>
 
-            <QuoteForm variant="compact" defaultCity={city.name} />
+            <QuoteForm variant="compact" />
           </div>
         </div>
       </section>
@@ -212,7 +216,7 @@ export default function CityLandingPage({ params }: CityPageProps) {
       {/* Quote form */}
       <section className="section-padding bg-alpine-900 text-white">
         <div className="section-container max-w-4xl mx-auto">
-          <QuoteForm defaultCity={city.name} />
+          <QuoteForm />
         </div>
       </section>
     </>

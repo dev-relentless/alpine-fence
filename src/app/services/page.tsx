@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { services } from '@/data/services';
+import { COMPANY } from '@/data/cities';
 
 export const metadata: Metadata = {
   title: 'Composite Fence & Deck Services | Refinishing, Repair & Compozen® Installation',
@@ -27,7 +28,7 @@ export default function ServicesIndex() {
             </h1>
             <p className="text-lg text-stone-200 leading-relaxed">
               From expert refinishing to revolutionary Compozen® composite fence and deck installations — 
-              we deliver complete composite outdoor living solutions backed by 15+ years of experience.
+              we deliver complete composite outdoor living solutions backed by {COMPANY.yearsExperience}+ years of experience.
             </p>
           </div>
         </div>

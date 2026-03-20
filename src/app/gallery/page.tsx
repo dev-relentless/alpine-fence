@@ -140,10 +140,11 @@ export default function GalleryPage() {
       {/* Filter bar */}
       <section className="bg-white border-b border-stone-200 sticky top-0 z-30">
         <div className="section-container py-4">
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2" role="group" aria-label="Filter projects">
             {['All Projects', 'Compozen®', 'Refinishing', 'Repair', 'Fence', 'Deck'].map((filter, idx) => (
               <button
                 key={filter}
+                aria-pressed={idx === 0}
                 className={`px-4 py-2 text-sm font-medium rounded-full transition-colors ${
                   idx === 0
                     ? 'bg-alpine-700 text-white'

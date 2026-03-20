@@ -3,8 +3,6 @@
 import Script from 'next/script';
 
 interface QuoteFormProps {
-  defaultService?: string;
-  defaultCity?: string;
   variant?: 'full' | 'compact' | 'sidebar';
   className?: string;
 }

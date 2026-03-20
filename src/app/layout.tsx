@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { COMPANY } from '@/data/cities';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -10,7 +11,9 @@ export const metadata: Metadata = {
     template: '%s | Alpine Fence & Deck',
   },
   description:
-    'Utah\'s premier composite fence and deck contractor. Expert refinishing, repair, and exclusive Compozen® composite installations across 94 cities. 15+ years experience. Free estimates. (801) 471-3148',
+    `Utah's premier composite fence and deck contractor. Expert refinishing, repair, and exclusive Compozen® composite installations across 94 cities. ${COMPANY.yearsExperience}+ years experience. Free estimates. (801) 471-3148`,
+  applicationName: 'Alpine Fence & Deck',
+  category: 'Home Improvement',
   keywords: [
     'composite fence Utah',
     'composite deck Utah',
@@ -29,6 +32,10 @@ export const metadata: Metadata = {
     'zero maintenance fence Utah',
     'composite fence Salt Lake City',
     'composite deck Provo',
+    'fence company near me Utah',
+    'deck builder Provo Utah',
+    'composite fence cost Utah',
+    'best fence contractor Wasatch Front',
   ],
   openGraph: {
     type: 'website',
@@ -42,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Alpine Fence & Deck | Utah\'s #1 Composite Fence & Deck Contractor',
-    description: 'Utah\'s premier composite fence and deck contractor. Compozen® certified installer.',
+    description: 'Utah\'s premier composite fence and deck contractor. Compozen® certified installer serving 94 Utah cities.',
   },
   robots: {
     index: true,
@@ -51,6 +58,22 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://alpinefenceanddeck.com',
+    languages: {
+      'en-US': 'https://alpinefenceanddeck.com',
+    },
+  },
+  verification: {
+    google: 'GOOGLE_SITE_VERIFICATION_TOKEN',
+    other: {
+      'msvalidate.01': 'BING_SITE_VERIFICATION_TOKEN',
+      'yandex-verification': 'YANDEX_VERIFICATION_TOKEN',
+    },
+  },
+  other: {
+    'geo.region': 'US-UT',
+    'geo.placename': 'Provo, Utah',
+    'geo.position': '40.2338;-111.6585',
+    'ICBM': '40.2338, -111.6585',
   },
 };
 

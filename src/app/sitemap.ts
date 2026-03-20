@@ -5,7 +5,7 @@ import { services } from '@/data/services';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://alpinefenceanddeck.com';
   const cities = getAllCities();
-  const lastModified = new Date('2025-01-15');
+  const lastModified = new Date();
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified, changeFrequency: 'weekly', priority: 1.0 },
@@ -16,6 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/quote`, lastModified, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/contact`, lastModified, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/about`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/privacy`, lastModified, changeFrequency: 'yearly', priority: 0.2 },
+    { url: `${baseUrl}/terms`, lastModified, changeFrequency: 'yearly', priority: 0.2 },
   ];
 
   const servicePages: MetadataRoute.Sitemap = services.map((s) => ({

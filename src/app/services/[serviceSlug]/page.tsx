@@ -38,7 +38,11 @@ export default function ServicePage({ params }: ServicePageProps) {
 
   return (
     <>
-      <SchemaMarkup pageType="service" service={service.title} />
+      <SchemaMarkup pageType="service" service={service.title} breadcrumbs={[
+        { name: 'Home', url: 'https://alpinefenceanddeck.com' },
+        { name: 'Services', url: 'https://alpinefenceanddeck.com/services' },
+        { name: service.title, url: `https://alpinefenceanddeck.com/services/${params.serviceSlug}` },
+      ]} />
 
       {/* Hero */}
       <section className={service.isCompozen ? 'bg-gradient-to-br from-stone-900 via-alpine-950 to-stone-900 text-white' : 'bg-hero-gradient text-white'}>
@@ -65,7 +69,7 @@ export default function ServicePage({ params }: ServicePageProps) {
               </p>
             </div>
             <div className="lg:col-span-2">
-              <QuoteForm variant="sidebar" defaultService={service.id} />
+              <QuoteForm variant="sidebar" />
             </div>
           </div>
         </div>
@@ -180,7 +184,7 @@ export default function ServicePage({ params }: ServicePageProps) {
       {/* CTA */}
       <section className="section-padding bg-alpine-900">
         <div className="section-container max-w-4xl mx-auto">
-          <QuoteForm defaultService={service.id} />
+          <QuoteForm />
         </div>
       </section>
     </>

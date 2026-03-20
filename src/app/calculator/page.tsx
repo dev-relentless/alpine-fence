@@ -54,7 +54,7 @@ export default function CalculatorPage() {
         <div className="section-container py-16 lg:py-20">
           <div className="max-w-3xl">
             <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-6">
-              Fence &amp; Gate Cost Estimator
+              Composite Fence &amp; Gate Cost Estimator
             </h1>
             <p className="text-lg text-stone-200 leading-relaxed">
               Get a quick price range for your fence and gate project. Enter your measurements
