@@ -1,9 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { COMPANY } from '@/data/cities';
+import { useRouter } from 'next/navigation';
+import { COMPANY, getAllCities } from '@/data/cities';
+import { services } from '@/data/services';
 
 const navLinks = [
   {
@@ -26,6 +28,59 @@ const navLinks = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (searchOpen && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [searchOpen]);
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
+      if (e.key === 'Escape') {
+        setSearchOpen(false);
+        setSearchQuery('');
+      }
+    }
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  const searchResults = searchQuery.trim().length > 1
+    ? [
+        ...services
+          .filter((s) => s.title.toLowerCase().includes(searchQuery.toLowerCase()))
+          .map((s) => ({ label: s.title, href: `/services/${s.slug}`, type: 'Service' as const })),
+        ...getAllCities()
+          .filter((c) => c.name.toLowerCase().includes(searchQuery.toLowerCase()))
+          .slice(0, 8)
+          .map((c) => ({ label: c.name, href: `/${c.slug}-fence-deck-contractor`, type: 'City' as const })),
+        ...([
+          { label: 'Gallery', href: '/gallery' },
+          { label: 'About', href: '/about' },
+          { label: 'Contact', href: '/contact' },
+          { label: 'Cost Calculator', href: '/calculator' },
+          { label: 'Service Areas', href: '/service-areas' },
+          { label: 'Get a Quote', href: '/quote' },
+        ]
+          .filter((p) => p.label.toLowerCase().includes(searchQuery.toLowerCase()))
+          .map((p) => ({ ...p, type: 'Page' as const }))),
+      ]
+    : [];
+
+  function handleResultClick(href: string) {
+    setSearchOpen(false);
+    setSearchQuery('');
+    router.push(href);
+  }
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-stone-200 shadow-sm">
@@ -105,8 +160,17 @@ export default function Header() {
             ))}
           </div>
 
-          {/* CTA + Mobile toggle */}
+          {/* Search + CTA + Mobile toggle */}
           <div className="flex items-center gap-3">
+            <button
+              onClick={() => setSearchOpen(true)}
+              className="p-2 text-stone-500 hover:text-alpine-700 hover:bg-alpine-50 rounded-lg transition-colors"
+              aria-label="Search"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
+            </button>
             <Link href="/contact" className="hidden sm:inline-flex btn-primary !py-2.5 !px-5 !text-sm">
               Free Estimate
             </Link>
@@ -160,6 +224,68 @@ export default function Header() {
           </div>
         )}
       </nav>
+
+      {/* Search Modal */}
+      {searchOpen && (
+        <div className="fixed inset-0 z-[100] flex items-start justify-center pt-[15vh]">
+          <div
+            className="absolute inset-0 bg-stone-900/50 backdrop-blur-sm"
+            onClick={() => { setSearchOpen(false); setSearchQuery(''); }}
+          />
+          <div className="relative w-full max-w-lg mx-4 bg-white rounded-2xl shadow-2xl border border-stone-200 overflow-hidden animate-fade-in">
+            <div className="flex items-center gap-3 px-4 py-3 border-b border-stone-200">
+              <svg className="w-5 h-5 text-stone-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
+              <input
+                ref={searchInputRef}
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search cities, services, pages…"
+                className="flex-1 text-base text-stone-800 placeholder:text-stone-400 outline-none bg-transparent"
+              />
+              <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-1 text-xs text-stone-400 bg-stone-100 rounded border border-stone-200">
+                ESC
+              </kbd>
+            </div>
+
+            <div className="max-h-80 overflow-y-auto">
+              {searchQuery.trim().length > 1 && searchResults.length === 0 && (
+                <div className="px-4 py-8 text-center text-stone-500 text-sm">
+                  No results for &ldquo;{searchQuery}&rdquo;
+                </div>
+              )}
+              {searchResults.length > 0 && (
+                <ul className="py-2">
+                  {searchResults.map((result) => (
+                    <li key={result.href}>
+                      <button
+                        onClick={() => handleResultClick(result.href)}
+                        className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-alpine-50 transition-colors"
+                      >
+                        <span className={`text-xs font-medium px-2 py-0.5 rounded-full shrink-0 ${
+                          result.type === 'Service' ? 'bg-compozen-100 text-compozen-800' :
+                          result.type === 'City' ? 'bg-alpine-100 text-alpine-800' :
+                          'bg-stone-100 text-stone-600'
+                        }`}>
+                          {result.type}
+                        </span>
+                        <span className="text-sm text-stone-800">{result.label}</span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {searchQuery.trim().length <= 1 && (
+                <div className="px-4 py-6 text-center text-stone-400 text-sm">
+                  Type to search 94 cities, services &amp; pages
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

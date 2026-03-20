@@ -500,7 +500,6 @@ const cityDatabase: CityData[] = [
     { name: 'Plain City', slug: 'plain-city', county: 'Weber', population: 7500 },
     { name: 'West Haven', slug: 'west-haven', county: 'Weber', population: 15000 },
     { name: 'Lehi', slug: 'lehi', county: 'Utah', population: 75000 },
-    { name: 'Lindon', slug: 'lindon-city', county: 'Utah', population: 11000 },
     { name: 'Woodland Hills', slug: 'woodland-hills', county: 'Utah', population: 1500 },
     { name: 'Elk Ridge', slug: 'elk-ridge', county: 'Utah', population: 4000 },
     { name: 'Genola', slug: 'genola', county: 'Utah', population: 2000 },

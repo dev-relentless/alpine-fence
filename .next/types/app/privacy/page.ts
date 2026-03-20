@@ -1,8 +1,8 @@
-// File: /workspaces/alpine-fence/src/app/[slug]/page.tsx
-import * as entry from '../../../../src/app/[slug]/page.js'
+// File: /workspaces/alpine-fence/src/app/privacy/page.tsx
+import * as entry from '../../../../src/app/privacy/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
-type TEntry = typeof import('../../../../src/app/[slug]/page.js')
+type TEntry = typeof import('../../../../src/app/privacy/page.js')
 
 // Check that the entry is a valid entry
 checkFields<Diff<{

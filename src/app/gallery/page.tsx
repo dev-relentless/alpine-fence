@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -111,6 +112,27 @@ export default function GalleryPage() {
               Browse our portfolio of composite fence installations, composite deck builds, refinishing, and repair projects 
               across Utah. See real Compozen® composite transformations.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Project */}
+      <section className="section-padding bg-white">
+        <div className="section-container">
+          <div className="text-center mb-8">
+            <span className="text-xs font-medium text-alpine-600 uppercase tracking-wide">Featured Project</span>
+            <h2 className="text-2xl lg:text-3xl font-heading font-bold text-stone-900 mt-1">Wood Fence Refinish</h2>
+          </div>
+          <div className="relative aspect-[16/9] max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-xl">
+            <Image
+              src="/images/gallery/wood-fence-refinish-01.JPG"
+              alt="Wood fence refinish project by Alpine Fence & Deck"
+              fill
+              priority
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1024px"
+              quality={80}
+            />
           </div>
         </div>
       </section>
