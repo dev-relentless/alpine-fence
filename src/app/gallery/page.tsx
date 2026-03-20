@@ -3,11 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Composite Fence & Deck Gallery | Before & After Transformations',
-  description: 'Browse before and after photos of composite fence installations, composite deck builds, refinishing, and repair projects across Utah. See the Compozen® composite difference.',
+  title: 'Fence & Deck Gallery | Before & After Transformations',
+  description: 'Browse before and after photos of fence staining, deck refinishing, new fence installations, and repair projects across Utah by Alpine Fence & Deck.',
   openGraph: {
-    title: 'Composite Fence & Deck Project Gallery | Alpine Fence & Deck',
-    description: 'Before & after composite fence and deck transformations across Utah. Compozen® composite installations, refinishing & repair.',
+    title: 'Fence & Deck Project Gallery | Alpine Fence & Deck',
+    description: 'Before & after fence and deck transformations across Utah. Staining, refinishing, installations & repair.',
     url: 'https://alpinefenceanddeck.com/gallery',
   },
   alternates: {
@@ -15,86 +15,94 @@ export const metadata: Metadata = {
   },
 };
 
-const projects = [
+interface Project {
+  id: number;
+  title: string;
+  type: string;
+  description: string;
+  tags: string[];
+  beforeImage?: string;
+  afterImage?: string;
+  image?: string;
+}
+
+const projects: Project[] = [
   {
     id: 1,
-    title: 'Daybreak Modern Compozen® Fence',
-    city: 'South Jordan',
-    neighborhood: 'Daybreak',
-    type: 'Compozen® Fence',
-    description: 'Full perimeter Compozen® horizontal fence replacement. HOA approved in 5 days.',
-    isCompozen: true,
-    tags: ['Fence', 'Compozen®', 'Modern'],
+    title: 'Custom Wood Fence Staining',
+    type: 'Staining',
+    description: 'Full custom wood fence stain — before and after transformation.',
+    tags: ['Fence', 'Staining', 'Before & After'],
+    beforeImage: '/images/gallery/custom-wood-fence-stainig-before.jpg',
+    afterImage: '/images/gallery/custom-wood-fence-stainig-after.jpg',
   },
   {
     id: 2,
-    title: 'SunCrest Multi-Level Compozen® Deck',
-    city: 'Draper',
-    neighborhood: 'SunCrest',
-    type: 'Compozen® Deck',
-    description: 'Three-level deck with integrated lighting, built-in benches, and mountain views.',
-    isCompozen: true,
-    tags: ['Deck', 'Compozen®', 'Multi-Level'],
+    title: 'Deck Refinish',
+    type: 'Refinishing',
+    description: 'Complete deck refinishing with professional-grade stain and seal.',
+    tags: ['Deck', 'Refinishing', 'Before & After'],
+    beforeImage: '/images/gallery/deck-refinish-before-01.jpg',
+    afterImage: '/images/gallery/deck-refinish-after-01.jpg',
   },
   {
     id: 3,
-    title: 'Sugar House Cedar Deck Refinish',
-    city: 'Salt Lake City',
-    neighborhood: 'Sugar House',
+    title: 'Wood Deck Refinish',
     type: 'Refinishing',
-    description: 'Complete sand-down and premium cedar stain restoration. UV protection applied.',
-    isCompozen: false,
-    tags: ['Deck', 'Refinishing', 'Cedar'],
+    description: 'Wood deck restored to like-new condition with premium refinishing.',
+    tags: ['Deck', 'Refinishing', 'Before & After'],
+    beforeImage: '/images/gallery/wood-deck-refinish-before-01.jpg',
+    afterImage: '/images/gallery/wood-deck-refinish-after-01.jpg',
   },
   {
     id: 4,
-    title: 'Sandy Privacy Fence Repair',
-    city: 'Sandy',
-    neighborhood: 'Alta Canyon',
-    type: 'Repair',
-    description: 'Storm damage repair — 40 feet of fence replaced with matching materials, same day.',
-    isCompozen: false,
-    tags: ['Fence', 'Repair', 'Emergency'],
+    title: 'Wood Fence Stain',
+    type: 'Staining',
+    description: 'Professional wood fence staining — dramatic before and after.',
+    tags: ['Fence', 'Staining', 'Before & After'],
+    beforeImage: '/images/gallery/wood-fence-stain-before-01.jpg',
+    afterImage: '/images/gallery/wood-fence-stain-after-01.jpg',
   },
   {
     id: 5,
-    title: 'Park City Luxury Compozen® Installation',
-    city: 'Park City',
-    neighborhood: 'Deer Valley',
-    type: 'Compozen® Fence & Deck',
-    description: 'Full property transformation: Compozen® privacy fence and wrap-around deck.',
-    isCompozen: true,
-    tags: ['Fence', 'Deck', 'Compozen®', 'Luxury'],
+    title: 'Wood Fence Stain',
+    type: 'Staining',
+    description: 'Another beautiful fence stain transformation by Alpine Fence & Deck.',
+    tags: ['Fence', 'Staining', 'Before & After'],
+    beforeImage: '/images/gallery/wood-fence-stain-before.jpg',
+    afterImage: '/images/gallery/wood-fence-stain-after.jpg',
   },
   {
     id: 6,
-    title: 'Herriman Board-on-Board Refinish',
-    city: 'Herriman',
-    neighborhood: 'Blackridge',
-    type: 'Refinishing',
-    description: 'Full fence refinishing with Sherwin-Williams SuperDeck stain. HOA color match.',
-    isCompozen: false,
-    tags: ['Fence', 'Refinishing'],
+    title: 'New Wood Fence Install',
+    type: 'Installation',
+    description: 'Brand new wood fence installation — clean lines, quality craftsmanship.',
+    tags: ['Fence', 'Installation', 'New Build'],
+    image: '/images/gallery/new--wood-fence-install.jpg',
   },
   {
     id: 7,
-    title: 'Orem Backyard Compozen® Deck',
-    city: 'Orem',
-    neighborhood: 'Northridge',
-    type: 'Compozen® Deck',
-    description: 'Elevated deck with pergola integration, composite railing & privacy screens.',
-    isCompozen: true,
-    tags: ['Deck', 'Compozen®', 'Pergola'],
+    title: 'Wood Fence Stain',
+    type: 'Staining',
+    description: 'Expert fence staining to protect and beautify natural wood.',
+    tags: ['Fence', 'Staining'],
+    image: '/images/gallery/wood-fence-stain-01.jpg',
   },
   {
     id: 8,
-    title: 'Riverton Fence & Stain',
-    city: 'Riverton',
-    neighborhood: 'Western Springs',
-    type: 'Refinishing',
-    description: 'Full property perimeter stain and seal. 280 linear feet completed in 2 days.',
-    isCompozen: false,
-    tags: ['Fence', 'Refinishing', 'Large Project'],
+    title: 'Wood Fence Stain',
+    type: 'Staining',
+    description: 'Premium stain application for long-lasting wood fence protection.',
+    tags: ['Fence', 'Staining'],
+    image: '/images/gallery/wood-fence-stain.jpg',
+  },
+  {
+    id: 9,
+    title: 'Wood Picket Fence',
+    type: 'Installation',
+    description: 'Classic wood picket fence — timeless curb appeal.',
+    tags: ['Fence', 'Installation', 'Picket'],
+    image: '/images/gallery/wood-picket-fence.jpg',
   },
 ];
 
@@ -106,11 +114,11 @@ export default function GalleryPage() {
         <div className="section-container py-16 lg:py-20">
           <div className="max-w-3xl">
             <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-6">
-              Composite Fence & Deck Project Gallery
+              Fence & Deck Project Gallery
             </h1>
             <p className="text-lg text-stone-200 leading-relaxed">
-              Browse our portfolio of composite fence installations, composite deck builds, refinishing, and repair projects 
-              across Utah. See real Compozen® composite transformations.
+              Browse our portfolio of fence staining, deck refinishing, new installations, and repair projects 
+              across Utah. Real before &amp; after transformations.
             </p>
           </div>
         </div>
@@ -141,7 +149,7 @@ export default function GalleryPage() {
       <section className="bg-white border-b border-stone-200 sticky top-0 z-30">
         <div className="section-container py-4">
           <div className="flex flex-wrap gap-2" role="group" aria-label="Filter projects">
-            {['All Projects', 'Compozen®', 'Refinishing', 'Repair', 'Fence', 'Deck'].map((filter, idx) => (
+            {['All Projects', 'Staining', 'Refinishing', 'Installation', 'Fence', 'Deck'].map((filter, idx) => (
               <button
                 key={filter}
                 aria-pressed={idx === 0}
@@ -163,40 +171,56 @@ export default function GalleryPage() {
         <div className="section-container">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
-              <div key={project.id} className={project.isCompozen ? 'card-compozen group' : 'card group'}>
-                {/* Image placeholder */}
-                <div className="aspect-[4/3] bg-gradient-to-br from-stone-200 to-stone-300 relative overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <svg className="w-10 h-10 text-stone-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-                      </svg>
-                      <p className="text-xs text-stone-500">Before / After Photos</p>
+              <div key={project.id} className="card group">
+                {project.beforeImage && project.afterImage ? (
+                  <div className="grid grid-cols-2">
+                    <div className="aspect-[4/3] relative overflow-hidden">
+                      <Image
+                        src={project.beforeImage}
+                        alt={`${project.title} — before`}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 200px"
+                        quality={75}
+                      />
+                      <span className="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded">Before</span>
+                    </div>
+                    <div className="aspect-[4/3] relative overflow-hidden">
+                      <Image
+                        src={project.afterImage}
+                        alt={`${project.title} — after`}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 200px"
+                        quality={75}
+                      />
+                      <span className="absolute bottom-2 left-2 bg-alpine-700/80 text-white text-xs px-2 py-0.5 rounded">After</span>
                     </div>
                   </div>
-                  {project.isCompozen && (
-                    <div className="absolute top-3 right-3">
-                      <span className="badge-compozen">Compozen®</span>
-                    </div>
-                  )}
-                </div>
+                ) : project.image ? (
+                  <div className="aspect-[4/3] relative overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                      quality={75}
+                    />
+                  </div>
+                ) : null}
                 <div className="p-6">
                   <span className="text-xs font-medium text-alpine-600 uppercase tracking-wide">{project.type}</span>
                   <h3 className="text-lg font-heading font-bold text-stone-900 mt-1 mb-2 group-hover:text-alpine-700 transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-sm text-stone-600 mb-3">{project.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-stone-500">
-                      {project.neighborhood}, {project.city}
-                    </span>
-                    <div className="flex gap-1">
-                      {project.tags.slice(0, 2).map((tag) => (
-                        <span key={tag} className="text-xs bg-stone-100 text-stone-600 px-2 py-0.5 rounded">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                  <div className="flex gap-1">
+                    {project.tags.slice(0, 3).map((tag) => (
+                      <span key={tag} className="text-xs bg-stone-100 text-stone-600 px-2 py-0.5 rounded">
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -212,7 +236,7 @@ export default function GalleryPage() {
             Want Your Project in Our Gallery?
           </h2>
           <p className="text-stone-300 mb-8">
-            Every project starts with a free estimate. Whether it&apos;s refinishing or Compozen®, 
+            Every project starts with a free estimate. Whether it&apos;s refinishing or a new installation, 
             let us transform your outdoor space.
           </p>
           <Link href="/quote" className="btn-compozen">
