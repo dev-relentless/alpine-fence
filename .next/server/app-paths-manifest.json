@@ -1,17 +1,5 @@
 {
-  "/api/quote/route": "app/api/quote/route.js",
-  "/hoa-compliance/page": "app/hoa-compliance/page.js",
-  "/robots.txt/route": "app/robots.txt/route.js",
-  "/sitemap.xml/route": "app/sitemap.xml/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/[slug]/page": "app/[slug]/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/gallery/page": "app/gallery/page.js",
-  "/quote/page": "app/quote/page.js",
   "/page": "app/page.js",
-  "/about/page": "app/about/page.js",
-  "/services/page": "app/services/page.js",
-  "/service-areas/page": "app/service-areas/page.js",
-  "/services/[serviceSlug]/page": "app/services/[serviceSlug]/page.js",
-  "/calculator/page": "app/calculator/page.js"
+  "/[slug]/page": "app/[slug]/page.js",
+  "/service-areas/page": "app/service-areas/page.js"
 }

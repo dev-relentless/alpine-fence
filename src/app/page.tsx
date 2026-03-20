@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Metadata } from 'next';
 import { COMPANY } from '@/data/cities';
 import { services } from '@/data/services';
@@ -22,9 +23,21 @@ export default function HomePage() {
     <>
       <SchemaMarkup pageType="home" />
       {/* ───── HERO ───── */}
-      <section className="relative bg-hero-gradient text-white overflow-hidden">
+      <section className="relative text-white overflow-hidden">
+        {/* hero background photo */}
+        <Image
+          src="/images/hero/hero-bg.jpg"
+          alt="Composite fence installation by Alpine Fence & Deck"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+          quality={80}
+        />
+        {/* dark overlay for text readability */}
+        <div className="absolute inset-0 bg-mountain-900/60 z-[1]" />
         {/* decorative */}
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-10 z-[2]">
           <div className="absolute top-0 right-0 w-96 h-96 bg-compozen-400 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-mountain-400 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
         </div>
