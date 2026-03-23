@@ -20,7 +20,6 @@ const navLinks = [
   },
   { label: 'Gallery', href: '/gallery' },
   { label: 'Service Areas', href: '/service-areas' },
-  { label: 'Calculator', href: '/calculator' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -67,7 +66,7 @@ export default function Header() {
           { label: 'Gallery', href: '/gallery' },
           { label: 'About', href: '/about' },
           { label: 'Contact', href: '/contact' },
-          { label: 'Cost Calculator', href: '/calculator' },
+
           { label: 'Service Areas', href: '/service-areas' },
           { label: 'Get a Quote', href: '/quote' },
         ]

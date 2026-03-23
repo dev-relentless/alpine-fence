@@ -343,8 +343,8 @@ export default function HomePage() {
                 The numbers speak for themselves. Repeated refinishing costs add up, while a single 
                 Compozen® composite installation pays for itself and adds lasting property value.
               </p>
-              <Link href="/calculator" className="btn-primary">
-                Use Our Cost Calculator →
+              <Link href="/quote" className="btn-primary">
+                Get a Free Estimate →
               </Link>
             </div>
             <div className="space-y-6">

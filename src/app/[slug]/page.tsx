@@ -183,8 +183,8 @@ export default function CityLandingPage({ params }: CityPageProps) {
             <Link href="/quote" className="btn-compozen">
               Get Free Estimate
             </Link>
-            <Link href="/calculator" className="btn-secondary border-stone-600 text-stone-200 hover:bg-stone-800">
-              Cost Calculator
+            <Link href="/contact" className="btn-secondary border-stone-600 text-stone-200 hover:bg-stone-800">
+              Contact Us
             </Link>
           </div>
         </div>

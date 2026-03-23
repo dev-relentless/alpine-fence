@@ -98,11 +98,6 @@ export default function Footer() {
             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-6">Resources</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/calculator" className="text-sm text-stone-400 hover:text-white transition-colors">
-                  Refinish vs. Replace Calculator
-                </Link>
-              </li>
-              <li>
                 <Link href="/gallery" className="text-sm text-stone-400 hover:text-white transition-colors">
                   Project Gallery
                 </Link>
