@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllCities, COUNTIES, COMPANY, type CityData } from '@/data/cities';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'Composite Fence & Deck Service Areas | 94 Utah Cities',
@@ -34,6 +36,16 @@ export default function ServiceAreasPage() {
 
   return (
     <>
+      <SchemaMarkup pageType="about" breadcrumbs={[
+        { name: 'Home', url: 'https://alpinefenceanddeck.com' },
+        { name: 'Service Areas', url: 'https://alpinefenceanddeck.com/service-areas' },
+      ]} />
+
+      <Breadcrumbs items={[
+        { label: 'Home', href: '/' },
+        { label: 'Service Areas' },
+      ]} />
+
       {/* Hero */}
       <section className="bg-hero-gradient text-white">
         <div className="section-container py-16 lg:py-20">

@@ -113,7 +113,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <Image
-              src="/images/Alpine Fence and Deck_Final File (3).png"
+              src="/images/alpine-fence-deck-logo.png"
               alt="Alpine Fence & Deck"
               width={270}
               height={90}

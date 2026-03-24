@@ -5,6 +5,7 @@ import { getAllCities, getCityBySlug, COMPANY } from '@/data/cities';
 import { services } from '@/data/services';
 import QuoteForm from '@/components/QuoteForm';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 interface CityPageProps {
   params: { slug: string };
@@ -52,6 +53,12 @@ export default function CityLandingPage({ params }: CityPageProps) {
         { name: 'Home', url: 'https://alpinefenceanddeck.com' },
         { name: 'Service Areas', url: 'https://alpinefenceanddeck.com/service-areas' },
         { name: city.name, url: `https://alpinefenceanddeck.com/${params.slug}` },
+      ]} />
+
+      <Breadcrumbs items={[
+        { label: 'Home', href: '/' },
+        { label: 'Service Areas', href: '/service-areas' },
+        { label: city.name },
       ]} />
 
       {/* Hero */}

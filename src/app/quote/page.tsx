@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import QuoteForm from '@/components/QuoteForm';
 import { COMPANY } from '@/data/cities';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Get a Free Composite Fence & Deck Estimate | Utah',
@@ -18,6 +19,11 @@ export const metadata: Metadata = {
 export default function QuotePage() {
   return (
     <>
+      <Breadcrumbs items={[
+        { label: 'Home', href: '/' },
+        { label: 'Free Estimate' },
+      ]} />
+
       <section className="bg-hero-gradient text-white">
         <div className="section-container py-16 lg:py-20">
           <div className="max-w-3xl">

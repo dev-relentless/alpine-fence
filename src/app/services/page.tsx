@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { services } from '@/data/services';
 import { COMPANY } from '@/data/cities';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Composite Fence & Deck Services | Refinishing, Repair & Compozen® Installation',
@@ -19,6 +20,11 @@ export const metadata: Metadata = {
 export default function ServicesIndex() {
   return (
     <>
+      <Breadcrumbs items={[
+        { label: 'Home', href: '/' },
+        { label: 'Services' },
+      ]} />
+
       <section className="bg-hero-gradient text-white">
         <div className="section-container py-16 lg:py-20">
           <div className="max-w-3xl">

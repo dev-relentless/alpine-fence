@@ -2,10 +2,11 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import GalleryGrid from '@/components/GalleryGrid';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'Fence & Deck Gallery | Before & After Transformations',
-  description: 'Browse before and after photos of fence staining, deck refinishing, new fence installations, and repair projects across Utah by Alpine Fence & Deck.',
+  title: 'Fence & Deck Gallery | Before & After Composite Transformations',
+  description: 'Browse before and after photos of composite fence installations, deck refinishing, Compozen® composite projects, and repair work across Utah by Alpine Fence & Deck.',
   openGraph: {
     title: 'Fence & Deck Project Gallery | Alpine Fence & Deck',
     description: 'Before & after fence and deck transformations across Utah. Staining, refinishing, installations & repair.',
@@ -19,6 +20,11 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <>
+      <Breadcrumbs items={[
+        { label: 'Home', href: '/' },
+        { label: 'Gallery' },
+      ]} />
+
       {/* Hero */}
       <section className="bg-hero-gradient text-white">
         <div className="section-container py-16 lg:py-20">

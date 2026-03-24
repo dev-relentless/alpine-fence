@@ -25,6 +25,7 @@ export default function Error({
           <a href="tel:+18014713148" className="btn-secondary">
             Call (801) 471-3148
           </a>
+          <p className="text-sm text-stone-500 mt-4">If the problem persists, email info@alpinefenceanddeck.com</p>
         </div>
       </div>
     </section>

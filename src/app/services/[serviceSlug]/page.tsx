@@ -4,7 +4,8 @@ import { notFound } from 'next/navigation';
 import { getServiceBySlug, services } from '@/data/services';
 import { COMPANY } from '@/data/cities';
 import QuoteForm from '@/components/QuoteForm';
-import SchemaMarkup from '@/components/SchemaMarkup';
+import SchemaMarkup, { generateFAQSchema } from '@/components/SchemaMarkup';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 interface ServicePageProps {
   params: { serviceSlug: string };
@@ -42,6 +43,12 @@ export default function ServicePage({ params }: ServicePageProps) {
         { name: 'Home', url: 'https://alpinefenceanddeck.com' },
         { name: 'Services', url: 'https://alpinefenceanddeck.com/services' },
         { name: service.title, url: `https://alpinefenceanddeck.com/services/${params.serviceSlug}` },
+      ]} />
+
+      <Breadcrumbs items={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services' },
+        { label: service.title },
       ]} />
 
       {/* Hero */}
@@ -180,6 +187,31 @@ export default function ServicePage({ params }: ServicePageProps) {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      {service.faqs.length > 0 && (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(service.faqs)) }}
+          />
+          <section className="section-padding bg-white border-t border-stone-100">
+            <div className="section-container max-w-3xl mx-auto">
+              <h2 className="text-3xl font-heading font-bold text-alpine-900 mb-8 text-center">
+                Frequently Asked Questions
+              </h2>
+              <div className="space-y-6">
+                {service.faqs.map((faq, i) => (
+                  <div key={i} className="border border-stone-200 rounded-xl p-6">
+                    <h3 className="text-lg font-heading font-bold text-stone-900 mb-2">{faq.question}</h3>
+                    <p className="text-stone-600 leading-relaxed">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </>
+      )}
 
       {/* CTA */}
       <section className="section-padding bg-alpine-900">

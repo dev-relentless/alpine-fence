@@ -5,7 +5,9 @@ import { services } from '@/data/services';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://alpinefenceanddeck.com';
   const cities = getAllCities();
-  const lastModified = new Date();
+  // Use a fixed date so search engines don't see every page as "just modified" on every build.
+  // Update this date when you actually change content.
+  const lastModified = new Date('2026-03-24');
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified, changeFrequency: 'weekly', priority: 1.0 },

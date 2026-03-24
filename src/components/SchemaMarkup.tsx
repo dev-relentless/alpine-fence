@@ -15,7 +15,7 @@ export function generateOrganizationSchema() {
     name: COMPANY.name,
     legalName: 'Alpine Fence and Deck LLC',
     url: 'https://alpinefenceanddeck.com',
-    logo: 'https://alpinefenceanddeck.com/images/Alpine%20Fence%20and%20Deck_Final%20File%20(3).png',
+    logo: 'https://alpinefenceanddeck.com/images/alpine-fence-deck-logo.png',
     foundingDate: '2009',
     contactPoint: {
       '@type': 'ContactPoint',
@@ -44,7 +44,7 @@ export function generateLocalBusinessSchema(city?: CityData) {
     '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
     '@id': 'https://alpinefenceanddeck.com/#business',
     name: COMPANY.name,
-    image: 'https://alpinefenceanddeck.com/images/Alpine%20Fence%20and%20Deck_Final%20File%20(3).png',
+    image: 'https://alpinefenceanddeck.com/images/alpine-fence-deck-logo.png',
     telephone: '+1-801-471-3148',
     email: COMPANY.email,
     description: 'Utah\'s premier composite fence and deck contractor. Expert refinishing, repair, and exclusive Compozen® composite fence and deck installations across 94 cities.',

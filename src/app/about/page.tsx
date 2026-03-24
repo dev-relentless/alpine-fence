@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { COMPANY } from '@/data/cities';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Our Story | Utah\'s Composite Fence & Deck Experts | Compozen® Certified',
@@ -18,6 +19,11 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      <Breadcrumbs items={[
+        { label: 'Home', href: '/' },
+        { label: 'About' },
+      ]} />
+
       {/* Hero */}
       <section className="bg-hero-gradient text-white">
         <div className="section-container py-20 lg:py-32">

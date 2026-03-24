@@ -6,7 +6,7 @@ import { services } from '@/data/services';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'Utah\'s #1 Composite Fence & Deck Contractor | Compozen® Certified | Alpine Fence & Deck',
+  title: 'Utah\'s #1 Composite Fence & Deck | Compozen® Certified',
   description: 'Utah\'s premier composite fence and deck contractor. Expert refinishing, repair, and exclusive Compozen® composite installations across 94 cities. 25-year warranty. Free estimates. (801) 471-3148',
   openGraph: {
     title: 'Alpine Fence & Deck | Utah\'s #1 Composite Fence & Deck Contractor',
@@ -44,16 +44,16 @@ export default function HomePage() {
 
         <div className="section-container relative z-10 py-24 lg:py-36">
           <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6 text-balance">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6 text-balance animate-fade-in-up">
                 Utah&apos;s Premier Composite Fence & Deck{' '}
                 <span className="text-compozen-400">Experts</span>
               </h1>
-              <p className="text-lg lg:text-xl text-stone-200 mb-10 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-lg lg:text-xl text-stone-200 mb-10 leading-relaxed max-w-2xl mx-auto animate-fade-in-up-delay-1">
                 From expert refinishing to revolutionary <strong className="text-compozen-300">Compozen® composite</strong> installations —
                 we deliver stunning outdoor living spaces across {COMPANY.serviceArea}. {COMPANY.yearsExperience}+ years of trusted craftsmanship.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10 animate-fade-in-up-delay-2">
                 <Link href="/quote" className="btn-compozen text-lg">
                   Request a Free Quote
                 </Link>
@@ -261,12 +261,17 @@ export default function HomePage() {
               },
             ].map((testimonial) => (
               <div key={testimonial.name} className="card p-6">
-                <div className="flex items-center gap-1 mb-4">
-                  {[1, 2, 3, 4, 5].map((s) => (
-                    <svg key={s} className="w-4 h-4 text-compozen-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-alpine-700 text-white flex items-center justify-center font-bold text-sm shrink-0">
+                    {testimonial.name.split(' ').map(n => n[0]).join('')}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    {[1, 2, 3, 4, 5].map((s) => (
+                      <svg key={s} className="w-4 h-4 text-compozen-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
                 </div>
                 <p className="text-stone-700 text-sm leading-relaxed mb-4">&ldquo;{testimonial.text}&rdquo;</p>
                 <div className="flex items-center justify-between">

@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import QuoteForm from '@/components/QuoteForm';
 import { COMPANY } from '@/data/cities';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Contact Us | Composite Fence & Deck Experts | Free Estimates',
@@ -19,6 +20,11 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <Breadcrumbs items={[
+        { label: 'Home', href: '/' },
+        { label: 'Contact' },
+      ]} />
+
       {/* Hero */}
       <section className="bg-hero-gradient text-white">
         <div className="section-container py-16 lg:py-20">

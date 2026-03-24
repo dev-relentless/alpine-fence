@@ -1,8 +1,21 @@
 import type { Metadata } from 'next';
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { COMPANY } from '@/data/cities';
 import './globals.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-body',
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-heading',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://alpinefenceanddeck.com'),
@@ -68,17 +81,12 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://alpinefenceanddeck.com',
-    languages: {
-      'en-US': 'https://alpinefenceanddeck.com',
-    },
   },
-  verification: {
-    google: 'GOOGLE_SITE_VERIFICATION_TOKEN',
-    other: {
-      'msvalidate.01': 'BING_SITE_VERIFICATION_TOKEN',
-      'yandex-verification': 'YANDEX_VERIFICATION_TOKEN',
-    },
-  },
+  // TODO: Add real verification tokens from Google Search Console, Bing Webmaster Tools, etc.
+  // verification: {
+  //   google: 'your-real-google-token',
+  //   other: { 'msvalidate.01': 'your-real-bing-token' },
+  // },
   other: {
     'geo.region': 'US-UT',
     'geo.placename': 'Provo, Utah',
@@ -89,7 +97,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${inter.variable} ${jakarta.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://book.housecallpro.com" />
+        <link rel="dns-prefetch" href="https://online-booking.housecallpro.com" />
+      </head>
       <body className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>

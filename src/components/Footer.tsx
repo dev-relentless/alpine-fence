@@ -42,11 +42,15 @@ export default function Footer() {
                 <span className="text-xs text-compozen-400">Compozen® Certified</span>
               </div>
             </div>
-            <p className="text-sm text-stone-400 mb-4">{COMPANY.address}</p>
-            <a href={COMPANY.phoneHref} className="text-lg font-bold text-white hover:text-compozen-400 transition-colors">
-              {COMPANY.phone}
-            </a>
-            <p className="text-sm text-stone-400 mt-2">{COMPANY.email}</p>
+            <address className="not-italic">
+              <p className="text-sm text-stone-400 mb-4">{COMPANY.address}</p>
+              <a href={COMPANY.phoneHref} className="text-lg font-bold text-white hover:text-compozen-400 transition-colors">
+                {COMPANY.phone}
+              </a>
+              <p className="text-sm text-stone-400 mt-2">
+                <a href={`mailto:${COMPANY.email}`} className="hover:text-white transition-colors">{COMPANY.email}</a>
+              </p>
+            </address>
             <p className="text-sm text-stone-500 mt-4">
               {COMPANY.yearsExperience}+ years transforming Utah&apos;s outdoor living spaces
             </p>
