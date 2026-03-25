@@ -12,10 +12,11 @@ const navLinks = [
     label: 'Services',
     href: '/services',
     children: [
-      { label: 'Deck & Fence Refinishing', href: '/services/deck-refinishing' },
-      { label: 'Fence & Deck Repair', href: '/services/fence-repair' },
       { label: 'Compozen® Fence Installation', href: '/services/compozen-fence-installation' },
       { label: 'Compozen® Deck Installation', href: '/services/compozen-deck-installation' },
+      { label: 'Wood Fence Installation', href: '/services/wood-fence-installation' },
+      { label: 'Deck & Fence Refinishing', href: '/services/deck-refinishing' },
+      { label: 'Fence & Deck Repair', href: '/services/fence-repair' },
     ],
   },
   { label: 'Gallery', href: '/gallery' },
