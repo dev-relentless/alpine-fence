@@ -99,8 +99,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`scroll-smooth ${inter.variable} ${jakarta.variable}`}>
       <head>
-        <link rel="preconnect" href="https://book.housecallpro.com" />
-        <link rel="dns-prefetch" href="https://online-booking.housecallpro.com" />
+        <link rel="preconnect" href="https://online-booking.housecallpro.com" />
+        <link rel="dns-prefetch" href="https://book.housecallpro.com" />
       </head>
       <body className="min-h-screen flex flex-col">
         <Header />

@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import QuoteForm from '@/components/QuoteForm';
 import { COMPANY } from '@/data/cities';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'Contact Us | Composite Fence & Deck Experts | Free Estimates',
@@ -20,6 +21,11 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <SchemaMarkup pageType="contact" breadcrumbs={[
+        { name: 'Home', url: 'https://alpinefenceanddeck.com' },
+        { name: 'Contact', url: 'https://alpinefenceanddeck.com/contact' },
+      ]} />
+
       <Breadcrumbs items={[
         { label: 'Home', href: '/' },
         { label: 'Contact' },

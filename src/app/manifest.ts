@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Alpine Fence & Deck',
-    short_name: 'Alpine Fence',
+    short_name: 'Alpine F&D',
     description:
       "Utah's premier composite fence and deck contractor. Compozen® certified installer serving 94 cities.",
     start_url: '/',

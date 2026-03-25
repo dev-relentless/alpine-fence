@@ -214,7 +214,7 @@ export default function CityLandingPage({ params }: CityPageProps) {
             </div>
             <div className="p-6">
               <div className="text-4xl font-heading font-bold text-alpine-800 mb-2">100%</div>
-              <p className="text-stone-600">HOA approval rate</p>
+              <p className="text-stone-600">HOA-compliant designs</p>
             </div>
           </div>
         </div>

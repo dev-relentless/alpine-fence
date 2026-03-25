@@ -133,7 +133,6 @@ A: Yes. For repair emergencies (storm damage, security concerns), we guarantee a
 | Contact | https://alpinefenceanddeck.com/contact | Contact information and form |
 | Service Areas | https://alpinefenceanddeck.com/service-areas | All 94 cities served |
 | Gallery | https://alpinefenceanddeck.com/gallery | Project photos and transformations |
-| Cost Calculator | https://alpinefenceanddeck.com/calculator | Composite fence cost estimator |
 | About | https://alpinefenceanddeck.com/about | Company history and story |
 | Privacy Policy | https://alpinefenceanddeck.com/privacy | Privacy policy |
 | Terms of Service | https://alpinefenceanddeck.com/terms | Terms of service |

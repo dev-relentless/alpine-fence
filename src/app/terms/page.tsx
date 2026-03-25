@@ -47,10 +47,6 @@ export default function TermsPage() {
               Estimates are based on information available at the time of assessment. Final pricing may vary based on
               actual site conditions, material costs, or scope changes discovered during the project.
             </li>
-            <li>
-              The cost calculator on our website provides rough estimates for planning purposes only and does not
-              constitute a binding quote.
-            </li>
             <li>A signed agreement is required before any work begins.</li>
           </ul>
 

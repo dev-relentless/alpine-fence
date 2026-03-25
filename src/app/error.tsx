@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { COMPANY } from '@/data/cities';
 
 export default function Error({
   reset,
@@ -22,11 +23,14 @@ export default function Error({
           <Link href="/" className="btn-secondary">
             Back to Home
           </Link>
-          <a href="tel:+18014713148" className="btn-secondary">
-            Call (801) 471-3148
+          <a href={COMPANY.phoneHref} className="btn-secondary">
+            Call {COMPANY.phone}
           </a>
-          <p className="text-sm text-stone-500 mt-4">If the problem persists, email info@alpinefenceanddeck.com</p>
         </div>
+        <p className="text-sm text-stone-500 mt-4">
+          If the problem persists, email{' '}
+          <a href={`mailto:${COMPANY.email}`} className="underline hover:text-alpine-700">{COMPANY.email}</a>
+        </p>
       </div>
     </section>
   );

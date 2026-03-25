@@ -243,19 +243,19 @@ export default function HomePage() {
             {[
               {
                 name: 'Cynthia Dunford',
-                location: 'Utah',
+                location: 'Provo, UT',
                 text: 'Very professional! First, they repaired my fence and then I had them stain the entire fence. The owner, Chandler, kept me informed every step of the way. The end product was excellent!',
                 service: 'Fence Repair & Staining',
               },
               {
                 name: 'Scott Poppen',
-                location: 'Utah',
+                location: 'Orem, UT',
                 text: 'They repaired, stained, and sealed a 28-year-old fence, making it look like new. They also replaced an old worn-out gate. The crew were very professional and personable.',
                 service: 'Fence Staining & Gate Repair',
               },
               {
                 name: 'Morgan Busch',
-                location: 'Utah',
+                location: 'Sandy, UT',
                 text: 'Great communication all around! They power washed the fence and the staining looks gorgeous! Love the way it turned out. Would highly recommend Alpine Fence and Deck!',
                 service: 'Power Wash & Staining',
               },

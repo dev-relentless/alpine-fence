@@ -177,6 +177,8 @@ export default function Header() {
               onClick={() => setMobileOpen(!mobileOpen)}
               className="lg:hidden p-2 text-stone-600 hover:bg-stone-100 rounded-lg"
               aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-nav"
             >
               {mobileOpen ? (
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -193,7 +195,7 @@ export default function Header() {
 
         {/* Mobile nav */}
         {mobileOpen && (
-          <div className="lg:hidden border-t border-stone-100 py-4 animate-fade-in">
+          <div id="mobile-nav" className="lg:hidden border-t border-stone-100 py-4 animate-fade-in">
             {navLinks.map((link) => (
               <div key={link.href}>
                 <Link

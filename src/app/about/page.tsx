@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { COMPANY } from '@/data/cities';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'Our Story | Utah\'s Composite Fence & Deck Experts | Compozen® Certified',
@@ -19,6 +20,11 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      <SchemaMarkup pageType="about" breadcrumbs={[
+        { name: 'Home', url: 'https://alpinefenceanddeck.com' },
+        { name: 'About', url: 'https://alpinefenceanddeck.com/about' },
+      ]} />
+
       <Breadcrumbs items={[
         { label: 'Home', href: '/' },
         { label: 'About' },

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import GalleryGrid from '@/components/GalleryGrid';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'Fence & Deck Gallery | Before & After Composite Transformations',
@@ -20,6 +21,11 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <>
+      <SchemaMarkup pageType="gallery" breadcrumbs={[
+        { name: 'Home', url: 'https://alpinefenceanddeck.com' },
+        { name: 'Gallery', url: 'https://alpinefenceanddeck.com/gallery' },
+      ]} />
+
       <Breadcrumbs items={[
         { label: 'Home', href: '/' },
         { label: 'Gallery' },

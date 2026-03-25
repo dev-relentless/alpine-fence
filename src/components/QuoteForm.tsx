@@ -8,7 +8,7 @@ interface QuoteFormProps {
 }
 
 export default function QuoteForm({ variant = 'full', className = '' }: QuoteFormProps) {
-  const iframeHeight = variant === 'compact' ? '900px' : variant === 'sidebar' ? '900px' : '900px';
+  const iframeHeight = variant === 'compact' ? '650px' : variant === 'sidebar' ? '700px' : '900px';
 
   return (
     <div className={`rounded-2xl overflow-hidden ${className}`}>
@@ -19,7 +19,6 @@ export default function QuoteForm({ variant = 'full', className = '' }: QuoteFor
       <iframe
         src="https://book.housecallpro.com/lead-form/Alpine-Fence-and-Deck/ab4919eca6a743f88f9367d057f7f963"
         style={{ border: 'none', width: '100%', minHeight: iframeHeight, overflow: 'hidden' }}
-        scrolling="no"
         title="Request a Quote - Alpine Fence and Deck"
       />
     </div>

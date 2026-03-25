@@ -1,11 +1,11 @@
 export default function Loading() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-white" role="status" aria-label="Loading content">
       <div className="section-container max-w-4xl mx-auto">
         <div className="space-y-8">
           {/* Branded loading bar */}
           <div className="h-1 w-full bg-stone-100 rounded-full overflow-hidden">
-            <div className="h-full w-1/3 bg-gradient-to-r from-alpine-500 to-compozen-400 rounded-full animate-pulse" />
+            <div className="h-full bg-gradient-to-r from-alpine-500 to-compozen-400 rounded-full animate-loading-bar" />
           </div>
           <div className="animate-pulse space-y-8">
             <div className="h-10 bg-alpine-100 rounded-lg w-2/3 mx-auto" />

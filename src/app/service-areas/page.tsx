@@ -36,7 +36,7 @@ export default function ServiceAreasPage() {
 
   return (
     <>
-      <SchemaMarkup pageType="about" breadcrumbs={[
+      <SchemaMarkup pageType="service-areas" breadcrumbs={[
         { name: 'Home', url: 'https://alpinefenceanddeck.com' },
         { name: 'Service Areas', url: 'https://alpinefenceanddeck.com/service-areas' },
       ]} />
@@ -145,8 +145,8 @@ export default function ServiceAreasPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/quote" className="btn-compozen">Get Free Estimate</Link>
-            <a href="tel:+18014713148" className="btn-secondary border-white/30 text-white hover:bg-white/10">
-              Call (801) 471-3148
+            <a href={COMPANY.phoneHref} className="btn-secondary border-white/30 text-white hover:bg-white/10">
+              Call {COMPANY.phone}
             </a>
           </div>
         </div>

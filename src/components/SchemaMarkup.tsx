@@ -3,7 +3,7 @@ import { COMPANY, type CityData } from '@/data/cities';
 interface SchemaMarkupProps {
   city?: CityData;
   service?: string;
-  pageType: 'home' | 'city' | 'service' | 'gallery' | 'about';
+  pageType: 'home' | 'city' | 'service' | 'gallery' | 'about' | 'contact' | 'service-areas';
   breadcrumbs?: { name: string; url: string }[];
 }
 
@@ -151,14 +151,6 @@ export function generateWebSiteSchema() {
     url: 'https://alpinefenceanddeck.com',
     description: 'Utah\'s premier composite fence and deck contractor. Compozen® certified installer. Composite fencing, composite decking, refinishing & repair.',
     publisher: { '@id': 'https://alpinefenceanddeck.com/#organization' },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: 'https://alpinefenceanddeck.com/service-areas?q={search_term_string}',
-      },
-      'query-input': 'required name=search_term_string',
-    },
     inLanguage: 'en-US',
   };
 }
@@ -290,6 +282,14 @@ export default function SchemaMarkup({ city, service, pageType, breadcrumbs }: S
       { name: 'Scott Poppen', text: 'They repaired, stained, and sealed a 28-year-old fence, making it look like new. They also replaced an old worn-out gate. The crew were very professional and personable.', rating: 5 },
       { name: 'Morgan Busch', text: 'Great communication all around! They power washed the fence and the staining looks gorgeous! Love the way it turned out. Would highly recommend Alpine Fence and Deck!', rating: 5 },
     ]));
+  }
+
+  if (pageType === 'about') {
+    schemas.push(generateOrganizationSchema());
+  }
+
+  if (pageType === 'contact') {
+    schemas.push(generateOrganizationSchema());
   }
 
   if (pageType === 'service') {

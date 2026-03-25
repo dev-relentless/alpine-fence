@@ -52,7 +52,7 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: 'Wood Fence Stain',
+    title: 'Privacy Fence Stain — Natural Cedar Tone',
     type: 'Staining',
     category: 'Fence',
     material: 'Wood',
@@ -63,7 +63,7 @@ const projects: Project[] = [
   },
   {
     id: 5,
-    title: 'Wood Fence Stain',
+    title: 'Backyard Fence Stain — Full Perimeter',
     type: 'Staining',
     category: 'Fence',
     material: 'Wood',
@@ -84,7 +84,7 @@ const projects: Project[] = [
   },
   {
     id: 7,
-    title: 'Wood Fence Stain',
+    title: 'Fence Stain — Rich Walnut Finish',
     type: 'Staining',
     category: 'Fence',
     material: 'Wood',
@@ -94,7 +94,7 @@ const projects: Project[] = [
   },
   {
     id: 8,
-    title: 'Wood Fence Stain',
+    title: 'Fence Stain — Semi-Transparent Coat',
     type: 'Staining',
     category: 'Fence',
     material: 'Wood',
@@ -134,7 +134,7 @@ function ProjectCard({ project }: { project: Project }) {
               alt={`${project.title} — before`}
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 200px"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 22vw"
               quality={75}
             />
             <span className="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded">
@@ -147,7 +147,7 @@ function ProjectCard({ project }: { project: Project }) {
               alt={`${project.title} — after`}
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 200px"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 22vw"
               quality={75}
             />
             <span className="absolute bottom-2 left-2 bg-alpine-700/80 text-white text-xs px-2 py-0.5 rounded">
@@ -162,11 +162,21 @@ function ProjectCard({ project }: { project: Project }) {
             alt={project.title}
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 400px"
             quality={75}
           />
         </div>
       ) : null}
+      <div className="p-4">
+        <div className="flex items-center gap-2 mb-1">
+          <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-alpine-50 text-alpine-700">
+            {project.type}
+          </span>
+          <span className="text-xs text-stone-400">{project.category} · {project.material}</span>
+        </div>
+        <h3 className="font-heading font-semibold text-stone-900 text-sm">{project.title}</h3>
+        <p className="text-xs text-stone-500 mt-1">{project.description}</p>
+      </div>
     </div>
   );
 }
