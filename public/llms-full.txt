@@ -24,7 +24,16 @@ Alpine serves 94 municipalities across 8 Utah counties on the Wasatch Front: Web
 - Price range: $200–$2,500
 - Average project value: ~$800
 
-### 3. Compozen® Composite Fence Installation
+### 3. Wood Fence Installation
+- Privacy fences, picket fences, split rail & custom designs
+- Premium cedar and pine options
+- Steel post reinforcement available
+- HOA-compliant designs with permit handling
+- Price range: $3,000–$15,000
+- Average project value: ~$7,500
+- Typical completion: 3–5 days
+
+### 4. Compozen® Composite Fence Installation
 - Exclusive zero-maintenance composite fencing
 - Won't rot, warp, splinter, or fade
 - 25-year material warranty
@@ -33,7 +42,7 @@ Alpine serves 94 municipalities across 8 Utah counties on the Wasatch Front: Web
 - Average project value: ~$25,000
 - Typical completion: 1–2 weeks
 
-### 4. Compozen® Composite Deck Installation
+### 5. Compozen® Composite Deck Installation
 - Premium composite deck design and installation
 - Custom engineering for multi-level, wraparound, and specialty designs
 - Built-in lighting, benches, and railing options
@@ -127,6 +136,7 @@ A: Yes. For repair emergencies (storm damage, security concerns), we guarantee a
 | Services | https://alpinefenceanddeck.com/services | All fence & deck services offered |
 | Deck Refinishing | https://alpinefenceanddeck.com/services/deck-refinishing | Deck & fence refinishing service details |
 | Fence Repair | https://alpinefenceanddeck.com/services/fence-repair | Fence & deck repair service details |
+| Wood Fence | https://alpinefenceanddeck.com/services/wood-fence-installation | Wood fence installation details |
 | Compozen Fence | https://alpinefenceanddeck.com/services/compozen-fence-installation | Composite fence installation details |
 | Compozen Deck | https://alpinefenceanddeck.com/services/compozen-deck-installation | Composite deck installation details |
 | Free Quote | https://alpinefenceanddeck.com/quote | Request a free estimate |

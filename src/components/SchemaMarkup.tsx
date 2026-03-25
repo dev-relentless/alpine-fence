@@ -105,6 +105,14 @@ export function generateLocalBusinessSchema(city?: CityData) {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
+            name: 'Wood Fence Installation',
+            description: 'Professional wood fence installation in Utah. Privacy, picket & custom designs in cedar and pine.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
             name: 'Compozen® Composite Fence Installation',
             description: 'Exclusive Compozen® composite fence installation. Zero-maintenance composite fencing with 25-year warranty.',
           },
