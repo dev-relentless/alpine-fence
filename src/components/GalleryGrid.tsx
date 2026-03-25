@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 
 interface Project {
@@ -123,9 +123,12 @@ const categories: { label: string; value: CategoryFilter; description: string }[
   { label: 'Wood', value: 'Wood', description: 'Natural wood fences & decks — our most popular material' },
 ];
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project, onClick }: { project: Project; onClick: () => void }) {
   return (
-    <div className="rounded-2xl overflow-hidden shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
+    <button
+      onClick={onClick}
+      className="rounded-2xl overflow-hidden shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300 cursor-pointer text-left w-full"
+    >
       {project.beforeImage && project.afterImage ? (
         <div className="grid grid-cols-2">
           <div className="aspect-[4/3] relative overflow-hidden">
@@ -177,12 +180,134 @@ function ProjectCard({ project }: { project: Project }) {
         <h3 className="font-heading font-semibold text-stone-900 text-sm">{project.title}</h3>
         <p className="text-xs text-stone-500 mt-1">{project.description}</p>
       </div>
+    </button>
+  );
+}
+
+function Lightbox({ project, onClose, onPrev, onNext }: { project: Project; onClose: () => void; onPrev: () => void; onNext: () => void }) {
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft') onPrev();
+      if (e.key === 'ArrowRight') onNext();
+    };
+    document.addEventListener('keydown', handleKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose, onPrev, onNext]);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label={project.title}
+    >
+      <div
+        className="relative max-w-5xl w-full"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Close */}
+        <button
+          onClick={onClose}
+          className="absolute -top-12 right-0 text-white/80 hover:text-white text-sm flex items-center gap-1 z-10"
+          aria-label="Close lightbox"
+        >
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+          ESC
+        </button>
+
+        {/* Prev / Next */}
+        <button
+          onClick={onPrev}
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 text-white/70 hover:text-white hidden md:block"
+          aria-label="Previous project"
+        >
+          <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button
+          onClick={onNext}
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 text-white/70 hover:text-white hidden md:block"
+          aria-label="Next project"
+        >
+          <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        {/* Images */}
+        <div className="rounded-2xl overflow-hidden bg-stone-900">
+          {project.beforeImage && project.afterImage ? (
+            <div className="grid grid-cols-2 gap-1">
+              <div className="relative w-full" style={{ paddingBottom: '75%' }}>
+                <Image
+                  src={project.beforeImage}
+                  alt={`${project.title} — before`}
+                  fill
+                  className="object-cover absolute inset-0"
+                  sizes="50vw"
+                  quality={90}
+                  priority
+                />
+                <span className="absolute bottom-3 left-3 bg-black/70 text-white text-sm px-3 py-1 rounded-lg z-10">
+                  Before
+                </span>
+              </div>
+              <div className="relative w-full" style={{ paddingBottom: '75%' }}>
+                <Image
+                  src={project.afterImage}
+                  alt={`${project.title} — after`}
+                  fill
+                  className="object-cover absolute inset-0"
+                  sizes="50vw"
+                  quality={90}
+                  priority
+                />
+                <span className="absolute bottom-3 left-3 bg-alpine-700/90 text-white text-sm px-3 py-1 rounded-lg z-10">
+                  After
+                </span>
+              </div>
+            </div>
+          ) : project.image ? (
+            <div className="relative w-full" style={{ paddingBottom: '62.5%' }}>
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover absolute inset-0"
+                sizes="100vw"
+                quality={90}
+                priority
+              />
+            </div>
+          ) : null}
+        </div>
+
+        {/* Caption */}
+        <div className="mt-4 text-center">
+          <h3 className="text-white font-heading font-bold text-lg">{project.title}</h3>
+          <p className="text-white/60 text-sm mt-1">{project.description}</p>
+          <div className="flex items-center justify-center gap-2 mt-2">
+            <span className="text-xs px-2 py-0.5 rounded-full bg-alpine-700/50 text-alpine-200">{project.type}</span>
+            <span className="text-xs text-white/40">{project.category} · {project.material}</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default function GalleryGrid() {
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>('All');
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const filtered = projects.filter((p) => {
     if (activeCategory === 'All') return true;
@@ -257,8 +382,8 @@ export default function GalleryGrid() {
 
           {filtered.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filtered.map((project) => (
-                <ProjectCard key={project.id} project={project} />
+              {filtered.map((project, index) => (
+                <ProjectCard key={project.id} project={project} onClick={() => setLightboxIndex(index)} />
               ))}
             </div>
           ) : (
@@ -268,6 +393,15 @@ export default function GalleryGrid() {
           )}
         </div>
       </section>
+
+      {lightboxIndex !== null && filtered[lightboxIndex] && (
+        <Lightbox
+          project={filtered[lightboxIndex]}
+          onClose={() => setLightboxIndex(null)}
+          onPrev={() => setLightboxIndex((prev) => prev !== null ? (prev - 1 + filtered.length) % filtered.length : null)}
+          onNext={() => setLightboxIndex((prev) => prev !== null ? (prev + 1) % filtered.length : null)}
+        />
+      )}
     </>
   );
 }

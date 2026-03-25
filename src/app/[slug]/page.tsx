@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getAllCities, getCityBySlug, COMPANY } from '@/data/cities';
-import { services } from '@/data/services';
+import { 
+  services } from '@/data/services';
 import QuoteForm from '@/components/QuoteForm';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import Breadcrumbs from '@/components/Breadcrumbs';
