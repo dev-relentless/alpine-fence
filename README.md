@@ -2,7 +2,7 @@
 
 Next.js 14 website for Alpine Fence & Deck, Utah's exclusive Compozen® certified fence and deck installer.
 
-<!-- Updated: 2026-03-21 -->
+<!-- Updated: 2026-03-25 -->
 
 ## Tech Stack
 
