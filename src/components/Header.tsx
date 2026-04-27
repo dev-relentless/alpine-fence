@@ -12,8 +12,8 @@ const navLinks = [
     label: 'Services',
     href: '/services',
     children: [
-      { label: 'Compozen® Fence Installation', href: '/services/compozen-fence-installation' },
-      { label: 'Compozen® Deck Installation', href: '/services/compozen-deck-installation' },
+      { label: 'Compoxen® Fence Installation', href: '/services/compoxen-fence-installation' },
+      { label: 'Compoxen® Deck Installation', href: '/services/compoxen-deck-installation' },
       { label: 'Wood Fence Installation', href: '/services/wood-fence-installation' },
       { label: 'Deck & Fence Refinishing', href: '/services/deck-refinishing' },
       { label: 'Fence & Deck Repair', href: '/services/fence-repair' },
@@ -85,13 +85,13 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-stone-200 shadow-sm">
       {/* Accent line */}
-      <div className="h-1 bg-gradient-to-r from-compozen-400 via-compozen-500 to-alpine-600" />
+      <div className="h-1 bg-gradient-to-r from-compoxen-400 via-compoxen-500 to-alpine-600" />
 
       {/* Top bar */}
       <div className="bg-alpine-900 text-white text-sm">
         <div className="section-container flex items-center justify-between py-2">
           <div className="flex items-center gap-4">
-            <a href={COMPANY.phoneHref} className="flex items-center gap-1.5 hover:text-compozen-400 transition-colors font-semibold">
+            <a href={COMPANY.phoneHref} className="flex items-center gap-1.5 hover:text-compoxen-400 transition-colors font-semibold">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
@@ -101,8 +101,8 @@ export default function Header() {
             <span className="hidden sm:inline text-stone-300">{COMPANY.serviceArea}</span>
           </div>
           <div className="hidden md:flex items-center gap-2">
-            <span className="badge-compozen text-[10px]">
-              ★ Exclusive Compozen® Certified Installer
+            <span className="badge-compoxen text-[10px]">
+              ★ Exclusive Compoxen® Certified Installer
             </span>
           </div>
         </div>
@@ -267,7 +267,7 @@ export default function Header() {
                         className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-alpine-50 transition-colors"
                       >
                         <span className={`text-xs font-medium px-2 py-0.5 rounded-full shrink-0 ${
-                          result.type === 'Service' ? 'bg-compozen-100 text-compozen-800' :
+                          result.type === 'Service' ? 'bg-compoxen-100 text-compoxen-800' :
                           result.type === 'City' ? 'bg-alpine-100 text-alpine-800' :
                           'bg-stone-100 text-stone-600'
                         }`}>

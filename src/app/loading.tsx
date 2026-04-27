@@ -5,7 +5,7 @@ export default function Loading() {
         <div className="space-y-8">
           {/* Branded loading bar */}
           <div className="h-1 w-full bg-stone-100 rounded-full overflow-hidden">
-            <div className="h-full bg-gradient-to-r from-alpine-500 to-compozen-400 rounded-full animate-loading-bar" />
+            <div className="h-full bg-gradient-to-r from-alpine-500 to-compoxen-400 rounded-full animate-loading-bar" />
           </div>
           <div className="animate-pulse space-y-8">
             <div className="h-10 bg-alpine-100 rounded-lg w-2/3 mx-auto" />

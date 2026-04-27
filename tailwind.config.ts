@@ -61,7 +61,7 @@ const config: Config = {
           900: '#1e3a8a',
           950: '#172554',
         },
-        compozen: {
+        compoxen: {
           50: '#fefce8',
           100: '#fef9c3',
           200: '#fef08a',
@@ -81,7 +81,7 @@ const config: Config = {
       },
       backgroundImage: {
         'hero-gradient': 'linear-gradient(135deg, #14532d 0%, #166534 50%, #1e3a8a 100%)',
-        'compozen-gradient': 'linear-gradient(135deg, #a16207 0%, #ca8a04 50%, #eab308 100%)',
+        'compoxen-gradient': 'linear-gradient(135deg, #a16207 0%, #ca8a04 50%, #eab308 100%)',
         'trust-gradient': 'linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%)',
       },
       animation: {

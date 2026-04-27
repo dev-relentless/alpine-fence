@@ -1,6 +1,6 @@
-# Alpine Fence & Deck — Compozen® Powered Website
+# Alpine Fence & Deck — Compoxen® Powered Website
 
-Next.js 14 website for Alpine Fence & Deck, Utah's exclusive Compozen® certified fence and deck installer.
+Next.js 14 website for Alpine Fence & Deck, Utah's exclusive Compoxen® certified fence and deck installer.
 
 <!-- Updated: 2026-03-25 -->
 
@@ -45,7 +45,7 @@ src/
 │   ├── services/
 │   │   ├── page.tsx                        # Services index
 │   │   └── [serviceSlug]/page.tsx          # Individual service pages
-│   ├── design-studio/page.tsx              # Compozen® 3D Design Studio
+│   ├── design-studio/page.tsx              # Compoxen® 3D Design Studio
 │   ├── hoa-compliance/page.tsx             # HOA Compliance Center
 │   ├── gallery/page.tsx                    # Project gallery
 │   ├── calculator/page.tsx                 # Refinish vs. Replace calculator
@@ -70,14 +70,14 @@ Dynamic pages for 94 municipalities across Weber, Davis, Salt Lake, Utah, and su
 - City-specific hero with name and county
 - Local service listings
 - Neighborhood grid (where applicable)
-- Compozen® spotlight
+- Compoxen® spotlight
 - Embedded quote form
 
-### Compozen® Integration
+### Compoxen® Integration
 - Design Studio with curated design collection
 - Refinish vs. Replace cost calculator
 - Upgrade path messaging throughout refinishing pages
-- Compozen® badges and certification branding
+- Compoxen® badges and certification branding
 
 ### HOA Compliance Center
 - Address lookup for HOA requirements
@@ -143,4 +143,4 @@ vercel --prod
 
 ---
 
-*Exclusive Compozen® Certified Installer | Transforming Utah's Outdoor Living Since 2009*
+*Exclusive Compoxen® Certified Installer | Transforming Utah's Outdoor Living Since 2009*

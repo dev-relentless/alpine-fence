@@ -57,7 +57,7 @@ export default function TermsPage() {
               within a reasonable timeframe after project completion.
             </li>
             <li>
-              <strong>Materials:</strong> Material warranties are provided by the respective manufacturers. Compozen®
+              <strong>Materials:</strong> Material warranties are provided by the respective manufacturers. Compoxen®
               composite products carry their own manufacturer warranty terms.
             </li>
             <li>

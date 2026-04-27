@@ -7,7 +7,7 @@ import SchemaMarkup from '@/components/SchemaMarkup';
 export const metadata: Metadata = {
   title: 'Contact Us | Composite Fence & Deck Experts | Free Estimates',
   description:
-    'Contact Alpine Fence & Deck for a free composite fence or deck estimate. Call, email, or fill out our form. Utah\'s trusted Compozen® composite fence and deck contractor serving 94 cities.',
+    'Contact Alpine Fence & Deck for a free composite fence or deck estimate. Call, email, or fill out our form. Utah\'s trusted Compoxen® composite fence and deck contractor serving 94 cities.',
   openGraph: {
     title: 'Contact Alpine Fence & Deck | Utah Composite Fence & Deck Contractor',
     description: 'Get a free estimate for composite fence and deck installation, refinishing, or repair across Utah.',
@@ -123,7 +123,7 @@ export default function ContactPage() {
                 <ul className="space-y-3 text-sm text-stone-600">
                   {[
                     `${COMPANY.yearsExperience}+ years experience`,
-                    'Exclusive Compozen\u00AE Composite Certified',
+                    'Exclusive Compoxen\u00AE Composite Certified',
                     'Same-day estimates',
                     '2-hour emergency callback',
                     '100% satisfaction guarantee',

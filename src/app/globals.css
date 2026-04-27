@@ -28,12 +28,12 @@
            focus:outline-none focus:ring-2 focus:ring-alpine-500 focus:ring-offset-2;
   }
 
-  .btn-compozen {
+  .btn-compoxen {
     @apply inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-stone-900 
-           bg-gradient-to-r from-compozen-400 to-compozen-500 rounded-lg shadow-lg 
-           hover:from-compozen-500 hover:to-compozen-600
+           bg-gradient-to-r from-compoxen-400 to-compoxen-500 rounded-lg shadow-lg 
+           hover:from-compoxen-500 hover:to-compoxen-600
            transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5
-           focus:outline-none focus:ring-2 focus:ring-compozen-500 focus:ring-offset-2;
+           focus:outline-none focus:ring-2 focus:ring-compoxen-500 focus:ring-offset-2;
   }
 
   .btn-secondary {
@@ -63,14 +63,14 @@
            hover:shadow-xl transition-shadow duration-300 overflow-hidden;
   }
 
-  .card-compozen {
-    @apply bg-gradient-to-br from-compozen-50 to-white rounded-2xl shadow-lg 
-           border border-compozen-200 hover:shadow-xl transition-shadow duration-300 overflow-hidden;
+  .card-compoxen {
+    @apply bg-gradient-to-br from-compoxen-50 to-white rounded-2xl shadow-lg 
+           border border-compoxen-200 hover:shadow-xl transition-shadow duration-300 overflow-hidden;
   }
 
-  .badge-compozen {
+  .badge-compoxen {
     @apply inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold uppercase tracking-wider
-           text-compozen-800 bg-compozen-100 border border-compozen-300 rounded-full;
+           text-compoxen-800 bg-compoxen-100 border border-compoxen-300 rounded-full;
   }
 
   .badge-certified {
@@ -88,8 +88,8 @@
     @apply bg-gradient-to-r from-alpine-700 to-mountain-600 bg-clip-text text-transparent;
   }
 
-  .compozen-text {
-    @apply bg-gradient-to-r from-compozen-600 to-compozen-700 bg-clip-text text-transparent;
+  .compoxen-text {
+    @apply bg-gradient-to-r from-compoxen-600 to-compoxen-700 bg-clip-text text-transparent;
   }
 }
 

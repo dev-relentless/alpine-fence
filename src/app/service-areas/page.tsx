@@ -57,7 +57,7 @@ export default function ServiceAreasPage() {
               Alpine Fence & Deck proudly serves <strong>94 cities</strong> across Utah&apos;s Wasatch Front
               with composite fence and deck solutions.
               From Ogden to Payson, Park City to Tooele — we bring expert refinishing and exclusive 
-              Compozen® composite installations to your neighborhood.
+              Compoxen® composite installations to your neighborhood.
             </p>
           </div>
         </div>
@@ -144,7 +144,7 @@ export default function ServiceAreasPage() {
             We may still serve your area. Contact us to check availability and schedule a free estimate.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/quote" className="btn-compozen">Get Free Estimate</Link>
+            <Link href="/quote" className="btn-compoxen">Get Free Estimate</Link>
             <a href={COMPANY.phoneHref} className="btn-secondary border-white/30 text-white hover:bg-white/10">
               Call {COMPANY.phone}
             </a>

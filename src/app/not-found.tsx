@@ -19,7 +19,7 @@ export default function NotFound() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/" className="btn-primary">Back to Home</Link>
-            <Link href="/quote" className="btn-compozen">Get Free Estimate</Link>
+            <Link href="/quote" className="btn-compoxen">Get Free Estimate</Link>
             <Link href="/service-areas" className="btn-secondary">Find Your City</Link>
           </div>
         </div>
@@ -30,7 +30,7 @@ export default function NotFound() {
           <h3 className="text-xl font-heading font-bold text-stone-900 mb-8 text-center">Popular Pages</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { label: 'Our Services', href: '/services', desc: 'Refinishing, repair & Compozen® composite' },
+              { label: 'Our Services', href: '/services', desc: 'Refinishing, repair & Compoxen® composite' },
               { label: 'Project Gallery', href: '/gallery', desc: 'Before & after transformations' },
               { label: 'Service Areas', href: '/service-areas', desc: '94 Utah cities we serve' },
               { label: 'About Us', href: '/about', desc: 'Our story & expertise' },

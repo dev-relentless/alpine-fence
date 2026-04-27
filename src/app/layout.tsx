@@ -20,11 +20,11 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL('https://alpinefenceanddeck.com'),
   title: {
-    default: 'Alpine Fence & Deck | Composite Fence & Deck Contractor Utah | Compozen® Certified',
+    default: 'Alpine Fence & Deck | Composite Fence & Deck Contractor Utah | Compoxen® Certified',
     template: '%s | Alpine Fence & Deck',
   },
   description:
-    `Utah's premier composite fence and deck contractor. Expert refinishing, repair, and exclusive Compozen® composite installations across 94 cities. ${COMPANY.yearsExperience}+ years experience. Free estimates. (801) 471-3148`,
+    `Utah's premier composite fence and deck contractor. Expert refinishing, repair, and exclusive Compoxen® composite installations across 94 cities. ${COMPANY.yearsExperience}+ years experience. Free estimates. (801) 471-3148`,
   applicationName: 'Alpine Fence & Deck',
   category: 'Home Improvement',
   keywords: [
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     'composite deck Utah',
     'composite fencing contractor',
     'composite decking Utah',
-    'Compozen composite fence',
-    'Compozen composite deck',
+    'Compoxen composite fence',
+    'Compoxen composite deck',
     'fence contractor Utah',
     'deck contractor Utah',
     'composite fence installation Utah',
@@ -56,13 +56,13 @@ export const metadata: Metadata = {
     url: 'https://alpinefenceanddeck.com',
     siteName: 'Alpine Fence & Deck',
     title: 'Alpine Fence & Deck | Utah\'s #1 Composite Fence & Deck Contractor',
-    description: 'Utah\'s premier composite fence and deck contractor. Refinishing, repair, and exclusive Compozen® composite installations across 94 cities.',
+    description: 'Utah\'s premier composite fence and deck contractor. Refinishing, repair, and exclusive Compoxen® composite installations across 94 cities.',
     images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: 'Alpine Fence & Deck — Composite Fence and Deck Installations in Utah' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Alpine Fence & Deck | Utah\'s #1 Composite Fence & Deck Contractor',
-    description: 'Utah\'s premier composite fence and deck contractor. Compozen® certified installer serving 94 Utah cities.',
+    description: 'Utah\'s premier composite fence and deck contractor. Compoxen® certified installer serving 94 Utah cities.',
   },
   robots: {
     index: true,

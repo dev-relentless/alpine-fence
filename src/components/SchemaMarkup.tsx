@@ -47,7 +47,7 @@ export function generateLocalBusinessSchema(city?: CityData) {
     image: 'https://alpinefenceanddeck.com/images/alpine-fence-deck-logo.png',
     telephone: '+1-801-471-3148',
     email: COMPANY.email,
-    description: 'Utah\'s premier composite fence and deck contractor. Expert refinishing, repair, and exclusive Compozen® composite fence and deck installations across 94 cities.',
+    description: 'Utah\'s premier composite fence and deck contractor. Expert refinishing, repair, and exclusive Compoxen® composite fence and deck installations across 94 cities.',
     foundingDate: '2009',
     numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 5, maxValue: 20 },
     paymentAccepted: 'Cash, Credit Card, Check, Financing Available',
@@ -113,16 +113,16 @@ export function generateLocalBusinessSchema(city?: CityData) {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Compozen® Composite Fence Installation',
-            description: 'Exclusive Compozen® composite fence installation. Zero-maintenance composite fencing with 25-year warranty.',
+            name: 'Compoxen® Composite Fence Installation',
+            description: 'Exclusive Compoxen® composite fence installation. Zero-maintenance composite fencing with 25-year warranty.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Compozen® Composite Deck Installation',
-            description: 'Revolutionary Compozen® composite deck design and installation. Premium composite decking in Utah.',
+            name: 'Compoxen® Composite Deck Installation',
+            description: 'Revolutionary Compoxen® composite deck design and installation. Premium composite decking in Utah.',
           },
         },
       ],
@@ -145,7 +145,7 @@ export function generateLocalBusinessSchema(city?: CityData) {
       'Deck refinishing',
       'Fence repair',
       'HOA compliance fencing',
-      'Compozen composite materials',
+      'Compoxen composite materials',
     ],
   };
 }
@@ -157,7 +157,7 @@ export function generateWebSiteSchema() {
     '@id': 'https://alpinefenceanddeck.com/#website',
     name: 'Alpine Fence & Deck',
     url: 'https://alpinefenceanddeck.com',
-    description: 'Utah\'s premier composite fence and deck contractor. Compozen® certified installer. Composite fencing, composite decking, refinishing & repair.',
+    description: 'Utah\'s premier composite fence and deck contractor. Compoxen® certified installer. Composite fencing, composite decking, refinishing & repair.',
     publisher: { '@id': 'https://alpinefenceanddeck.com/#organization' },
     inLanguage: 'en-US',
   };
@@ -235,11 +235,11 @@ export function generateProductSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: 'Compozen® Composite Fencing & Decking',
+    name: 'Compoxen® Composite Fencing & Decking',
     description: 'Revolutionary composite materials for zero-maintenance fences and decks. Exclusive composite technology available only through certified installers in Utah.',
     brand: {
       '@type': 'Brand',
-      name: 'Compozen®',
+      name: 'Compoxen®',
     },
     category: 'Composite Fencing & Decking Materials',
     offers: {
@@ -269,8 +269,8 @@ export default function SchemaMarkup({ city, service, pageType, breadcrumbs }: S
         answer: 'We serve 94 cities across Utah\'s Wasatch Front, including Salt Lake City, Provo, Orem, Sandy, South Jordan, Layton, Draper, Park City, and more.',
       },
       {
-        question: 'What is Compozen® composite fencing?',
-        answer: 'Compozen® is a revolutionary composite material that delivers stunning aesthetics with zero maintenance. It won\'t rot, warp, or splinter, and comes with a 25-year material warranty.',
+        question: 'What is Compoxen® composite fencing?',
+        answer: 'Compoxen® is a revolutionary composite material that delivers stunning aesthetics with zero maintenance. It won\'t rot, warp, or splinter, and comes with a 25-year material warranty.',
       },
       {
         question: 'How much does a composite fence cost in Utah?',

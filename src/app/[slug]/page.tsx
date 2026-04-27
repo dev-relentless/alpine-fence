@@ -68,7 +68,7 @@ export default function CityLandingPage({ params }: CityPageProps) {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <span className="badge-compozen">Compozen® Certified</span>
+                <span className="badge-compoxen">Compoxen® Certified</span>
                 <span className="px-3 py-1 text-xs font-medium text-white/80 bg-white/10 rounded-full">
                   {tierLabel}
                 </span>
@@ -78,7 +78,7 @@ export default function CityLandingPage({ params }: CityPageProps) {
               </h1>
               <p className="text-lg text-stone-200 mb-6 leading-relaxed">
                 {city.name}&apos;s trusted fence and deck experts. From professional refinishing and emergency repairs
-                to exclusive <strong className="text-compozen-300">Compozen® composite installations</strong> —
+                to exclusive <strong className="text-compoxen-300">Compoxen® composite installations</strong> —
                 we transform outdoor living spaces across {city.county} County.
               </p>
               <p className="text-stone-300 mb-8">
@@ -87,7 +87,7 @@ export default function CityLandingPage({ params }: CityPageProps) {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link href="/quote" className="btn-compozen">
+                <Link href="/quote" className="btn-compoxen">
                   Free {city.name} Estimate
                 </Link>
                 <a href={COMPANY.phoneHref} className="btn-secondary border-white/30 text-white hover:bg-white/10">
@@ -115,7 +115,7 @@ export default function CityLandingPage({ params }: CityPageProps) {
           </h2>
           <p className="text-stone-600 text-center max-w-2xl mx-auto mb-12">
             Complete composite fence and deck solutions for {city.name} homeowners — from quick refinishing to 
-            revolutionary Compozen® composite transformations.
+            revolutionary Compoxen® composite transformations.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -123,14 +123,14 @@ export default function CityLandingPage({ params }: CityPageProps) {
               <Link
                 key={service.id}
                 href={`/services/${service.slug}`}
-                className={service.isCompozen ? 'card-compozen group' : 'card group'}
+                className={service.isCompoxen ? 'card-compoxen group' : 'card group'}
               >
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-lg font-heading font-bold text-stone-900 group-hover:text-alpine-700 transition-colors">
                       {service.title}
                     </h3>
-                    {service.isCompozen && <span className="badge-compozen text-[10px]">Compozen®</span>}
+                    {service.isCompoxen && <span className="badge-compoxen text-[10px]">Compoxen®</span>}
                   </div>
                   <p className="text-stone-600 text-sm mb-4">{service.description}</p>
                   <div className="flex items-center justify-between">
@@ -166,7 +166,7 @@ export default function CityLandingPage({ params }: CityPageProps) {
                   <div className="flex items-center gap-2 mt-3">
                     <span className="text-xs bg-alpine-50 text-alpine-700 px-2 py-0.5 rounded">Refinishing</span>
                     <span className="text-xs bg-alpine-50 text-alpine-700 px-2 py-0.5 rounded">Repair</span>
-                    <span className="text-xs bg-compozen-50 text-compozen-700 px-2 py-0.5 rounded">Compozen®</span>
+                    <span className="text-xs bg-compoxen-50 text-compoxen-700 px-2 py-0.5 rounded">Compoxen®</span>
                   </div>
                 </div>
               ))}
@@ -175,20 +175,20 @@ export default function CityLandingPage({ params }: CityPageProps) {
         </section>
       )}
 
-      {/* Compozen spotlight for city */}
+      {/* Compoxen spotlight for city */}
       <section className="section-padding bg-gradient-to-br from-stone-900 to-alpine-950 text-white">
         <div className="section-container text-center max-w-3xl mx-auto">
-          <span className="badge-compozen mb-6">Exclusive in {city.name}</span>
+          <span className="badge-compoxen mb-6">Exclusive in {city.name}</span>
           <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-6">
-            {city.name}&apos;s Only Compozen® Composite Certified Installer
+            {city.name}&apos;s Only Compoxen® Composite Certified Installer
           </h2>
           <p className="text-stone-300 text-lg mb-8 leading-relaxed">
-            As {city.county} County&apos;s exclusive Compozen® certified composite installer, 
+            As {city.county} County&apos;s exclusive Compoxen® certified composite installer, 
             Alpine Fence & Deck offers revolutionary composite materials and designs 
             unavailable from any other {city.name} contractor.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/quote" className="btn-compozen">
+            <Link href="/quote" className="btn-compoxen">
               Get Free Estimate
             </Link>
             <Link href="/contact" className="btn-secondary border-stone-600 text-stone-200 hover:bg-stone-800">

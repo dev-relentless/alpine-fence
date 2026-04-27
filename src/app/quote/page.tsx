@@ -5,7 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Get a Free Composite Fence & Deck Estimate | Utah',
-  description: 'Request a free composite fence or deck estimate from Alpine Fence & Deck. Same-day response guaranteed. Composite installations, refinishing & repair across 94 Utah cities. Compozen® certified.',
+  description: 'Request a free composite fence or deck estimate from Alpine Fence & Deck. Same-day response guaranteed. Composite installations, refinishing & repair across 94 Utah cities. Compoxen® certified.',
   openGraph: {
     title: 'Free Composite Fence & Deck Estimate | Alpine Fence & Deck',
     description: 'Get a same-day estimate for composite fence and deck installation, refinishing, or repair in Utah.',
@@ -32,7 +32,7 @@ export default function QuotePage() {
             </h1>
             <p className="text-lg text-stone-200 leading-relaxed">
               Tell us about your project and get a detailed, no-obligation estimate the same day. 
-              Whether it&apos;s refinishing, repair, or a Compozen® composite installation — we&apos;re ready to help.
+              Whether it&apos;s refinishing, repair, or a Compoxen® composite installation — we&apos;re ready to help.
             </p>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function QuotePage() {
                 <ul className="space-y-3 text-sm text-stone-600">
                   {[
                     `${COMPANY.yearsExperience}+ years experience`,
-                    'Exclusive Compozen® Composite Certified',
+                    'Exclusive Compoxen® Composite Certified',
                     'Same-day estimates',
                     '2-hour emergency callback',
                     '100% satisfaction guarantee',

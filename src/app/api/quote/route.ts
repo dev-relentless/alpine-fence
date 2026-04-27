@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
       details: details || null,
       source: 'website',
       createdAt: new Date().toISOString(),
-      isCompozen: service.includes('compozen'),
+      isCompoxen: service.includes('compoxen'),
     };
 
     console.log('New lead received:', lead);

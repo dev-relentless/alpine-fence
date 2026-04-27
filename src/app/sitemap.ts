@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/services/${s.slug}`,
     lastModified,
     changeFrequency: 'weekly' as const,
-    priority: s.isCompozen ? 0.9 : 0.8,
+    priority: s.isCompoxen ? 0.9 : 0.8,
   }));
 
   const cityPages: MetadataRoute.Sitemap = cities.map((c) => ({

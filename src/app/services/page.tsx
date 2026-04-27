@@ -5,11 +5,11 @@ import { COMPANY } from '@/data/cities';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'Composite Fence & Deck Services | Refinishing, Repair & Compozen® Installation',
-  description: 'Complete composite fence and deck services in Utah: refinishing, repair, and exclusive Compozen® composite installations across 94 cities. Free estimates for all composite projects.',
+  title: 'Composite Fence & Deck Services | Refinishing, Repair & Compoxen® Installation',
+  description: 'Complete composite fence and deck services in Utah: refinishing, repair, and exclusive Compoxen® composite installations across 94 cities. Free estimates for all composite projects.',
   openGraph: {
     title: 'Composite Fence & Deck Services | Alpine Fence & Deck',
-    description: 'Utah\'s full-service composite fence and deck contractor. Refinishing, repair & Compozen® composite installations.',
+    description: 'Utah\'s full-service composite fence and deck contractor. Refinishing, repair & Compoxen® composite installations.',
     url: 'https://alpinefenceanddeck.com/services',
   },
   alternates: {
@@ -28,12 +28,12 @@ export default function ServicesIndex() {
       <section className="bg-hero-gradient text-white">
         <div className="section-container py-16 lg:py-20">
           <div className="max-w-3xl">
-            <span className="badge-compozen mb-6">Full-Service Solutions</span>
+            <span className="badge-compoxen mb-6">Full-Service Solutions</span>
             <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-6">
               Our Composite Fence & Deck Services
             </h1>
             <p className="text-lg text-stone-200 leading-relaxed">
-              From expert refinishing to revolutionary Compozen® composite fence and deck installations — 
+              From expert refinishing to revolutionary Compoxen® composite fence and deck installations — 
               we deliver complete composite outdoor living solutions backed by {COMPANY.yearsExperience}+ years of experience.
             </p>
           </div>
@@ -47,7 +47,7 @@ export default function ServicesIndex() {
               <Link
                 key={service.id}
                 href={`/services/${service.slug}`}
-                className={`block ${service.isCompozen ? 'card-compozen' : 'card'} group`}
+                className={`block ${service.isCompoxen ? 'card-compoxen' : 'card'} group`}
               >
                 <div className="p-8 lg:p-10">
                   <div className="flex flex-col lg:flex-row lg:items-center gap-6">
@@ -56,7 +56,7 @@ export default function ServicesIndex() {
                         <h2 className="text-2xl font-heading font-bold text-stone-900 group-hover:text-alpine-700 transition-colors">
                           {service.title}
                         </h2>
-                        {service.isCompozen && <span className="badge-compozen">Compozen®</span>}
+                        {service.isCompoxen && <span className="badge-compoxen">Compoxen®</span>}
                       </div>
                       <p className="text-stone-600 mb-4">{service.description}</p>
                       <div className="flex flex-wrap gap-2">

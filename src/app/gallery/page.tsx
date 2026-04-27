@@ -7,7 +7,7 @@ import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'Fence & Deck Gallery | Before & After Composite Transformations',
-  description: 'Browse before and after photos of composite fence installations, deck refinishing, Compozen® composite projects, and repair work across Utah by Alpine Fence & Deck.',
+  description: 'Browse before and after photos of composite fence installations, deck refinishing, Compoxen® composite projects, and repair work across Utah by Alpine Fence & Deck.',
   openGraph: {
     title: 'Fence & Deck Project Gallery | Alpine Fence & Deck',
     description: 'Before & after fence and deck transformations across Utah. Staining, refinishing, installations & repair.',
@@ -80,7 +80,7 @@ export default function GalleryPage() {
             Every project starts with a free estimate. Whether it&apos;s refinishing or a new installation, 
             let us transform your outdoor space.
           </p>
-          <Link href="/quote" className="btn-compozen">
+          <Link href="/quote" className="btn-compoxen">
             Get Your Free Estimate →
           </Link>
         </div>

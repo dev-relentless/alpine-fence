@@ -14,16 +14,16 @@ public/images/
 ├── hero.jpg                  ← Homepage & city pages hero background
 ├── hero-about.jpg            ← About page hero photo (team/company)
 ├── team.jpg                  ← About page team photo
-├── compozen-feature.jpg      ← Compozen spotlight section on homepage
+├── compoxen-feature.jpg      ← Compoxen spotlight section on homepage
 │
 ├── gallery/                  ← Project portfolio photos
-│   ├── daybreak-compozen-fence.jpg
-│   ├── suncrest-compozen-deck.jpg
+│   ├── daybreak-compoxen-fence.jpg
+│   ├── suncrest-compoxen-deck.jpg
 │   ├── sugar-house-cedar-deck.jpg
 │   ├── sandy-privacy-fence.jpg
-│   ├── park-city-compozen.jpg
+│   ├── park-city-compoxen.jpg
 │   ├── herriman-board-on-board.jpg
-│   ├── orem-compozen-deck.jpg
+│   ├── orem-compoxen-deck.jpg
 │   └── riverton-fence-stain.jpg
 │
 ├── designs/                  ← Design studio style previews
@@ -37,8 +37,8 @@ public/images/
 ├── services/                 ← Service page images
 │   ├── fence-refinishing.jpg
 │   ├── deck-refinishing.jpg
-│   ├── compozen-fencing.jpg
-│   ├── compozen-decking.jpg
+│   ├── compoxen-fencing.jpg
+│   ├── compoxen-decking.jpg
 │   └── fence-repair.jpg
 │
 ├── testimonials/             ← Customer avatars (square, min 200×200)
@@ -48,7 +48,7 @@ public/images/
 │
 └── badges/                   ← Certification & trust logos
     ├── bbb.svg
-    ├── compozen-certified.svg
+    ├── compoxen-certified.svg
     ├── epa-lead-safe.svg
     └── licensed-insured.svg
 ```
@@ -65,7 +65,7 @@ public/images/
 | **hero.jpg** | 1920×1080 | JPG | High-quality, landscape |
 | **hero-about.jpg** | 1920×800 | JPG | Wide banner crop |
 | **team.jpg** | 800×600 | JPG | Team/workspace photo |
-| **compozen-feature.jpg** | 800×600 | JPG | 4:3 aspect ratio |
+| **compoxen-feature.jpg** | 800×600 | JPG | 4:3 aspect ratio |
 | **gallery/*.jpg** | 800×600 | JPG | 4:3 aspect ratio, before/after |
 | **designs/*.jpg** | 800×600 | JPG | 4:3 aspect ratio |
 | **services/*.jpg** | 1200×600 | JPG | Wide banner, 2:1 ratio |
@@ -87,7 +87,7 @@ public/images/
 - [ ] 5 service page images
 
 ### Medium Priority
-- [ ] `compozen-feature.jpg`
+- [ ] `compoxen-feature.jpg`
 - [ ] `team.jpg` / `hero-about.jpg`
 - [ ] 3 testimonial avatars
 

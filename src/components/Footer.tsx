@@ -12,7 +12,7 @@ export default function Footer() {
             Ready to Transform Your Space with Composite?
           </h2>
           <p className="text-alpine-100 mb-8 max-w-2xl mx-auto">
-            Whether you need refinishing, repair, or are ready for a revolutionary Compozen® composite installation — 
+            Whether you need refinishing, repair, or are ready for a revolutionary Compoxen® composite installation — 
             we&apos;re here to help. Free composite fence and deck estimates, guaranteed satisfaction.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -39,12 +39,12 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-lg font-heading font-bold text-white">Alpine Fence & Deck</h3>
-                <span className="text-xs text-compozen-400">Compozen® Certified</span>
+                <span className="text-xs text-compoxen-400">Compoxen® Certified</span>
               </div>
             </div>
             <address className="not-italic">
               <p className="text-sm text-stone-400 mb-4">{COMPANY.address}</p>
-              <a href={COMPANY.phoneHref} className="text-lg font-bold text-white hover:text-compozen-400 transition-colors">
+              <a href={COMPANY.phoneHref} className="text-lg font-bold text-white hover:text-compoxen-400 transition-colors">
                 {COMPANY.phone}
               </a>
               <p className="text-sm text-stone-400 mt-2">
@@ -66,7 +66,7 @@ export default function Footer() {
                     href={`/services/${service.slug}`}
                     className="text-sm text-stone-400 hover:text-white transition-colors flex items-center gap-2"
                   >
-                    {service.isCompozen && <span className="w-1.5 h-1.5 bg-compozen-400 rounded-full" />}
+                    {service.isCompoxen && <span className="w-1.5 h-1.5 bg-compoxen-400 rounded-full" />}
                     {service.shortTitle}
                   </Link>
                 </li>

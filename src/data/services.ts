@@ -12,7 +12,7 @@ export interface ServiceData {
   benefits: string[];
   priceRange: string;
   avgProjectValue: number;
-  isCompozen: boolean;
+  isCompoxen: boolean;
   ctaText: string;
   ctaHref: string;
   faqs: { question: string; answer: string }[];
@@ -20,15 +20,15 @@ export interface ServiceData {
 
 export const services: ServiceData[] = [
   {
-    id: 'compozen-fence',
-    slug: 'compozen-fence-installation',
-    title: 'Compozen® Composite Fence Installation',
-    shortTitle: 'Compozen Fence',
-    description: 'Transform your property with revolutionary Compozen® composite fencing. Zero maintenance composite fence, lasting beauty, and exclusive designs only available through certified composite installers.',
-    heroDescription: 'Experience the future of composite fencing. Compozen® composite materials deliver stunning aesthetics with zero maintenance — backed by our exclusive certified composite installer guarantee.',
+    id: 'compoxen-fence',
+    slug: 'compoxen-fence-installation',
+    title: 'Compoxen® Composite Fence Installation',
+    shortTitle: 'Compoxen Fence',
+    description: 'Transform your property with revolutionary Compoxen® composite fencing. Zero maintenance composite fence, lasting beauty, and exclusive designs only available through certified composite installers.',
+    heroDescription: 'Experience the future of composite fencing. Compoxen® composite materials deliver stunning aesthetics with zero maintenance — backed by our exclusive certified composite installer guarantee.',
     icon: 'Shield',
     features: [
-      'Exclusive Compozen® composite material',
+      'Exclusive Compoxen® composite material',
       '3D design visualization before install',
       'Zero-maintenance composite technology',
       'Custom color & texture matching',
@@ -45,27 +45,27 @@ export const services: ServiceData[] = [
     ],
     priceRange: '$8,000 – $45,000',
     avgProjectValue: 25000,
-    isCompozen: true,
+    isCompoxen: true,
     ctaText: 'Get a Free Estimate',
-    ctaHref: '/quote?service=compozen-fence',
+    ctaHref: '/quote?service=compoxen-fence',
     faqs: [
-      { question: 'What is Compozen® composite fencing?', answer: 'Compozen® is a revolutionary composite material that delivers stunning wood-like aesthetics with zero maintenance. It won\'t rot, warp, or splinter, and comes with a 25-year material warranty.' },
-      { question: 'How much does a composite fence cost in Utah?', answer: 'Compozen® composite fence installations typically range from $8,000 to $45,000 depending on property size, design, and terrain. We provide free on-site estimates for accurate pricing.' },
-      { question: 'Are Compozen® fences HOA approved?', answer: 'Yes, Compozen® composite fences are designed to meet HOA requirements. We offer HOA pre-approval assistance and provide documentation for your association.' },
+      { question: 'What is Compoxen® composite fencing?', answer: 'Compoxen® is a revolutionary composite material that delivers stunning wood-like aesthetics with zero maintenance. It won\'t rot, warp, or splinter, and comes with a 25-year material warranty.' },
+      { question: 'How much does a composite fence cost in Utah?', answer: 'Compoxen® composite fence installations typically range from $8,000 to $45,000 depending on property size, design, and terrain. We provide free on-site estimates for accurate pricing.' },
+      { question: 'Are Compoxen® fences HOA approved?', answer: 'Yes, Compoxen® composite fences are designed to meet HOA requirements. We offer HOA pre-approval assistance and provide documentation for your association.' },
       { question: 'How long does composite fence installation take?', answer: 'Most composite fence installations are completed within 1-2 weeks depending on the project scope. We provide a detailed timeline with your estimate.' },
     ],
   },
   {
-    id: 'compozen-deck',
-    slug: 'compozen-deck-installation',
-    title: 'Compozen® Composite Deck Installation',
-    shortTitle: 'Compozen Deck',
-    description: 'Elevate your outdoor living with a Compozen® composite deck. Revolutionary composite materials, breathtaking designs, and zero maintenance for 25 years.',
-    heroDescription: 'Create the outdoor living space of your dreams. Compozen® composite decking delivers unmatched beauty, durability, and zero-maintenance living — the ultimate composite deck designed exclusively for your home.',
+    id: 'compoxen-deck',
+    slug: 'compoxen-deck-installation',
+    title: 'Compoxen® Composite Deck Installation',
+    shortTitle: 'Compoxen Deck',
+    description: 'Elevate your outdoor living with a Compoxen® composite deck. Revolutionary composite materials, breathtaking designs, and zero maintenance for 25 years.',
+    heroDescription: 'Create the outdoor living space of your dreams. Compoxen® composite decking delivers unmatched beauty, durability, and zero-maintenance living — the ultimate composite deck designed exclusively for your home.',
     icon: 'Home',
     features: [
       'Custom deck design consultation',
-      'Premium Compozen® decking materials',
+      'Premium Compoxen® decking materials',
       'Multi-level & wrap-around designs',
       'Built-in lighting integration',
       'Railing & privacy screen options',
@@ -81,12 +81,12 @@ export const services: ServiceData[] = [
     ],
     priceRange: '$15,000 – $75,000',
     avgProjectValue: 35000,
-    isCompozen: true,
+    isCompoxen: true,
     ctaText: 'Get a Free Estimate',
-    ctaHref: '/quote?service=compozen-deck',
+    ctaHref: '/quote?service=compoxen-deck',
     faqs: [
-      { question: 'How much does a composite deck cost in Utah?', answer: 'Compozen® composite deck installations range from $15,000 to $75,000 depending on size, design complexity, and features. Free on-site estimates are available.' },
-      { question: 'Do composite decks get hot in Utah summers?', answer: 'Compozen® composite uses advanced technology to reduce heat absorption compared to traditional composite materials, making it comfortable for bare feet even in summer.' },
+      { question: 'How much does a composite deck cost in Utah?', answer: 'Compoxen® composite deck installations range from $15,000 to $75,000 depending on size, design complexity, and features. Free on-site estimates are available.' },
+      { question: 'Do composite decks get hot in Utah summers?', answer: 'Compoxen® composite uses advanced technology to reduce heat absorption compared to traditional composite materials, making it comfortable for bare feet even in summer.' },
       { question: 'What is the ROI on a composite deck?', answer: 'Composite deck installations typically see a 70-80% return on investment in property value. Combined with zero maintenance costs, the total cost of ownership is lower than wood over 10+ years.' },
       { question: 'Can you build custom deck designs with composite?', answer: 'Absolutely. We offer 3D design visualization before installation so you can see your custom composite deck design, including curves, multi-levels, built-in seating, and more.' },
     ],
@@ -113,17 +113,17 @@ export const services: ServiceData[] = [
       'Customizable stain & paint colors',
       'Fast installation — most in 3-5 days',
       'Increases property value & security',
-      'Upgrade path to Compozen® composite later',
+      'Upgrade path to Compoxen® composite later',
     ],
     priceRange: '$3,000 – $15,000',
     avgProjectValue: 7500,
-    isCompozen: false,
+    isCompoxen: false,
     ctaText: 'Get Free Fence Estimate',
     ctaHref: '/quote?service=wood-fence',
     faqs: [
       { question: 'What types of wood fences do you install?', answer: 'We install privacy fences, picket fences, split rail, horizontal slat, and custom designs. We work with cedar, pine, and other quality wood species suited for Utah\'s climate.' },
       { question: 'How much does a wood fence cost in Utah?', answer: 'Wood fence installations typically range from $3,000 to $15,000 depending on the fence style, wood species, property size, and terrain. We provide free on-site estimates for accurate pricing.' },
-      { question: 'How long does a wood fence last in Utah?', answer: 'With proper maintenance and staining every 2-3 years, a quality wood fence lasts 15-20 years in Utah. Cedar fences tend to last longer due to natural rot resistance. For a zero-maintenance option, ask about our Compozen® composite fencing.' },
+      { question: 'How long does a wood fence last in Utah?', answer: 'With proper maintenance and staining every 2-3 years, a quality wood fence lasts 15-20 years in Utah. Cedar fences tend to last longer due to natural rot resistance. For a zero-maintenance option, ask about our Compoxen® composite fencing.' },
       { question: 'Do you handle fence permits?', answer: 'Yes, we handle all permit requirements for fence installation in your city. We also provide HOA pre-approval assistance and documentation for your homeowners association.' },
     ],
   },
@@ -153,7 +153,7 @@ export const services: ServiceData[] = [
     ],
     priceRange: '$800 – $3,500',
     avgProjectValue: 2000,
-    isCompozen: false,
+    isCompoxen: false,
     ctaText: 'Get Free Refinishing Estimate',
     ctaHref: '/quote?service=refinishing',
     faqs: [
@@ -185,17 +185,17 @@ export const services: ServiceData[] = [
       'Honest damage assessment',
       'Insurance claim assistance',
       'Warranty on all repairs',
-      'Upgrade path to Compozen® composite',
+      'Upgrade path to Compoxen® composite',
     ],
     priceRange: '$200 – $2,500',
     avgProjectValue: 800,
-    isCompozen: false,
+    isCompoxen: false,
     ctaText: 'Request Emergency Repair',
     ctaHref: '/quote?service=repair',
     faqs: [
       { question: 'How quickly can you repair my fence?', answer: 'We offer a 2-hour callback guarantee during business hours. Most repairs are scheduled within the same week, with emergency service available for urgent damage.' },
       { question: 'Do you help with insurance claims for storm damage?', answer: 'Yes, we provide detailed damage assessments and documentation to assist with your insurance claim for storm-damaged fences and decks.' },
-      { question: 'Is it better to repair or replace my fence?', answer: 'We provide an honest assessment of your fence\'s condition. Minor damage is worth repairing, but if your fence needs frequent repairs, upgrading to Compozen® composite can save money long-term.' },
+      { question: 'Is it better to repair or replace my fence?', answer: 'We provide an honest assessment of your fence\'s condition. Minor damage is worth repairing, but if your fence needs frequent repairs, upgrading to Compoxen® composite can save money long-term.' },
       { question: 'Do you warranty your repair work?', answer: 'Yes, all repair work comes with our workmanship warranty. We stand behind every project we complete.' },
     ],
   },
@@ -205,10 +205,10 @@ export function getServiceBySlug(slug: string): ServiceData | undefined {
   return services.find((s) => s.slug === slug);
 }
 
-export function getCompozenServices(): ServiceData[] {
-  return services.filter((s) => s.isCompozen);
+export function getCompoxenServices(): ServiceData[] {
+  return services.filter((s) => s.isCompoxen);
 }
 
 export function getRefinishingServices(): ServiceData[] {
-  return services.filter((s) => !s.isCompozen);
+  return services.filter((s) => !s.isCompoxen);
 }
