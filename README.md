@@ -66,7 +66,7 @@ src/
 ## Key Features
 
 ### City Landing Pages
-Dynamic pages for 94 municipalities across Weber, Davis, Salt Lake, Utah, and surrounding counties. Each page includes:
+Dynamic pages for 94 cities across Weber, Davis, Salt Lake, Utah, and surrounding counties. Each page includes:
 - City-specific hero with name and county
 - Local service listings
 - Neighborhood grid (where applicable)

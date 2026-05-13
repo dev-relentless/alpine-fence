@@ -18,6 +18,11 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
   }
+
+  /* Global keyboard-focus ring — accessibility win, no visual cost for mouse users */
+  :focus-visible {
+    @apply outline-none ring-2 ring-bronze-400 ring-offset-2 ring-offset-white rounded;
+  }
 }
 
 @layer components {
@@ -85,7 +90,7 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-alpine-700 to-mountain-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-alpine-800 to-bronze-600 bg-clip-text text-transparent;
   }
 
   .compoxen-text {

@@ -4,11 +4,11 @@ import { COMPANY } from '@/data/cities';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'Get a Free Composite Fence & Deck Estimate | Utah',
-  description: 'Request a free composite fence or deck estimate from Alpine Fence & Deck. Same-day response guaranteed. Composite installations, refinishing & repair across 94 Utah cities. Compoxen® certified.',
+  title: 'Get a Free Fence & Deck Estimate | Utah',
+  description: 'Request a free fence or deck estimate from Alpine Fence & Deck. Same-day response on every request. Wood, vinyl, composite, iron, aluminum, staining, refinishing & repair across 94 Utah cities.',
   openGraph: {
-    title: 'Free Composite Fence & Deck Estimate | Alpine Fence & Deck',
-    description: 'Get a same-day estimate for composite fence and deck installation, refinishing, or repair in Utah.',
+    title: 'Free Fence & Deck Estimate | Alpine Fence & Deck',
+    description: 'Get a same-day estimate for fence or deck installation, staining, refinishing, or repair in Utah.',
     url: 'https://alpinefenceanddeck.com/quote',
   },
   alternates: {
@@ -27,12 +27,13 @@ export default function QuotePage() {
       <section className="bg-hero-gradient text-white">
         <div className="section-container py-16 lg:py-20">
           <div className="max-w-3xl">
-            <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-6">
-              Get Your Free Composite Fence & Deck Estimate
+            <span className="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-compoxen-300 mb-4">Free Estimate</span>
+            <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-6 tracking-tight">
+              Get Your Free <span className="italic font-light text-compoxen-300">Estimate.</span>
             </h1>
-            <p className="text-lg text-stone-200 leading-relaxed">
-              Tell us about your project and get a detailed, no-obligation estimate the same day. 
-              Whether it&apos;s refinishing, repair, or a Compoxen® composite installation — we&apos;re ready to help.
+            <p className="text-lg text-stone-200/90 leading-relaxed">
+              Tell us about your project and get a detailed, no-obligation estimate the same day — for any fence,
+              deck, staining, refinishing, or repair.
             </p>
           </div>
         </div>
@@ -60,11 +61,11 @@ export default function QuotePage() {
                 <ul className="space-y-3 text-sm text-stone-600">
                   {[
                     `${COMPANY.yearsExperience}+ years experience`,
-                    'Exclusive Compoxen® Composite Certified',
+                    'Every major fence & deck material',
                     'Same-day estimates',
                     '2-hour emergency callback',
                     '100% satisfaction guarantee',
-                    '25-year composite material warranty',
+                    'Up to 25-year material warranties',
                     `${COMPANY.googleRating}★ Google rating`,
                     'Licensed, bonded & insured',
                   ].map((item) => (

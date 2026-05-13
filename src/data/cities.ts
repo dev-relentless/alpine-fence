@@ -1,5 +1,5 @@
 // Alpine Fence & Deck — City Database
-// 94 municipalities across Weber, Davis, Salt Lake, and Utah counties
+// 94 cities across Weber, Davis, Salt Lake, and Utah counties
 
 const YEARS_EXPERIENCE = new Date().getFullYear() - 2009;
 
@@ -27,8 +27,8 @@ const cityDatabase: CityData[] = [
     population: 200133,
     neighborhoodSlugs: ['sugar-house', 'the-avenues', 'liberty-park', 'marmalade', 'rose-park', 'glendale', 'east-bench', 'federal-heights', 'capitol-hill', 'downtown'],
     neighborhoodNames: ['Sugar House', 'The Avenues', 'Liberty Park', 'Marmalade', 'Rose Park', 'Glendale', 'East Bench', 'Federal Heights', 'Capitol Hill', 'Downtown'],
-    metaTitle: 'Salt Lake City Fence & Deck Contractor | Refinishing, Repair & Compoxen® Composite Installation',
-    metaDescription: `Salt Lake City's premier fence and deck contractor. Expert refinishing, repair, and exclusive Compoxen® composite installations. ${YEARS_EXPERIENCE}+ years experience. Free estimates. (801) 471-3148`,
+    metaTitle: 'Salt Lake City Fence, Deck & Landscape Contractor | Compoxen® Composite & Yard Services',
+    metaDescription: `Salt Lake City's premier fence, deck, and landscape contractor. Expert refinishing, repair, Compoxen® composite installs, plus sod, retaining walls, paver patios, and sprinklers. ${YEARS_EXPERIENCE}+ years experience. Free estimates. (801) 471-3148`,
   },
   {
     name: 'West Valley City',
@@ -38,8 +38,8 @@ const cityDatabase: CityData[] = [
     population: 140230,
     neighborhoodSlugs: ['hunter', 'granger', 'chesterfield', 'valley-fair'],
     neighborhoodNames: ['Hunter', 'Granger', 'Chesterfield', 'Valley Fair'],
-    metaTitle: 'West Valley City Fence & Deck Contractor | Compoxen® Composite Certified',
-    metaDescription: 'West Valley City fence and deck services. Refinishing, repair, and Compoxen® composite installations. HOA-approved designs. Free estimates. (801) 471-3148',
+    metaTitle: 'West Valley City Fence, Deck & Landscape Contractor | Compoxen® Certified',
+    metaDescription: 'West Valley City fence, deck, and landscape services. Refinishing, repair, Compoxen® composite installs, sod, retaining walls, paver patios, and sprinklers. HOA-approved. (801) 471-3148',
   },
   {
     name: 'West Jordan',
@@ -49,8 +49,8 @@ const cityDatabase: CityData[] = [
     population: 116961,
     neighborhoodSlugs: ['oquirrh-shadows', 'jordan-landing', 'mountain-shadows'],
     neighborhoodNames: ['Oquirrh Shadows', 'Jordan Landing', 'Mountain Shadows'],
-    metaTitle: 'West Jordan Fence & Deck Contractor | Refinishing & Compoxen® Composite Installation',
-    metaDescription: 'West Jordan\'s trusted fence and deck experts. Professional refinishing, repair & exclusive Compoxen® composite installations. Free estimates. (801) 471-3148',
+    metaTitle: 'West Jordan Fence, Deck & Landscape Contractor | Compoxen® & Yard Services',
+    metaDescription: 'West Jordan\'s trusted fence, deck, and landscape experts. Refinishing, repair, Compoxen® composite installs, plus sod, retaining walls, pavers, and sprinklers. (801) 471-3148',
   },
   {
     name: 'Provo',
@@ -60,8 +60,8 @@ const cityDatabase: CityData[] = [
     population: 115162,
     neighborhoodSlugs: ['north-park', 'south-provo', 'edgemont', 'carterville', 'sunset'],
     neighborhoodNames: ['North Park', 'South Provo', 'Edgemont', 'Carterville', 'Sunset'],
-    metaTitle: 'Provo Fence & Deck Contractor | Compoxen® Composite Certified',
-    metaDescription: 'Provo fence and deck contractor. Expert refinishing, repair, and revolutionary Compoxen® composite installations. Free estimates. (801) 471-3148',
+    metaTitle: 'Provo Fence, Deck & Landscape Contractor | Compoxen® & Yard Services',
+    metaDescription: 'Provo fence, deck, and landscape contractor. Expert refinishing, repair, Compoxen® composite installs, plus sod, walls, pavers, and sprinklers. Free estimates. (801) 471-3148',
   },
   {
     name: 'Orem',
@@ -71,8 +71,8 @@ const cityDatabase: CityData[] = [
     population: 97499,
     neighborhoodSlugs: ['northridge', 'cascade', 'vineyard-connector', 'university-mall-area'],
     neighborhoodNames: ['Northridge', 'Cascade', 'Vineyard Connector', 'University Mall Area'],
-    metaTitle: 'Orem Fence & Deck Contractor | Compoxen® Composite Installations',
-    metaDescription: 'Orem\'s premier fence and deck services. Refinishing, repair & exclusive Compoxen® composite material installations. HOA approved. (801) 471-3148',
+    metaTitle: 'Orem Fence, Deck & Landscape Contractor | Compoxen® & Yard Services',
+    metaDescription: 'Orem\'s premier fence, deck, and landscape services. Refinishing, repair, Compoxen® composite, plus sod, retaining walls, pavers, and sprinklers. HOA approved. (801) 471-3148',
   },
   {
     name: 'Sandy',
@@ -82,8 +82,8 @@ const cityDatabase: CityData[] = [
     population: 96904,
     neighborhoodSlugs: ['alta-canyon', 'sandy-hills', 'quarry-bend', 'bell-canyon'],
     neighborhoodNames: ['Alta Canyon', 'Sandy Hills', 'Quarry Bend', 'Bell Canyon'],
-    metaTitle: 'Sandy Fence & Deck Contractor | Expert Refinishing & Compoxen® Composite',
-    metaDescription: 'Sandy UT fence and deck contractor. Professional refinishing, repair, and revolutionary Compoxen® composite installations. Free estimates. (801) 471-3148',
+    metaTitle: 'Sandy Fence, Deck & Landscape Contractor | Compoxen® & Yard Services',
+    metaDescription: 'Sandy UT fence, deck, and landscape contractor. Refinishing, repair, Compoxen® composite, plus sod, retaining walls, paver patios, and sprinklers. Free estimates. (801) 471-3148',
   },
   {
     name: 'South Jordan',
@@ -93,8 +93,8 @@ const cityDatabase: CityData[] = [
     population: 77487,
     neighborhoodSlugs: ['daybreak', 'river-park', 'south-hills', 'jordan-narrows'],
     neighborhoodNames: ['Daybreak', 'River Park', 'South Hills', 'Jordan Narrows'],
-    metaTitle: 'South Jordan Fence & Deck Contractor | Daybreak Composite Specialist',
-    metaDescription: 'South Jordan fence and deck experts including Daybreak. Refinishing, repair & exclusive Compoxen® composite installations. HOA compliant. (801) 471-3148',
+    metaTitle: 'South Jordan Fence, Deck & Landscape Contractor | Daybreak Specialist',
+    metaDescription: 'South Jordan fence, deck, and landscape experts including Daybreak. Refinishing, repair, Compoxen® composite, plus sod, walls, pavers, and sprinklers. HOA compliant. (801) 471-3148',
   },
   {
     name: 'Layton',
@@ -104,8 +104,8 @@ const cityDatabase: CityData[] = [
     population: 77348,
     neighborhoodSlugs: ['east-layton', 'gentleman-farms', 'kays-creek'],
     neighborhoodNames: ['East Layton', 'Gentleman Farms', 'Kays Creek'],
-    metaTitle: 'Layton Fence & Deck Contractor | Compoxen® Composite Certified',
-    metaDescription: 'Layton fence and deck services. Expert refinishing, repair & Compoxen® composite installations. Davis County\'s trusted contractor. (801) 471-3148',
+    metaTitle: 'Layton Fence, Deck & Landscape Contractor | Compoxen® & Yard Services',
+    metaDescription: 'Layton fence, deck, and landscape services. Expert refinishing, repair, Compoxen® composite, plus sod, retaining walls, pavers, and sprinklers. Davis County\'s trusted contractor. (801) 471-3148',
   },
   {
     name: 'Taylorsville',
@@ -115,8 +115,8 @@ const cityDatabase: CityData[] = [
     population: 60227,
     neighborhoodSlugs: ['bennion', 'taylorsville-center', 'valley-hi'],
     neighborhoodNames: ['Bennion', 'Taylorsville Center', 'Valley Hi'],
-    metaTitle: 'Taylorsville Fence & Deck Contractor | Refinishing & Compoxen® Composite',
-    metaDescription: 'Taylorsville fence deck contractor. Professional refinishing, repair & exclusive Compoxen® composite installations. Free estimates. (801) 471-3148',
+    metaTitle: 'Taylorsville Fence, Deck & Landscape Contractor | Compoxen® & Yard Services',
+    metaDescription: 'Taylorsville fence, deck, and landscape contractor. Refinishing, repair, Compoxen® composite, plus sod, retaining walls, pavers, and sprinklers. Free estimates. (801) 471-3148',
   },
 
   // ── TIER 1 (continued): Large cities previously miscategorized ──
@@ -128,8 +128,8 @@ const cityDatabase: CityData[] = [
     population: 87000,
     neighborhoodSlugs: ['downtown-ogden', 'east-bench-ogden', 'south-ogden-valley'],
     neighborhoodNames: ['Downtown Ogden', 'East Bench', 'South Ogden Valley'],
-    metaTitle: 'Ogden Composite Fence & Deck Contractor | Compoxen® Certified',
-    metaDescription: 'Ogden\'s premier composite fence and deck contractor. Expert refinishing, repair & exclusive Compoxen® composite installations. Weber County. (801) 471-3148',
+    metaTitle: 'Ogden Fence, Deck & Landscape Contractor | Compoxen® Certified',
+    metaDescription: 'Ogden fence, deck, and landscape contractor. Compoxen® composite, refinishing, repair, plus sod, retaining walls, pavers, and sprinklers. Weber County. (801) 471-3148',
   },
   {
     name: 'Lehi',
@@ -139,8 +139,8 @@ const cityDatabase: CityData[] = [
     population: 75000,
     neighborhoodSlugs: ['traverse-mountain', 'thanksgiving-point', 'wines-park'],
     neighborhoodNames: ['Traverse Mountain', 'Thanksgiving Point', 'Wines Park'],
-    metaTitle: 'Lehi Composite Fence & Deck Contractor | Compoxen® Certified',
-    metaDescription: 'Lehi\'s trusted composite fence and deck contractor. Refinishing, repair & exclusive Compoxen® composite installations. Utah County. (801) 471-3148',
+    metaTitle: 'Lehi Fence, Deck & Landscape Contractor | Compoxen® Certified',
+    metaDescription: 'Lehi fence, deck, and landscape contractor. Compoxen® composite, refinishing, repair, plus sod, walls, pavers, and sprinklers. Utah County. (801) 471-3148',
   },
 
   // ── TIER 2: Population 20,000–50,000 ───────────────────
@@ -671,12 +671,36 @@ export const COMPANY = {
   phone: '(801) 471-3148',
   phoneHref: 'tel:+18014713148',
   email: 'info@alpinefenceanddeck.com',
+  // Primary HQ — kept as the main `address` for backward compatibility
+  // with schema, footer summaries, and existing references.
   address: '4692 N 300 W Building 2, Ste 220B, Provo, UT 84604',
+  // Multi-location support — emit both on schema/footer/contact pages.
+  // Order matters: Provo HQ first, then satellite SLC office.
+  locations: [
+    {
+      label: 'Provo HQ',
+      street: '4692 N 300 W, Building 2, Ste 220B',
+      city: 'Provo',
+      region: 'UT',
+      postalCode: '84604',
+      latitude: 40.2826,
+      longitude: -111.6585,
+    },
+    {
+      label: 'Salt Lake City Office',
+      street: '357 S 200 E, Ste 307',
+      city: 'Salt Lake City',
+      region: 'UT',
+      postalCode: '84111',
+      latitude: 40.7619,
+      longitude: -111.8866,
+    },
+  ],
   founded: 2009,
   yearsExperience: YEARS_EXPERIENCE,
-  googleRating: 4.3,
-  tagline: 'Fence Contractor in Provo, Utah | Transforming Utah\'s Outdoor Living',
-  serviceArea: '94 municipalities across Utah\'s Wasatch Front',
+  googleRating: 4.4,
+  tagline: 'Utah\'s Premier Fence, Deck & Landscape Builder · Provo & Salt Lake City',
+  serviceArea: '94 cities across Utah',
   hours: 'Mon–Fri 8 AM – 5 PM',
 } as const;
 

@@ -9,18 +9,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // ───────────────────────────────────────────────────────────
+        // Brand palette — PREMIUM REFRESH (May 2026)
+        // `alpine` and `compoxen` retain their token names so existing
+        // class names continue to work, but their values have been
+        // retuned from bright kelly-green / yellow to deep forest /
+        // warm bronze for a more refined, easier-on-the-eyes feel.
+        // ───────────────────────────────────────────────────────────
         alpine: {
-          50: '#f0fdf4',
-          100: '#dcfce7',
-          200: '#bbf7d0',
-          300: '#86efac',
-          400: '#4ade80',
-          500: '#22c55e',
-          600: '#16a34a',
-          700: '#15803d',
-          800: '#166534',
-          900: '#14532d',
-          950: '#052e16',
+          50:  '#f1f6f3',
+          100: '#dde9e1',
+          200: '#bcd2c5',
+          300: '#93b6a3',
+          400: '#6a9981',
+          500: '#4a7d65',
+          600: '#356350',
+          700: '#295041',
+          800: '#214036',
+          900: '#1a322b',
+          950: '#0d1f1a',
         },
         cedar: {
           50: '#fdf8f0',
@@ -49,30 +56,69 @@ const config: Config = {
           950: '#0c0a09',
         },
         mountain: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-          950: '#172554',
+          50:  '#f1f6f3',
+          100: '#dde9e1',
+          200: '#bcd2c5',
+          300: '#93b6a3',
+          400: '#6a9981',
+          500: '#4a7d65',
+          600: '#356350',
+          700: '#295041',
+          800: '#214036',
+          900: '#1a322b',
+          950: '#0d1f1a',
         },
+        // Compoxen retains the token but shifts from bright yellow to
+        // warm muted bronze — refined, premium, and a better visual
+        // match for the actual composite material it represents.
         compoxen: {
-          50: '#fefce8',
-          100: '#fef9c3',
-          200: '#fef08a',
-          300: '#fde047',
-          400: '#facc15',
-          500: '#eab308',
-          600: '#ca8a04',
-          700: '#a16207',
-          800: '#854d0e',
-          900: '#713f12',
-          950: '#422006',
+          50:  '#faf6ef',
+          100: '#f4ead4',
+          200: '#e8d4a6',
+          300: '#d8b771',
+          400: '#c89849',
+          500: '#b07d34',
+          600: '#92632a',
+          700: '#744d23',
+          800: '#5c3e1f',
+          900: '#4a331c',
+          950: '#261910',
+        },
+        // ── Premium landscape palette (aliases of alpine/compoxen
+        //    + a new warm cream "oat" for soft backgrounds) ────────
+        forest: {
+          50:  '#f1f6f3',
+          100: '#dde9e1',
+          200: '#bcd2c5',
+          300: '#93b6a3',
+          400: '#6a9981',
+          500: '#4a7d65',
+          600: '#356350',
+          700: '#295041',
+          800: '#214036',
+          900: '#1a322b',
+          950: '#0d1f1a',
+        },
+        bronze: {
+          50:  '#faf6ef',
+          100: '#f4ead4',
+          200: '#e8d4a6',
+          300: '#d8b771',
+          400: '#c89849',
+          500: '#b07d34',
+          600: '#92632a',
+          700: '#744d23',
+          800: '#5c3e1f',
+          900: '#4a331c',
+          950: '#261910',
+        },
+        oat: {
+          50:  '#fdfbf6',
+          100: '#f8f1e3',
+          200: '#f0e3c5',
+          300: '#e6d2a3',
+          400: '#d8bb78',
+          500: '#c5a05a',
         },
       },
       fontFamily: {
@@ -80,9 +126,15 @@ const config: Config = {
         body: ['var(--font-body)', 'sans-serif'],
       },
       backgroundImage: {
-        'hero-gradient': 'linear-gradient(135deg, #14532d 0%, #166534 50%, #1e3a8a 100%)',
-        'compoxen-gradient': 'linear-gradient(135deg, #a16207 0%, #ca8a04 50%, #eab308 100%)',
-        'trust-gradient': 'linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%)',
+        // Premium hero gradient — deep evergreen, no blue cast
+        'hero-gradient':     'linear-gradient(135deg, #0d1f1a 0%, #1a322b 50%, #214036 100%)',
+        // Compoxen brand gradient — warm bronze (was bright yellow)
+        'compoxen-gradient': 'linear-gradient(135deg, #744d23 0%, #92632a 50%, #c89849 100%)',
+        // Trust band — warm cream → white (was minty green)
+        'trust-gradient':    'linear-gradient(180deg, #fdfbf6 0%, #ffffff 100%)',
+        // Landscape-specific aliases
+        'forest-hero':       'linear-gradient(135deg, #0d1f1a 0%, #1a322b 45%, #214036 100%)',
+        'oat-soft':          'linear-gradient(180deg, #fdfbf6 0%, #ffffff 100%)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',

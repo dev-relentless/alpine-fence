@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Alpine Fence & Deck',
     short_name: 'Alpine F&D',
     description:
-      "Utah's premier composite fence and deck contractor. Compoxen® certified installer serving 94 cities.",
+      "Utah's premier fence and deck builder. Wood, vinyl, composite, iron, aluminum, decking, railings, staining, refinishing, and repair across 94 Wasatch Front cities.",
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

@@ -3,6 +3,14 @@ import { COMPANY, type CityData } from '@/data/cities';
 interface SchemaMarkupProps {
   city?: CityData;
   service?: string;
+  /** Optional richer data for service pages — emits a proper Service schema. */
+  serviceData?: {
+    name: string;
+    description: string;
+    slug: string;
+    division?: 'fence-deck' | 'yard-landscape';
+    priceRange?: string;
+  };
   pageType: 'home' | 'city' | 'service' | 'gallery' | 'about' | 'contact' | 'service-areas';
   breadcrumbs?: { name: string; url: string }[];
 }
@@ -41,17 +49,47 @@ export function generateOrganizationSchema() {
 export function generateLocalBusinessSchema(city?: CityData) {
   return {
     '@context': 'https://schema.org',
-    '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
+    '@type': ['LocalBusiness', 'HomeAndConstructionBusiness', 'GeneralContractor'],
     '@id': 'https://alpinefenceanddeck.com/#business',
     name: COMPANY.name,
-    image: 'https://alpinefenceanddeck.com/images/alpine-fence-deck-logo.png',
+    alternateName: ['Alpine Fence and Deck', 'Alpine Fencing Utah'],
+    image: [
+      'https://alpinefenceanddeck.com/images/alpine-fence-deck-logo.png',
+      'https://alpinefenceanddeck.com/images/og-image.jpg',
+      'https://alpinefenceanddeck.com/images/hero/hero-bg.jpg',
+    ],
+    logo: 'https://alpinefenceanddeck.com/images/alpine-fence-deck-logo.png',
     telephone: '+1-801-471-3148',
     email: COMPANY.email,
-    description: 'Utah\'s premier composite fence and deck contractor. Expert refinishing, repair, and exclusive Compoxen® composite fence and deck installations across 94 cities.',
+    slogan: 'Quietly raising the standard.',
+    description: 'Utah\'s premier fence and deck builder. Wood, vinyl, Sim/Tek, composite, ornamental iron, aluminum, chain link, ranch rail, decking, railings, and custom installations — plus staining, refinishing, repair, and full yard & landscape services (sod, retaining walls, paver patios, sprinklers, landscape design) across 94 cities on the Wasatch Front. Compoxen® certified composite installer.',
     foundingDate: '2009',
     numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 5, maxValue: 20 },
     paymentAccepted: 'Cash, Credit Card, Check, Financing Available',
     currenciesAccepted: 'USD',
+    award: ['Compoxen® Certified Installer', '1,700+ Projects Completed'],
+    serviceType: [
+      'Wood fence installation',
+      'Vinyl fence installation',
+      'Sim/Tek fence installation',
+      'Composite fence installation',
+      'Ornamental iron fence installation',
+      'Aluminum fence installation',
+      'Ranch rail fence installation',
+      'Custom gate fabrication',
+      'Composite deck installation',
+      'Wood deck installation',
+      'Iron railing installation',
+      'Vinyl railing installation',
+      'Fence and deck staining',
+      'Fence and deck refinishing',
+      'Fence and deck repair',
+      'Sod and lawn installation',
+      'Retaining wall construction',
+      'Paver patio installation',
+      'Sprinkler and irrigation installation',
+      'Landscape design and grading',
+    ],
     address: {
       '@type': 'PostalAddress',
       streetAddress: '4692 N 300 W Building 2, Ste 220B',
@@ -65,6 +103,26 @@ export function generateLocalBusinessSchema(city?: CityData) {
       latitude: 40.2338,
       longitude: -111.6585,
     },
+    // Multi-location: surface every Alpine office to Google so each can rank
+    // for its local geo. The primary `address` above stays for legacy
+    // schema readers; `location` is the preferred multi-place signal.
+    location: COMPANY.locations.map((loc) => ({
+      '@type': 'Place',
+      name: `Alpine Fence & Deck — ${loc.label}`,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: loc.street,
+        addressLocality: loc.city,
+        addressRegion: loc.region,
+        postalCode: loc.postalCode,
+        addressCountry: 'US',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: loc.latitude,
+        longitude: loc.longitude,
+      },
+    })),
     url: 'https://alpinefenceanddeck.com',
     priceRange: '$$-$$$$',
     openingHoursSpecification: [
@@ -80,17 +138,66 @@ export function generateLocalBusinessSchema(city?: CityData) {
       : [
           { '@type': 'State', name: 'Utah' },
           { '@type': 'GeoCircle', geoMidpoint: { '@type': 'GeoCoordinates', latitude: 40.2338, longitude: -111.6585 }, geoRadius: '120 mi' },
+          ...['Salt Lake City', 'Provo', 'Orem', 'Sandy', 'South Jordan', 'West Jordan', 'Lehi', 'American Fork', 'Pleasant Grove', 'Draper', 'Riverton', 'Herriman', 'Bluffdale', 'Cottonwood Heights', 'Holladay', 'Murray', 'Midvale', 'Sugar House', 'Layton', 'Bountiful', 'Centerville', 'Farmington', 'Kaysville', 'Syracuse', 'Clearfield', 'Roy', 'Ogden', 'South Ogden', 'North Ogden', 'Pleasant View', 'Eden', 'Huntsville', 'Park City', 'Heber City', 'Midway', 'Spanish Fork', 'Springville', 'Mapleton', 'Payson', 'Saratoga Springs', 'Eagle Mountain', 'Tooele', 'Stansbury Park', 'Logan', 'North Logan'].map((c) => ({ '@type': 'City', name: c, containedInPlace: { '@type': 'State', name: 'Utah' } })),
         ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Composite Fence & Deck Services',
+      name: 'Fence & Deck Services',
       itemListElement: [
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
+            name: 'Wood Fence Installation',
+            description: 'Professional wood fence installation in Utah — privacy, picket, ranch rail, and custom designs in cedar and pine.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Vinyl & Sim/Tek Fence Installation',
+            description: 'Vinyl and Sim/Tek fence installation across Utah. Clean lines, lifetime color, engineered for privacy.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Iron & Aluminum Fence Installation',
+            description: 'Ornamental iron and aluminum fence installation. Estate-grade elegance, rust-free aluminum for pools and patios.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Composite Fence & Deck Installation',
+            description: 'Premium composite fence and deck installation, including Compoxen® certified installs with 25-year material warranty.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Decking & Railings',
+            description: 'Custom decks, iron railings, and vinyl railings designed and built for Utah homes.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Fence & Deck Staining',
+            description: 'Professional fence and deck staining — prep, premium oil/water-based stains, and weather-resistant sealing.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
             name: 'Deck & Fence Refinishing',
-            description: 'Professional refinishing services for wood decks and fences in Utah.',
+            description: 'Expert refinishing for wood decks and fences. Sanding, staining, and sealing built to last in Utah\'s climate.',
           },
         },
         {
@@ -98,31 +205,47 @@ export function generateLocalBusinessSchema(city?: CityData) {
           itemOffered: {
             '@type': 'Service',
             name: 'Fence & Deck Repair',
-            description: 'Expert fence and deck repair services. Upgrade path to composite available.',
+            description: 'Fast, reliable fence and deck repair — board replacement, post resetting, gate alignment, and storm damage restoration.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Wood Fence Installation',
-            description: 'Professional wood fence installation in Utah. Privacy, picket & custom designs in cedar and pine.',
+            name: 'Sod & Lawn Installation',
+            description: 'Site grading, soil prep, and premium Utah-climate sod installation. Same crews as fence and deck builds.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Compoxen® Composite Fence Installation',
-            description: 'Exclusive Compoxen® composite fence installation. Zero-maintenance composite fencing with 25-year warranty.',
+            name: 'Retaining Walls & Hardscapes',
+            description: 'Engineered block, boulder, and timber retaining walls built for Utah soil, frost, and freeze-thaw cycles.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Compoxen® Composite Deck Installation',
-            description: 'Revolutionary Compoxen® composite deck design and installation. Premium composite decking in Utah.',
+            name: 'Paver Patios & Walkways',
+            description: 'Custom paver patios, walkways, and driveways on engineered base — designed to integrate with your fence and deck.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Sprinkler & Irrigation Install & Repair',
+            description: 'New sprinkler installs, smart-controller upgrades, drip irrigation, and repairs across the Wasatch Front.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Landscape Design & Grading',
+            description: 'Full-property landscape design and site grading. Plan once, build right — fence, deck, sod, walls, and irrigation as one cohesive yard.',
           },
         },
       ],
@@ -131,21 +254,35 @@ export function generateLocalBusinessSchema(city?: CityData) {
       '@type': 'AggregateRating',
       ratingValue: String(COMPANY.googleRating),
       bestRating: '5',
-      reviewCount: '18',
+      worstRating: '1',
+      reviewCount: '21',
     },
+    knowsAbout: [
+      'Wood fence installation',
+      'Vinyl fence installation',
+      'Sim/Tek fence',
+      'Composite fencing',
+      'Ornamental iron fencing',
+      'Aluminum fencing',
+      'Ranch rail fencing',
+      'Custom gates',
+      'Composite decking',
+      'Wood decking',
+      'Iron railings',
+      'Vinyl railings',
+      'Fence and deck staining',
+      'Fence and deck refinishing',
+      'Fence and deck repair',
+      'HOA-compliant fencing',
+      'Compoxen composite materials',
+      'Pool-safe aluminum fencing',
+      'Wasatch Front climate engineering',
+      'Permit handling and HOA approval',
+    ],
     sameAs: [
       'https://www.google.com/maps/place/Alpine+Fence+and+Deck',
-    ],
-    knowsAbout: [
-      'Composite fencing',
-      'Composite decking',
-      'Fence installation',
-      'Deck building',
-      'Fence refinishing',
-      'Deck refinishing',
-      'Fence repair',
-      'HOA compliance fencing',
-      'Compoxen composite materials',
+      'https://www.facebook.com/alpinefenceanddeck',
+      'https://www.instagram.com/alpinefenceanddeck',
     ],
   };
 }
@@ -157,7 +294,7 @@ export function generateWebSiteSchema() {
     '@id': 'https://alpinefenceanddeck.com/#website',
     name: 'Alpine Fence & Deck',
     url: 'https://alpinefenceanddeck.com',
-    description: 'Utah\'s premier composite fence and deck contractor. Compoxen® certified installer. Composite fencing, composite decking, refinishing & repair.',
+    description: 'Utah\'s premier fence and deck builder. Wood, vinyl, composite, iron, aluminum, decking, railings, staining, refinishing, and repair across 94 Wasatch Front cities.',
     publisher: { '@id': 'https://alpinefenceanddeck.com/#organization' },
     inLanguage: 'en-US',
   };
@@ -212,21 +349,49 @@ export function generateReviewSchema(reviews: { name: string; text: string; rati
   }));
 }
 
-export function generateServiceSchema(serviceName: string, description: string, priceRange: string) {
+export function generateServiceSchema(
+  serviceName: string,
+  description: string,
+  priceRange: string,
+  options?: {
+    slug?: string;
+    division?: 'fence-deck' | 'yard-landscape';
+  }
+) {
+  const serviceType =
+    options?.division === 'yard-landscape'
+      ? 'Landscape Service'
+      : 'Fence and Deck Installation Service';
+
+  const url = options?.slug
+    ? options.division === 'yard-landscape'
+      ? `https://alpinefenceanddeck.com/landscaping/${options.slug}`
+      : `https://alpinefenceanddeck.com/services/${options.slug}`
+    : undefined;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
+    serviceType,
     name: serviceName,
     description,
+    ...(url ? { url } : {}),
     provider: {
       '@type': 'LocalBusiness',
+      '@id': 'https://alpinefenceanddeck.com/#business',
       name: COMPANY.name,
       telephone: '+1-801-471-3148',
+      url: 'https://alpinefenceanddeck.com',
     },
-    areaServed: {
-      '@type': 'State',
-      name: 'Utah',
-    },
+    areaServed: [
+      { '@type': 'State', name: 'Utah' },
+      {
+        '@type': 'GeoCircle',
+        geoMidpoint: { '@type': 'GeoCoordinates', latitude: 40.2338, longitude: -111.6585 },
+        geoRadius: '120 mi',
+      },
+    ],
+    audience: { '@type': 'Audience', audienceType: 'Homeowners and Property Managers' },
     priceRange,
   };
 }
@@ -252,7 +417,7 @@ export function generateProductSchema() {
   };
 }
 
-export default function SchemaMarkup({ city, service, pageType, breadcrumbs }: SchemaMarkupProps) {
+export default function SchemaMarkup({ city, service, serviceData, pageType, breadcrumbs }: SchemaMarkupProps) {
   const schemas: object[] = [generateLocalBusinessSchema(city)];
 
   if (breadcrumbs) {
@@ -262,33 +427,40 @@ export default function SchemaMarkup({ city, service, pageType, breadcrumbs }: S
   if (pageType === 'home') {
     schemas.push(generateOrganizationSchema());
     schemas.push(generateWebSiteSchema());
-    schemas.push(generateProductSchema());
     schemas.push(generateFAQSchema([
       {
         question: 'What areas does Alpine Fence & Deck serve?',
         answer: 'We serve 94 cities across Utah\'s Wasatch Front, including Salt Lake City, Provo, Orem, Sandy, South Jordan, Layton, Draper, Park City, and more.',
       },
       {
-        question: 'What is Compoxen® composite fencing?',
-        answer: 'Compoxen® is a revolutionary composite material that delivers stunning aesthetics with zero maintenance. It won\'t rot, warp, or splinter, and comes with a 25-year material warranty.',
+        question: 'What types of fences do you install?',
+        answer: 'We install every major fencing material: wood, vinyl, Sim/Tek, composite, ornamental iron, aluminum, chain link, ranch rail, custom gates, and decking and railing systems.',
       },
       {
-        question: 'How much does a composite fence cost in Utah?',
-        answer: 'Composite fence installations typically range from $8,000 to $45,000 depending on the property size, design, and materials. We offer free on-site estimates for accurate pricing.',
+        question: 'How much does a fence cost in Utah?',
+        answer: 'Fence installations typically range from $3,000 for basic wood privacy to $45,000+ for premium composite and ornamental iron projects, depending on property size, material, and design. We provide free on-site estimates for accurate pricing.',
       },
       {
         question: 'Do you offer free estimates?',
-        answer: 'Yes! We provide free, no-obligation estimates with same-day response. Call (801) 471-3148 or fill out our online quote form.',
+        answer: 'Yes — we provide free, no-obligation estimates with same-day response. Call (801) 471-3148 or fill out our online quote form.',
       },
       {
-        question: 'How long does a composite fence installation take?',
-        answer: 'Most composite fence installations are completed within 1-2 weeks depending on the project scope. Refinishing projects are typically completed in 1-3 days.',
+        question: 'Do you also stain, refinish, and repair fences and decks?',
+        answer: 'Absolutely. In addition to new installations, we offer professional fence and deck staining, refinishing, and repair across all 94 cities we serve.',
+      },
+      {
+        question: 'Do you handle yard and landscape work too — sod, walls, pavers, sprinklers?',
+        answer: 'Yes. Our Yard & Landscape division installs sod, retaining walls, paver patios and walkways, sprinkler systems, and full landscape design and grading — run by the same crew leads who have built 1,700+ Alpine fences and decks. One company, one warranty, one walkthrough.',
+      },
+      {
+        question: 'Can I bundle a fence or deck with sod, a patio, or a sprinkler system?',
+        answer: 'Yes. We project-manage the entire yard as one job — fence, deck, sod, walls, pavers, and irrigation sequenced together so trades do not step on each other and you do not coordinate three contractors.',
       },
     ]));
     schemas.push(...generateReviewSchema([
+      { name: 'Kathy M', text: 'I watched Alpine do my neighbor’s fence and thought they did a very good job, so we hired them to repair our fence, rebuild a gate, and power wash and paint the entire fence. They also stained a small bridge in our yard. Reasonable price and great work.', rating: 5 },
+      { name: 'George Mastakas', text: 'Swooped in and installed + painted/stained my cedar fence with two gates in less than a week! Cannot be more pleased with the work Chandler and his team did. Price was very fair, overall experience was great, end result was what I expected.', rating: 5 },
       { name: 'Cynthia Dunford', text: 'Very professional! First, they repaired my fence and then I had them stain the entire fence. The owner, Chandler, kept me informed every step of the way. The end product was excellent!', rating: 5 },
-      { name: 'Scott Poppen', text: 'They repaired, stained, and sealed a 28-year-old fence, making it look like new. They also replaced an old worn-out gate. The crew were very professional and personable.', rating: 5 },
-      { name: 'Morgan Busch', text: 'Great communication all around! They power washed the fence and the staining looks gorgeous! Love the way it turned out. Would highly recommend Alpine Fence and Deck!', rating: 5 },
     ]));
   }
 
@@ -301,13 +473,23 @@ export default function SchemaMarkup({ city, service, pageType, breadcrumbs }: S
   }
 
   if (pageType === 'service') {
-    schemas.push(generateProductSchema());
-    if (service) {
-      schemas.push(generateServiceSchema(
-        service,
-        `Professional ${service.toLowerCase()} by Alpine Fence & Deck. Utah's trusted composite fence and deck contractor.`,
-        '$$-$$$$'
-      ));
+    if (serviceData) {
+      schemas.push(
+        generateServiceSchema(
+          serviceData.name,
+          serviceData.description,
+          serviceData.priceRange ?? '$$-$$$$',
+          { slug: serviceData.slug, division: serviceData.division }
+        )
+      );
+    } else if (service) {
+      schemas.push(
+        generateServiceSchema(
+          service,
+          `Professional ${service.toLowerCase()} by Alpine Fence & Deck — Utah's premier fence and deck builder.`,
+          '$$-$$$$'
+        )
+      );
     }
   }
 

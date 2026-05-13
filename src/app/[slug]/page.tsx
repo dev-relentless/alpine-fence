@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
   const city = getCityBySlug(citySlug);
   if (!city) return {};
 
-  const title = city.metaTitle.includes('Composite') ? city.metaTitle : city.metaTitle.replace('Fence & Deck', 'Composite Fence & Deck');
-  const description = city.metaDescription.includes('composite') ? city.metaDescription : city.metaDescription.replace('fence and deck', 'composite fence and deck');
+  const title = `${city.name} Fence & Deck Builder | Installation, Staining, Repair`;
+  const description = `${city.name}'s trusted fence and deck builder. Wood, vinyl, composite, iron, aluminum and custom installations — plus staining, refinishing, and repair across ${city.county} County. Free same-day estimates. (801) 471-3148`;
 
   return {
     title,
@@ -67,19 +67,20 @@ export default function CityLandingPage({ params }: CityPageProps) {
         <div className="section-container py-16 lg:py-24">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <span className="badge-compoxen">Compoxen® Certified</span>
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-xs font-semibold uppercase tracking-[0.25em] text-compoxen-300">
+                  {city.name}, Utah
+                </span>
                 <span className="px-3 py-1 text-xs font-medium text-white/80 bg-white/10 rounded-full">
                   {tierLabel}
                 </span>
               </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold leading-tight mb-6">
-                {city.name} Composite Fence & Deck Contractor
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold leading-[1.05] tracking-tight mb-6">
+                {city.name} Fence &amp; Deck <span className="italic font-light text-compoxen-300">Builder.</span>
               </h1>
-              <p className="text-lg text-stone-200 mb-6 leading-relaxed">
-                {city.name}&apos;s trusted fence and deck experts. From professional refinishing and emergency repairs
-                to exclusive <strong className="text-compoxen-300">Compoxen® composite installations</strong> —
-                we transform outdoor living spaces across {city.county} County.
+              <p className="text-lg text-stone-200/90 mb-6 leading-relaxed">
+                {city.name}&apos;s trusted fence and deck team. Installation, staining, refinishing, and repair —
+                in every major material — across {city.county} County.
               </p>
               <p className="text-stone-300 mb-8">
                 Serving {city.name} and surrounding areas with {COMPANY.yearsExperience}+ years of experience.
@@ -87,7 +88,7 @@ export default function CityLandingPage({ params }: CityPageProps) {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link href="/quote" className="btn-compoxen">
+                <Link href="/quote" className="btn-primary">
                   Free {city.name} Estimate
                 </Link>
                 <a href={COMPANY.phoneHref} className="btn-secondary border-white/30 text-white hover:bg-white/10">
@@ -110,12 +111,11 @@ export default function CityLandingPage({ params }: CityPageProps) {
       {/* Services for this city */}
       <section className="section-padding bg-white">
         <div className="section-container">
-          <h2 className="text-3xl font-heading font-bold text-alpine-900 mb-4 text-center">
+          <h2 className="text-3xl font-heading font-bold text-alpine-900 mb-4 text-center tracking-tight">
             Our Services in {city.name}
           </h2>
           <p className="text-stone-600 text-center max-w-2xl mx-auto mb-12">
-            Complete composite fence and deck solutions for {city.name} homeowners — from quick refinishing to 
-            revolutionary Compoxen® composite transformations.
+            Complete fence and deck solutions for {city.name} homeowners — from staining and repair to brand-new installations.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -123,15 +123,12 @@ export default function CityLandingPage({ params }: CityPageProps) {
               <Link
                 key={service.id}
                 href={`/services/${service.slug}`}
-                className={service.isCompoxen ? 'card-compoxen group' : 'card group'}
+                className="card group"
               >
                 <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-lg font-heading font-bold text-stone-900 group-hover:text-alpine-700 transition-colors">
-                      {service.title}
-                    </h3>
-                    {service.isCompoxen && <span className="badge-compoxen text-[10px]">Compoxen®</span>}
-                  </div>
+                  <h3 className="text-lg font-heading font-bold text-stone-900 group-hover:text-alpine-700 transition-colors mb-3">
+                    {service.title}
+                  </h3>
                   <p className="text-stone-600 text-sm mb-4">{service.description}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-semibold text-alpine-700">{service.priceRange}</span>
@@ -164,9 +161,9 @@ export default function CityLandingPage({ params }: CityPageProps) {
                   <h3 className="font-semibold text-stone-900">{neighborhood}</h3>
                   <p className="text-xs text-stone-500 mt-1">{city.name}, {city.county} County</p>
                   <div className="flex items-center gap-2 mt-3">
-                    <span className="text-xs bg-alpine-50 text-alpine-700 px-2 py-0.5 rounded">Refinishing</span>
+                    <span className="text-xs bg-alpine-50 text-alpine-700 px-2 py-0.5 rounded">Installation</span>
+                    <span className="text-xs bg-alpine-50 text-alpine-700 px-2 py-0.5 rounded">Staining</span>
                     <span className="text-xs bg-alpine-50 text-alpine-700 px-2 py-0.5 rounded">Repair</span>
-                    <span className="text-xs bg-compoxen-50 text-compoxen-700 px-2 py-0.5 rounded">Compoxen®</span>
                   </div>
                 </div>
               ))}
@@ -175,24 +172,23 @@ export default function CityLandingPage({ params }: CityPageProps) {
         </section>
       )}
 
-      {/* Compoxen spotlight for city */}
+      {/* Editorial spotlight for city */}
       <section className="section-padding bg-gradient-to-br from-stone-900 to-alpine-950 text-white">
         <div className="section-container text-center max-w-3xl mx-auto">
-          <span className="badge-compoxen mb-6">Exclusive in {city.name}</span>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-6">
-            {city.name}&apos;s Only Compoxen® Composite Certified Installer
+          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-compoxen-300">{city.county} County</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mt-3 mb-6 tracking-tight">
+            Built for {city.name}. <span className="italic font-light">Built to Last.</span>
           </h2>
           <p className="text-stone-300 text-lg mb-8 leading-relaxed">
-            As {city.county} County&apos;s exclusive Compoxen® certified composite installer, 
-            Alpine Fence & Deck offers revolutionary composite materials and designs 
-            unavailable from any other {city.name} contractor.
+            Every fence we install in {city.name} is engineered for Utah&apos;s climate — from the wind off the mountains
+            to the freeze-thaw cycle. Setting the standard, one property at a time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/quote" className="btn-compoxen">
+            <Link href="/quote" className="btn-primary">
               Get Free Estimate
             </Link>
-            <Link href="/contact" className="btn-secondary border-stone-600 text-stone-200 hover:bg-stone-800">
-              Contact Us
+            <Link href="/#fence-types" className="btn-secondary border-stone-600 text-stone-200 hover:bg-stone-800">
+              Browse What We Build
             </Link>
           </div>
         </div>

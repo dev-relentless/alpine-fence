@@ -5,11 +5,11 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'Our Story | Utah\'s Composite Fence & Deck Experts | Compoxen® Certified',
-  description: `Alpine Fence & Deck — ${COMPANY.yearsExperience}+ years transforming Utah's outdoor living spaces with composite fence and deck solutions. From refinishing experts to exclusive Compoxen® certified composite installers. We build certainty, longevity, and spaces people are proud to come home to.`,
+  title: 'Our Story | Utah\'s Premier Fence & Deck Builder',
+  description: `Alpine Fence & Deck — ${COMPANY.yearsExperience}+ years building, restoring, and refinishing fences and decks across Utah. From cedar craftsmanship to modern composite, we build certainty, longevity, and spaces people are proud to come home to.`,
   openGraph: {
-    title: 'Our Story | Alpine Fence & Deck — Utah\'s Composite Experts',
-    description: `${COMPANY.yearsExperience}+ years of composite fence and deck expertise in Utah. Exclusive Compoxen® certified installer.`,
+    title: 'Our Story | Alpine Fence & Deck',
+    description: `${COMPANY.yearsExperience}+ years of fence and deck craftsmanship across Utah\'s Wasatch Front.`,
     url: 'https://alpinefenceanddeck.com/about',
   },
   alternates: {
@@ -34,13 +34,13 @@ export default function AboutPage() {
       <section className="bg-hero-gradient text-white">
         <div className="section-container py-20 lg:py-32">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="badge-compoxen mb-6 inline-flex">Our Story</span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
-              Utah&apos;s Composite Fence &amp; Deck Experts
+            <span className="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-compoxen-300 mb-5">Our Story</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-[1.05] tracking-tight">
+              Quietly Raising the <span className="italic font-light text-compoxen-300">Standard.</span>
             </h1>
-            <p className="text-xl text-stone-200 leading-relaxed">
+            <p className="text-xl text-stone-200/90 leading-relaxed">
               We started by restoring what homeowners loved.<br />
-              Now we build what they&apos;ll love for the next 25 years.
+              Now we build what they&apos;ll love for the next twenty-five years.
             </p>
           </div>
         </div>
@@ -102,31 +102,22 @@ export default function AboutPage() {
       {/* The Turning Point */}
       <section className="section-padding bg-white">
         <div className="section-container max-w-4xl mx-auto">
-          <h2 className="text-3xl font-heading font-bold text-alpine-900 mb-8">The Turning Point: Discovering Composite</h2>
+          <h2 className="text-3xl font-heading font-bold text-alpine-900 mb-8">The Turning Point: Becoming a Full-Line Builder</h2>
           <div className="space-y-5 text-stone-600 leading-relaxed text-lg">
             <p>
-              As Utah&apos;s climate became harsher and homeowners demanded longer-lasting solutions, we searched
-              for a partner who could match our standards for durability, aesthetics, and engineering.
+              As Utah’s climate became harsher and homeowners demanded longer-lasting solutions, our work
+              naturally expanded beyond refinishing. Customers asked for new fences, fresh decks, custom railings,
+              and gates — in materials we hadn’t carried before.
             </p>
             <p>
-              That search led to <strong className="text-compoxen-700">Compoxen®</strong>.
+              So we built a deeper bench. We brought in the best lines of <strong className="text-stone-800">vinyl, Sim/Tek,
+              ornamental iron, aluminum, and premium composite</strong> — including becoming a certified installer
+              for <strong className="text-compoxen-700">Compoxen®</strong>, an engineered composite built specifically to
+              outperform in extreme climates.
             </p>
             <p>
-              Not just another composite brand — an engineered, premium composite material built specifically to outperform
-              in extreme climates. When we saw the quality, the structural integrity, and the 25-year performance
-              expectations, the decision to become Utah&apos;s go-to composite fence and deck contractor was obvious.
-            </p>
-          </div>
-          <div className="mt-10 bg-gradient-to-br from-compoxen-50 to-alpine-50 rounded-2xl p-8 border border-compoxen-200">
-            <div className="flex items-center gap-3 mb-4">
-              <svg className="w-8 h-8 text-compoxen-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <h3 className="text-xl font-heading font-bold text-compoxen-800">Exclusive Compoxen® Certified Installer</h3>
-            </div>
-            <p className="text-stone-700 leading-relaxed">
-              We became an Exclusive Compoxen® Certified Installer, bringing Utah homeowners a level of outdoor
-              living performance they simply couldn&apos;t get anywhere else.
+              Today we install every major fencing and decking material, plus the staining, refinishing, and repair
+              work that built our name. Same craftsmen, same standards — a much wider catalog.
             </p>
           </div>
         </div>
@@ -138,15 +129,17 @@ export default function AboutPage() {
           <h2 className="text-3xl font-heading font-bold text-alpine-900 mb-8">Why This Matters</h2>
           <div className="space-y-5 text-stone-600 leading-relaxed text-lg mb-10">
             <p>
-              This wasn&apos;t a pivot. It was an <strong className="text-stone-800">evolution</strong>.
+              This wasn’t a pivot. It was an <strong className="text-stone-800">evolution</strong>.
             </p>
             <p>
-              We still refinish natural wood with the same craftsmanship that built our name. But now we also
-              offer a revolutionary composite option for homeowners who want beauty without the burden.
+              We still refinish, stain, and repair with the same craftsmanship that built our name. We just do a lot
+              more now — wood, vinyl, Sim/Tek, composite, iron, aluminum, ranch rail, decking, and railings, with
+              custom design when the project calls for it.
             </p>
             <p>
-              Our composite fence and deck installations use Compoxen® — the industry-leading composite material
-              designed for Utah&apos;s extreme climate. This dual offering gives homeowners something powerful: <strong className="text-stone-800">choice without compromise.</strong>
+              That dual reality — deep restoration roots and a full installation catalog — gives homeowners
+              something rare: <strong className="text-stone-800">choice without compromise</strong>, and an honest
+              recommendation either way.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
@@ -157,20 +150,20 @@ export default function AboutPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-heading font-bold text-stone-900 mb-3">Restore What You Love</h3>
-              <p className="text-stone-600">Expert refinishing that revives your existing wood fence or deck to its former glory.</p>
+              <p className="text-stone-600">Expert staining, refinishing, and repair to bring your existing wood fence or deck back to life.</p>
             </div>
-            <div className="bg-white rounded-2xl p-8 border border-compoxen-200 text-center">
-              <div className="w-14 h-14 mx-auto mb-4 bg-compoxen-50 text-compoxen-700 rounded-full flex items-center justify-center">
+            <div className="bg-white rounded-2xl p-8 border border-alpine-200 text-center">
+              <div className="w-14 h-14 mx-auto mb-4 bg-alpine-50 text-alpine-700 rounded-full flex items-center justify-center">
                 <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-heading font-bold text-stone-900 mb-3">Upgrade to Last Decades</h3>
-              <p className="text-stone-600">Revolutionary Compoxen® composite — built for 25+ years of beauty without maintenance. The ultimate composite fence and deck solution.</p>
+              <h3 className="text-xl font-heading font-bold text-stone-900 mb-3">Build for the Long Run</h3>
+              <p className="text-stone-600">A new fence, deck, or railing in the material that fits your home — wood, vinyl, composite, iron, aluminum, and more.</p>
             </div>
           </div>
           <p className="text-center text-stone-500 mt-6 text-lg">
-            Either way, you&apos;re choosing a company that understands both worlds.
+            Either way, you’re choosing a company that understands both worlds.
           </p>
         </div>
       </section>
@@ -188,7 +181,7 @@ export default function AboutPage() {
             {[
               { value: `${COMPANY.yearsExperience}+`, label: 'Years in Business' },
               { value: '94', label: 'Cities Served' },
-              { value: '25yr', label: 'Compoxen® Performance' },
+              { value: '1,700+', label: 'Projects Completed' },
             ].map((stat) => (
               <div key={stat.label} className="bg-white/10 rounded-xl p-6">
                 <div className="text-3xl font-heading font-bold text-compoxen-400 mb-1">{stat.value}</div>
@@ -209,14 +202,14 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="section-padding bg-white">
         <div className="section-container max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-heading font-bold text-alpine-900 mb-4">
-            Ready to Start Your Transformation?
+          <h2 className="text-3xl font-heading font-bold text-alpine-900 mb-4 tracking-tight">
+            Ready to Start Your Project?
           </h2>
           <p className="text-stone-600 text-lg mb-8">
-            Whether you want to restore what you love or upgrade to something built to last — we&apos;re here to help.
+            Whether you want to restore what you love or build something new — we&apos;re here to help.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-compoxen text-lg">
+            <Link href="/quote" className="btn-primary text-lg">
               Request a Free Estimate
             </Link>
             <a href={COMPANY.phoneHref} className="btn-secondary text-lg">

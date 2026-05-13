@@ -6,8 +6,8 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'Fence & Deck Gallery | Before & After Composite Transformations',
-  description: 'Browse before and after photos of composite fence installations, deck refinishing, Compoxen® composite projects, and repair work across Utah by Alpine Fence & Deck.',
+  title: 'Fence & Deck Gallery | Before & After Project Photos',
+  description: 'Browse before and after photos of fence and deck installations, staining, refinishing, and repair work across Utah by Alpine Fence & Deck.',
   openGraph: {
     title: 'Fence & Deck Project Gallery | Alpine Fence & Deck',
     description: 'Before & after fence and deck transformations across Utah. Staining, refinishing, installations & repair.',
@@ -35,12 +35,13 @@ export default function GalleryPage() {
       <section className="bg-hero-gradient text-white">
         <div className="section-container py-16 lg:py-20">
           <div className="max-w-3xl">
-            <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-6">
-              Fence & Deck Project Gallery
+            <span className="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-compoxen-300 mb-4">Project Gallery</span>
+            <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-6 tracking-tight">
+              The Work <span className="italic font-light text-compoxen-300">Speaks for Itself.</span>
             </h1>
-            <p className="text-lg text-stone-200 leading-relaxed">
-              Browse our portfolio of fence staining, deck refinishing, new installations, and repair projects 
-              across Utah. Real before &amp; after transformations.
+            <p className="text-lg text-stone-200/90 leading-relaxed">
+              A portfolio of recent fence and deck installations, staining, refinishing, and repair across Utah —
+              real before &amp; after transformations.
             </p>
           </div>
         </div>
@@ -73,14 +74,13 @@ export default function GalleryPage() {
       {/* CTA */}
       <section className="section-padding bg-alpine-900 text-white text-center">
         <div className="section-container max-w-2xl mx-auto">
-          <h2 className="text-3xl font-heading font-bold mb-4">
+          <h2 className="text-3xl font-heading font-bold mb-4 tracking-tight">
             Want Your Project in Our Gallery?
           </h2>
           <p className="text-stone-300 mb-8">
-            Every project starts with a free estimate. Whether it&apos;s refinishing or a new installation, 
-            let us transform your outdoor space.
+            Every project starts with a free estimate. From staining to a brand-new install — let&apos;s build something remarkable.
           </p>
-          <Link href="/quote" className="btn-compoxen">
+          <Link href="/quote" className="btn-primary">
             Get Your Free Estimate →
           </Link>
         </div>

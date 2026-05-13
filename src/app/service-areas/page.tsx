@@ -5,11 +5,11 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'Composite Fence & Deck Service Areas | 94 Utah Cities',
-  description: 'Alpine Fence & Deck serves 94 cities across Weber, Davis, Salt Lake, Utah, and surrounding counties with composite fence and deck installations. Find your city for local composite fencing & decking services.',
+  title: 'Fence & Deck Service Areas | 94 Utah Cities',
+  description: 'Alpine Fence & Deck serves 94 cities across Weber, Davis, Salt Lake, Utah, and surrounding counties with fence and deck installation, staining, refinishing, and repair. Find your city.',
   openGraph: {
-    title: 'Composite Fence & Deck Service Areas | 94 Utah Cities',
-    description: 'Find composite fence and deck services near you. Alpine Fence & Deck serves 94 cities across Utah\'s Wasatch Front.',
+    title: 'Fence & Deck Service Areas | 94 Utah Cities',
+    description: 'Find a trusted fence and deck builder near you. Alpine Fence & Deck serves 94 cities across Utah\'s Wasatch Front.',
     url: 'https://alpinefenceanddeck.com/service-areas',
   },
   alternates: {
@@ -50,14 +50,13 @@ export default function ServiceAreasPage() {
       <section className="bg-hero-gradient text-white">
         <div className="section-container py-16 lg:py-20">
           <div className="max-w-3xl">
-            <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-6">
-              Composite Fence & Deck Service Areas
+            <span className="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-compoxen-300 mb-4">Service Areas</span>
+            <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-6 tracking-tight">
+              94 Cities. <span className="italic font-light text-compoxen-300">One Standard.</span>
             </h1>
-            <p className="text-lg text-stone-200 leading-relaxed">
-              Alpine Fence & Deck proudly serves <strong>94 cities</strong> across Utah&apos;s Wasatch Front
-              with composite fence and deck solutions.
-              From Ogden to Payson, Park City to Tooele — we bring expert refinishing and exclusive 
-              Compoxen® composite installations to your neighborhood.
+            <p className="text-lg text-stone-200/90 leading-relaxed">
+              Alpine Fence &amp; Deck proudly serves <strong>94 cities</strong> across Utah&apos;s Wasatch Front —
+              from Ogden to Payson, Park City to Tooele — with the same craftsmanship in every neighborhood.
             </p>
           </div>
         </div>
@@ -115,7 +114,7 @@ export default function ServiceAreasPage() {
                       <div className="flex items-center gap-2 mt-2">
                         <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
                           city.tier === 'tier1' ? 'bg-alpine-100 text-alpine-700' :
-                          city.tier === 'tier2' ? 'bg-mountain-100 text-mountain-700' :
+                          city.tier === 'tier2' ? 'bg-bronze-100 text-bronze-700' :
                           city.tier === 'tier3' ? 'bg-cedar-100 text-cedar-700' :
                           'bg-stone-100 text-stone-600'
                         }`}>
@@ -144,7 +143,7 @@ export default function ServiceAreasPage() {
             We may still serve your area. Contact us to check availability and schedule a free estimate.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/quote" className="btn-compoxen">Get Free Estimate</Link>
+            <Link href="/quote" className="btn-primary">Get Free Estimate</Link>
             <a href={COMPANY.phoneHref} className="btn-secondary border-white/30 text-white hover:bg-white/10">
               Call {COMPANY.phone}
             </a>

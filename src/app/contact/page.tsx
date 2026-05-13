@@ -5,12 +5,12 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Composite Fence & Deck Experts | Free Estimates',
+  title: 'Contact Us | Free Fence & Deck Estimates in Utah',
   description:
-    'Contact Alpine Fence & Deck for a free composite fence or deck estimate. Call, email, or fill out our form. Utah\'s trusted Compoxen® composite fence and deck contractor serving 94 cities.',
+    'Contact Alpine Fence & Deck for a free fence or deck estimate. Call, email, or fill out our form. Utah\'s premier fence and deck builder serving 94 cities.',
   openGraph: {
-    title: 'Contact Alpine Fence & Deck | Utah Composite Fence & Deck Contractor',
-    description: 'Get a free estimate for composite fence and deck installation, refinishing, or repair across Utah.',
+    title: 'Contact Alpine Fence & Deck | Utah Fence & Deck Builder',
+    description: 'Get a free estimate for fence or deck installation, staining, refinishing, or repair across Utah.',
     url: 'https://alpinefenceanddeck.com/contact',
   },
   alternates: {
@@ -35,12 +35,12 @@ export default function ContactPage() {
       <section className="bg-hero-gradient text-white">
         <div className="section-container py-16 lg:py-20">
           <div className="max-w-3xl">
-            <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-6">
-              Contact Utah&apos;s Composite Fence & Deck Experts
+            <span className="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-compoxen-300 mb-4">Get In Touch</span>
+            <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-6 tracking-tight">
+              Let&apos;s Build Something <span className="italic font-light text-compoxen-300">Remarkable.</span>
             </h1>
-            <p className="text-lg text-stone-200 leading-relaxed">
-              Have a question about composite fencing or decking? Ready to get started? Reach out by phone, email, or fill out the
-              form below for a free, no-obligation composite fence or deck estimate.
+            <p className="text-lg text-stone-200/90 leading-relaxed">
+              Reach out by phone, email, or the form below for a free, no-obligation estimate. Same-day response on every request.
             </p>
           </div>
         </div>
@@ -87,8 +87,20 @@ export default function ContactPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                 </svg>
               </div>
-              <h3 className="font-heading font-bold text-stone-900 mb-1">Office</h3>
-              <span className="text-sm text-stone-600">{COMPANY.address}</span>
+              <h3 className="font-heading font-bold text-stone-900 mb-1">Two Utah Offices</h3>
+              <div className="space-y-3 mt-1">
+                {COMPANY.locations.map((loc) => (
+                  <div key={loc.label}>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-alpine-700">
+                      {loc.label}
+                    </p>
+                    <span className="text-sm text-stone-600 leading-snug block">
+                      {loc.street}<br />
+                      {loc.city}, {loc.region} {loc.postalCode}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Hours */}
@@ -123,11 +135,11 @@ export default function ContactPage() {
                 <ul className="space-y-3 text-sm text-stone-600">
                   {[
                     `${COMPANY.yearsExperience}+ years experience`,
-                    'Exclusive Compoxen\u00AE Composite Certified',
+                    'Every major fence & deck material',
                     'Same-day estimates',
                     '2-hour emergency callback',
                     '100% satisfaction guarantee',
-                    '25-year composite material warranty',
+                    'Up to 25-year material warranties',
                     `${COMPANY.googleRating}\u2605 Google rating`,
                     'Licensed, bonded & insured',
                   ].map((item) => (

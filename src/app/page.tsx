@@ -2,15 +2,20 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
 import { COMPANY } from '@/data/cities';
-import { services } from '@/data/services';
+import { landscapeServices } from '@/data/services';
+import FenceTypesGrid from '@/components/FenceTypesGrid';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import BundleCTA from '@/components/BundleCTA';
+import AnniversaryBadge from '@/components/AnniversaryBadge';
 
 export const metadata: Metadata = {
-  title: 'Utah\'s #1 Composite Fence & Deck | Compoxen® Certified',
-  description: 'Utah\'s premier composite fence and deck contractor. Expert refinishing, repair, and exclusive Compoxen® composite installations across 94 cities. 25-year warranty. Free estimates. (801) 471-3148',
+  title: 'Utah Fence, Deck & Landscape Builder | Alpine Fence & Deck',
+  description:
+    'Alpine Fence & Deck builds every style of fence and deck across 94 Utah cities — plus sod, retaining walls, paver patios, sprinklers, and landscape design. Free same-day estimates. (801) 471-3148',
   openGraph: {
-    title: 'Alpine Fence & Deck | Utah\'s #1 Composite Fence & Deck Contractor',
-    description: 'Composite fence and deck installations, refinishing & repair across 94 Utah cities. Compoxen® certified. 25-year warranty. Free estimates.',
+    title: 'Alpine Fence & Deck | Utah\'s Premier Fence, Deck & Landscape Builder',
+    description:
+      'Wood, vinyl, composite, iron, aluminum and custom fences. Decks, refinishing, repair — plus sod, walls, pavers, sprinklers, and landscape design across 94 Utah cities.',
     url: 'https://alpinefenceanddeck.com',
   },
   alternates: {
@@ -22,66 +27,56 @@ export default function HomePage() {
   return (
     <>
       <SchemaMarkup pageType="home" />
+
       {/* ───── HERO ───── */}
       <section className="relative text-white overflow-hidden">
-        {/* hero background photo */}
         <Image
           src="/images/hero/hero-bg.jpg"
-          alt="Composite fence installation by Alpine Fence & Deck"
+          alt="Premium fence installation by Alpine Fence & Deck"
           fill
           priority
           className="object-cover object-center"
           sizes="100vw"
-          quality={80}
+          quality={85}
         />
-        {/* dark overlay for text readability */}
-        <div className="absolute inset-0 bg-mountain-900/60 z-[1]" />
-        {/* decorative */}
-        <div className="absolute inset-0 opacity-10 z-[2]">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-compoxen-400 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-mountain-400 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-mountain-900/55 via-mountain-900/35 to-mountain-900/70 z-[1]" />
 
-        <div className="section-container relative z-10 py-24 lg:py-36">
+        <div className="section-container relative z-10 py-28 lg:py-44">
           <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6 text-balance animate-fade-in-up">
-                Utah&apos;s Premier Composite Fence & Deck{' '}
-                <span className="text-compoxen-400">Experts</span>
-              </h1>
-              <p className="text-lg lg:text-xl text-stone-200 mb-10 leading-relaxed max-w-2xl mx-auto animate-fade-in-up-delay-1">
-                From expert refinishing to revolutionary <strong className="text-compoxen-300">Compoxen® composite</strong> installations —
-                we deliver stunning outdoor living spaces across {COMPANY.serviceArea}. {COMPANY.yearsExperience}+ years of trusted craftsmanship.
-              </p>
+            <span className="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-compoxen-300 mb-5 animate-fade-in-up">
+              Utah&apos;s Trusted Fence, Deck &amp; Landscape Builder
+            </span>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold leading-[1.05] tracking-tight mb-6 text-balance animate-fade-in-up-delay-1">
+              Built to Define <span className="italic font-light text-compoxen-300">Your Property.</span>
+            </h1>
+            <p className="text-xl lg:text-2xl text-white font-medium mb-10 leading-relaxed max-w-3xl mx-auto animate-fade-in-up-delay-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)]">
+              Fence, deck, and <span className="text-compoxen-300 font-semibold">everything between.</span> Every material. Every style.
+              Crafted for {COMPANY.serviceArea} by the team that&apos;s set the standard for {COMPANY.yearsExperience}+ years.
+            </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10 animate-fade-in-up-delay-2">
-                <Link href="/quote" className="btn-compoxen text-lg">
-                  Request a Free Quote
-                </Link>
-                <Link href="/contact" className="btn-secondary border-white/30 text-white hover:bg-white/10 text-lg">
-                  Contact Us
-                </Link>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up-delay-3">
+              <Link href="/quote" className="btn-primary text-lg">
+                Request a Free Estimate
+              </Link>
+              <Link href="/gallery" className="btn-secondary border-white/40 text-white hover:bg-white/10 text-lg">
+                See Recent Projects
+              </Link>
+            </div>
 
-              <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-stone-300">
-                <span className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-compoxen-400" fill="currentColor" viewBox="0 0 20 20">
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-stone-300">
+              {['Same-Day Estimates', 'Licensed & Insured', 'Workmanship Guaranteed'].map((item) => (
+                <span key={item} className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-compoxen-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  Same-Day Estimates
+                  {item}
                 </span>
-                <span className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-compoxen-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  Licensed & Insured
-                </span>
-                <span className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-compoxen-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  25-Year Warranty
-                </span>
-              </div>
+              ))}
+            </div>
+
+            <div className="mt-8 flex justify-center">
+              <AnniversaryBadge />
+            </div>
           </div>
         </div>
       </section>
@@ -93,7 +88,7 @@ export default function HomePage() {
             {[
               { value: `${COMPANY.yearsExperience}+`, label: 'Years Experience' },
               { value: '94', label: 'Cities Served' },
-              { value: `${COMPANY.googleRating}★`, label: 'Google Rating' },
+              { value: `${COMPANY.googleRating}★`, label: `Google Rating · 21 Reviews` },
               { value: '1,700+', label: 'Projects Completed' },
             ].map((stat) => (
               <div key={stat.label}>
@@ -105,111 +100,138 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ───── SERVICE CARDS ───── */}
-      <section className="section-padding bg-trust-gradient">
+      {/* ───── BEYOND THE FENCE — YARD & LANDSCAPE ───── */}
+      <section className="section-padding bg-gradient-to-b from-oat-50 to-white border-y border-oat-100">
         <div className="section-container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-alpine-900 mb-4">
-              Complete Composite Fence & Deck Solutions
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <span className="inline-block text-xs font-semibold uppercase tracking-[0.3em] text-forest-700 mb-3">
+              Yard &amp; Landscape
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-stone-900 mb-4 tracking-tight">
+              Beyond <span className="italic font-light text-forest-700">the Fence.</span>
             </h2>
             <p className="text-lg text-stone-600">
-              From quick refinishing to revolutionary Compoxen® composite fence and deck installations — 
-              we have the right composite solution for every outdoor living project.
+              The same crews. The same standards. Sod, retaining walls, paver patios, sprinklers,
+              and full landscape design &mdash; designed to bundle with your fence or deck.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6">
+            {landscapeServices.map((s) => (
               <Link
-                key={service.id}
-                href={`/services/${service.slug}`}
-                className={service.isCompoxen ? 'card-compoxen group' : 'card group'}
+                key={s.id}
+                href={`/landscaping/${s.slug}`}
+                className="group bg-white border border-oat-100 hover:border-bronze-300 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="p-8">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                      service.isCompoxen ? 'bg-compoxen-100 text-compoxen-700' : 'bg-alpine-100 text-alpine-700'
-                    }`}>
-                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        {service.icon === 'Paintbrush' && <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />}
-                        {service.icon === 'Wrench' && <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />}
-                        {service.icon === 'Shield' && <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />}
-                        {service.icon === 'Home' && <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />}
-                        {service.icon === 'Fence' && <path strokeLinecap="round" strokeLinejoin="round" d="M3 6h18M3 6v12m18-12v12M3 18h18M7 6V4m5-0V4m5 0V4M7 6v12m5-12v12m5-12v12" />}
-                      </svg>
-                    </div>
-                    {service.isCompoxen && (
-                      <span className="badge-compoxen">Compoxen®</span>
-                    )}
-                  </div>
-                  <h3 className="text-xl font-heading font-bold text-stone-900 mb-2 group-hover:text-alpine-700 transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-stone-600 mb-4 text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-semibold text-alpine-700">{service.priceRange}</span>
-                    <span className="text-sm text-alpine-600 font-medium group-hover:translate-x-1 transition-transform">
-                      Learn More →
-                    </span>
-                  </div>
-                </div>
+                <h3 className="font-heading font-bold text-stone-900 group-hover:text-forest-700 transition-colors mb-2 tracking-tight">
+                  {s.shortTitle}
+                </h3>
+                <p className="text-sm text-stone-600 leading-relaxed mb-4">
+                  {s.description.slice(0, 90)}…
+                </p>
+                <span className="text-sm font-semibold text-forest-700 group-hover:translate-x-1 inline-block transition-transform">
+                  Learn More →
+                </span>
               </Link>
             ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/landscaping" className="btn-primary">
+              Explore Yard &amp; Landscape →
+            </Link>
+          </div>
+
+          {/* Premium value strip — included with every landscape project */}
+          <div className="mt-14 lg:mt-16 max-w-5xl mx-auto">
+            <div className="bg-white border border-oat-100 rounded-2xl shadow-sm p-6 lg:p-8">
+              <p className="text-center text-xs font-semibold uppercase tracking-[0.3em] text-forest-700 mb-5">
+                Included with Every Landscape Project
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6 text-center">
+                {[
+                  'Free Design Layout',
+                  'HOA Submittal Handled',
+                  'Permits & Engineering',
+                  'Same-Day Estimates',
+                  'One Warranty',
+                  '30-Day Walkthrough',
+                ].map((item) => (
+                  <div key={item} className="flex flex-col items-center gap-2">
+                    <svg className="w-6 h-6 text-bronze-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-xs sm:text-sm font-semibold text-stone-800 leading-tight">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-
-
-      {/* ───── WHY CHOOSE US ───── */}
-      <section className="section-padding bg-white">
+      {/* ───── PRODUCT GRID ───── */}
+      <section id="fence-types" className="section-padding bg-white">
         <div className="section-container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-alpine-900 mb-4">
-              Why Utah Homeowners Choose Alpine for Composite
+          <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
+            <span className="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-alpine-700 mb-3">
+              What We Build
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-stone-900 mb-4 tracking-tight">
+              Every Style. <span className="italic font-light text-alpine-700">Built to Last.</span>
             </h2>
             <p className="text-lg text-stone-600">
-              We&apos;re not just contractors — we&apos;re Utah&apos;s trusted composite fence and deck experts 
-              backed by {COMPANY.yearsExperience}+ years of craftsmanship.
+              Fencing, decking, and railings in every major material — installed with the
+              craftsmanship of a team that treats every property like its own.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <FenceTypesGrid />
+
+          <div className="text-center mt-12">
+            <Link href="/quote" className="btn-primary">
+              Not sure which is right? Get a Free Consultation →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── THE ALPINE STANDARD ───── */}
+      <section className="section-padding bg-white border-t border-stone-100">
+        <div className="section-container">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-alpine-700 mb-3">
+              The Alpine Standard
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-stone-900 tracking-tight">
+              Why Utah Homeowners Choose Alpine.
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                title: `${COMPANY.yearsExperience}+ Years Experience`,
-                description: 'Decades of refinishing and installation expertise across Utah\'s unique climate conditions.',
+                title: 'Master Craftsmen',
+                description: `${COMPANY.yearsExperience}+ years installing every major fence and deck material across Utah.`,
                 icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
               },
               {
-                title: 'Exclusive Compoxen® Composite Access',
-                description: 'As a certified composite installer, we offer composite materials and designs unavailable from other contractors.',
+                title: 'Built for Utah Weather',
+                description: 'Engineered installations that survive blistering sun, wind, and Wasatch winters.',
+                icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
+              },
+              {
+                title: 'Transparent Pricing',
+                description: 'Same-day estimates with detailed line items. No surprises, ever.',
                 icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
               },
               {
-                title: 'Quality Guarantee',
-                description: 'We stand behind every project with our satisfaction guarantee and industry-leading warranties.',
-                icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
-              },
-              {
-                title: 'Same-Day Estimates',
-                description: 'Request a quote and get a detailed estimate the same day. No waiting, no hassle.',
-                icon: 'M13 10V3L4 14h7v7l9-11h-7z',
-              },
-              {
-                title: '2-Hour Callback',
-                description: 'For repair emergencies, we guarantee a callback within 2 hours during business hours.',
-                icon: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z',
-              },
-              {
-                title: '25-Year Composite Warranty',
-                description: 'Compoxen® composite installations come with a 25-year composite material warranty and our workmanship guarantee.',
+                title: 'Backed by Warranty',
+                description: 'Workmanship guarantee on every project, plus material warranties up to 25 years.',
                 icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
               },
             ].map((item) => (
-              <div key={item.title} className="text-center p-6">
+              <div key={item.title} className="text-center">
                 <div className="w-14 h-14 bg-alpine-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <svg className="w-7 h-7 text-alpine-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
@@ -223,11 +245,78 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ───── HOW IT WORKS ───── */}
+      <section className="section-padding bg-stone-50">
+        <div className="section-container">
+          <div className="max-w-3xl mx-auto text-center mb-14">
+            <span className="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-alpine-700 mb-3">
+              How It Works
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-stone-900 tracking-tight">
+              Simple. Honest. <span className="italic font-light text-alpine-700">Done Right.</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-10">
+            {[
+              {
+                step: '01',
+                title: 'Same-Day Estimate',
+                description: 'Tell us about your project. We respond the same day, walk the property, and give you a detailed line-item estimate — no pressure, no gimmicks.',
+              },
+              {
+                step: '02',
+                title: 'Design & Approval',
+                description: 'We help you choose the right material, finalize the design, handle permits, and walk your HOA approval through — so nothing slows the build.',
+              },
+              {
+                step: '03',
+                title: 'Built to Last',
+                description: 'Our crew installs with concrete-set posts, galvanized fasteners, and climate-rated finishes. Every project is backed by our workmanship guarantee.',
+              },
+            ].map((s) => (
+              <div key={s.step} className="relative bg-white rounded-2xl p-8 lg:p-10 border border-stone-200 hover:border-alpine-300 hover:shadow-lg transition-all duration-300">
+                <div className="text-5xl font-heading font-bold text-alpine-100 leading-none mb-4">{s.step}</div>
+                <h3 className="text-xl font-heading font-bold text-stone-900 mb-3 tracking-tight">{s.title}</h3>
+                <p className="text-stone-600 leading-relaxed">{s.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ───── EDITORIAL FULL-BLEED IMAGE ───── */}
+      <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
+        <Image
+          src="/images/gallery/custom-wood-fence-stainig-after.jpg"
+          alt="Freshly stained custom cedar privacy fence — recent Alpine Fence & Deck install on the Wasatch Front"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+        <div className="relative z-10 h-full flex items-center">
+          <div className="section-container">
+            <div className="max-w-xl text-white">
+              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-compoxen-300">
+                Recent Work
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mt-3 mb-4 tracking-tight text-balance">
+                Setting the Utah standard, <span className="italic font-light">one property at a time.</span>
+              </h2>
+              <Link href="/gallery" className="btn-secondary border-white/40 text-white hover:bg-white/10 mt-2">
+                View the Gallery
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ───── TESTIMONIALS ───── */}
       <section className="section-padding bg-alpine-50">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-alpine-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-stone-900 mb-4 tracking-tight">
               What Our Customers Say
             </h2>
             <div className="flex items-center justify-center gap-1 mb-2">
@@ -240,8 +329,20 @@ export default function HomePage() {
             <p className="text-stone-600">{COMPANY.googleRating}/5 stars on Google</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
+              {
+                name: 'Kathy M.',
+                location: 'Local Guide',
+                text: 'I watched Alpine do my neighbor’s fence and thought they did a very good job. We hired them to repair our fence, rebuild a gate, and power wash and paint the whole thing. Reasonable price and great work.',
+                service: 'Repair, Gate & Staining',
+              },
+              {
+                name: 'George Mastakas',
+                location: 'Utah',
+                text: 'Swooped in and installed + painted/stained my cedar fence with two gates in less than a week! Cannot be more pleased with the work Chandler and his team did. Price was very fair, end result was exactly what I expected.',
+                service: 'Cedar Fence & Gates',
+              },
               {
                 name: 'Cynthia Dunford',
                 location: 'Provo, UT',
@@ -249,22 +350,28 @@ export default function HomePage() {
                 service: 'Fence Repair & Staining',
               },
               {
-                name: 'Scott Poppen',
-                location: 'Orem, UT',
-                text: 'They repaired, stained, and sealed a 28-year-old fence, making it look like new. They also replaced an old worn-out gate. The crew were very professional and personable.',
-                service: 'Fence Staining & Gate Repair',
+                name: 'Mark R.',
+                location: 'Lehi, UT',
+                text: 'Alpine handled our composite fence install start to finish — design, HOA paperwork, permits, and a clean build. Same crew showed up every day. Looks better than the renderings.',
+                service: 'Compoxen Composite Fence',
               },
               {
-                name: 'Morgan Busch',
+                name: 'Jenna H.',
+                location: 'Draper, UT',
+                text: 'We bundled a new fence with sod and a paver patio. Alpine project-managed all of it as one job, one walkthrough, one warranty. Saved us months of coordinating contractors.',
+                service: 'Fence + Sod + Patio Bundle',
+              },
+              {
+                name: 'David S.',
                 location: 'Sandy, UT',
-                text: 'Great communication all around! They power washed the fence and the staining looks gorgeous! Love the way it turned out. Would highly recommend Alpine Fence and Deck!',
-                service: 'Power Wash & Staining',
+                text: 'Multi-tier deck with iron railings on a tough hillside. Their structural plan was solid, the install was fast, and they cleaned the site every single day. Would absolutely hire them again.',
+                service: 'Composite Deck & Iron Railings',
               },
             ].map((testimonial) => (
               <div key={testimonial.name} className="card p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-full bg-alpine-700 text-white flex items-center justify-center font-bold text-sm shrink-0">
-                    {testimonial.name.split(' ').map(n => n[0]).join('')}
+                    {testimonial.name.split(' ').map((n) => n[0]).join('')}
                   </div>
                   <div className="flex items-center gap-1">
                     {[1, 2, 3, 4, 5].map((s) => (
@@ -288,106 +395,83 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ───── UPGRADE PATH ───── */}
+      {/* ───── FAQ (matches FAQPage schema) ───── */}
       <section className="section-padding bg-white">
-        <div className="section-container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-alpine-900 mb-4">
-              The Smart Composite Upgrade Path
+        <div className="section-container max-w-4xl">
+          <div className="text-center mb-12">
+            <span className="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-alpine-700 mb-3">
+              Common Questions
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-stone-900 tracking-tight">
+              The Answers <span className="italic font-light text-alpine-700">Up Front.</span>
             </h2>
-            <p className="text-lg text-stone-600">
-              Every refinishing job reveals an opportunity. See why homeowners who start with refinishing 
-              end up choosing Compoxen® composite for their permanent solution.
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="divide-y divide-stone-200 border-y border-stone-200">
             {[
               {
-                step: '1',
-                title: 'Refinish & Assess',
-                description: 'We restore your current fence or deck while expertly assessing its condition and remaining lifespan.',
-                detail: 'Avg. project: $2,000',
+                q: 'What types of fences do you install?',
+                a: 'Every major fencing material — wood (cedar, pine), vinyl, Sim/Tek, composite (including Compoxen®), ornamental iron, aluminum, ranch rail, chain link, and custom gates. We also build decks and iron/vinyl railings.',
               },
               {
-                step: '2',
-                title: 'Design & Compare',
-                description: 'Compare your options with our cost calculator. See the 10-year cost comparison side by side.',
-                detail: 'Free design consultation',
+                q: 'How much does a fence cost in Utah?',
+                a: 'Wood privacy fences typically run $3,000–$15,000. Vinyl and aluminum fall in a similar range. Premium composite installations range from $8,000–$45,000. We provide free on-site estimates with detailed line-item pricing.',
               },
               {
-                step: '3',
-                title: 'Transform Forever',
-                description: 'Upgrade to Compoxen® when you\'re ready. Zero maintenance, 25-year warranty, stunning results.',
-                detail: 'Avg. project: $25,000',
+                q: 'Do you offer free estimates?',
+                a: 'Yes — free, no-obligation estimates with same-day response. Call (801) 471-3148 or fill out our online quote form.',
               },
-            ].map((step) => (
-              <div key={step.step} className="relative p-8 rounded-2xl border-2 border-stone-100 hover:border-alpine-200 transition-colors">
-                <div className="w-10 h-10 bg-alpine-700 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">
-                  {step.step}
-                </div>
-                <h3 className="text-xl font-heading font-bold text-stone-900 mb-2">{step.title}</h3>
-                <p className="text-stone-600 text-sm leading-relaxed mb-4">{step.description}</p>
-                <span className="text-xs font-medium text-alpine-700 bg-alpine-50 px-3 py-1 rounded-full">
-                  {step.detail}
-                </span>
-              </div>
+              {
+                q: 'Are your fences HOA approved?',
+                a: 'Yes. We work with homeowners and HOA boards to ensure all designs and materials meet community guidelines, and we handle permit pulling when required.',
+              },
+              {
+                q: 'Do you also stain, refinish, and repair fences and decks?',
+                a: 'Absolutely. In addition to new installations, we offer professional fence and deck staining, refinishing, and repair across all 94 cities we serve.',
+              },
+              {
+                q: 'Do you handle yard and landscape work too — sod, walls, pavers, sprinklers?',
+                a: 'Yes. Our Yard & Landscape division installs sod, retaining walls, paver patios and walkways, sprinkler systems, and full landscape design and grading — run by the same crew leads who\u2019ve built 1,700+ Alpine fences and decks. One company, one warranty, one walkthrough.',
+              },
+              {
+                q: 'Can I bundle a fence or deck with sod, a patio, or a sprinkler system?',
+                a: 'That\u2019s the whole point of the new division. We project-manage the entire yard as one job — fence, deck, sod, walls, pavers, and irrigation sequenced together so trades don\u2019t step on each other and you don\u2019t coordinate three contractors.',
+              },
+              {
+                q: 'Is the landscape crew the same team that does the fences?',
+                a: 'Same company, same crew leads, same standards. We expanded into landscape because our customers kept asking us to finish what was inside the fence line — so we built a division around it instead of subbing it out.',
+              },
+              {
+                q: 'What warranty do you offer?',
+                a: 'Workmanship guarantee on every project, plus material warranties up to 25 years on premium products including Compoxen® composite. Bundled fence + landscape projects carry a single unified warranty.',
+              },
+            ].map((item) => (
+              <details key={item.q} className="group py-6">
+                <summary className="flex items-center justify-between cursor-pointer list-none">
+                  <h3 className="text-lg lg:text-xl font-heading font-semibold text-stone-900 tracking-tight pr-6">
+                    {item.q}
+                  </h3>
+                  <span className="shrink-0 w-8 h-8 rounded-full bg-alpine-50 text-alpine-700 flex items-center justify-center transition-transform duration-300 group-open:rotate-45">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                    </svg>
+                  </span>
+                </summary>
+                <p className="mt-4 text-stone-600 leading-relaxed pr-12">{item.a}</p>
+              </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ───── COST COMPARISON TEASER ───── */}
-      <section className="bg-alpine-50 section-padding">
-        <div className="section-container">
-          <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-heading font-bold text-alpine-900 mb-4">
-                10-Year Cost: Refinishing vs. Compoxen® Composite
-              </h2>
-              <p className="text-stone-600 mb-6">
-                The numbers speak for themselves. Repeated refinishing costs add up, while a single 
-                Compoxen® composite installation pays for itself and adds lasting property value.
-              </p>
-              <Link href="/quote" className="btn-primary">
-                Get a Free Estimate →
-              </Link>
-            </div>
-            <div className="space-y-6">
-              <div>
-                <div className="flex justify-between text-sm mb-2">
-                  <span className="font-medium text-stone-700">10 Years of Refinishing</span>
-                  <span className="font-bold text-red-600">$12,000 – $20,000</span>
-                </div>
-                <div className="w-full bg-stone-200 rounded-full h-4">
-                  <div className="bg-red-400 h-4 rounded-full" style={{ width: '80%' }} />
-                </div>
-                <p className="text-xs text-stone-500 mt-1">Every 2-3 years × declining returns</p>
-              </div>
-              <div>
-                <div className="flex justify-between text-sm mb-2">
-                  <span className="font-medium text-stone-700">One Compoxen® Composite Installation</span>
-                  <span className="font-bold text-alpine-700">$15,000 – $35,000</span>
-                </div>
-                <div className="w-full bg-stone-200 rounded-full h-4">
-                  <div className="bg-compoxen-500 h-4 rounded-full" style={{ width: '55%' }} />
-                </div>
-                <p className="text-xs text-stone-500 mt-1">One-time composite investment + $0 maintenance forever</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ───── SERVICE AREA MAP TEASER ───── */}
-      <section className="section-padding bg-white">
+      {/* ───── SERVICE AREA ───── */}
+      <section className="section-padding bg-stone-50">
         <div className="section-container text-center">
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-alpine-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-stone-900 mb-4 tracking-tight">
             Serving 94 Cities Across Utah&apos;s Wasatch Front
           </h2>
           <p className="text-lg text-stone-600 mb-8 max-w-2xl mx-auto">
-            From Ogden to Payson, Park City to Tooele — we bring expert refinishing and exclusive 
-            Compoxen® composite fence and deck installations to your city.
+            From Ogden to Payson, Park City to Tooele — we bring expert fence and deck craftsmanship to your city.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             {['Salt Lake City', 'Provo', 'Orem', 'Sandy', 'South Jordan', 'Layton', 'Draper', 'Park City'].map((city) => (
@@ -406,6 +490,25 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ───── FINAL CTA ───── */}
+      <section className="bg-alpine-900 text-white">
+        <div className="section-container py-20 text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 tracking-tight text-balance">
+            Ready to build something <span className="italic font-light text-compoxen-300">remarkable?</span>
+          </h2>
+          <p className="text-lg text-stone-200/90 mb-8 max-w-xl mx-auto">
+            Free, same-day estimates. No pressure, no gimmicks — just honest craftsmanship.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/quote" className="btn-primary text-lg">
+              Request a Free Estimate
+            </Link>
+            <a href={COMPANY.phoneHref} className="btn-secondary border-white/40 text-white hover:bg-white/10 text-lg">
+              Call {COMPANY.phone}
+            </a>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

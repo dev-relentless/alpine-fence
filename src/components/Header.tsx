@@ -5,19 +5,28 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { COMPANY, getAllCities } from '@/data/cities';
-import { services } from '@/data/services';
+import { landscapeServices, getAllServices } from '@/data/services';
 
 const navLinks = [
   {
-    label: 'Services',
+    label: 'Fence & Deck',
     href: '/services',
     children: [
-      { label: 'Compoxen® Fence Installation', href: '/services/compoxen-fence-installation' },
-      { label: 'Compoxen® Deck Installation', href: '/services/compoxen-deck-installation' },
       { label: 'Wood Fence Installation', href: '/services/wood-fence-installation' },
+      { label: 'Composite Fence Installation', href: '/services/compoxen-fence-installation' },
+      { label: 'Composite Deck Installation', href: '/services/compoxen-deck-installation' },
+      { label: 'Fence & Deck Staining', href: '/services/fence-deck-staining' },
       { label: 'Deck & Fence Refinishing', href: '/services/deck-refinishing' },
       { label: 'Fence & Deck Repair', href: '/services/fence-repair' },
     ],
+  },
+  {
+    label: 'Yard & Landscape',
+    href: '/landscaping',
+    children: landscapeServices.map((s) => ({
+      label: s.title,
+      href: `/landscaping/${s.slug}`,
+    })),
   },
   { label: 'Gallery', href: '/gallery' },
   { label: 'Service Areas', href: '/service-areas' },
@@ -56,9 +65,15 @@ export default function Header() {
 
   const searchResults = searchQuery.trim().length > 1
     ? [
-        ...services
+        ...getAllServices()
           .filter((s) => s.title.toLowerCase().includes(searchQuery.toLowerCase()))
-          .map((s) => ({ label: s.title, href: `/services/${s.slug}`, type: 'Service' as const })),
+          .map((s) => ({
+            label: s.title,
+            href: s.division === 'yard-landscape'
+              ? `/landscaping/${s.slug}`
+              : `/services/${s.slug}`,
+            type: 'Service' as const,
+          })),
         ...getAllCities()
           .filter((c) => c.name.toLowerCase().includes(searchQuery.toLowerCase()))
           .slice(0, 8)
@@ -67,7 +82,7 @@ export default function Header() {
           { label: 'Gallery', href: '/gallery' },
           { label: 'About', href: '/about' },
           { label: 'Contact', href: '/contact' },
-
+          { label: 'Yard & Landscape', href: '/landscaping' },
           { label: 'Service Areas', href: '/service-areas' },
           { label: 'Get a Quote', href: '/quote' },
         ]
@@ -101,8 +116,8 @@ export default function Header() {
             <span className="hidden sm:inline text-stone-300">{COMPANY.serviceArea}</span>
           </div>
           <div className="hidden md:flex items-center gap-2">
-            <span className="badge-compoxen text-[10px]">
-              ★ Exclusive Compoxen® Certified Installer
+            <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-compoxen-300">
+              Utah&apos;s Premier Fence, Deck &amp; Landscape Builder
             </span>
           </div>
         </div>

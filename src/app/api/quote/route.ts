@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { name, phone, email, city, service, timeline, details } = body;
+    const { name, phone, email, city, service, timeline, details, division } = body;
 
     // Validation
     if (!name || !phone || !service) {
@@ -57,6 +57,20 @@ export async function POST(request: NextRequest) {
     // 4. Feed Relentless AI with lead data
     // 5. Create CRM entry
 
+    // Resolve division: explicit body field wins, else infer from service slug.
+    // This is the audit trail for future Yard & Landscape carve-out.
+    const knownLandscapeSlugs = new Set([
+      'sod-lawn-installation',
+      'retaining-walls-hardscapes',
+      'paver-patios-walkways',
+      'sprinkler-irrigation-install',
+      'landscape-design-grading',
+    ]);
+    const resolvedDivision: 'fence-deck' | 'yard-landscape' =
+      division === 'yard-landscape' || knownLandscapeSlugs.has(String(service))
+        ? 'yard-landscape'
+        : 'fence-deck';
+
     const lead = {
       id: `lead_${Date.now()}`,
       name,
@@ -67,8 +81,9 @@ export async function POST(request: NextRequest) {
       timeline: timeline || 'asap',
       details: details || null,
       source: 'website',
+      division: resolvedDivision,
       createdAt: new Date().toISOString(),
-      isCompoxen: service.includes('compoxen'),
+      isCompoxen: String(service).includes('compoxen'),
     };
 
     console.log('New lead received:', lead);

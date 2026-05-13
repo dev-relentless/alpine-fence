@@ -2,18 +2,22 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { landscapePillarFeatured } from '@/data/landscapeGallery';
 
 interface Project {
   id: number;
   title: string;
   type: string;
-  category: 'Fence' | 'Deck';
+  category: 'Fence' | 'Deck' | 'Landscape';
   material: string;
   description: string;
   tags: string[];
   beforeImage?: string;
   afterImage?: string;
   image?: string;
+  /** Optional deep link — used for landscape entries that point to the service page. */
+  href?: string;
 }
 
 const projects: Project[] = [
@@ -114,20 +118,52 @@ const projects: Project[] = [
   },
 ];
 
-type CategoryFilter = 'All' | 'Fence' | 'Deck' | 'Wood';
+type CategoryFilter = 'All' | 'Fence' | 'Deck' | 'Landscape' | 'Wood';
+
+const landscapeServiceSlugMap: Record<string, string> = {
+  'Sod & Lawn Install': 'sod-lawn-installation',
+  'Retaining Walls': 'retaining-walls-hardscapes',
+  'Paver Patios': 'paver-patios-walkways',
+  'Sprinkler Systems': 'sprinkler-irrigation-install',
+  'Landscape Design': 'landscape-design-grading',
+};
+
+// Landscape projects pulled from the pillar featured slots so the gallery
+// reflects the new division. These are PhotoStub-friendly: if the file
+// doesn't exist yet, ProjectCard hides the image and the user still
+// gets the labeled card linking to the service page.
+const landscapeProjects: Project[] = landscapePillarFeatured.map((p, i) => ({
+  id: 100 + i,
+  title: p.label,
+  type: 'Landscape',
+  category: 'Landscape' as const,
+  material: 'Yard',
+  description: `Recent ${p.label.toLowerCase()} project by Alpine. Tap for full gallery & details.`,
+  tags: ['Landscape', p.label],
+  image: `/images/landscaping/gallery/${p.file}`,
+  href: `/landscaping/${landscapeServiceSlugMap[p.label] ?? ''}`,
+}));
 
 const categories: { label: string; value: CategoryFilter; description: string }[] = [
   { label: 'All Projects', value: 'All', description: 'Browse every project in our portfolio' },
   { label: 'Fence', value: 'Fence', description: 'Privacy fences, picket fences, staining & repairs' },
   { label: 'Deck', value: 'Deck', description: 'Deck refinishing, staining & new builds' },
+  { label: 'Landscape', value: 'Landscape', description: 'Sod, retaining walls, paver patios, sprinklers & landscape design' },
   { label: 'Wood', value: 'Wood', description: 'Natural wood fences & decks — our most popular material' },
 ];
 
 function ProjectCard({ project, onClick }: { project: Project; onClick: () => void }) {
+  // Landscape entries deep-link to the service page rather than opening
+  // a lightbox — the per-service galleries have richer context there.
+  const Wrapper: React.ElementType = project.href ? Link : 'button';
+  const wrapperProps = project.href
+    ? { href: project.href }
+    : { onClick, type: 'button' as const };
+
   return (
-    <button
-      onClick={onClick}
-      className="rounded-2xl overflow-hidden shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300 cursor-pointer text-left w-full"
+    <Wrapper
+      {...wrapperProps}
+      className="rounded-2xl overflow-hidden shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300 cursor-pointer text-left w-full block"
     >
       {project.beforeImage && project.afterImage ? (
         <div className="grid grid-cols-2">
@@ -159,7 +195,7 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
           </div>
         </div>
       ) : project.image ? (
-        <div className="aspect-[4/3] relative overflow-hidden">
+        <div className="aspect-[4/3] relative overflow-hidden bg-stone-100">
           <Image
             src={project.image}
             alt={project.title}
@@ -180,7 +216,7 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
         <h3 className="font-heading font-semibold text-stone-900 text-sm">{project.title}</h3>
         <p className="text-xs text-stone-500 mt-1">{project.description}</p>
       </div>
-    </button>
+    </Wrapper>
   );
 }
 
@@ -309,10 +345,13 @@ export default function GalleryGrid() {
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>('All');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const filtered = projects.filter((p) => {
+  const allProjects: Project[] = [...projects, ...landscapeProjects];
+
+  const filtered = allProjects.filter((p) => {
     if (activeCategory === 'All') return true;
     if (activeCategory === 'Fence') return p.category === 'Fence';
     if (activeCategory === 'Deck') return p.category === 'Deck';
+    if (activeCategory === 'Landscape') return p.category === 'Landscape';
     if (activeCategory === 'Wood') return p.material === 'Wood';
     return true;
   });
@@ -329,10 +368,10 @@ export default function GalleryGrid() {
             {categories.map((cat) => {
               const count =
                 cat.value === 'All'
-                  ? projects.length
+                  ? allProjects.length
                   : cat.value === 'Wood'
-                    ? projects.filter((p) => p.material === 'Wood').length
-                    : projects.filter((p) => p.category === cat.value).length;
+                    ? allProjects.filter((p) => p.material === 'Wood').length
+                    : allProjects.filter((p) => p.category === cat.value).length;
 
               return (
                 <button
@@ -372,6 +411,7 @@ export default function GalleryGrid() {
               <h2 className="text-2xl lg:text-3xl font-heading font-bold text-stone-900">
                 {activeCategory === 'Fence' && 'Fence Projects'}
                 {activeCategory === 'Deck' && 'Deck Projects'}
+                {activeCategory === 'Landscape' && 'Landscape Projects'}
                 {activeCategory === 'Wood' && 'Wood Fence & Deck Projects'}
               </h2>
               <p className="text-stone-500 mt-1">

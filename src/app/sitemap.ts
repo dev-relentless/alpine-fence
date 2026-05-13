@@ -1,17 +1,19 @@
 import { MetadataRoute } from 'next';
 import { getAllCities } from '@/data/cities';
-import { services } from '@/data/services';
+import { services, landscapeServices } from '@/data/services';
+import { fenceTypes } from '@/data/fenceTypes';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://alpinefenceanddeck.com';
   const cities = getAllCities();
   // Use a fixed date so search engines don't see every page as "just modified" on every build.
   // Update this date when you actually change content.
-  const lastModified = new Date('2026-03-24');
+  const lastModified = new Date('2026-05-13');
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified, changeFrequency: 'weekly', priority: 1.0 },
     { url: `${baseUrl}/services`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/landscaping`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/gallery`, lastModified, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/service-areas`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/quote`, lastModified, changeFrequency: 'monthly', priority: 0.9 },
@@ -28,6 +30,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: s.isCompoxen ? 0.9 : 0.8,
   }));
 
+  // Yard & Landscape pages — kept in their own group so they can be split
+  // into a dedicated sitemap-landscape.xml during a future carve-out.
+  const landscapePages: MetadataRoute.Sitemap = landscapeServices.map((s) => ({
+    url: `${baseUrl}/landscaping/${s.slug}`,
+    lastModified,
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }));
+
   const cityPages: MetadataRoute.Sitemap = cities.map((c) => ({
     url: `${baseUrl}/${c.slug}-fence-deck-contractor`,
     lastModified,
@@ -35,5 +46,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: c.tier === 'tier1' ? 0.9 : c.tier === 'tier2' ? 0.8 : c.tier === 'tier3' ? 0.7 : 0.5,
   }));
 
-  return [...staticPages, ...servicePages, ...cityPages];
+  return [...staticPages, ...servicePages, ...landscapePages, ...cityPages];
 }

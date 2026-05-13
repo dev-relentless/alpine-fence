@@ -5,11 +5,11 @@ import { COMPANY } from '@/data/cities';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'Composite Fence & Deck Services | Refinishing, Repair & Compoxen® Installation',
-  description: 'Complete composite fence and deck services in Utah: refinishing, repair, and exclusive Compoxen® composite installations across 94 cities. Free estimates for all composite projects.',
+  title: 'Fence & Deck Services | Installation, Repair, Staining & Refinishing',
+  description: 'Complete fence and deck services in Utah: installation, repair, staining, and refinishing across 94 cities. Wood, vinyl, iron, aluminum, composite & more. Free estimates.',
   openGraph: {
-    title: 'Composite Fence & Deck Services | Alpine Fence & Deck',
-    description: 'Utah\'s full-service composite fence and deck contractor. Refinishing, repair & Compoxen® composite installations.',
+    title: 'Fence & Deck Services | Alpine Fence & Deck',
+    description: 'Utah\'s full-service fence and deck contractor. Installation, repair, staining, and refinishing in every major material.',
     url: 'https://alpinefenceanddeck.com/services',
   },
   alternates: {
@@ -26,15 +26,17 @@ export default function ServicesIndex() {
       ]} />
 
       <section className="bg-hero-gradient text-white">
-        <div className="section-container py-16 lg:py-20">
+        <div className="section-container py-20 lg:py-28">
           <div className="max-w-3xl">
-            <span className="badge-compoxen mb-6">Full-Service Solutions</span>
-            <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-6">
-              Our Composite Fence & Deck Services
+            <span className="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-compoxen-300 mb-5">
+              Full-Service Fence &amp; Deck
+            </span>
+            <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-6 tracking-tight leading-[1.05]">
+              Our Services. <span className="italic font-light text-compoxen-300">Built to Last.</span>
             </h1>
-            <p className="text-lg text-stone-200 leading-relaxed">
-              From expert refinishing to revolutionary Compoxen® composite fence and deck installations — 
-              we deliver complete composite outdoor living solutions backed by {COMPANY.yearsExperience}+ years of experience.
+            <p className="text-lg text-stone-200/90 leading-relaxed">
+              Installation, staining, refinishing, and repair — in every major fencing and decking
+              material. {COMPANY.yearsExperience}+ years of trusted craftsmanship across Utah&apos;s Wasatch Front.
             </p>
           </div>
         </div>
@@ -42,38 +44,37 @@ export default function ServicesIndex() {
 
       <section className="section-padding bg-white">
         <div className="section-container">
-          <div className="space-y-8">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
             {services.map((service) => (
               <Link
                 key={service.id}
                 href={`/services/${service.slug}`}
-                className={`block ${service.isCompoxen ? 'card-compoxen' : 'card'} group`}
+                className={`group relative flex flex-col justify-between p-8 lg:p-10 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                  service.isCompoxen
+                    ? 'bg-gradient-to-br from-compoxen-50/60 to-white border-compoxen-200'
+                    : 'bg-white border-stone-200 hover:border-alpine-300'
+                }`}
               >
-                <div className="p-8 lg:p-10">
-                  <div className="flex flex-col lg:flex-row lg:items-center gap-6">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-3">
-                        <h2 className="text-2xl font-heading font-bold text-stone-900 group-hover:text-alpine-700 transition-colors">
-                          {service.title}
-                        </h2>
-                        {service.isCompoxen && <span className="badge-compoxen">Compoxen®</span>}
-                      </div>
-                      <p className="text-stone-600 mb-4">{service.description}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {service.features.slice(0, 3).map((f) => (
-                          <span key={f} className="text-xs bg-stone-100 text-stone-700 px-3 py-1 rounded-full">
-                            {f}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="lg:text-right shrink-0">
-                      <div className="text-lg font-bold text-alpine-700 mb-2">{service.priceRange}</div>
-                      <span className="btn-primary !py-2.5 !px-5 !text-sm">
-                        {service.ctaText} →
-                      </span>
-                    </div>
+                <div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <h2 className="text-2xl font-heading font-bold text-stone-900 group-hover:text-alpine-700 transition-colors tracking-tight">
+                      {service.title}
+                    </h2>
                   </div>
+                  <p className="text-stone-600 leading-relaxed mb-5">{service.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {service.features.slice(0, 3).map((f) => (
+                      <span key={f} className="text-xs bg-stone-100 text-stone-700 px-3 py-1 rounded-full">
+                        {f}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex items-center justify-between pt-4 border-t border-stone-100">
+                  <span className="text-sm font-semibold text-alpine-700">{service.priceRange}</span>
+                  <span className="text-sm font-semibold text-alpine-700 group-hover:translate-x-1 transition-transform">
+                    {service.ctaText} →
+                  </span>
                 </div>
               </Link>
             ))}
