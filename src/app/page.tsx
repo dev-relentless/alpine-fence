@@ -332,40 +332,58 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: 'Kathy M.',
-                location: 'Local Guide',
-                text: 'I watched Alpine do my neighbor’s fence and thought they did a very good job. We hired them to repair our fence, rebuild a gate, and power wash and paint the whole thing. Reasonable price and great work.',
-                service: 'Repair, Gate & Staining',
+                name: 'Ben Meldrum',
+                location: 'Google Local Guide',
+                text: 'This company does absolutely fantastic fencing and decking. I would recommend them above all of the contractors. Great price.',
+                service: 'Fence & Deck',
+              },
+              {
+                name: 'Katy Brown',
+                location: 'Google Local Guide',
+                text: 'Alpine Fence and Deck did an excellent job with composite fence installation. Beautiful work. Chandler was friendly, honest, and easy to work with—someone you feel comfortable trusting right away. Highly recommend.',
+                service: 'Composite Fence Install',
               },
               {
                 name: 'George Mastakas',
-                location: 'Utah',
-                text: 'Swooped in and installed + painted/stained my cedar fence with two gates in less than a week! Cannot be more pleased with the work Chandler and his team did. Price was very fair, end result was exactly what I expected.',
+                location: 'Google Review',
+                text: 'Swooped in and installed + painted/stained my cedar fence with two gates in less than a week! Cannot be more pleased with the work Chandler and his team did. Price was very fair, overall experience was great, end result was what I expected.',
                 service: 'Cedar Fence & Gates',
               },
               {
+                name: 'Kathy M.',
+                location: 'Google Local Guide',
+                text: 'I watched Alpine do my neighbor\u2019s fence and I think they did a very good job. We then hired them to work on our fence for repairs, rebuild a gate, then power wash and paint the entire fence. They also stained a small bridge in our yard.',
+                service: 'Repair, Gate & Staining',
+              },
+              {
                 name: 'Cynthia Dunford',
-                location: 'Provo, UT',
-                text: 'Very professional! First, they repaired my fence and then I had them stain the entire fence. The owner, Chandler, kept me informed every step of the way. The end product was excellent!',
-                service: 'Fence Repair & Staining',
+                location: 'Google Local Guide',
+                text: 'I initially called Alpine Fence and Deck for an estimate to repair a section of a wooden panel of my fence that had blown out in a windstorm. Josh came out and gave me a very affordable estimate for repairing it.',
+                service: 'Fence Repair',
               },
               {
-                name: 'Mark R.',
-                location: 'Lehi, UT',
-                text: 'Alpine handled our composite fence install start to finish — design, HOA paperwork, permits, and a clean build. Same crew showed up every day. Looks better than the renderings.',
-                service: 'Compoxen Composite Fence',
+                name: 'P&C Wilkinson',
+                location: 'Google Review',
+                text: 'Chandler and his team did a great job. They came when they said they would and finished quickly without sacrificing quality of work. I will use them next time my deck needs to be refinished. Very happy with them!',
+                service: 'Deck Refinishing',
               },
               {
-                name: 'Jenna H.',
-                location: 'Draper, UT',
-                text: 'We bundled a new fence with sod and a paver patio. Alpine project-managed all of it as one job, one walkthrough, one warranty. Saved us months of coordinating contractors.',
-                service: 'Fence + Sod + Patio Bundle',
+                name: 'Morgan Busch',
+                location: 'Google Review',
+                text: 'Chandler was great to work with. He communicated regularly to schedule the power wash and staining, working around the rainy days we had in May. Chandler and Jordan worked with us to get the right stain and color and were committed to get it right.',
+                service: 'Power Wash & Stain',
               },
               {
-                name: 'David S.',
-                location: 'Sandy, UT',
-                text: 'Multi-tier deck with iron railings on a tough hillside. Their structural plan was solid, the install was fast, and they cleaned the site every single day. Would absolutely hire them again.',
-                service: 'Composite Deck & Iron Railings',
+                name: 'Bradford Denham',
+                location: 'Sandy, UT \u00b7 Google Local Guide',
+                text: 'I hired Alpine Fence & Deck to perform a full recondition of my two redwood decks here behind my home in Sandy. Chandler and his crew did excellent work \u2014 my decks look brand new.',
+                service: 'Deck Recondition',
+              },
+              {
+                name: 'Scott Poppen',
+                location: 'Google Local Guide',
+                text: 'I initially contacted Chandler and his crew to fix a broken gate on my 28 year old fence. They replaced the gate, repaired a couple of rotting posts, and did a complete staining. Fence now looks like new and is good for many more years.',
+                service: 'Gate Repair & Staining',
               },
             ].map((testimonial) => (
               <div key={testimonial.name} className="card p-6">
@@ -435,7 +453,7 @@ export default function HomePage() {
               },
               {
                 q: 'Can I bundle a fence or deck with sod, a patio, or a sprinkler system?',
-                a: 'That\u2019s the whole point of the new division. We project-manage the entire yard as one job — fence, deck, sod, walls, pavers, and irrigation sequenced together so trades don\u2019t step on each other and you don\u2019t coordinate three contractors.',
+                a: 'Yes \u2014 that\u2019s exactly how we work. We project-manage the entire yard as one job: fence, deck, sod, walls, pavers, and irrigation sequenced together so trades don\u2019t step on each other and you don\u2019t coordinate three contractors. One contract, one warranty, one walkthrough.',
               },
               {
                 q: 'Is the landscape crew the same team that does the fences?',

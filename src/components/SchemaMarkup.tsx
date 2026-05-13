@@ -458,9 +458,13 @@ export default function SchemaMarkup({ city, service, serviceData, pageType, bre
       },
     ]));
     schemas.push(...generateReviewSchema([
-      { name: 'Kathy M', text: 'I watched Alpine do my neighbor’s fence and thought they did a very good job, so we hired them to repair our fence, rebuild a gate, and power wash and paint the entire fence. They also stained a small bridge in our yard. Reasonable price and great work.', rating: 5 },
+      { name: 'Ben Meldrum', text: 'This company does absolutely fantastic fencing and decking. I would recommend them above all of the contractors. Great price.', rating: 5 },
+      { name: 'Katy Brown', text: 'Alpine Fence and Deck did an excellent job with composite fence installation. Beautiful work. Chandler was friendly, honest, and easy to work with—someone you feel comfortable trusting right away. Highly recommend.', rating: 5 },
       { name: 'George Mastakas', text: 'Swooped in and installed + painted/stained my cedar fence with two gates in less than a week! Cannot be more pleased with the work Chandler and his team did. Price was very fair, overall experience was great, end result was what I expected.', rating: 5 },
-      { name: 'Cynthia Dunford', text: 'Very professional! First, they repaired my fence and then I had them stain the entire fence. The owner, Chandler, kept me informed every step of the way. The end product was excellent!', rating: 5 },
+      { name: 'Kathy M', text: 'I watched Alpine do my neighbor\u2019s fence and I think they did a very good job. We then hired them to work on our fence for repairs, rebuild a gate, then power wash and paint the entire fence. They also stained a small bridge in our yard.', rating: 5 },
+      { name: 'Cynthia Dunford', text: 'I initially called Alpine Fence and Deck for an estimate to repair a section of a wooden panel of my fence that had blown out in a windstorm. Josh came out and gave me a very affordable estimate for repairing it.', rating: 5 },
+      { name: 'P&C Wilkinson', text: 'Chandler and his team did a great job. They came when they said they would and finished quickly without sacrificing quality of work. I will use them next time my deck needs to be refinished. Very happy with them!', rating: 5 },
+      { name: 'Morgan Busch', text: 'Chandler was great to work with. He communicated regularly to schedule the power wash and staining, working around the rainy days we had in May. Chandler and Jordan worked with us to get the right stain and color and were committed to get it right.', rating: 5 },
     ]));
   }
 

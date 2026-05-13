@@ -197,33 +197,33 @@ export default function LandscapingIndex() {
               From Our Wasatch Front Customers
             </span>
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-stone-900 mb-3 tracking-tight">
-              Trusted by the Same Customers <span className="italic font-light text-forest-700">Who Trust Our Fences.</span>
+              The Same Crews. <span className="italic font-light text-forest-700">The Same Standards.</span>
             </h2>
             <p className="text-stone-600 max-w-2xl mx-auto">
-              {COMPANY.yearsExperience}+ years of fence and deck reviews back every yard project we run.
-              Here&apos;s what our customers say about working with the same crews across the whole property.
+              {COMPANY.yearsExperience}+ years, 1,700+ projects, and a 4.4-star Google rating across fence and deck.
+              Yard &amp; landscape is run by the same crew leads — here&apos;s what customers say about working with us.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: 'Kathy M.',
-                location: 'Local Guide',
-                text: 'Alpine did our fence and gate — reasonable price, great work. When they offered to handle the sod and sprinklers too, it was a no-brainer. Same crew, one schedule, done right.',
-                service: 'Fence + Sod Bundle',
+                name: 'Katy Brown',
+                location: 'Google Local Guide',
+                text: 'Alpine Fence and Deck did an excellent job with composite fence installation. Beautiful work. Chandler was friendly, honest, and easy to work with\u2014someone you feel comfortable trusting right away. Highly recommend.',
+                service: 'Composite Fence Install',
               },
               {
                 name: 'George Mastakas',
-                location: 'Utah',
-                text: 'Chandler\u2019s crew installed my cedar fence in under a week. Adding a paver patio later with the same team meant I didn\u2019t have to coordinate two contractors. Highly recommend.',
-                service: 'Fence + Paver Patio',
+                location: 'Google Review',
+                text: 'Swooped in and installed + painted/stained my cedar fence with two gates in less than a week! Cannot be more pleased with the work Chandler and his team did. Price was very fair, overall experience was great, end result was what I expected.',
+                service: 'Cedar Fence & Gates',
               },
               {
-                name: 'Cynthia Dunford',
-                location: 'Provo, UT',
-                text: 'Professional from start to finish. Repaired and stained our fence, then came back to grade and re-sod the yard. The owner kept me informed every step of the way.',
-                service: 'Fence + Sod Install',
+                name: 'Bradford Denham',
+                location: 'Sandy, UT \u00b7 Google Local Guide',
+                text: 'I hired Alpine Fence & Deck to perform a full recondition of my two redwood decks here behind my home in Sandy. Chandler and his crew did excellent work \u2014 my decks look brand new.',
+                service: 'Deck Recondition',
               },
             ].map((t) => (
               <div key={t.name} className="card p-6">

@@ -65,7 +65,7 @@ export default function FenceTypesGrid() {
         <div className="absolute inset-0 p-5 lg:p-6 flex flex-col justify-between text-white">
           <span className="self-start inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-bronze-500/20 border border-bronze-300/40 text-[10px] font-semibold uppercase tracking-[0.2em] text-bronze-200">
             <span className="w-1.5 h-1.5 rounded-full bg-bronze-300" />
-            New Division
+            Licensed &amp; Insured
           </span>
 
           <div>
