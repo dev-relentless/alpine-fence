@@ -88,7 +88,7 @@ export default function HomePage() {
             {[
               { value: `${COMPANY.yearsExperience}+`, label: 'Years Experience' },
               { value: '94', label: 'Cities Served' },
-              { value: `${COMPANY.googleRating}★`, label: `Google Rating · 21 Reviews` },
+              { value: `${COMPANY.googleRating}★`, label: `Google Rating · 24 Reviews` },
               { value: '1,700+', label: 'Projects Completed' },
             ].map((stat) => (
               <div key={stat.label}>
@@ -331,6 +331,18 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
+              {
+                name: 'McCall Jensen',
+                location: 'Google Review',
+                text: 'We just bought a home and honestly had no idea what to do with the yard. Alpine Fence and Deck made it easy. We told them we wanted something clean and low-maintenance, and they helped us pick a simple layout with rock, a few shrubs, and a clean look. Great price.',
+                service: 'Yard & Landscape',
+              },
+              {
+                name: 'Keith Refsdal',
+                location: 'Google Review',
+                text: 'They did a great job on 2 gates and some short composite fencings! Reasonable price.',
+                service: 'Gates & Composite Fence',
+              },
               {
                 name: 'Ben Meldrum',
                 location: 'Google Local Guide',

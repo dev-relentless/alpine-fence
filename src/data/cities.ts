@@ -698,7 +698,7 @@ export const COMPANY = {
   ],
   founded: 2009,
   yearsExperience: YEARS_EXPERIENCE,
-  googleRating: 4.4,
+  googleRating: 4.5,
   tagline: 'Utah\'s Premier Fence, Deck & Landscape Builder · Provo & Salt Lake City',
   serviceArea: '94 cities across Utah',
   hours: 'Mon–Fri 8 AM – 5 PM',

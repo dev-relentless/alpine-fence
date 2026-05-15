@@ -200,7 +200,7 @@ export default function LandscapingIndex() {
               The Same Crews. <span className="italic font-light text-forest-700">The Same Standards.</span>
             </h2>
             <p className="text-stone-600 max-w-2xl mx-auto">
-              {COMPANY.yearsExperience}+ years, 1,700+ projects, and a 4.4-star Google rating across fence and deck.
+              {COMPANY.yearsExperience}+ years, 1,700+ projects, and a 4.5-star Google rating across fence and deck.
               Yard &amp; landscape is run by the same crew leads — here&apos;s what customers say about working with us.
             </p>
           </div>
@@ -208,16 +208,16 @@ export default function LandscapingIndex() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
+                name: 'McCall Jensen',
+                location: 'Google Review',
+                text: 'We just bought a home and honestly had no idea what to do with the yard. Alpine Fence and Deck made it easy. We told them we wanted something clean and low-maintenance, and they helped us pick a simple layout with rock, a few shrubs, and a clean look. Great price.',
+                service: 'Yard & Landscape',
+              },
+              {
                 name: 'Katy Brown',
                 location: 'Google Local Guide',
                 text: 'Alpine Fence and Deck did an excellent job with composite fence installation. Beautiful work. Chandler was friendly, honest, and easy to work with\u2014someone you feel comfortable trusting right away. Highly recommend.',
                 service: 'Composite Fence Install',
-              },
-              {
-                name: 'George Mastakas',
-                location: 'Google Review',
-                text: 'Swooped in and installed + painted/stained my cedar fence with two gates in less than a week! Cannot be more pleased with the work Chandler and his team did. Price was very fair, overall experience was great, end result was what I expected.',
-                service: 'Cedar Fence & Gates',
               },
               {
                 name: 'Bradford Denham',

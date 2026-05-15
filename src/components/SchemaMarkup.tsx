@@ -255,7 +255,7 @@ export function generateLocalBusinessSchema(city?: CityData) {
       ratingValue: String(COMPANY.googleRating),
       bestRating: '5',
       worstRating: '1',
-      reviewCount: '21',
+      reviewCount: '24',
     },
     knowsAbout: [
       'Wood fence installation',
@@ -458,6 +458,8 @@ export default function SchemaMarkup({ city, service, serviceData, pageType, bre
       },
     ]));
     schemas.push(...generateReviewSchema([
+      { name: 'McCall Jensen', text: 'We just bought a home and honestly had no idea what to do with the yard. Alpine Fence and Deck made it easy. We told them we wanted something clean and low-maintenance, and they helped us pick a simple layout with rock, a few shrubs, and a clean look. Great price.', rating: 5 },
+      { name: 'Keith Refsdal', text: 'They did a great job on 2 gates and some short composite fencings! Reasonable price.', rating: 5 },
       { name: 'Ben Meldrum', text: 'This company does absolutely fantastic fencing and decking. I would recommend them above all of the contractors. Great price.', rating: 5 },
       { name: 'Katy Brown', text: 'Alpine Fence and Deck did an excellent job with composite fence installation. Beautiful work. Chandler was friendly, honest, and easy to work with—someone you feel comfortable trusting right away. Highly recommend.', rating: 5 },
       { name: 'George Mastakas', text: 'Swooped in and installed + painted/stained my cedar fence with two gates in less than a week! Cannot be more pleased with the work Chandler and his team did. Price was very fair, overall experience was great, end result was what I expected.', rating: 5 },
