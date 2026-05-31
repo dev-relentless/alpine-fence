@@ -35,10 +35,10 @@ export default function HomePage() {
           />
         </div>
 
-        {/* logo watermark */}
-        <div className="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 opacity-[0.20] hidden md:block">
+        {/* logo watermark — single, prominent, right gutter */}
+        <div className="pointer-events-none absolute right-[-6%] top-1/2 -translate-y-1/2 opacity-[0.32] hidden md:block mix-blend-screen">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/harlow/logo.png" alt="" className="w-[640px] h-[640px] object-contain brightness-0 invert" />
+          <img src="/harlow/logo.png" alt="" className="w-[720px] h-[720px] object-contain brightness-0 invert" />
         </div>
 
         {/* hero content */}
