@@ -3,7 +3,7 @@ import InquiryForm from '@/components/InquiryForm';
 
 export const metadata: Metadata = {
   title: 'Begin a project',
-  description: 'Tell us about your site and the way you would like to live in the landscape. Inquiries are read by the firm’s principal.',,
+  description: 'Tell us about your site and the way you would like to live in the landscape. Inquiries are read by the firm’s principal.',
 };
 
 export default function InquirePage() {

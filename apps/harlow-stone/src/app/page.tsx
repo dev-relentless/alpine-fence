@@ -26,17 +26,17 @@ export default function HomePage() {
               className="object-cover"
             />
           </Parallax>
-          {/* tonal washes */}
-          <div className="absolute inset-0 bg-gradient-to-b from-stone-950/55 via-stone-950/30 to-stone-950/90" />
+          {/* tonal washes — kept light to preserve photographic richness */}
+          <div className="absolute inset-0 bg-gradient-to-b from-stone-950/30 via-stone-950/5 to-stone-950/80" />
           {/* vignette */}
           <div
             className="absolute inset-0"
-            style={{ background: 'radial-gradient(ellipse at center, transparent 45%, rgba(13,11,9,0.5) 100%)' }}
+            style={{ background: 'radial-gradient(ellipse at center, transparent 55%, rgba(13,11,9,0.4) 100%)' }}
           />
         </div>
 
         {/* logo watermark */}
-        <div className="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 opacity-[0.06] hidden md:block">
+        <div className="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 opacity-[0.20] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/logo.png" alt="" className="w-[640px] h-[640px] object-contain brightness-0 invert" />
         </div>
@@ -81,7 +81,7 @@ export default function HomePage() {
       {/* ─────────── MEANING — the name carries the work ─────────── */}
       <section className="relative bg-ivory-50 overflow-hidden">
         {/* logo watermark in shadows */}
-        <div className="pointer-events-none absolute -left-32 top-1/2 -translate-y-1/2 opacity-[0.09] hidden md:block">
+        <div className="pointer-events-none absolute -left-32 top-1/2 -translate-y-1/2 opacity-[0.16] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/logo.png" alt="" className="w-[680px] h-[680px] object-contain" />
         </div>
@@ -144,7 +144,7 @@ export default function HomePage() {
       {/* ─────────── PHILOSOPHY ─────────── */}
       <section className="relative bg-ivory-100 border-y border-stone-200 overflow-hidden">
         {/* logo watermark in shadows */}
-        <div className="pointer-events-none absolute -right-40 -bottom-32 opacity-[0.10] hidden md:block">
+        <div className="pointer-events-none absolute -right-40 -bottom-32 opacity-[0.16] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/logo.png" alt="" className="w-[620px] h-[620px] object-contain" />
         </div>
@@ -183,7 +183,7 @@ export default function HomePage() {
       {/* ─────────── SERVICES ─────────── */}
       <section className="bg-ivory-50 relative overflow-hidden">
         {/* logo watermark in shadows */}
-        <div className="pointer-events-none absolute -left-40 -bottom-40 opacity-[0.09] hidden md:block">
+        <div className="pointer-events-none absolute -left-40 -bottom-40 opacity-[0.16] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/logo.png" alt="" className="w-[640px] h-[640px] object-contain" />
         </div>
@@ -221,7 +221,7 @@ export default function HomePage() {
 
       {/* ─────────── IN-HOUSE — our own crews, beginning to end ─────────── */}
       <section className="relative bg-ivory-100 border-y border-stone-200 overflow-hidden">
-        <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 opacity-[0.10] hidden md:block">
+        <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 opacity-[0.16] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/logo.png" alt="" className="w-[700px] h-[700px] object-contain" />
         </div>
@@ -297,7 +297,7 @@ export default function HomePage() {
 
       {/* ─────────── STEWARDSHIP — replaces 'care' with a deeper voice ─────────── */}
       <section className="relative bg-moss-deep text-ivory-50 overflow-hidden">
-        <div className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 opacity-[0.05] hidden md:block">
+        <div className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 opacity-[0.18] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/logo.png" alt="" className="w-[560px] h-[560px] object-contain brightness-0 invert" />
         </div>
@@ -329,7 +329,7 @@ export default function HomePage() {
 
       {/* ─────────── LINEAGE ─────────── */}
       <section className="relative bg-stone-50 border-y border-stone-200 overflow-hidden">
-        <div className="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 opacity-[0.09] hidden md:block">
+        <div className="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 opacity-[0.16] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/logo.png" alt="" className="w-[520px] h-[520px] object-contain" />
         </div>
@@ -354,7 +354,7 @@ export default function HomePage() {
       {/* ─────────── CTA ─────────── */}
       <section className="relative bg-stone-950 text-ivory-50 overflow-hidden">
         {/* logo backdrop */}
-        <div className="pointer-events-none absolute -left-16 top-1/2 -translate-y-1/2 opacity-[0.07] hidden md:block">
+        <div className="pointer-events-none absolute -left-16 top-1/2 -translate-y-1/2 opacity-[0.18] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/logo.png" alt="" className="w-[560px] h-[560px] object-contain brightness-0 invert" />
         </div>

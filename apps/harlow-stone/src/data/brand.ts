@@ -3,7 +3,7 @@ export const BRAND = {
   shortName: 'Harlow & Stone',
   tagline: 'Outdoor environments, crafted to endure.',
   description:
-    'Harlow & Stone is a premium Utah landscape design-build firm composing complete outdoor environments — full landscape installations, retaining walls, sport courts, hardscape, lighting, and water — designed with intent and built to last.',,
+    'Harlow & Stone is a premium Utah landscape design-build firm composing complete outdoor environments — full landscape installations, retaining walls, sport courts, hardscape, lighting, and water — designed with intent and built to last.',
   shortDescription:
     'Premium landscape design-build for Utah estates and homes — full installations, retaining walls, sport courts, hardscape, lighting, and water.',
   domain: 'harlowandstonelandscapes.com',

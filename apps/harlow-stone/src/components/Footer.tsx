@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="relative bg-stone-950 text-ivory-100 mt-24 overflow-hidden">
       {/* logo watermark */}
-      <div className="pointer-events-none absolute -right-16 -bottom-24 opacity-[0.06] hidden md:block">
+      <div className="pointer-events-none absolute -right-16 -bottom-24 opacity-[0.14] hidden md:block">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/harlow/logo.png" alt="" className="w-[480px] h-[480px] object-contain invert brightness-200" />
       </div>
