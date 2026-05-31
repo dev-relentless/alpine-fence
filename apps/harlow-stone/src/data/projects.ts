@@ -5,7 +5,7 @@ export interface HarlowProject {
   year: number;
   scope: string[];
   summary: string;
-  hero?: string; // /harlow/projects/<slug>.jpg — fill in once photography is available
+  hero: string;
 }
 
 export const harlowProjects: HarlowProject[] = [
@@ -17,6 +17,7 @@ export const harlowProjects: HarlowProject[] = [
     scope: ['Master plan', 'Hardscape', 'Planting', 'Lighting'],
     summary:
       'A terraced rear garden with a board-formed concrete spa surround, drystack stone walls, and a perennial meadow that opens to the Lone Peak ridgeline.',
+    hero: '/harlow/projects/alpine-bench-residence.jpg',
   },
   {
     slug: 'holladay-courtyard',
@@ -26,6 +27,7 @@ export const harlowProjects: HarlowProject[] = [
     scope: ['Hardscape', 'Water feature', 'Planting'],
     summary:
       'A walled entry courtyard anchored by a basalt scupper basin and a single multi-trunk serviceberry.',
+    hero: '/harlow/projects/holladay-courtyard.jpg',
   },
   {
     slug: 'park-city-meadow',
@@ -35,5 +37,6 @@ export const harlowProjects: HarlowProject[] = [
     scope: ['Master plan', 'Native restoration', 'Irrigation'],
     summary:
       'A 1.4-acre site reframed as native meadow with mowed sight-lines, a stone fire ring, and a cor-ten retaining edge.',
+    hero: '/harlow/projects/park-city-meadow.jpg',
   },
 ];

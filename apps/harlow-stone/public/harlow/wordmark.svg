@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" fill="none" aria-hidden="true">
+  <g fill="#1a1714" font-family="Georgia, 'Cormorant Garamond', serif" font-weight="300">
+    <text x="0" y="135" font-size="140" letter-spacing="-4">Harlow</text>
+    <text x="320" y="135" font-size="140" fill="#9e7639" font-style="italic">&amp;</text>
+    <text x="385" y="135" font-size="140" letter-spacing="-4">Stone</text>
+  </g>
+  <line x1="0" y1="160" x2="600" y2="160" stroke="#1a1714" stroke-width="0.6" opacity="0.35"/>
+  <text x="0" y="185" font-family="Inter, system-ui, sans-serif" font-size="14" letter-spacing="6" fill="#1a1714" opacity="0.6">LANDSCAPE STUDIO  ·  WASATCH FRONT</text>
+</svg>

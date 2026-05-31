@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+  <rect x="2" y="2" width="76" height="76" stroke="#1a1714" stroke-width="1.25" fill="none"/>
+  <rect x="6" y="6" width="68" height="68" stroke="#1a1714" stroke-width="0.4" fill="none" opacity="0.4"/>
+  <!-- H -->
+  <g fill="#1a1714" font-family="Georgia, 'Cormorant Garamond', serif">
+    <text x="18" y="50" font-size="34" font-weight="400" letter-spacing="-1">H</text>
+    <!-- vertical rule -->
+    <line x1="40" y1="20" x2="40" y2="60" stroke="#9e7639" stroke-width="0.75"/>
+    <!-- S -->
+    <text x="46" y="50" font-size="34" font-weight="400" letter-spacing="-1">S</text>
+  </g>
+  <!-- footer micro-type -->
+  <text x="40" y="70" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="4.2" letter-spacing="1.6" fill="#1a1714" opacity="0.55">HARLOW &amp; STONE</text>
+</svg>

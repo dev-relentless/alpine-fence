@@ -5,11 +5,21 @@ import { harlowServices } from '@/data/services';
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="bg-stone-900 text-ivory-100 mt-24">
-      <div className="container-editorial py-20 grid gap-12 md:grid-cols-4">
+    <footer className="relative bg-stone-950 text-ivory-100 mt-24 overflow-hidden">
+      {/* monogram watermark */}
+      <div className="pointer-events-none absolute -right-10 -bottom-20 opacity-[0.05] hidden md:block">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/harlow/monogram-light.svg" alt="" className="w-[420px] h-[420px]" />
+      </div>
+
+      <div className="relative container-editorial py-20 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2 space-y-5">
-          <div className="font-display text-3xl tracking-display-tight">
-            Harlow <span className="text-bronze-400">&amp;</span> Stone
+          <div className="flex items-center gap-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/harlow/monogram-light.svg" alt="" className="h-10 w-10" />
+            <div className="font-display text-3xl tracking-display-tight">
+              Harlow <span className="italic text-bronze-300">&amp;</span> Stone
+            </div>
           </div>
           <p className="text-stone-400 max-w-md leading-relaxed">{BRAND.description}</p>
           <p className="text-stone-500 text-sm">{BRAND.parent.note}</p>
@@ -35,7 +45,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-stone-800">
+      <div className="relative border-t border-stone-800">
         <div className="container-editorial py-6 flex flex-col md:flex-row gap-3 justify-between text-xs text-stone-500">
           <div>&copy; {year} {BRAND.name}. All rights reserved.</div>
           <div className="flex gap-6">
