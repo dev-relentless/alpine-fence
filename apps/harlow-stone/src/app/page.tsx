@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { BRAND } from '@/data/brand';
 import { harlowServices } from '@/data/services';
 import { harlowProjects } from '@/data/projects';
@@ -12,16 +13,17 @@ export default function HomePage() {
     <>
       {/* ─────────── HERO — cinematic, parallax, sharp ─────────── */}
       <section className="relative h-[94vh] min-h-[660px] overflow-hidden bg-stone-950 text-ivory-50">
-        {/* photographic backdrop — slower parallax, no upscale, keeps edges crisp */}
+        {/* photographic backdrop — next/image for sharp delivery, parallax wrapper */}
         <div className="absolute inset-0 -z-0">
           <Parallax speed={-40} className="absolute inset-0">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/harlow/hero.jpg"
               alt="Wasatch Front estate landscape"
-              className="h-full w-full object-cover"
-              loading="eager"
-              decoding="async"
+              fill
+              priority
+              quality={92}
+              sizes="100vw"
+              className="object-cover"
             />
           </Parallax>
           {/* tonal washes */}
@@ -79,7 +81,7 @@ export default function HomePage() {
       {/* ─────────── MEANING — the name carries the work ─────────── */}
       <section className="relative bg-ivory-50 overflow-hidden">
         {/* logo watermark in shadows */}
-        <div className="pointer-events-none absolute -left-32 top-1/2 -translate-y-1/2 opacity-[0.035] hidden md:block">
+        <div className="pointer-events-none absolute -left-32 top-1/2 -translate-y-1/2 opacity-[0.09] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/logo.png" alt="" className="w-[680px] h-[680px] object-contain" />
         </div>
@@ -142,7 +144,7 @@ export default function HomePage() {
       {/* ─────────── PHILOSOPHY ─────────── */}
       <section className="relative bg-ivory-100 border-y border-stone-200 overflow-hidden">
         {/* logo watermark in shadows */}
-        <div className="pointer-events-none absolute -right-40 -bottom-32 opacity-[0.04] hidden md:block">
+        <div className="pointer-events-none absolute -right-40 -bottom-32 opacity-[0.10] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/logo.png" alt="" className="w-[620px] h-[620px] object-contain" />
         </div>
@@ -181,7 +183,7 @@ export default function HomePage() {
       {/* ─────────── SERVICES ─────────── */}
       <section className="bg-ivory-50 relative overflow-hidden">
         {/* logo watermark in shadows */}
-        <div className="pointer-events-none absolute -left-40 -bottom-40 opacity-[0.035] hidden md:block">
+        <div className="pointer-events-none absolute -left-40 -bottom-40 opacity-[0.09] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/logo.png" alt="" className="w-[640px] h-[640px] object-contain" />
         </div>
@@ -219,7 +221,7 @@ export default function HomePage() {
 
       {/* ─────────── IN-HOUSE — our own crews, beginning to end ─────────── */}
       <section className="relative bg-ivory-100 border-y border-stone-200 overflow-hidden">
-        <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 opacity-[0.04] hidden md:block">
+        <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 opacity-[0.10] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/logo.png" alt="" className="w-[700px] h-[700px] object-contain" />
         </div>
@@ -327,7 +329,7 @@ export default function HomePage() {
 
       {/* ─────────── STUDIO LINEAGE ─────────── */}
       <section className="relative bg-stone-50 border-y border-stone-200 overflow-hidden">
-        <div className="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 opacity-[0.04] hidden md:block">
+        <div className="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 opacity-[0.09] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/logo.png" alt="" className="w-[520px] h-[520px] object-contain" />
         </div>

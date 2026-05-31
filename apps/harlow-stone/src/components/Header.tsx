@@ -19,8 +19,13 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 bg-ivory-50/85 backdrop-blur border-b border-stone-200">
-      <div className="container-editorial flex h-[72px] items-center justify-between gap-6">
+    <header className="sticky top-0 z-40 bg-ivory-50/85 backdrop-blur border-b border-stone-200 overflow-hidden">
+      {/* faint logo watermark in shadows */}
+      <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 opacity-[0.07] hidden md:block">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/harlow/logo.png" alt="" className="h-[140px] w-[140px] object-contain" />
+      </div>
+      <div className="relative container-editorial flex h-[72px] items-center justify-between gap-6">
         <Logo />
         <nav className="hidden lg:flex items-center gap-7">
           {nav.map((item) => (
