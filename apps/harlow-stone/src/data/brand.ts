@@ -8,10 +8,8 @@ export const BRAND = {
     'Premium landscape design-build for Utah estates and homes — full installations, retaining walls, sport courts, hardscape, lighting, and water.',
   domain: 'harlowandstonelandscapes.com',
   url: 'https://harlowandstonelandscapes.com',
-  email: 'studio@harlowandstonelandscapes.com',
-  // TODO: replace with provisioned studio line (SMS-capable). E.164 format for tel:/sms:.
-  phone: '(801) 477-0220',
-  phoneRaw: '+18014770220',
+  phone: '(801) 471-3148',
+  phoneRaw: '+18014713148',
   smsBody: "Hi Harlow & Stone — I'd like to start a conversation about a project.",
   address: {
     region: 'Utah — Wasatch Front',

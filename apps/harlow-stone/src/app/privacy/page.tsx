@@ -15,7 +15,7 @@ export default function PrivacyPage() {
         {BRAND.name} collects information you submit through inquiry forms — name, contact details, and project notes — solely to respond to your inquiry and deliver our services. We do not sell or share this information with third parties for marketing purposes.
       </p>
       <p className="text-stone-600 leading-relaxed mt-6">
-        Questions: <a href={`mailto:${BRAND.email}`} className="underline">{BRAND.email}</a>.
+        Questions: call <a href={`tel:${BRAND.phoneRaw}`} className="underline">{BRAND.phone}</a>.
       </p>
     </section>
   );

@@ -18,7 +18,6 @@ export default function SchemaMarkup() {
       alternateName: BRAND.shortName,
       url: BRAND.url,
       logo: `${BRAND.url}/harlow/logo.png`,
-      email: BRAND.email,
       telephone: BRAND.phoneRaw,
       description: BRAND.description,
       foundingDate: BRAND.founded,
@@ -51,7 +50,6 @@ export default function SchemaMarkup() {
       image: `${BRAND.url}/harlow/og.jpg`,
       url: BRAND.url,
       telephone: BRAND.phoneRaw,
-      email: BRAND.email,
       priceRange: BRAND.priceRange,
       address: {
         '@type': 'PostalAddress',

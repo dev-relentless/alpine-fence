@@ -40,20 +40,20 @@ export default function HomePage() {
 
         {/* upper meta bar */}
         <div className="absolute top-0 inset-x-0">
-          <div className="container-editorial flex items-center justify-between py-7 text-[11px] tracking-[0.32em] uppercase text-ivory-100/70">
+          <div className="container-editorial flex items-center justify-between py-5 md:py-7 text-[10px] md:text-[11px] tracking-[0.28em] md:tracking-[0.32em] uppercase text-ivory-100/70">
             <span>Harlow &amp; Stone</span>
             <span className="hidden md:inline">By appointment</span>
-            <span>Wasatch Front, UT</span>
+            <span className="hidden xs:inline">Wasatch Front, UT</span>
           </div>
         </div>
 
         {/* hero content — anchored low-left for editorial weight */}
-        <div className="relative container-editorial h-full flex flex-col justify-end pb-28 md:pb-32">
+        <div className="relative container-editorial h-full flex flex-col justify-end pb-20 md:pb-32">
           <Reveal>
-            <div className="eyebrow text-bronze-300 mb-7">A landscape firm · Design · Build · Steward</div>
+            <div className="eyebrow text-bronze-300 mb-5 md:mb-7 text-[10px] md:text-xs">A landscape firm · Design · Build · Steward</div>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="h-display text-[14vw] md:text-[9.5vw] lg:text-[8vw] leading-[0.94] max-w-[14ch] tracking-[-0.03em]">
+            <h1 className="h-display text-[15vw] md:text-[9.5vw] lg:text-[8vw] leading-[0.92] md:leading-[0.94] max-w-[14ch] tracking-[-0.03em]">
               The property
               <br />
               you&rsquo;ll never
@@ -62,14 +62,14 @@ export default function HomePage() {
             </h1>
           </Reveal>
           <Reveal delay={260}>
-            <div className="mt-12 flex flex-wrap items-center gap-4">
-              <Link href="/inquire" className="btn-primary bg-bronze-500 hover:bg-bronze-400 text-stone-900">
+            <div className="mt-8 md:mt-12 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4">
+              <Link href="/inquire" className="btn-primary bg-bronze-500 hover:bg-bronze-400 text-stone-900 w-full sm:w-auto text-center">
                 Begin a project
               </Link>
-              <a href={smsHref} className="btn-ghost border-ivory-100/40 text-ivory-50 hover:border-ivory-50">
+              <a href={smsHref} className="btn-ghost border-ivory-100/40 text-ivory-50 hover:border-ivory-50 w-full sm:w-auto text-center">
                 Text the firm
               </a>
-              <a href={`tel:${BRAND.phoneRaw}`} className="text-sm tracking-wide text-ivory-100/75 hover:text-ivory-50 ml-2">
+              <a href={`tel:${BRAND.phoneRaw}`} className="text-sm tracking-wide text-ivory-100/75 hover:text-ivory-50 sm:ml-2 mt-1 sm:mt-0">
                 {BRAND.phone}
               </a>
             </div>
@@ -79,22 +79,22 @@ export default function HomePage() {
 
       {/* ─────────── CREDO ─ full-bleed declaration ─────────── */}
       <section className="relative bg-ivory-50 border-b border-stone-200">
-        <div className="container-editorial py-20 md:py-28 text-center">
+        <div className="container-editorial py-16 md:py-28 text-center">
           <Reveal>
-            <div className="eyebrow text-bronze-500 mb-8">The Credo</div>
+            <div className="eyebrow text-bronze-500 mb-6 md:mb-8">The Credo</div>
           </Reveal>
           <Reveal delay={100}>
-            <p className="font-display text-3xl md:text-5xl lg:text-[3.4rem] text-stone-900 leading-[1.18] tracking-display-tight max-w-5xl mx-auto">
+            <p className="font-display text-[2rem] sm:text-4xl md:text-5xl lg:text-[3.4rem] text-stone-900 leading-[1.12] md:leading-[1.18] tracking-display-tight max-w-5xl mx-auto">
               Few properties are ever built like this.
               <br className="hidden md:block" />
               <span className="italic text-moss-700"> The few that are, are built by one firm.</span>
             </p>
           </Reveal>
           <Reveal delay={200}>
-            <div className="mt-10 flex items-center justify-center gap-4 text-stone-400">
-              <span className="h-px w-12 bg-stone-300" />
-              <span className="text-[10px] tracking-[0.4em] uppercase">From sketch to steward</span>
-              <span className="h-px w-12 bg-stone-300" />
+            <div className="mt-8 md:mt-10 flex items-center justify-center gap-3 md:gap-4 text-stone-400">
+              <span className="h-px w-8 md:w-12 bg-stone-300" />
+              <span className="text-[9px] md:text-[10px] tracking-[0.35em] md:tracking-[0.4em] uppercase">From sketch to steward</span>
+              <span className="h-px w-8 md:w-12 bg-stone-300" />
             </div>
           </Reveal>
         </div>
@@ -107,26 +107,26 @@ export default function HomePage() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/monogram.svg" alt="" className="w-[600px] h-[600px] object-contain" />
         </div>
-        <div className="relative container-editorial py-28 md:py-40">
+        <div className="relative container-editorial py-20 md:py-40">
           <Reveal>
-            <div className="eyebrow text-stone-500 mb-6 text-center">The Name</div>
+            <div className="eyebrow text-stone-500 mb-5 md:mb-6 text-center">The Name</div>
           </Reveal>
           <Reveal delay={100}>
-            <p className="font-display text-3xl md:text-4xl text-stone-800 max-w-3xl mx-auto text-center leading-snug tracking-display-tight">
+            <p className="font-display text-2xl sm:text-3xl md:text-4xl text-stone-800 max-w-3xl mx-auto text-center leading-snug tracking-display-tight">
               Two ideas held in one name. The hand and the foundation. What the eye keeps, and what the ground holds.
             </p>
           </Reveal>
 
-          <div className="mt-24 grid lg:grid-cols-[1fr_auto_1fr] gap-10 lg:gap-16 items-stretch">
+          <div className="mt-14 md:mt-24 grid lg:grid-cols-[1fr_auto_1fr] gap-8 md:gap-10 lg:gap-16 items-stretch">
             <Reveal delay={150}>
-              <article className="relative h-full p-10 md:p-14 border border-stone-200 bg-ivory-100/60">
-                <div className="absolute top-6 right-6 text-[10px] tracking-[0.3em] text-stone-400">I</div>
-                <div className="eyebrow text-bronze-500 mb-6">Harlow</div>
-                <h3 className="font-display text-5xl md:text-6xl text-stone-900 mb-6 italic font-light">The hand.</h3>
-                <p className="text-stone-700 leading-relaxed text-lg max-w-md">
+              <article className="relative h-full p-8 sm:p-10 md:p-14 border border-stone-200 bg-ivory-100/60">
+                <div className="absolute top-5 right-5 md:top-6 md:right-6 text-[10px] tracking-[0.3em] text-stone-400">I</div>
+                <div className="eyebrow text-bronze-500 mb-5 md:mb-6">Harlow</div>
+                <h3 className="font-display text-4xl sm:text-5xl md:text-6xl text-stone-900 mb-5 md:mb-6 italic font-light">The hand.</h3>
+                <p className="text-stone-700 leading-relaxed text-base md:text-lg max-w-md">
                   Refinement, proportion, restraint. Harlow is the design intelligence of the firm — the way a wall meets the architecture, the cadence of light across a terrace, the quiet edit that keeps a property feeling inevitable instead of arranged.
                 </p>
-                <ul className="mt-8 space-y-2 text-sm text-stone-600">
+                <ul className="mt-7 md:mt-8 space-y-2 text-sm text-stone-600">
                   {['Considered proportion', 'Editorial restraint', 'Light, line, repetition'].map((v) => (
                     <li key={v} className="flex items-center gap-3">
                       <span className="h-px w-5 bg-bronze-400" />{v}
@@ -143,14 +143,14 @@ export default function HomePage() {
             </Reveal>
 
             <Reveal delay={350}>
-              <article className="relative h-full p-10 md:p-14 border border-stone-200 bg-stone-900 text-ivory-50">
-                <div className="absolute top-6 right-6 text-[10px] tracking-[0.3em] text-ivory-100/40">II</div>
-                <div className="eyebrow text-bronze-300 mb-6">Stone</div>
-                <h3 className="font-display text-5xl md:text-6xl text-ivory-50 mb-6 italic font-light">The foundation.</h3>
-                <p className="text-ivory-100/85 leading-relaxed text-lg max-w-md">
+              <article className="relative h-full p-8 sm:p-10 md:p-14 border border-stone-200 bg-stone-900 text-ivory-50">
+                <div className="absolute top-5 right-5 md:top-6 md:right-6 text-[10px] tracking-[0.3em] text-ivory-100/40">II</div>
+                <div className="eyebrow text-bronze-300 mb-5 md:mb-6">Stone</div>
+                <h3 className="font-display text-4xl sm:text-5xl md:text-6xl text-ivory-50 mb-5 md:mb-6 italic font-light">The foundation.</h3>
+                <p className="text-ivory-100/85 leading-relaxed text-base md:text-lg max-w-md">
                   Strength, legacy, the part you don&rsquo;t see. Stone is the engineering underneath — base preparation, drainage, footings, structural walls, and honest materials specified to outlive the people who commissioned them.
                 </p>
-                <ul className="mt-8 space-y-2 text-sm text-ivory-100/75">
+                <ul className="mt-7 md:mt-8 space-y-2 text-sm text-ivory-100/75">
                   {['Engineered substructure', 'Natural stone & masonry', 'Built to outlast trends'].map((v) => (
                     <li key={v} className="flex items-center gap-3">
                       <span className="h-px w-5 bg-bronze-300" />{v}
@@ -169,23 +169,23 @@ export default function HomePage() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/monogram-light.svg" alt="" className="w-[560px] h-[560px] object-contain" />
         </div>
-        <div className="relative container-editorial py-24 md:py-32 grid lg:grid-cols-12 gap-12">
+        <div className="relative container-editorial py-20 md:py-32 grid lg:grid-cols-12 gap-10 md:gap-12">
           <div className="lg:col-span-5">
             <div className="eyebrow text-bronze-300 mb-4">An Invitation</div>
-            <h2 className="h-display text-4xl md:text-6xl leading-[1.04] mb-8">
+            <h2 className="h-display text-[2.4rem] sm:text-5xl md:text-6xl leading-[1.04] mb-6 md:mb-8">
               For the property
               <br />
               <span className="italic text-bronze-300 font-light">that deserves it.</span>
             </h2>
-            <p className="text-ivory-100/80 leading-relaxed max-w-md mb-8">
+            <p className="text-ivory-100/80 leading-relaxed max-w-md mb-7 md:mb-8">
               We take on a small number of projects each year. Each one is held by the principal, drawn against the architecture, and built by trades that have worked together for two decades.
             </p>
-            <Link href="/inquire" className="btn-primary bg-bronze-500 hover:bg-bronze-400 text-stone-900">
+            <Link href="/inquire" className="btn-primary bg-bronze-500 hover:bg-bronze-400 text-stone-900 w-full sm:w-auto inline-block text-center">
               Request a conversation
             </Link>
           </div>
-          <div className="lg:col-span-7 lg:pl-10 lg:border-l border-ivory-50/15 space-y-2">
-            <div className="eyebrow text-ivory-100/55 mb-6">Harlow &amp; Stone is for —</div>
+          <div className="lg:col-span-7 lg:pl-10 lg:border-l border-ivory-50/15">
+            <div className="eyebrow text-ivory-100/55 mb-5 md:mb-6">Harlow &amp; Stone is for —</div>
             {[
               {
                 n: '01',
@@ -204,11 +204,11 @@ export default function HomePage() {
               },
             ].map((item, i) => (
               <Reveal key={item.n} delay={i * 100}>
-                <div className="grid grid-cols-[auto_1fr] gap-6 py-7 border-b border-ivory-50/10 last:border-0">
-                  <div className="text-[11px] tracking-[0.3em] text-bronze-300 pt-2">{item.n}</div>
+                <div className="grid grid-cols-[auto_1fr] gap-4 sm:gap-6 py-6 md:py-7 border-b border-ivory-50/10 last:border-0">
+                  <div className="text-[11px] tracking-[0.3em] text-bronze-300 pt-1.5 md:pt-2">{item.n}</div>
                   <div>
-                    <div className="font-display text-2xl md:text-3xl italic text-ivory-50 mb-2 leading-snug">{item.k}</div>
-                    <p className="text-ivory-100/70 leading-relaxed">{item.v}</p>
+                    <div className="font-display text-xl sm:text-2xl md:text-3xl italic text-ivory-50 mb-2 leading-snug">{item.k}</div>
+                    <p className="text-ivory-100/70 leading-relaxed text-sm md:text-base">{item.v}</p>
                   </div>
                 </div>
               </Reveal>
@@ -223,17 +223,17 @@ export default function HomePage() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/monogram.svg" alt="" className="w-[620px] h-[620px] object-contain" />
         </div>
-        <div className="relative container-editorial py-24 md:py-32">
-          <div className="max-w-3xl mb-14">
+        <div className="relative container-editorial py-20 md:py-32">
+          <div className="max-w-3xl mb-12 md:mb-14">
             <div className="eyebrow mb-4">In-house, end to end</div>
-            <h2 className="h-display text-4xl md:text-6xl text-stone-900 leading-[1.05]">
+            <h2 className="h-display text-[2.4rem] sm:text-5xl md:text-6xl text-stone-900 leading-[1.04]">
               Our own crews. <span className="italic text-moss-700">From the first sketch to the last walk-through.</span>
             </h2>
-            <p className="mt-6 text-stone-600 leading-relaxed text-lg max-w-2xl">
+            <p className="mt-5 md:mt-6 text-stone-600 leading-relaxed text-base md:text-lg max-w-2xl">
               We don&rsquo;t broker the work. Designers, landscapers, builders, masons, concrete and stone setters, planters, irrigation techs, lighting specialists, and stewardship horticulturists are all on our payroll &mdash; one firm, one chain of accountability, one phone number for the life of the property.
             </p>
           </div>
-          <div className="grid md:grid-cols-4 gap-px bg-stone-200 border border-stone-200">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-px bg-stone-200 border border-stone-200">
             {[
               { n: '01', k: 'Design', v: 'Site analysis, master planning, construction documents — drawn by the principal who walks the property with you.' },
               { n: '02', k: 'Build', v: 'Earthwork, concrete, masonry, retaining walls, hardscape, sport courts, irrigation, and lighting — installed by our own landscapers, builders, and trades. No subs.' },
@@ -261,17 +261,17 @@ export default function HomePage() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/monogram-light.svg" alt="" className="w-[500px] h-[500px] object-contain" />
         </div>
-        <div className="relative container-editorial py-24 md:py-32 grid lg:grid-cols-12 gap-12 items-start">
+        <div className="relative container-editorial py-20 md:py-32 grid lg:grid-cols-12 gap-10 md:gap-12 items-start">
           <div className="lg:col-span-5">
             <div className="eyebrow text-bronze-300 mb-4">Stewardship</div>
-            <h2 className="h-display text-4xl md:text-5xl leading-[1.05] mb-6">
+            <h2 className="h-display text-[2.2rem] sm:text-4xl md:text-5xl leading-[1.05] mb-5 md:mb-6">
               The firm doesn&rsquo;t leave <span className="italic text-bronze-300">when the truck does.</span>
             </h2>
-            <p className="text-ivory-100/80 leading-relaxed max-w-md">
+            <p className="text-ivory-100/80 leading-relaxed max-w-md text-sm md:text-base">
               A property settles into itself slowly — and looks its best when someone is paying attention. Bronze patinas, stone weathers, canopies widen, lawns thicken, light shifts with the seasons. Our stewardship program keeps the same firm close to the work: full-service maintenance and the slow refinements that hold a property at its peak.
             </p>
           </div>
-          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-ivory-50/10">
+          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-ivory-50/10 mt-2 lg:mt-0">
             {[
               { k: 'Lawn & grounds', v: 'Mowing, edging, fertility, aeration, and the weekly attention that keeps a property feeling kept — not merely cut.' },
               { k: 'Horticultural care', v: 'Pruning, plant replacement, seasonal color edits, and editorial refinements by in-house horticulturists.' },
@@ -293,12 +293,12 @@ export default function HomePage() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/monogram-light.svg" alt="" className="w-[500px] h-[500px] object-contain" />
         </div>
-        <div className="relative container-editorial py-28 md:py-40">
-          <div className="grid lg:grid-cols-12 gap-12 items-end">
+        <div className="relative container-editorial py-20 md:py-40">
+          <div className="grid lg:grid-cols-12 gap-10 md:gap-12 items-end">
             <Reveal className="lg:col-span-7">
               <div>
-                <div className="eyebrow text-bronze-300 mb-6">By appointment</div>
-                <h2 className="h-display text-4xl md:text-7xl leading-[1.02]">
+                <div className="eyebrow text-bronze-300 mb-5 md:mb-6">By appointment</div>
+                <h2 className="h-display text-[2.6rem] sm:text-5xl md:text-7xl leading-[1.02]">
                   Bring us a property.
                   <br />
                   <span className="italic text-bronze-300 font-light">We&rsquo;ll bring it forward a generation.</span>
@@ -307,14 +307,14 @@ export default function HomePage() {
             </Reveal>
             <Reveal delay={150} className="lg:col-span-5 lg:pl-10 lg:border-l border-ivory-50/15">
               <div>
-                <p className="text-ivory-100/80 leading-relaxed mb-8">
+                <p className="text-ivory-100/80 leading-relaxed mb-7 md:mb-8">
                   The first conversation is unhurried. Tell us the site, the architecture, and what the property is meant to become. The firm&rsquo;s principal reads each inquiry personally.
                 </p>
-                <div className="flex flex-wrap gap-3 mb-6">
-                  <Link href="/inquire" className="btn-primary bg-bronze-500 hover:bg-bronze-400 text-stone-900">
+                <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-6">
+                  <Link href="/inquire" className="btn-primary bg-bronze-500 hover:bg-bronze-400 text-stone-900 w-full sm:w-auto text-center">
                     Begin a project
                   </Link>
-                  <a href={smsHref} className="btn-ghost border-ivory-100/40 text-ivory-50 hover:border-ivory-50">
+                  <a href={smsHref} className="btn-ghost border-ivory-100/40 text-ivory-50 hover:border-ivory-50 w-full sm:w-auto text-center">
                     Text the firm
                   </a>
                 </div>

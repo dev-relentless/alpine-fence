@@ -17,16 +17,10 @@ export default function ContactPage() {
           The firm.
         </h1>
         <p className="text-stone-600 leading-relaxed">
-          For new projects, the inquiry form gives us the right starting points. For everything else, reach the firm directly — call, text, or email. The principal answers each one.
+          For new projects, the inquiry form gives us the right starting points. For everything else, reach the firm directly — call or text. The principal answers each one.
         </p>
       </div>
       <div className="lg:col-span-7 space-y-10">
-        <div>
-          <div className="eyebrow mb-2">Email</div>
-          <a href={`mailto:${BRAND.email}`} className="font-display text-2xl text-stone-900 hover:text-moss-700">
-            {BRAND.email}
-          </a>
-        </div>
         <div>
           <div className="eyebrow mb-2">Call</div>
           <a href={`tel:${BRAND.phoneRaw}`} className="font-display text-2xl text-stone-900 hover:text-moss-700">
