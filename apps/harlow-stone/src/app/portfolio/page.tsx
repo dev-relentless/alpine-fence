@@ -16,7 +16,7 @@ export default function PortfolioPage() {
           Selected <span className="italic text-bronze-500">projects.</span>
         </h1>
         <p className="text-stone-600 leading-relaxed text-lg">
-          A small, edited catalogue. Each project is a multi-year relationship — design, construction, and ongoing stewardship by the same studio.
+          A small, edited catalogue. Each project is a multi-year relationship — design, construction, and ongoing stewardship by the same firm.
         </p>
       </section>
 

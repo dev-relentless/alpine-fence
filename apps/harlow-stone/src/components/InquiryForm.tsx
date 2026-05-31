@@ -23,7 +23,7 @@ export default function InquiryForm() {
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || 'Something went wrong.');
       setStatus('sent');
-      setMessage('Thank you. The studio will be in touch within one business day.');
+      setMessage('Thank you. The firm will be in touch within one business day.');
       (e.target as HTMLFormElement).reset();
     } catch (err) {
       setStatus('error');

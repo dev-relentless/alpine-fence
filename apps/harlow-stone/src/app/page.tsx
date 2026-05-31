@@ -44,7 +44,7 @@ export default function HomePage() {
         {/* hero content */}
         <div className="relative container-editorial h-full flex flex-col justify-end pb-24 md:pb-28">
           <Reveal>
-            <div className="eyebrow text-bronze-300 mb-7">A landscape studio · Wasatch Front, Utah</div>
+            <div className="eyebrow text-bronze-300 mb-7">A landscape firm · Wasatch Front, Utah</div>
           </Reveal>
           <Reveal delay={120}>
             <h1 className="h-display text-[13vw] md:text-[8.5vw] lg:text-[7vw] leading-[0.96] max-w-[16ch] tracking-[-0.025em]">
@@ -62,7 +62,7 @@ export default function HomePage() {
                   Begin a project
                 </Link>
                 <a href={smsHref} className="btn-ghost border-ivory-100/40 text-ivory-50 hover:border-ivory-50">
-                  Text the studio
+                  Text the firm
                 </a>
               </div>
             </div>
@@ -73,7 +73,7 @@ export default function HomePage() {
           <div className="container-editorial flex items-center justify-between py-5 border-t border-ivory-50/15 text-[11px] tracking-[0.28em] uppercase text-ivory-100/55">
             <span>Wasatch Front</span>
             <span className="hidden md:inline">Design · Build · Steward</span>
-            <span>Studio Edition · No. 01</span>
+            <span>House Edition · No. 01</span>
           </div>
         </div>
       </section>
@@ -102,7 +102,7 @@ export default function HomePage() {
                 <div className="eyebrow text-bronze-500 mb-6">Harlow</div>
                 <h3 className="font-display text-5xl md:text-6xl text-stone-900 mb-6 italic font-light">The hand.</h3>
                 <p className="text-stone-700 leading-relaxed text-lg max-w-md">
-                  Refinement, proportion, restraint. Harlow is the design intelligence of the studio — the way a wall meets the architecture, the cadence of light across a terrace, the quiet edit that keeps a property feeling inevitable instead of arranged.
+                  Refinement, proportion, restraint. Harlow is the design intelligence of the firm — the way a wall meets the architecture, the cadence of light across a terrace, the quiet edit that keeps a property feeling inevitable instead of arranged.
                 </p>
                 <ul className="mt-8 space-y-2 text-sm text-stone-600">
                   {['Considered proportion', 'Editorial restraint', 'Light, line, repetition'].map((v) => (
@@ -192,7 +192,7 @@ export default function HomePage() {
             <div>
               <div className="eyebrow mb-3">Capabilities</div>
               <h2 className="h-display text-4xl md:text-6xl text-stone-900 max-w-2xl leading-[1.05]">
-                One studio. <span className="italic text-moss-700">Every layer of the property.</span>
+                One firm. <span className="italic text-moss-700">Every layer of the property.</span>
               </h2>
               <p className="mt-5 text-stone-600 max-w-xl leading-relaxed">
                 From rough grading to the final fixture aim — design, construction, and ongoing stewardship handled in-house, so the vision is held by one team across years.
@@ -232,15 +232,15 @@ export default function HomePage() {
               Our own crews. <span className="italic text-moss-700">From the first sketch to the last walk-through.</span>
             </h2>
             <p className="mt-6 text-stone-600 leading-relaxed text-lg max-w-2xl">
-              We don&rsquo;t broker the work. Designers, masons, carpenters, irrigation techs, plant specialists, lighting designers, and stewardship horticulturists are all on our payroll &mdash; one studio, one chain of accountability, one phone number for the life of the property.
+              We don&rsquo;t broker the work. Designers, landscapers, builders, masons, concrete and stone setters, planters, irrigation techs, lighting specialists, and stewardship horticulturists are all on our payroll &mdash; one firm, one chain of accountability, one phone number for the life of the property.
             </p>
           </div>
           <div className="grid md:grid-cols-4 gap-px bg-stone-200 border border-stone-200">
             {[
               { n: '01', k: 'Design', v: 'Site analysis, master planning, construction documents — drawn by the principal who walks the property with you.' },
-              { n: '02', k: 'Build', v: 'Earthwork, masonry, hardscape, structures, sport courts, irrigation, lighting — installed by our own trades.' },
-              { n: '03', k: 'Plant', v: 'Specimen sourcing, layered planting, and finish work by in-house horticulturists. Nothing left to a separate crew.' },
-              { n: '04', k: 'Steward', v: 'Seasonal walks, pruning, systems service, and refinements — the same studio, returning year after year.' },
+              { n: '02', k: 'Build', v: 'Earthwork, concrete, masonry, retaining walls, hardscape, sport courts, irrigation, and lighting — installed by our own landscapers, builders, and trades. No subs.' },
+              { n: '03', k: 'Plant', v: 'Specimen sourcing, layered planting, sod and lawn install, and finish work by our in-house planters and horticulturists.' },
+              { n: '04', k: 'Steward', v: 'Mowing, pruning, fertility, irrigation tuning, lighting service, and seasonal refinements — the same firm, returning year after year, keeping the property looking its best.' },
             ].map((s) => (
               <Reveal key={s.n}>
                 <div className="bg-ivory-50 p-8 lg:p-10 h-full">
@@ -305,18 +305,18 @@ export default function HomePage() {
           <div className="lg:col-span-5">
             <div className="eyebrow text-bronze-300 mb-4">Stewardship</div>
             <h2 className="h-display text-4xl md:text-5xl leading-[1.05] mb-6">
-              The studio doesn&rsquo;t leave <span className="italic text-bronze-300">when the truck does.</span>
+              The firm doesn&rsquo;t leave <span className="italic text-bronze-300">when the truck does.</span>
             </h2>
             <p className="text-ivory-100/80 leading-relaxed max-w-md">
-              A property settles into itself slowly. Bronze patinas, stone weathers, canopies widen, light shifts with the seasons. Our stewardship program keeps the same studio close to the work — the people who drew it, returning to look after it.
+              A property settles into itself slowly — and looks its best when someone is paying attention. Bronze patinas, stone weathers, canopies widen, lawns thicken, light shifts with the seasons. Our stewardship program keeps the same firm close to the work: full-service maintenance and the slow refinements that hold a property at its peak.
             </p>
           </div>
           <div className="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-ivory-50/10">
             {[
-              { k: 'Seasonal walks', v: 'Twice-yearly walks with the principal — tuning, refining, noting what the property is asking for next.' },
-              { k: 'Horticultural care', v: 'Pruning, fertility, plant replacement, and editorial editing by in-house horticulturists.' },
-              { k: 'Systems service', v: 'Irrigation calibration, lighting alignment and re-lamping, controller programming, and winterization.' },
-              { k: 'Hardscape inspection', v: 'Annual review of walls, terraces, drainage, and joinery — small attention now, no failures later.' },
+              { k: 'Lawn & grounds', v: 'Mowing, edging, fertility, aeration, and the weekly attention that keeps a property feeling kept — not merely cut.' },
+              { k: 'Horticultural care', v: 'Pruning, plant replacement, seasonal color edits, and editorial refinements by in-house horticulturists.' },
+              { k: 'Systems service', v: 'Irrigation calibration, lighting alignment and re-lamping, controller programming, blowouts, and spring start-ups.' },
+              { k: 'Hardscape inspection', v: 'Annual review of walls, terraces, drainage, joinery, and finishes — small attention now, no failures later.' },
             ].map((c) => (
               <div key={c.k} className="bg-moss-deep p-7 md:p-9">
                 <div className="font-display text-xl text-bronze-300 mb-2 italic">{c.k}</div>
@@ -327,7 +327,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─────────── STUDIO LINEAGE ─────────── */}
+      {/* ─────────── LINEAGE ─────────── */}
       <section className="relative bg-stone-50 border-y border-stone-200 overflow-hidden">
         <div className="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 opacity-[0.09] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -337,7 +337,7 @@ export default function HomePage() {
           <div className="md:col-span-5">
             <div className="eyebrow mb-3">Lineage</div>
             <h2 className="h-display text-3xl md:text-5xl text-stone-900 leading-tight">
-              Twenty years of trades, <span className="italic text-moss-700">all under one studio.</span>
+              Twenty years of trades, <span className="italic text-moss-700">all under one firm.</span>
             </h2>
           </div>
           <div className="md:col-span-7 space-y-5 text-stone-700 leading-relaxed">
@@ -345,7 +345,7 @@ export default function HomePage() {
               Harlow &amp; Stone is the design-led landscape practice of a family of companies anchored by <a className="underline decoration-bronze-400 underline-offset-4 hover:text-stone-900" href={BRAND.parent.url}>{BRAND.parent.name}</a> &mdash; twenty-plus years of Wasatch Front masonry, carpentry, and outdoor construction. The same crews that built fences and decks across Utah for two decades are the crews on your project.
             </p>
             <p className="text-stone-500 text-sm">
-              The trades that build the work are the trades that have always built the work. The studio is what they sound like when given a drawing board.
+              The trades that build the work are the trades that have always built the work. The firm is what they sound like when given a drawing board.
             </p>
           </div>
         </div>
@@ -369,14 +369,14 @@ export default function HomePage() {
           <Reveal delay={150}>
             <div className="space-y-7 lg:pl-10 border-l border-ivory-50/15 lg:py-2">
               <p className="text-ivory-100/80 leading-relaxed max-w-md">
-                The first conversation is unhurried. Tell us the site, the architecture, and what the property is meant to become. The studio principal reads each inquiry personally.
+                The first conversation is unhurried. Tell us the site, the architecture, and what the property is meant to become. The firm’s principal reads each inquiry personally.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/inquire" className="btn-primary bg-bronze-500 hover:bg-bronze-400 text-stone-900">
                   Begin a project
                 </Link>
                 <a href={smsHref} className="btn-ghost border-ivory-100/40 text-ivory-50 hover:border-ivory-50">
-                  Text the studio
+                  Text the firm
                 </a>
                 <a href={`tel:${BRAND.phoneRaw}`} className="btn-ghost border-ivory-100/40 text-ivory-50 hover:border-ivory-50">
                   {BRAND.phone}

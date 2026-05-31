@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     'landscaping Cottonwood Heights',
     // Tier
     'luxury landscaping Utah',
-    'premium landscape studio Utah',
+    'premium landscape firm Utah',
     'high-end landscape design Wasatch Front',
   ],
   openGraph: {

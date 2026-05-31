@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { BRAND } from '@/data/brand';
 
 export const metadata: Metadata = {
-  title: 'The Studio',
-  description: 'About Harlow & Stone Landscapes — a premium design-build studio backed by 20+ years of Wasatch Front craftsmanship.',
+  title: 'The Firm',
+  description: 'About Harlow & Stone Landscapes — a premium design-build firm backed by 20+ years of Wasatch Front craftsmanship.',
 };
 
 export default function AboutPage() {
@@ -12,21 +12,21 @@ export default function AboutPage() {
     <>
       <section className="container-editorial py-24 md:py-32 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5 space-y-6">
-          <div className="eyebrow">The Studio</div>
+          <div className="eyebrow">The Firm</div>
           <h1 className="h-display text-5xl md:text-6xl text-stone-900 leading-tight">
-            A small studio. <br />
+            A small firm. <br />
             <span className="text-moss-700">Considered work.</span>
           </h1>
         </div>
         <div className="lg:col-span-7 space-y-6 text-stone-700 leading-relaxed text-lg">
           <p>
-            Harlow &amp; Stone is a premium landscape design-build studio composing full outdoor environments — for estate residences, architecturally-significant homes, and the properties that surround them — along Utah&rsquo;s Wasatch Front.
+            Harlow &amp; Stone is a premium landscape design-build firm composing full outdoor environments — for estate residences, architecturally-significant homes, and the properties that surround them — along Utah&rsquo;s Wasatch Front.
           </p>
           <p>
             We are a deliberately small practice. Each project is led from concept through construction by the same designer, built by our own crews, and cared for by the team that built it. Nothing is brokered. Nothing is handed off.
           </p>
           <p>
-            The studio is part of a family of companies anchored by <a href={BRAND.parent.url} className="underline decoration-bronze-400 underline-offset-4 hover:text-stone-900">{BRAND.parent.name}</a>, with more than two decades of construction craft on the Wasatch Front. Harlow &amp; Stone is its design-led landscape practice.
+            The firm is part of a family of companies anchored by <a href={BRAND.parent.url} className="underline decoration-bronze-400 underline-offset-4 hover:text-stone-900">{BRAND.parent.name}</a>, with more than two decades of construction craft on the Wasatch Front. Harlow &amp; Stone is its design-led landscape practice.
           </p>
         </div>
       </section>

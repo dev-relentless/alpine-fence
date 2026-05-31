@@ -13,7 +13,7 @@ export const harlowServices: HarlowService[] = [
     shortTitle: 'Full Install',
     blurb: 'Complete outdoor environments — site to finish, drawn once and built whole.',
     detail:
-      'Turn-key installations across the property: grading, drainage, hardscape, structures, planting, lighting, irrigation, and finish. One studio, one schedule, one accountability line — from rough earthwork to the day the last fixture is aimed.',
+      'Turn-key installations across the property: grading, drainage, hardscape, structures, planting, lighting, irrigation, and finish. One firm, one schedule, one accountability line — from rough earthwork to the day the last fixture is aimed.',,
   },
   {
     slug: 'landscape-design',
@@ -85,6 +85,6 @@ export const harlowServices: HarlowService[] = [
     shortTitle: 'Stewardship',
     blurb: 'Ongoing care of the landscapes we build — by the people who built them.',
     detail:
-      'Stewardship is how a landscape grows into itself. Seasonal walks with the principal, pruning by our horticulturists, irrigation tuning, lighting service, hardscape inspection, and replanting refinements as the property matures. Not a maintenance crew — the same studio, returning.',
+      'Stewardship is how a landscape stays at its peak. Mowing, edging, fertility, pruning by our horticulturists, irrigation tuning, lighting service, hardscape inspection, and replanting refinements as the property matures. Full-service maintenance — by the same firm that built it.',
   },
 ];

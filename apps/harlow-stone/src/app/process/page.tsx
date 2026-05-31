@@ -20,7 +20,7 @@ const steps = [
   {
     n: '03',
     title: 'Build',
-    body: 'Construction by our own crews — masons, carpenters, irrigation techs, plant specialists. One studio, one accountability line.',
+    body: 'Construction by our own landscapers, builders, masons, concrete and stone setters, planters, irrigation techs, and lighting specialists — one firm, one accountability line. No subs.',
   },
   {
     n: '04',

@@ -3,7 +3,7 @@ import { BRAND } from '@/data/brand';
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: `Contact ${BRAND.name} — premium landscape design-build studio, Wasatch Front, Utah.`,
+  description: `Contact ${BRAND.name} — premium landscape design-build firm, Wasatch Front, Utah.`,
 };
 
 const smsHref = `sms:${BRAND.phoneRaw}?&body=${encodeURIComponent(BRAND.smsBody)}`;
@@ -14,10 +14,10 @@ export default function ContactPage() {
       <div className="lg:col-span-5 space-y-6">
         <div className="eyebrow">Contact</div>
         <h1 className="h-display text-5xl md:text-6xl text-stone-900 leading-tight">
-          The studio.
+          The firm.
         </h1>
         <p className="text-stone-600 leading-relaxed">
-          For new projects, the inquiry form gives us the right starting points. For everything else, reach the studio directly — call, text, or email. The principal answers each one.
+          For new projects, the inquiry form gives us the right starting points. For everything else, reach the firm directly — call, text, or email. The principal answers each one.
         </p>
       </div>
       <div className="lg:col-span-7 space-y-10">
@@ -34,7 +34,7 @@ export default function ContactPage() {
           </a>
         </div>
         <div>
-          <div className="eyebrow mb-2">Text the studio</div>
+          <div className="eyebrow mb-2">Text the firm</div>
           <a href={smsHref} className="font-display text-2xl text-stone-900 hover:text-moss-700">
             {BRAND.phone} <span className="italic text-bronze-500 text-base">— SMS</span>
           </a>

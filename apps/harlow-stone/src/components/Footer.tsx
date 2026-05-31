@@ -25,7 +25,7 @@ export default function Footer() {
           <p className="text-stone-500 text-sm">{BRAND.parent.note}</p>
         </div>
         <div>
-          <div className="eyebrow text-stone-400 mb-4">Studio</div>
+          <div className="eyebrow text-stone-400 mb-4">The Firm</div>
           <ul className="space-y-2 text-sm text-stone-300">
             <li><Link href="/about" className="hover:text-ivory-50">About</Link></li>
             <li><Link href="/process" className="hover:text-ivory-50">Process</Link></li>

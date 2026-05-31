@@ -9,7 +9,7 @@ const nav = [
   { href: '/services', label: 'Services' },
   { href: '/portfolio', label: 'Portfolio' },
   { href: '/process', label: 'Process' },
-  { href: '/about', label: 'Studio' },
+  { href: '/about', label: 'The Firm' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -41,7 +41,7 @@ export default function Header() {
           <a
             href={smsHref}
             className="text-[13px] tracking-wide text-stone-700 hover:text-moss-700 transition-colors inline-flex items-center gap-1.5"
-            aria-label="Text the studio"
+            aria-label="Text the firm"
           >
             <SmsIcon /> Text
           </a>

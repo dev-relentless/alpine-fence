@@ -3,7 +3,7 @@ import InquiryForm from '@/components/InquiryForm';
 
 export const metadata: Metadata = {
   title: 'Begin a project',
-  description: 'Tell us about your site and the way you would like to live in the landscape. Inquiries are read by the studio principal.',
+  description: 'Tell us about your site and the way you would like to live in the landscape. Inquiries are read by the firm’s principal.',,
 };
 
 export default function InquirePage() {
@@ -18,7 +18,7 @@ export default function InquirePage() {
           We work with a limited number of clients each year. The more we know up front, the more useful the first conversation becomes.
         </p>
         <p className="text-stone-500 text-sm leading-relaxed">
-          Inquiries are read by the studio principal. You can expect a response within one business day.
+          Inquiries are read by the firm’s principal. You can expect a response within one business day.
         </p>
       </div>
       <div className="lg:col-span-7 bg-ivory-100 p-8 md:p-12 border border-stone-200 shadow-editorial">

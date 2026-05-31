@@ -13,7 +13,7 @@ export default function ServicesPage() {
       <section className="container-editorial py-24 md:py-32 max-w-3xl">
         <div className="eyebrow mb-4">Services</div>
         <h1 className="h-display text-5xl md:text-6xl text-stone-900 leading-tight mb-8">
-          One studio. Every layer of the landscape.
+          One firm. Every layer of the landscape.
         </h1>
         <p className="text-stone-600 leading-relaxed text-lg">
           We carry a project from first sketch to final pruning — design, construction, and stewardship handled in-house so the vision is held by one team across years, not handed off across trades.
