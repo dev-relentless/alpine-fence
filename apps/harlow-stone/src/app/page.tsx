@@ -28,13 +28,13 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-l from-stone-950/65 via-stone-950/15 to-transparent" />
         </div>
 
-        {/* visible white wordmark in dark right gutter */}
-        <div className="pointer-events-none absolute right-[-3%] top-1/2 -translate-y-1/2 opacity-60 hidden md:block">
+        {/* visible monogram in dark right gutter */}
+        <div className="pointer-events-none absolute right-[-3%] top-1/2 -translate-y-1/2 opacity-50 hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/harlow/logo.png"
+            src="/harlow/monogram-light.svg"
             alt=""
-            className="w-[780px] h-[780px] object-contain brightness-0 invert"
+            className="w-[640px] h-[640px] object-contain"
           />
         </div>
 
@@ -103,9 +103,9 @@ export default function HomePage() {
       {/* ─────────── MEANING — the name carries the work ─────────── */}
       <section className="relative bg-ivory-50 overflow-hidden">
         {/* logo watermark in shadows */}
-        <div className="pointer-events-none absolute -left-32 top-1/2 -translate-y-1/2 opacity-[0.16] hidden md:block">
+        <div className="pointer-events-none absolute -left-32 top-1/2 -translate-y-1/2 opacity-25 hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/harlow/logo.png" alt="" className="w-[680px] h-[680px] object-contain" />
+          <img src="/harlow/monogram.svg" alt="" className="w-[600px] h-[600px] object-contain" />
         </div>
         <div className="relative container-editorial py-28 md:py-40">
           <Reveal>
@@ -165,9 +165,9 @@ export default function HomePage() {
 
       {/* ─────────── INVITATION — who this is for ─────────── */}
       <section className="relative bg-stone-950 text-ivory-50 overflow-hidden">
-        <div className="pointer-events-none absolute right-[-8%] -top-20 opacity-25 hidden md:block">
+        <div className="pointer-events-none absolute right-[-8%] -top-20 opacity-30 hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/harlow/logo.png" alt="" className="w-[640px] h-[640px] object-contain brightness-0 invert" />
+          <img src="/harlow/monogram-light.svg" alt="" className="w-[560px] h-[560px] object-contain" />
         </div>
         <div className="relative container-editorial py-24 md:py-32 grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
@@ -219,9 +219,9 @@ export default function HomePage() {
 
       {/* ─────────── IN-HOUSE — our own crews, beginning to end ─────────── */}
       <section className="relative bg-ivory-100 border-y border-stone-200 overflow-hidden">
-        <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 opacity-[0.16] hidden md:block">
+        <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 opacity-25 hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/harlow/logo.png" alt="" className="w-[700px] h-[700px] object-contain" />
+          <img src="/harlow/monogram.svg" alt="" className="w-[620px] h-[620px] object-contain" />
         </div>
         <div className="relative container-editorial py-24 md:py-32">
           <div className="max-w-3xl mb-14">
@@ -240,7 +240,7 @@ export default function HomePage() {
               { n: '03', k: 'Plant', v: 'Specimen sourcing, layered planting, sod and lawn install, and finish work by our in-house planters and horticulturists.' },
               { n: '04', k: 'Steward', v: 'Mowing, pruning, fertility, irrigation tuning, lighting service, and seasonal refinements — the same firm, returning year after year, keeping the property looking its best.' },
             ].map((s) => (
-              <Reveal key={s.n}>
+              <Reveal key={s.n} className="h-full">
                 <div className="bg-ivory-50 p-8 lg:p-10 h-full">
                   <div className="text-[10px] tracking-[0.3em] text-stone-400 mb-4">{s.n}</div>
                   <div className="font-display text-2xl italic text-moss-700 mb-3">{s.k}</div>
@@ -257,9 +257,9 @@ export default function HomePage() {
 
       {/* ─────────── STEWARDSHIP ─────────── */}
       <section className="relative bg-moss-deep text-ivory-50 overflow-hidden">
-        <div className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 opacity-[0.18] hidden md:block">
+        <div className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 opacity-30 hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/harlow/logo.png" alt="" className="w-[560px] h-[560px] object-contain brightness-0 invert" />
+          <img src="/harlow/monogram-light.svg" alt="" className="w-[500px] h-[500px] object-contain" />
         </div>
         <div className="relative container-editorial py-24 md:py-32 grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-5">
@@ -289,14 +289,14 @@ export default function HomePage() {
 
       {/* ─────────── CLOSER — by appointment ─────────── */}
       <section className="relative bg-stone-950 text-ivory-50 overflow-hidden">
-        <div className="pointer-events-none absolute -left-16 top-1/2 -translate-y-1/2 opacity-[0.18] hidden md:block">
+        <div className="pointer-events-none absolute -left-16 top-1/2 -translate-y-1/2 opacity-30 hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/harlow/logo.png" alt="" className="w-[560px] h-[560px] object-contain brightness-0 invert" />
+          <img src="/harlow/monogram-light.svg" alt="" className="w-[500px] h-[500px] object-contain" />
         </div>
         <div className="relative container-editorial py-28 md:py-40">
           <div className="grid lg:grid-cols-12 gap-12 items-end">
-            <Reveal>
-              <div className="lg:col-span-7">
+            <Reveal className="lg:col-span-7">
+              <div>
                 <div className="eyebrow text-bronze-300 mb-6">By appointment</div>
                 <h2 className="h-display text-4xl md:text-7xl leading-[1.02]">
                   Bring us a property.
@@ -305,8 +305,8 @@ export default function HomePage() {
                 </h2>
               </div>
             </Reveal>
-            <Reveal delay={150}>
-              <div className="lg:col-span-5 lg:pl-10 lg:border-l border-ivory-50/15">
+            <Reveal delay={150} className="lg:col-span-5 lg:pl-10 lg:border-l border-ivory-50/15">
+              <div>
                 <p className="text-ivory-100/80 leading-relaxed mb-8">
                   The first conversation is unhurried. Tell us the site, the architecture, and what the property is meant to become. The firm&rsquo;s principal reads each inquiry personally.
                 </p>
