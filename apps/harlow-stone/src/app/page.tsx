@@ -27,10 +27,10 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-moss-deep opacity-40 mix-blend-multiply" />
         </div>
 
-        {/* monogram watermark */}
-        <div className="pointer-events-none absolute -right-10 top-1/2 -translate-y-1/2 opacity-[0.07] hidden md:block">
+        {/* logo watermark */}
+        <div className="pointer-events-none absolute -right-16 top-1/2 -translate-y-1/2 opacity-[0.08] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/harlow/monogram-light.svg" alt="" className="w-[640px] h-[640px]" />
+          <img src="/harlow/logo.png" alt="" className="w-[680px] h-[680px] object-contain invert brightness-200" />
         </div>
 
         {/* hero content */}
@@ -258,10 +258,10 @@ export default function HomePage() {
 
       {/* ─────────── CTA ─────────── */}
       <section className="relative bg-stone-950 text-ivory-50 overflow-hidden">
-        {/* monogram backdrop */}
-        <div className="pointer-events-none absolute -left-12 top-1/2 -translate-y-1/2 opacity-[0.06] hidden md:block">
+        {/* logo backdrop */}
+        <div className="pointer-events-none absolute -left-16 top-1/2 -translate-y-1/2 opacity-[0.07] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/harlow/monogram-light.svg" alt="" className="w-[520px] h-[520px]" />
+          <img src="/harlow/logo.png" alt="" className="w-[560px] h-[560px] object-contain invert brightness-200" />
         </div>
         <div className="relative container-editorial py-28 md:py-36 grid lg:grid-cols-2 gap-12 items-center">
           <Reveal>
@@ -289,7 +289,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* keep next/image import live for future migration */}
-      <Image src="/harlow/monogram.svg" alt="" width={1} height={1} className="hidden" />
+      <Image src="/harlow/logo.png" alt="" width={1} height={1} className="hidden" />
     </>
   );
 }

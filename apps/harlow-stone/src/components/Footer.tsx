@@ -6,17 +6,17 @@ export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="relative bg-stone-950 text-ivory-100 mt-24 overflow-hidden">
-      {/* monogram watermark */}
-      <div className="pointer-events-none absolute -right-10 -bottom-20 opacity-[0.05] hidden md:block">
+      {/* logo watermark */}
+      <div className="pointer-events-none absolute -right-16 -bottom-24 opacity-[0.06] hidden md:block">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/harlow/monogram-light.svg" alt="" className="w-[420px] h-[420px]" />
+        <img src="/harlow/logo.png" alt="" className="w-[480px] h-[480px] object-contain invert brightness-200" />
       </div>
 
       <div className="relative container-editorial py-20 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2 space-y-5">
           <div className="flex items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/harlow/monogram-light.svg" alt="" className="h-10 w-10" />
+            <img src="/harlow/logo.png" alt="" className="h-12 w-12 object-contain invert brightness-200" />
             <div className="font-display text-3xl tracking-display-tight">
               Harlow <span className="italic text-bronze-300">&amp;</span> Stone
             </div>
