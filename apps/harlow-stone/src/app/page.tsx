@@ -78,7 +78,12 @@ export default function HomePage() {
 
       {/* ─────────── MEANING — the name carries the work ─────────── */}
       <section className="relative bg-ivory-50 overflow-hidden">
-        <div className="container-editorial py-28 md:py-40">
+        {/* logo watermark in shadows */}
+        <div className="pointer-events-none absolute -left-32 top-1/2 -translate-y-1/2 opacity-[0.035] hidden md:block">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/harlow/logo.png" alt="" className="w-[680px] h-[680px] object-contain" />
+        </div>
+        <div className="relative container-editorial py-28 md:py-40">
           <Reveal>
             <div className="eyebrow text-stone-500 mb-6 text-center">The Name</div>
           </Reveal>
@@ -135,8 +140,13 @@ export default function HomePage() {
       </section>
 
       {/* ─────────── PHILOSOPHY ─────────── */}
-      <section className="bg-ivory-100 border-y border-stone-200">
-        <div className="container-editorial py-24 md:py-32 grid lg:grid-cols-12 gap-12 items-start">
+      <section className="relative bg-ivory-100 border-y border-stone-200 overflow-hidden">
+        {/* logo watermark in shadows */}
+        <div className="pointer-events-none absolute -right-40 -bottom-32 opacity-[0.04] hidden md:block">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/harlow/logo.png" alt="" className="w-[620px] h-[620px] object-contain" />
+        </div>
+        <div className="relative container-editorial py-24 md:py-32 grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-4">
             <div className="eyebrow mb-4">Philosophy</div>
             <div className="rule" />
@@ -169,8 +179,13 @@ export default function HomePage() {
       </section>
 
       {/* ─────────── SERVICES ─────────── */}
-      <section className="bg-ivory-50 relative">
-        <div className="container-editorial py-24 md:py-32">
+      <section className="bg-ivory-50 relative overflow-hidden">
+        {/* logo watermark in shadows */}
+        <div className="pointer-events-none absolute -left-40 -bottom-40 opacity-[0.035] hidden md:block">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/harlow/logo.png" alt="" className="w-[640px] h-[640px] object-contain" />
+        </div>
+        <div className="relative container-editorial py-24 md:py-32">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
             <div>
               <div className="eyebrow mb-3">Capabilities</div>
@@ -202,8 +217,46 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ─────────── IN-HOUSE — our own crews, beginning to end ─────────── */}
+      <section className="relative bg-ivory-100 border-y border-stone-200 overflow-hidden">
+        <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 opacity-[0.04] hidden md:block">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/harlow/logo.png" alt="" className="w-[700px] h-[700px] object-contain" />
+        </div>
+        <div className="relative container-editorial py-24 md:py-32">
+          <div className="max-w-3xl mb-14">
+            <div className="eyebrow mb-4">In-house, end to end</div>
+            <h2 className="h-display text-4xl md:text-6xl text-stone-900 leading-[1.05]">
+              Our own crews. <span className="italic text-moss-700">From the first sketch to the last walk-through.</span>
+            </h2>
+            <p className="mt-6 text-stone-600 leading-relaxed text-lg max-w-2xl">
+              We don&rsquo;t broker the work. Designers, masons, carpenters, irrigation techs, plant specialists, lighting designers, and stewardship horticulturists are all on our payroll &mdash; one studio, one chain of accountability, one phone number for the life of the property.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-4 gap-px bg-stone-200 border border-stone-200">
+            {[
+              { n: '01', k: 'Design', v: 'Site analysis, master planning, construction documents — drawn by the principal who walks the property with you.' },
+              { n: '02', k: 'Build', v: 'Earthwork, masonry, hardscape, structures, sport courts, irrigation, lighting — installed by our own trades.' },
+              { n: '03', k: 'Plant', v: 'Specimen sourcing, layered planting, and finish work by in-house horticulturists. Nothing left to a separate crew.' },
+              { n: '04', k: 'Steward', v: 'Seasonal walks, pruning, systems service, and refinements — the same studio, returning year after year.' },
+            ].map((s) => (
+              <Reveal key={s.n}>
+                <div className="bg-ivory-50 p-8 lg:p-10 h-full">
+                  <div className="text-[10px] tracking-[0.3em] text-stone-400 mb-4">{s.n}</div>
+                  <div className="font-display text-2xl italic text-moss-700 mb-3">{s.k}</div>
+                  <p className="text-stone-600 text-sm leading-relaxed">{s.v}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <p className="mt-10 text-stone-500 text-sm italic max-w-2xl">
+            — No subcontracted designers. No subcontracted builders. No handoff to a maintenance company you&rsquo;ve never met.
+          </p>
+        </div>
+      </section>
+
       {/* ─────────── SELECTED WORK — real photography ─────────── */}
-      <section className="container-editorial py-24 md:py-32">
+      <section className="relative container-editorial py-24 md:py-32">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
           <div>
             <div className="eyebrow mb-3">Selected Work</div>
@@ -273,17 +326,21 @@ export default function HomePage() {
       </section>
 
       {/* ─────────── STUDIO LINEAGE ─────────── */}
-      <section className="bg-stone-50 border-y border-stone-200">
-        <div className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-10 items-center">
+      <section className="relative bg-stone-50 border-y border-stone-200 overflow-hidden">
+        <div className="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 opacity-[0.04] hidden md:block">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/harlow/logo.png" alt="" className="w-[520px] h-[520px] object-contain" />
+        </div>
+        <div className="relative container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-10 items-center">
           <div className="md:col-span-5">
             <div className="eyebrow mb-3">Lineage</div>
             <h2 className="h-display text-3xl md:text-5xl text-stone-900 leading-tight">
-              Two decades of craft, <span className="italic text-moss-700">a new studio voice.</span>
+              Twenty years of trades, <span className="italic text-moss-700">all under one studio.</span>
             </h2>
           </div>
           <div className="md:col-span-7 space-y-5 text-stone-700 leading-relaxed">
             <p>
-              Harlow &amp; Stone is the design-led landscape practice of a family of companies anchored by <a className="underline decoration-bronze-400 underline-offset-4 hover:text-stone-900" href={BRAND.parent.url}>{BRAND.parent.name}</a> — twenty-plus years of Wasatch Front masonry, carpentry, and outdoor construction.
+              Harlow &amp; Stone is the design-led landscape practice of a family of companies anchored by <a className="underline decoration-bronze-400 underline-offset-4 hover:text-stone-900" href={BRAND.parent.url}>{BRAND.parent.name}</a> &mdash; twenty-plus years of Wasatch Front masonry, carpentry, and outdoor construction. The same crews that built fences and decks across Utah for two decades are the crews on your project.
             </p>
             <p className="text-stone-500 text-sm">
               The trades that build the work are the trades that have always built the work. The studio is what they sound like when given a drawing board.
