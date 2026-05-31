@@ -26,19 +26,20 @@ export default function HomePage() {
               className="object-cover"
             />
           </Parallax>
-          {/* tonal washes — kept light to preserve photographic richness */}
-          <div className="absolute inset-0 bg-gradient-to-b from-stone-950/30 via-stone-950/5 to-stone-950/80" />
+          {/* tonal washes — darker right side anchors the watermark */}
+          <div className="absolute inset-0 bg-gradient-to-b from-stone-950/35 via-stone-950/10 to-stone-950/85" />
+          <div className="absolute inset-0 bg-gradient-to-l from-stone-950/55 via-stone-950/10 to-transparent" />
           {/* vignette */}
           <div
             className="absolute inset-0"
-            style={{ background: 'radial-gradient(ellipse at center, transparent 55%, rgba(13,11,9,0.4) 100%)' }}
+            style={{ background: 'radial-gradient(ellipse at center, transparent 55%, rgba(13,11,9,0.45) 100%)' }}
           />
         </div>
 
-        {/* logo watermark — single, prominent, right gutter */}
-        <div className="pointer-events-none absolute right-[-6%] top-1/2 -translate-y-1/2 opacity-[0.32] hidden md:block mix-blend-screen">
+        {/* logo watermark — single, large, sits in darkened right gutter */}
+        <div className="pointer-events-none absolute right-[-4%] top-1/2 -translate-y-1/2 opacity-[0.55] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/harlow/logo.png" alt="" className="w-[720px] h-[720px] object-contain brightness-0 invert" />
+          <img src="/harlow/logo.png" alt="" className="w-[760px] h-[760px] object-contain brightness-0 invert" />
         </div>
 
         {/* hero content */}
