@@ -16,7 +16,7 @@ export const harlowProjects: HarlowProject[] = [
     year: 2026,
     scope: ['Master plan', 'Hardscape', 'Planting', 'Lighting'],
     summary:
-      'A terraced rear garden with a board-formed concrete spa surround, drystack stone walls, and a perennial meadow that opens to the Lone Peak ridgeline.',
+      'A terraced rear landscape with a board-formed concrete spa surround, drystack stone walls, and a perennial meadow that opens to the Lone Peak ridgeline.',
     hero: '/harlow/projects/alpine-bench-residence.jpg',
   },
   {

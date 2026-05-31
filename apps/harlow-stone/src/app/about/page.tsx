@@ -20,7 +20,7 @@ export default function AboutPage() {
         </div>
         <div className="lg:col-span-7 space-y-6 text-stone-700 leading-relaxed text-lg">
           <p>
-            Harlow &amp; Stone is a premium landscape design-build studio working on residential gardens and estate properties along Utah&rsquo;s Wasatch Front.
+            Harlow &amp; Stone is a premium landscape design-build studio composing full outdoor environments — for estate residences, architecturally-significant homes, and the properties that surround them — along Utah&rsquo;s Wasatch Front.
           </p>
           <p>
             We are a deliberately small practice. Each project is led from concept through construction by the same designer, built by our own crews, and cared for by the team that built it. Nothing is brokered. Nothing is handed off.
@@ -36,7 +36,7 @@ export default function AboutPage() {
           {[
             { k: 'Design-led', v: 'Every project starts on the drawing board, not in a sales meeting.' },
             { k: 'Self-performed', v: 'Masonry, carpentry, irrigation, planting, and lighting handled by our own crews.' },
-            { k: 'Long-term', v: 'We stay with the gardens we build — through their first decade and beyond.' },
+            { k: 'Long-term', v: 'We stay with the landscapes we build — through their first decade and beyond.' },
           ].map((v) => (
             <div key={v.k} className="space-y-3">
               <div className="font-display text-2xl text-bronze-300">{v.k}</div>

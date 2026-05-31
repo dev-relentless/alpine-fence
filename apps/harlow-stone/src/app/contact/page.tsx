@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   description: `Contact ${BRAND.name} — premium landscape design-build studio, Wasatch Front, Utah.`,
 };
 
+const smsHref = `sms:${BRAND.phoneRaw}?&body=${encodeURIComponent(BRAND.smsBody)}`;
+
 export default function ContactPage() {
   return (
     <section className="container-editorial py-24 md:py-32 grid lg:grid-cols-12 gap-12">
@@ -15,7 +17,7 @@ export default function ContactPage() {
           The studio.
         </h1>
         <p className="text-stone-600 leading-relaxed">
-          For new projects, please use the inquiry form so we can ask the right questions up front. For everything else, you can reach the studio directly.
+          For new projects, the inquiry form gives us the right starting points. For everything else, reach the studio directly — call, text, or email. The principal answers each one.
         </p>
       </div>
       <div className="lg:col-span-7 space-y-10">
@@ -26,17 +28,25 @@ export default function ContactPage() {
           </a>
         </div>
         <div>
-          <div className="eyebrow mb-2">Phone</div>
-          <a href={`tel:${BRAND.phone.replace(/\D/g, '')}`} className="font-display text-2xl text-stone-900 hover:text-moss-700">
+          <div className="eyebrow mb-2">Call</div>
+          <a href={`tel:${BRAND.phoneRaw}`} className="font-display text-2xl text-stone-900 hover:text-moss-700">
             {BRAND.phone}
+          </a>
+        </div>
+        <div>
+          <div className="eyebrow mb-2">Text the studio</div>
+          <a href={smsHref} className="font-display text-2xl text-stone-900 hover:text-moss-700">
+            {BRAND.phone} <span className="italic text-bronze-500 text-base">— SMS</span>
           </a>
         </div>
         <div>
           <div className="eyebrow mb-2">Region</div>
           <p className="font-display text-2xl text-stone-900">{BRAND.address.region}</p>
+          <p className="text-stone-500 text-sm mt-1">Serving {BRAND.address.cities.slice(0, 8).join(', ')} and the broader Wasatch Front.</p>
         </div>
-        <div className="pt-6">
+        <div className="pt-6 flex flex-wrap gap-3">
           <a href="/inquire" className="btn-primary">Begin a project</a>
+          <a href={smsHref} className="btn-ghost">Text us</a>
         </div>
       </div>
     </section>

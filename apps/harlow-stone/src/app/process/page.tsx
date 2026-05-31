@@ -25,7 +25,7 @@ const steps = [
   {
     n: '04',
     title: 'Care',
-    body: 'Estate care after install. Seasonal pruning, irrigation tuning, lighting service, and replanting refinements as the garden matures.',
+    body: 'Stewardship after install. Seasonal walks, horticultural care, irrigation tuning, lighting service, hardscape inspection, and replanting refinements as the landscape matures.',
   },
 ];
 
@@ -38,7 +38,7 @@ export default function ProcessPage() {
           From first walk to final pruning.
         </h1>
         <p className="text-stone-600 leading-relaxed text-lg">
-          A landscape isn&rsquo;t finished when the crew leaves. Our work is structured around the multi-year arc of a garden — and we stay with the projects we build.
+          A landscape isn&rsquo;t finished when the crew leaves. Our work is structured around the multi-year arc of a property — and we stay with the places we build.
         </p>
       </section>
 

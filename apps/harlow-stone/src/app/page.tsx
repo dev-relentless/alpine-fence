@@ -5,91 +5,97 @@ import { harlowProjects } from '@/data/projects';
 import Reveal from '@/components/Reveal';
 import Parallax from '@/components/Parallax';
 
+const smsHref = `sms:${BRAND.phoneRaw}?&body=${encodeURIComponent(BRAND.smsBody)}`;
+
 export default function HomePage() {
   return (
     <>
-      {/* ─────────── HERO — cinematic, parallax, monogram watermark ─────────── */}
-      <section className="relative h-[92vh] min-h-[640px] overflow-hidden bg-stone-950 text-ivory-50">
-        {/* parallax photographic backdrop */}
+      {/* ─────────── HERO — cinematic, parallax, sharp ─────────── */}
+      <section className="relative h-[94vh] min-h-[660px] overflow-hidden bg-stone-950 text-ivory-50">
+        {/* photographic backdrop — slower parallax, no upscale, keeps edges crisp */}
         <div className="absolute inset-0 -z-0">
-          <Parallax speed={-80} className="h-[120%] -mt-[10%]">
+          <Parallax speed={-40} className="absolute inset-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/harlow/hero.jpg"
-              alt=""
-              className="h-full w-full object-cover opacity-70"
+              alt="Wasatch Front estate landscape"
+              className="h-full w-full object-cover"
+              loading="eager"
+              decoding="async"
             />
           </Parallax>
-          {/* layered tonal washes for depth */}
-          <div className="absolute inset-0 bg-gradient-to-b from-stone-950/60 via-stone-950/40 to-stone-950/95" />
-          <div className="absolute inset-0 bg-moss-deep opacity-40 mix-blend-multiply" />
+          {/* tonal washes */}
+          <div className="absolute inset-0 bg-gradient-to-b from-stone-950/55 via-stone-950/30 to-stone-950/90" />
+          {/* vignette */}
+          <div
+            className="absolute inset-0"
+            style={{ background: 'radial-gradient(ellipse at center, transparent 45%, rgba(13,11,9,0.5) 100%)' }}
+          />
         </div>
 
         {/* logo watermark */}
-        <div className="pointer-events-none absolute -right-16 top-1/2 -translate-y-1/2 opacity-[0.08] hidden md:block">
+        <div className="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 opacity-[0.06] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/harlow/logo.png" alt="" className="w-[680px] h-[680px] object-contain invert brightness-200" />
+          <img src="/harlow/logo.png" alt="" className="w-[640px] h-[640px] object-contain brightness-0 invert" />
         </div>
 
         {/* hero content */}
-        <div className="relative container-editorial h-full flex flex-col justify-end pb-20 md:pb-28">
+        <div className="relative container-editorial h-full flex flex-col justify-end pb-24 md:pb-28">
           <Reveal>
-            <div className="eyebrow text-bronze-300 mb-8">{BRAND.shortName} — Wasatch Front, Utah</div>
+            <div className="eyebrow text-bronze-300 mb-7">A landscape studio · Wasatch Front, Utah</div>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="h-display text-[14vw] md:text-[9vw] lg:text-[7.5vw] leading-[0.95] max-w-[18ch]">
-              Crafted permanence,<br />
-              <span className="italic text-bronze-300 font-light">artfully composed.</span>
+            <h1 className="h-display text-[13vw] md:text-[8.5vw] lg:text-[7vw] leading-[0.96] max-w-[16ch] tracking-[-0.025em]">
+              Outdoor environments,<br />
+              <span className="italic text-bronze-300 font-light">crafted to endure.</span>
             </h1>
           </Reveal>
           <Reveal delay={260}>
             <div className="mt-10 grid md:grid-cols-12 gap-8 items-end">
-              <p className="md:col-span-6 text-ivory-100/80 text-lg leading-relaxed max-w-xl">
-                A landscape design-build studio creating considered outdoor environments where artistry and architecture settle into the land — built to last, designed to deepen with time.
+              <p className="md:col-span-7 text-ivory-100/85 text-lg leading-relaxed max-w-2xl">
+                Full landscape installations, retaining walls, sport courts, hardscape, lighting, and water — composed for the architecture they belong to and built on bones that don&rsquo;t move.
               </p>
-              <div className="md:col-span-6 flex flex-wrap gap-3 md:justify-end">
+              <div className="md:col-span-5 flex flex-wrap gap-3 md:justify-end">
                 <Link href="/inquire" className="btn-primary bg-bronze-500 hover:bg-bronze-400 text-stone-900">
                   Begin a project
                 </Link>
-                <Link href="/portfolio" className="btn-ghost border-ivory-100/40 text-ivory-50 hover:border-ivory-50">
-                  See the work
-                </Link>
+                <a href={smsHref} className="btn-ghost border-ivory-100/40 text-ivory-50 hover:border-ivory-50">
+                  Text the studio
+                </a>
               </div>
             </div>
           </Reveal>
         </div>
 
-        {/* bottom rule + micro-type */}
         <div className="absolute bottom-0 inset-x-0">
-          <div className="container-editorial flex items-center justify-between py-5 border-t border-ivory-50/15 text-[11px] tracking-[0.25em] uppercase text-ivory-100/50">
-            <span>Est. — Wasatch Front</span>
+          <div className="container-editorial flex items-center justify-between py-5 border-t border-ivory-50/15 text-[11px] tracking-[0.28em] uppercase text-ivory-100/55">
+            <span>Wasatch Front</span>
             <span className="hidden md:inline">Design · Build · Steward</span>
-            <span>No. 01 / Studio Edition</span>
+            <span>Studio Edition · No. 01</span>
           </div>
         </div>
       </section>
 
-      {/* ─────────── MEANING — Harlow / & / Stone ─────────── */}
+      {/* ─────────── MEANING — the name carries the work ─────────── */}
       <section className="relative bg-ivory-50 overflow-hidden">
         <div className="container-editorial py-28 md:py-40">
           <Reveal>
-            <div className="eyebrow text-stone-500 mb-6 text-center">Meaning</div>
+            <div className="eyebrow text-stone-500 mb-6 text-center">The Name</div>
           </Reveal>
           <Reveal delay={100}>
             <p className="font-display text-3xl md:text-4xl text-stone-800 max-w-3xl mx-auto text-center leading-snug tracking-display-tight">
-              Two ideas held in a single name. The meeting of artistry and structure — refinement set into something that endures.
+              Two ideas held in one name. The hand and the foundation. What the eye keeps, and what the ground holds.
             </p>
           </Reveal>
 
           <div className="mt-24 grid lg:grid-cols-[1fr_auto_1fr] gap-10 lg:gap-16 items-stretch">
-            {/* HARLOW */}
             <Reveal delay={150}>
               <article className="relative h-full p-10 md:p-14 border border-stone-200 bg-ivory-100/60">
                 <div className="absolute top-6 right-6 text-[10px] tracking-[0.3em] text-stone-400">I</div>
                 <div className="eyebrow text-bronze-500 mb-6">Harlow</div>
-                <h3 className="font-display text-5xl md:text-6xl text-stone-900 mb-6 italic font-light">Artistry.</h3>
+                <h3 className="font-display text-5xl md:text-6xl text-stone-900 mb-6 italic font-light">The hand.</h3>
                 <p className="text-stone-700 leading-relaxed text-lg max-w-md">
-                  Refinement, elevation, a boutique design sensibility. Harlow is the hand of the studio — the proportion of a stair, the cadence of a planting, the way light lands at dusk.
+                  Refinement, proportion, restraint. Harlow is the design intelligence of the studio — the way a wall meets the architecture, the cadence of light across a terrace, the quiet edit that keeps a property feeling inevitable instead of arranged.
                 </p>
                 <ul className="mt-8 space-y-2 text-sm text-stone-600">
                   {['Considered proportion', 'Editorial restraint', 'Light, line, repetition'].map((v) => (
@@ -101,24 +107,22 @@ export default function HomePage() {
               </article>
             </Reveal>
 
-            {/* divider with ampersand */}
             <Reveal delay={250} className="hidden lg:flex flex-col items-center justify-center">
               <div className="h-24 w-px bg-stone-300" />
               <div className="font-display text-7xl text-bronze-500 italic my-4 leading-none">&amp;</div>
               <div className="h-24 w-px bg-stone-300" />
             </Reveal>
 
-            {/* STONE */}
             <Reveal delay={350}>
               <article className="relative h-full p-10 md:p-14 border border-stone-200 bg-stone-900 text-ivory-50">
                 <div className="absolute top-6 right-6 text-[10px] tracking-[0.3em] text-ivory-100/40">II</div>
                 <div className="eyebrow text-bronze-300 mb-6">Stone</div>
-                <h3 className="font-display text-5xl md:text-6xl text-ivory-50 mb-6 italic font-light">Permanence.</h3>
-                <p className="text-ivory-100/80 leading-relaxed text-lg max-w-md">
-                  Strength, legacy, architectural grounding. Stone is the bones of the work — engineered bases, honest materials, walls and terraces built to outlive the people who commissioned them.
+                <h3 className="font-display text-5xl md:text-6xl text-ivory-50 mb-6 italic font-light">The foundation.</h3>
+                <p className="text-ivory-100/85 leading-relaxed text-lg max-w-md">
+                  Strength, legacy, the part you don&rsquo;t see. Stone is the engineering underneath — base preparation, drainage, footings, structural walls, and honest materials specified to outlive the people who commissioned them.
                 </p>
-                <ul className="mt-8 space-y-2 text-sm text-ivory-100/70">
-                  {['Engineered substructure', 'Natural stone & masonry', 'Built for generations'].map((v) => (
+                <ul className="mt-8 space-y-2 text-sm text-ivory-100/75">
+                  {['Engineered substructure', 'Natural stone & masonry', 'Built to outlast trends'].map((v) => (
                     <li key={v} className="flex items-center gap-3">
                       <span className="h-px w-5 bg-bronze-300" />{v}
                     </li>
@@ -130,27 +134,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─────────── PHILOSOPHY — editorial pull-quote ─────────── */}
+      {/* ─────────── PHILOSOPHY ─────────── */}
       <section className="bg-ivory-100 border-y border-stone-200">
         <div className="container-editorial py-24 md:py-32 grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-4">
             <div className="eyebrow mb-4">Philosophy</div>
             <div className="rule" />
             <p className="mt-6 text-stone-500 text-sm leading-relaxed max-w-xs">
-              How a Harlow &amp; Stone landscape carries itself — across seasons, generations, and the slow widening of a tree canopy.
+              How a Harlow &amp; Stone property carries itself — across seasons, ownership, and the slow widening of a canopy.
             </p>
           </div>
           <div className="lg:col-span-8 space-y-12">
             <Reveal>
               <p className="font-display text-3xl md:text-4xl leading-snug text-stone-800 tracking-display-tight">
-                We design landscapes that feel inevitable — quiet, generous, and built to deepen with time. Architecture meets horticulture meets craft.
+                We compose outdoor environments that feel inevitable — generous to live in, quiet to look at, built so the structure outlasts the styling.
               </p>
             </Reveal>
             <div className="grid sm:grid-cols-3 gap-10 pt-2">
               {[
                 { k: 'Considered', v: 'Every line drawn against the architecture, sun path, and grade of the site.' },
-                { k: 'Honest', v: 'Stone, steel, timber, and plants chosen for the climate they have to live in.' },
-                { k: 'Stewarded', v: 'Built by the team that designs it, and cared for by the team that builds it.' },
+                { k: 'Honest', v: 'Stone, steel, timber, and plant material chosen for the climate they have to live in.' },
+                { k: 'Stewarded', v: 'Built by the team that drew it. Looked after by the team that built it.' },
               ].map((p, i) => (
                 <Reveal key={p.k} delay={i * 120}>
                   <div className="space-y-3 border-t border-stone-300 pt-6">
@@ -164,18 +168,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─────────── SERVICES — restrained grid ─────────── */}
+      {/* ─────────── SERVICES ─────────── */}
       <section className="bg-ivory-50 relative">
         <div className="container-editorial py-24 md:py-32">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
             <div>
-              <div className="eyebrow mb-3">Services</div>
+              <div className="eyebrow mb-3">Capabilities</div>
               <h2 className="h-display text-4xl md:text-6xl text-stone-900 max-w-2xl leading-[1.05]">
-                A complete <span className="italic text-moss-700">design-build</span> practice.
+                One studio. <span className="italic text-moss-700">Every layer of the property.</span>
               </h2>
+              <p className="mt-5 text-stone-600 max-w-xl leading-relaxed">
+                From rough grading to the final fixture aim — design, construction, and ongoing stewardship handled in-house, so the vision is held by one team across years.
+              </p>
             </div>
             <Link href="/services" className="text-sm text-stone-700 hover:text-stone-900 border-b border-stone-400 pb-1 self-start md:self-auto">
-              All services →
+              All capabilities →
             </Link>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-stone-200">
@@ -233,6 +240,38 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ─────────── STEWARDSHIP — replaces 'care' with a deeper voice ─────────── */}
+      <section className="relative bg-moss-deep text-ivory-50 overflow-hidden">
+        <div className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 opacity-[0.05] hidden md:block">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/harlow/logo.png" alt="" className="w-[560px] h-[560px] object-contain brightness-0 invert" />
+        </div>
+        <div className="relative container-editorial py-24 md:py-32 grid lg:grid-cols-12 gap-12 items-start">
+          <div className="lg:col-span-5">
+            <div className="eyebrow text-bronze-300 mb-4">Stewardship</div>
+            <h2 className="h-display text-4xl md:text-5xl leading-[1.05] mb-6">
+              The studio doesn&rsquo;t leave <span className="italic text-bronze-300">when the truck does.</span>
+            </h2>
+            <p className="text-ivory-100/80 leading-relaxed max-w-md">
+              A property settles into itself slowly. Bronze patinas, stone weathers, canopies widen, light shifts with the seasons. Our stewardship program keeps the same studio close to the work — the people who drew it, returning to look after it.
+            </p>
+          </div>
+          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-ivory-50/10">
+            {[
+              { k: 'Seasonal walks', v: 'Twice-yearly walks with the principal — tuning, refining, noting what the property is asking for next.' },
+              { k: 'Horticultural care', v: 'Pruning, fertility, plant replacement, and editorial editing by in-house horticulturists.' },
+              { k: 'Systems service', v: 'Irrigation calibration, lighting alignment and re-lamping, controller programming, and winterization.' },
+              { k: 'Hardscape inspection', v: 'Annual review of walls, terraces, drainage, and joinery — small attention now, no failures later.' },
+            ].map((c) => (
+              <div key={c.k} className="bg-moss-deep p-7 md:p-9">
+                <div className="font-display text-xl text-bronze-300 mb-2 italic">{c.k}</div>
+                <p className="text-ivory-100/75 text-sm leading-relaxed">{c.v}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─────────── STUDIO LINEAGE ─────────── */}
       <section className="bg-stone-50 border-y border-stone-200">
         <div className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-10 items-center">
@@ -258,28 +297,31 @@ export default function HomePage() {
         {/* logo backdrop */}
         <div className="pointer-events-none absolute -left-16 top-1/2 -translate-y-1/2 opacity-[0.07] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/harlow/logo.png" alt="" className="w-[560px] h-[560px] object-contain invert brightness-200" />
+          <img src="/harlow/logo.png" alt="" className="w-[560px] h-[560px] object-contain brightness-0 invert" />
         </div>
         <div className="relative container-editorial py-28 md:py-36 grid lg:grid-cols-2 gap-12 items-center">
           <Reveal>
             <h2 className="h-display text-4xl md:text-6xl leading-[1.05]">
-              Beginning a project?
+              Bring us a property.
               <br />
-              <span className="italic text-bronze-300 font-light">We&rsquo;d be honored to hear about it.</span>
+              <span className="italic text-bronze-300 font-light">We&rsquo;ll bring it forward a generation.</span>
             </h2>
           </Reveal>
           <Reveal delay={150}>
             <div className="space-y-7 lg:pl-10 border-l border-ivory-50/15 lg:py-2">
               <p className="text-ivory-100/80 leading-relaxed max-w-md">
-                Inquiries open the conversation. Tell us about the site, the home, and the way you&rsquo;d like to live in the landscape. The studio principal reads each one personally.
+                The first conversation is unhurried. Tell us the site, the architecture, and what the property is meant to become. The studio principal reads each inquiry personally.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/inquire" className="btn-primary bg-bronze-500 hover:bg-bronze-400 text-stone-900">
                   Begin a project
                 </Link>
-                <Link href="/contact" className="btn-ghost border-ivory-100/40 text-ivory-50 hover:border-ivory-50">
-                  Studio contact
-                </Link>
+                <a href={smsHref} className="btn-ghost border-ivory-100/40 text-ivory-50 hover:border-ivory-50">
+                  Text the studio
+                </a>
+                <a href={`tel:${BRAND.phoneRaw}`} className="btn-ghost border-ivory-100/40 text-ivory-50 hover:border-ivory-50">
+                  {BRAND.phone}
+                </a>
               </div>
             </div>
           </Reveal>
