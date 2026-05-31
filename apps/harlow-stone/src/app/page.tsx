@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { BRAND } from '@/data/brand';
-import { harlowServices } from '@/data/services';
-import { harlowProjects } from '@/data/projects';
 import Reveal from '@/components/Reveal';
 import Parallax from '@/components/Parallax';
 
@@ -11,10 +9,9 @@ const smsHref = `sms:${BRAND.phoneRaw}?&body=${encodeURIComponent(BRAND.smsBody)
 export default function HomePage() {
   return (
     <>
-      {/* ─────────── HERO — cinematic, parallax, sharp ─────────── */}
-      <section className="relative h-[94vh] min-h-[660px] overflow-hidden bg-stone-950 text-ivory-50">
-        {/* photographic backdrop — next/image for sharp delivery, parallax wrapper */}
-        <div className="absolute inset-0 -z-0">
+      {/* ─────────── HERO ─────────── */}
+      <section className="relative h-[100vh] min-h-[720px] overflow-hidden bg-stone-950 text-ivory-50">
+        <div className="absolute inset-0">
           <Parallax speed={-40} className="absolute inset-0">
             <Image
               src="/harlow/hero.jpg"
@@ -26,56 +23,80 @@ export default function HomePage() {
               className="object-cover"
             />
           </Parallax>
-          {/* tonal washes — darker right side anchors the watermark */}
-          <div className="absolute inset-0 bg-gradient-to-b from-stone-950/35 via-stone-950/10 to-stone-950/85" />
-          <div className="absolute inset-0 bg-gradient-to-l from-stone-950/55 via-stone-950/10 to-transparent" />
-          {/* vignette */}
-          <div
-            className="absolute inset-0"
-            style={{ background: 'radial-gradient(ellipse at center, transparent 55%, rgba(13,11,9,0.45) 100%)' }}
+          {/* tonal scrim — darkens for legibility, anchors the right-side mark */}
+          <div className="absolute inset-0 bg-gradient-to-b from-stone-950/45 via-stone-950/20 to-stone-950/90" />
+          <div className="absolute inset-0 bg-gradient-to-l from-stone-950/65 via-stone-950/15 to-transparent" />
+        </div>
+
+        {/* visible white wordmark in dark right gutter */}
+        <div className="pointer-events-none absolute right-[-3%] top-1/2 -translate-y-1/2 opacity-60 hidden md:block">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/harlow/logo.png"
+            alt=""
+            className="w-[780px] h-[780px] object-contain brightness-0 invert"
           />
         </div>
 
-        {/* logo watermark — single, large, sits in darkened right gutter */}
-        <div className="pointer-events-none absolute right-[-4%] top-1/2 -translate-y-1/2 opacity-[0.55] hidden md:block">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/harlow/logo.png" alt="" className="w-[760px] h-[760px] object-contain brightness-0 invert" />
+        {/* upper meta bar */}
+        <div className="absolute top-0 inset-x-0">
+          <div className="container-editorial flex items-center justify-between py-7 text-[11px] tracking-[0.32em] uppercase text-ivory-100/70">
+            <span>Harlow &amp; Stone</span>
+            <span className="hidden md:inline">By appointment</span>
+            <span>Wasatch Front, UT</span>
+          </div>
         </div>
 
-        {/* hero content */}
-        <div className="relative container-editorial h-full flex flex-col justify-end pb-24 md:pb-28">
+        {/* hero content — anchored low-left for editorial weight */}
+        <div className="relative container-editorial h-full flex flex-col justify-end pb-28 md:pb-32">
           <Reveal>
-            <div className="eyebrow text-bronze-300 mb-7">A landscape firm · Wasatch Front, Utah</div>
+            <div className="eyebrow text-bronze-300 mb-7">A landscape firm · Design · Build · Steward</div>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="h-display text-[13vw] md:text-[8.5vw] lg:text-[7vw] leading-[0.96] max-w-[16ch] tracking-[-0.025em]">
-              Outdoor environments,<br />
-              <span className="italic text-bronze-300 font-light">crafted to endure.</span>
+            <h1 className="h-display text-[14vw] md:text-[9.5vw] lg:text-[8vw] leading-[0.94] max-w-[14ch] tracking-[-0.03em]">
+              The property
+              <br />
+              you&rsquo;ll never
+              <br />
+              <span className="italic text-bronze-300 font-light">want to leave.</span>
             </h1>
           </Reveal>
           <Reveal delay={260}>
-            <div className="mt-10 grid md:grid-cols-12 gap-8 items-end">
-              <p className="md:col-span-7 text-ivory-100/85 text-lg leading-relaxed max-w-2xl">
-                Full landscape installations, retaining walls, sport courts, hardscape, lighting, and water — composed for the architecture they belong to and built on bones that don&rsquo;t move.
-              </p>
-              <div className="md:col-span-5 flex flex-wrap gap-3 md:justify-end">
-                <Link href="/inquire" className="btn-primary bg-bronze-500 hover:bg-bronze-400 text-stone-900">
-                  Begin a project
-                </Link>
-                <a href={smsHref} className="btn-ghost border-ivory-100/40 text-ivory-50 hover:border-ivory-50">
-                  Text the firm
-                </a>
-              </div>
+            <div className="mt-12 flex flex-wrap items-center gap-4">
+              <Link href="/inquire" className="btn-primary bg-bronze-500 hover:bg-bronze-400 text-stone-900">
+                Begin a project
+              </Link>
+              <a href={smsHref} className="btn-ghost border-ivory-100/40 text-ivory-50 hover:border-ivory-50">
+                Text the firm
+              </a>
+              <a href={`tel:${BRAND.phoneRaw}`} className="text-sm tracking-wide text-ivory-100/75 hover:text-ivory-50 ml-2">
+                {BRAND.phone}
+              </a>
             </div>
           </Reveal>
         </div>
+      </section>
 
-        <div className="absolute bottom-0 inset-x-0">
-          <div className="container-editorial flex items-center justify-between py-5 border-t border-ivory-50/15 text-[11px] tracking-[0.28em] uppercase text-ivory-100/55">
-            <span>Wasatch Front</span>
-            <span className="hidden md:inline">Design · Build · Steward</span>
-            <span>House Edition · No. 01</span>
-          </div>
+      {/* ─────────── CREDO ─ full-bleed declaration ─────────── */}
+      <section className="relative bg-ivory-50 border-b border-stone-200">
+        <div className="container-editorial py-20 md:py-28 text-center">
+          <Reveal>
+            <div className="eyebrow text-bronze-500 mb-8">The Credo</div>
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="font-display text-3xl md:text-5xl lg:text-[3.4rem] text-stone-900 leading-[1.18] tracking-display-tight max-w-5xl mx-auto">
+              Few properties are ever built like this.
+              <br className="hidden md:block" />
+              <span className="italic text-moss-700"> The few that are, are built by one firm.</span>
+            </p>
+          </Reveal>
+          <Reveal delay={200}>
+            <div className="mt-10 flex items-center justify-center gap-4 text-stone-400">
+              <span className="h-px w-12 bg-stone-300" />
+              <span className="text-[10px] tracking-[0.4em] uppercase">From sketch to steward</span>
+              <span className="h-px w-12 bg-stone-300" />
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -142,78 +163,54 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─────────── PHILOSOPHY ─────────── */}
-      <section className="relative bg-ivory-100 border-y border-stone-200 overflow-hidden">
-        {/* logo watermark in shadows */}
-        <div className="pointer-events-none absolute -right-40 -bottom-32 opacity-[0.16] hidden md:block">
+      {/* ─────────── INVITATION — who this is for ─────────── */}
+      <section className="relative bg-stone-950 text-ivory-50 overflow-hidden">
+        <div className="pointer-events-none absolute right-[-8%] -top-20 opacity-25 hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/harlow/logo.png" alt="" className="w-[620px] h-[620px] object-contain" />
+          <img src="/harlow/logo.png" alt="" className="w-[640px] h-[640px] object-contain brightness-0 invert" />
         </div>
-        <div className="relative container-editorial py-24 md:py-32 grid lg:grid-cols-12 gap-12 items-start">
-          <div className="lg:col-span-4">
-            <div className="eyebrow mb-4">Philosophy</div>
-            <div className="rule" />
-            <p className="mt-6 text-stone-500 text-sm leading-relaxed max-w-xs">
-              How a Harlow &amp; Stone property carries itself — across seasons, ownership, and the slow widening of a canopy.
+        <div className="relative container-editorial py-24 md:py-32 grid lg:grid-cols-12 gap-12">
+          <div className="lg:col-span-5">
+            <div className="eyebrow text-bronze-300 mb-4">An Invitation</div>
+            <h2 className="h-display text-4xl md:text-6xl leading-[1.04] mb-8">
+              For the property
+              <br />
+              <span className="italic text-bronze-300 font-light">that deserves it.</span>
+            </h2>
+            <p className="text-ivory-100/80 leading-relaxed max-w-md mb-8">
+              We take on a small number of projects each year. Each one is held by the principal, drawn against the architecture, and built by trades that have worked together for two decades.
             </p>
-          </div>
-          <div className="lg:col-span-8 space-y-12">
-            <Reveal>
-              <p className="font-display text-3xl md:text-4xl leading-snug text-stone-800 tracking-display-tight">
-                We compose outdoor environments that feel inevitable — generous to live in, quiet to look at, built so the structure outlasts the styling.
-              </p>
-            </Reveal>
-            <div className="grid sm:grid-cols-3 gap-10 pt-2">
-              {[
-                { k: 'Considered', v: 'Every line drawn against the architecture, sun path, and grade of the site.' },
-                { k: 'Honest', v: 'Stone, steel, timber, and plant material chosen for the climate they have to live in.' },
-                { k: 'Stewarded', v: 'Built by the team that drew it. Looked after by the team that built it.' },
-              ].map((p, i) => (
-                <Reveal key={p.k} delay={i * 120}>
-                  <div className="space-y-3 border-t border-stone-300 pt-6">
-                    <div className="font-display text-xl text-moss-700 italic">{p.k}</div>
-                    <p className="text-stone-600 text-sm leading-relaxed">{p.v}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─────────── SERVICES ─────────── */}
-      <section className="bg-ivory-50 relative overflow-hidden">
-        {/* logo watermark in shadows */}
-        <div className="pointer-events-none absolute -left-40 -bottom-40 opacity-[0.16] hidden md:block">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/harlow/logo.png" alt="" className="w-[640px] h-[640px] object-contain" />
-        </div>
-        <div className="relative container-editorial py-24 md:py-32">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
-            <div>
-              <div className="eyebrow mb-3">Capabilities</div>
-              <h2 className="h-display text-4xl md:text-6xl text-stone-900 max-w-2xl leading-[1.05]">
-                One firm. <span className="italic text-moss-700">Every layer of the property.</span>
-              </h2>
-              <p className="mt-5 text-stone-600 max-w-xl leading-relaxed">
-                From rough grading to the final fixture aim — design, construction, and ongoing stewardship handled in-house, so the vision is held by one team across years.
-              </p>
-            </div>
-            <Link href="/services" className="text-sm text-stone-700 hover:text-stone-900 border-b border-stone-400 pb-1 self-start md:self-auto">
-              All capabilities →
+            <Link href="/inquire" className="btn-primary bg-bronze-500 hover:bg-bronze-400 text-stone-900">
+              Request a conversation
             </Link>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-stone-200">
-            {harlowServices.map((s, i) => (
-              <Reveal key={s.slug} delay={(i % 3) * 80}>
-                <article className="group bg-ivory-50 p-8 lg:p-10 h-full transition-colors hover:bg-ivory-100 relative overflow-hidden">
-                  <div className="absolute top-6 right-6 text-[10px] tracking-[0.3em] text-stone-300">{String(i + 1).padStart(2, '0')}</div>
-                  <div className="font-display text-2xl text-stone-900 mb-3">{s.title}</div>
-                  <p className="text-stone-600 text-sm leading-relaxed mb-5">{s.blurb}</p>
-                  <Link href={`/services#${s.slug}`} className="inline-block text-xs tracking-eyebrow uppercase text-moss-700 group-hover:text-bronze-500 transition-colors">
-                    Detail →
-                  </Link>
-                </article>
+          <div className="lg:col-span-7 lg:pl-10 lg:border-l border-ivory-50/15 space-y-2">
+            <div className="eyebrow text-ivory-100/55 mb-6">Harlow &amp; Stone is for —</div>
+            {[
+              {
+                n: '01',
+                k: 'Architecturally-significant homes',
+                v: 'Properties where the landscape has to answer to architecture as well as to the land.',
+              },
+              {
+                n: '02',
+                k: 'Estate properties & private compounds',
+                v: 'Long-form sites: drives, courts, terraces, water, gardens, and the years of stewardship that follow.',
+              },
+              {
+                n: '03',
+                k: 'Owners who plan to stay',
+                v: 'Clients who want one firm holding the property across decades — not a different number for every season.',
+              },
+            ].map((item, i) => (
+              <Reveal key={item.n} delay={i * 100}>
+                <div className="grid grid-cols-[auto_1fr] gap-6 py-7 border-b border-ivory-50/10 last:border-0">
+                  <div className="text-[11px] tracking-[0.3em] text-bronze-300 pt-2">{item.n}</div>
+                  <div>
+                    <div className="font-display text-2xl md:text-3xl italic text-ivory-50 mb-2 leading-snug">{item.k}</div>
+                    <p className="text-ivory-100/70 leading-relaxed">{item.v}</p>
+                  </div>
+                </div>
               </Reveal>
             ))}
           </div>
@@ -258,45 +255,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─────────── SELECTED WORK — real photography ─────────── */}
-      <section className="relative container-editorial py-24 md:py-32">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
-          <div>
-            <div className="eyebrow mb-3">Selected Work</div>
-            <h2 className="h-display text-4xl md:text-6xl text-stone-900 max-w-2xl leading-[1.05]">
-              Recent <span className="italic text-bronze-500">projects.</span>
-            </h2>
-          </div>
-          <Link href="/portfolio" className="text-sm text-stone-700 hover:text-stone-900 border-b border-stone-400 pb-1 self-start md:self-auto">
-            Full portfolio →
-          </Link>
-        </div>
-        <div className="grid md:grid-cols-3 gap-10">
-          {harlowProjects.map((p, i) => (
-            <Reveal key={p.slug} delay={i * 140}>
-              <article className="group">
-                <div className="relative aspect-[4/5] bg-stone-200 mb-6 overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={p.hero}
-                    alt={p.title}
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-900/40 via-transparent to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-[10px] tracking-[0.3em] uppercase text-ivory-50/85">
-                    No. {String(i + 1).padStart(2, '0')}
-                  </div>
-                </div>
-                <div className="eyebrow mb-2">{p.location} — {p.year}</div>
-                <h3 className="font-display text-2xl text-stone-900 mb-2 group-hover:text-moss-700 transition-colors">{p.title}</h3>
-                <p className="text-stone-600 text-sm leading-relaxed">{p.summary}</p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* ─────────── STEWARDSHIP — replaces 'care' with a deeper voice ─────────── */}
+      {/* ─────────── STEWARDSHIP ─────────── */}
       <section className="relative bg-moss-deep text-ivory-50 overflow-hidden">
         <div className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 opacity-[0.18] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -328,63 +287,43 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─────────── LINEAGE ─────────── */}
-      <section className="relative bg-stone-50 border-y border-stone-200 overflow-hidden">
-        <div className="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 opacity-[0.16] hidden md:block">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/harlow/logo.png" alt="" className="w-[520px] h-[520px] object-contain" />
-        </div>
-        <div className="relative container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-10 items-center">
-          <div className="md:col-span-5">
-            <div className="eyebrow mb-3">Lineage</div>
-            <h2 className="h-display text-3xl md:text-5xl text-stone-900 leading-tight">
-              Twenty years of trades, <span className="italic text-moss-700">all under one firm.</span>
-            </h2>
-          </div>
-          <div className="md:col-span-7 space-y-5 text-stone-700 leading-relaxed">
-            <p>
-              Harlow &amp; Stone is the design-led landscape practice of a family of companies anchored by <a className="underline decoration-bronze-400 underline-offset-4 hover:text-stone-900" href={BRAND.parent.url}>{BRAND.parent.name}</a> &mdash; twenty-plus years of Wasatch Front masonry, carpentry, and outdoor construction. The same crews that built fences and decks across Utah for two decades are the crews on your project.
-            </p>
-            <p className="text-stone-500 text-sm">
-              The trades that build the work are the trades that have always built the work. The firm is what they sound like when given a drawing board.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ─────────── CTA ─────────── */}
+      {/* ─────────── CLOSER — by appointment ─────────── */}
       <section className="relative bg-stone-950 text-ivory-50 overflow-hidden">
-        {/* logo backdrop */}
         <div className="pointer-events-none absolute -left-16 top-1/2 -translate-y-1/2 opacity-[0.18] hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/harlow/logo.png" alt="" className="w-[560px] h-[560px] object-contain brightness-0 invert" />
         </div>
-        <div className="relative container-editorial py-28 md:py-36 grid lg:grid-cols-2 gap-12 items-center">
-          <Reveal>
-            <h2 className="h-display text-4xl md:text-6xl leading-[1.05]">
-              Bring us a property.
-              <br />
-              <span className="italic text-bronze-300 font-light">We&rsquo;ll bring it forward a generation.</span>
-            </h2>
-          </Reveal>
-          <Reveal delay={150}>
-            <div className="space-y-7 lg:pl-10 border-l border-ivory-50/15 lg:py-2">
-              <p className="text-ivory-100/80 leading-relaxed max-w-md">
-                The first conversation is unhurried. Tell us the site, the architecture, and what the property is meant to become. The firm’s principal reads each inquiry personally.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Link href="/inquire" className="btn-primary bg-bronze-500 hover:bg-bronze-400 text-stone-900">
-                  Begin a project
-                </Link>
-                <a href={smsHref} className="btn-ghost border-ivory-100/40 text-ivory-50 hover:border-ivory-50">
-                  Text the firm
-                </a>
-                <a href={`tel:${BRAND.phoneRaw}`} className="btn-ghost border-ivory-100/40 text-ivory-50 hover:border-ivory-50">
+        <div className="relative container-editorial py-28 md:py-40">
+          <div className="grid lg:grid-cols-12 gap-12 items-end">
+            <Reveal>
+              <div className="lg:col-span-7">
+                <div className="eyebrow text-bronze-300 mb-6">By appointment</div>
+                <h2 className="h-display text-4xl md:text-7xl leading-[1.02]">
+                  Bring us a property.
+                  <br />
+                  <span className="italic text-bronze-300 font-light">We&rsquo;ll bring it forward a generation.</span>
+                </h2>
+              </div>
+            </Reveal>
+            <Reveal delay={150}>
+              <div className="lg:col-span-5 lg:pl-10 lg:border-l border-ivory-50/15">
+                <p className="text-ivory-100/80 leading-relaxed mb-8">
+                  The first conversation is unhurried. Tell us the site, the architecture, and what the property is meant to become. The firm&rsquo;s principal reads each inquiry personally.
+                </p>
+                <div className="flex flex-wrap gap-3 mb-6">
+                  <Link href="/inquire" className="btn-primary bg-bronze-500 hover:bg-bronze-400 text-stone-900">
+                    Begin a project
+                  </Link>
+                  <a href={smsHref} className="btn-ghost border-ivory-100/40 text-ivory-50 hover:border-ivory-50">
+                    Text the firm
+                  </a>
+                </div>
+                <a href={`tel:${BRAND.phoneRaw}`} className="text-sm tracking-wide text-ivory-100/70 hover:text-ivory-50 inline-block">
                   {BRAND.phone}
                 </a>
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
         </div>
       </section>
     </>
