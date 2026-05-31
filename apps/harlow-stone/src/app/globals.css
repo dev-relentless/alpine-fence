@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ink: 26 23 20;       /* stone-900 */
+  --color-paper: 253 251 246;  /* ivory-50 */
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: rgb(var(--color-paper));
+  color: rgb(var(--color-ink));
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-feature-settings: 'ss01', 'ss02';
+}
+
+::selection {
+  background: #283823;
+  color: #fdfbf6;
+}
+
+@layer components {
+  .h-display {
+    @apply font-display tracking-display-tight font-light;
+  }
+  .eyebrow {
+    @apply uppercase tracking-eyebrow text-xs text-stone-500 font-medium;
+  }
+  .container-editorial {
+    @apply mx-auto w-full max-w-[1280px] px-6 md:px-10 lg:px-16;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-moss-800 text-ivory-50 px-7 py-3.5 text-sm tracking-wide hover:bg-moss-700 transition-colors;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full border border-stone-300 text-stone-800 px-7 py-3.5 text-sm tracking-wide hover:border-stone-800 transition-colors;
+  }
+  .rule {
+    @apply h-px w-12 bg-stone-300;
+  }
+}
