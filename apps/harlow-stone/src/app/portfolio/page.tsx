@@ -31,7 +31,6 @@ export default function PortfolioPage() {
                     src={p.hero}
                     alt={p.title}
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.03]"
-                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
                   />
                   <div className="absolute top-5 left-5 text-[10px] tracking-[0.3em] uppercase text-ivory-50/85 bg-stone-900/40 backdrop-blur-sm px-2 py-1">
                     No. {String(i + 1).padStart(2, '0')}

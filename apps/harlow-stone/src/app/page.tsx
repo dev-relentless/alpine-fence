@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { BRAND } from '@/data/brand';
 import { harlowServices } from '@/data/services';
 import { harlowProjects } from '@/data/projects';
@@ -19,7 +18,6 @@ export default function HomePage() {
               src="/harlow/hero.jpg"
               alt=""
               className="h-full w-full object-cover opacity-70"
-              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
             />
           </Parallax>
           {/* layered tonal washes for depth */}
@@ -220,7 +218,6 @@ export default function HomePage() {
                     src={p.hero}
                     alt={p.title}
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
-                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-stone-900/40 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 text-[10px] tracking-[0.3em] uppercase text-ivory-50/85">
@@ -288,8 +285,6 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
-      {/* keep next/image import live for future migration */}
-      <Image src="/harlow/logo.png" alt="" width={1} height={1} className="hidden" />
     </>
   );
 }
