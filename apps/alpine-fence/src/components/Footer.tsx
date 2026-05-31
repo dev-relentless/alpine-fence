@@ -191,6 +191,24 @@ export default function Footer() {
             </Link>
           </div>
         </div>
+        <div className="section-container pb-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-stone-500">
+          <a
+            href="https://harlowandstonelandscapes.com"
+            className="hover:text-white transition-colors"
+            target="_blank"
+            rel="noopener"
+          >
+            Sister studio: Harlow &amp; Stone Landscapes
+          </a>
+          <a
+            href="https://spravek.com"
+            className="hover:text-white transition-colors"
+            target="_blank"
+            rel="noopener"
+          >
+            A Spravek Company
+          </a>
+        </div>
       </div>
     </footer>
   );

@@ -48,8 +48,9 @@ export default function Footer() {
       <div className="relative border-t border-stone-800">
         <div className="container-editorial py-6 flex flex-col md:flex-row gap-3 justify-between text-xs text-stone-500">
           <div>&copy; {year} {BRAND.name}. All rights reserved.</div>
-          <div className="flex gap-6">
-            <a href={BRAND.parent.url} className="hover:text-ivory-200">{BRAND.parent.name}</a>
+          <div className="flex flex-wrap gap-6">
+            <a href={BRAND.parent.url} className="hover:text-ivory-200" target="_blank" rel="noopener">{BRAND.parent.name}</a>
+            <a href="https://spravek.com" className="hover:text-ivory-200" target="_blank" rel="noopener">A Spravek Company</a>
             <Link href="/privacy" className="hover:text-ivory-200">Privacy</Link>
             <Link href="/terms" className="hover:text-ivory-200">Terms</Link>
           </div>
