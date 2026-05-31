@@ -13,7 +13,7 @@ export const harlowServices: HarlowService[] = [
     shortTitle: 'Full Install',
     blurb: 'Complete outdoor environments — site to finish, drawn once and built whole.',
     detail:
-      'Turn-key installations across the property: grading, drainage, hardscape, structures, planting, lighting, irrigation, and finish. One firm, one schedule, one accountability line — from rough earthwork to the day the last fixture is aimed.',,
+      'Turn-key installations across the property: grading, drainage, hardscape, structures, planting, lighting, irrigation, and finish. One firm, one schedule, one accountability line — from rough earthwork to the day the last fixture is aimed.',
   },
   {
     slug: 'landscape-design',
