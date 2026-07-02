@@ -23,10 +23,13 @@ const navLinks = [
   {
     label: 'Yard & Landscape',
     href: '/landscaping',
-    children: landscapeServices.map((s) => ({
-      label: s.title,
-      href: `/landscaping/${s.slug}`,
-    })),
+    children: [
+      { label: 'New-Construction Yard Packages', href: '/yard-packages' },
+      ...landscapeServices.map((s) => ({
+        label: s.title,
+        href: `/landscaping/${s.slug}`,
+      })),
+    ],
   },
   { label: 'Gallery', href: '/gallery' },
   { label: 'Service Areas', href: '/service-areas' },
