@@ -5,48 +5,47 @@ import { spxServices } from '@/data/services';
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="bg-iron-950 text-concrete-100 mt-24 border-t-4 border-signal-500">
-      <div className="container-site py-16 grid gap-12 md:grid-cols-4">
-        <div className="md:col-span-2 space-y-5">
-          <div className="flex items-center gap-2.5">
-            <span className="grid h-10 w-10 place-items-center bg-signal-500 font-display font-extrabold text-iron-950 text-sm">
-              SPX
+    <footer className="bg-carbon-950 text-bone-100 mt-28 border-t border-brass-500/40">
+      <div className="container-site py-20 grid gap-14 md:grid-cols-4">
+        <div className="md:col-span-2 space-y-6">
+          <div className="flex items-center gap-3.5">
+            <span className="font-display text-3xl tracking-[0.06em] text-bone-50">SPX</span>
+            <span className="h-5 w-px bg-brass-400/70" aria-hidden />
+            <span className="text-[10px] uppercase tracking-[0.3em] text-carbon-300">
+              Design <span className="text-brass-300">·</span> Build
             </span>
-            <div className="font-display uppercase tracking-headline text-2xl font-extrabold">
-              SPX <span className="text-signal-500">Construction</span>
-            </div>
           </div>
-          <p className="text-iron-300 max-w-md leading-relaxed text-sm">{BRAND.description}</p>
-          <p className="text-iron-400 text-sm">{BRAND.parent.note}</p>
+          <p className="text-carbon-300 max-w-md leading-relaxed text-sm">{BRAND.description}</p>
+          <p className="text-carbon-400 text-sm">{BRAND.parent.note}</p>
         </div>
         <div>
-          <div className="tag text-iron-400 mb-4">Company</div>
-          <ul className="space-y-2 text-sm text-iron-200">
-            <li><Link href="/about" className="hover:text-concrete-50">About</Link></li>
-            <li><Link href="/process" className="hover:text-concrete-50">Process</Link></li>
-            <li><Link href="/contact" className="hover:text-concrete-50">Contact</Link></li>
-            <li><Link href="/quote" className="hover:text-concrete-50">Get a bid</Link></li>
+          <div className="eyebrow text-carbon-400 mb-5">Studio</div>
+          <ul className="space-y-2.5 text-sm text-carbon-200">
+            <li><Link href="/about" className="hover:text-bone-50 transition-colors">About</Link></li>
+            <li><Link href="/process" className="hover:text-bone-50 transition-colors">Approach</Link></li>
+            <li><Link href="/contact" className="hover:text-bone-50 transition-colors">Contact</Link></li>
+            <li><Link href="/quote" className="hover:text-bone-50 transition-colors">Start a conversation</Link></li>
           </ul>
         </div>
         <div>
-          <div className="tag text-iron-400 mb-4">Services</div>
-          <ul className="space-y-2 text-sm text-iron-200">
+          <div className="eyebrow text-carbon-400 mb-5">The work</div>
+          <ul className="space-y-2.5 text-sm text-carbon-200">
             {spxServices.map((s) => (
               <li key={s.slug}>
-                <Link href={`/services#${s.slug}`} className="hover:text-concrete-50">{s.shortTitle}</Link>
+                <Link href={`/services#${s.slug}`} className="hover:text-bone-50 transition-colors">{s.shortTitle}</Link>
               </li>
             ))}
           </ul>
         </div>
       </div>
-      <div className="border-t border-iron-800">
-        <div className="container-site py-6 flex flex-col md:flex-row gap-3 justify-between text-xs text-iron-400">
+      <div className="border-t border-carbon-800">
+        <div className="container-site py-6 flex flex-col md:flex-row gap-3 justify-between text-xs text-carbon-400">
           <div>&copy; {year} {BRAND.name}. All rights reserved.</div>
           <div className="flex flex-wrap gap-6">
-            <a href={BRAND.parent.url} className="hover:text-concrete-200" target="_blank" rel="noopener">{BRAND.parent.name}</a>
-            <a href={BRAND.spravekUrl} className="hover:text-concrete-200" target="_blank" rel="noopener">A Spravek Company</a>
-            <Link href="/privacy" className="hover:text-concrete-200">Privacy</Link>
-            <Link href="/terms" className="hover:text-concrete-200">Terms</Link>
+            <a href={BRAND.parent.url} className="hover:text-bone-200 transition-colors" target="_blank" rel="noopener">{BRAND.parent.name}</a>
+            <a href={BRAND.spravekUrl} className="hover:text-bone-200 transition-colors" target="_blank" rel="noopener">A Spravek Company</a>
+            <Link href="/privacy" className="hover:text-bone-200 transition-colors">Privacy</Link>
+            <Link href="/terms" className="hover:text-bone-200 transition-colors">Terms</Link>
           </div>
         </div>
       </div>

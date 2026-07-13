@@ -1,9 +1,9 @@
 import type { Config } from 'tailwindcss';
 
 /**
- * SPX Construction — residential general contractor brand.
- * Palette: iron charcoal, poured-concrete neutrals, signal orange.
- * Typography: hard grotesque display + utilitarian sans body.
+ * SPX Construction — design·build studio brand.
+ * Palette: warm graphite, plaster bone, smoked brass — quiet luxury.
+ * Typography: architectural serif display + refined sans body.
  */
 const config: Config = {
   content: [
@@ -13,51 +13,54 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Charcoal structure
-        iron: {
-          50:  '#f5f6f7',
-          100: '#e6e8ea',
-          200: '#c9cdd2',
-          300: '#a2a9b1',
-          400: '#767f89',
-          500: '#5a626c',
-          600: '#464d56',
-          700: '#383e45',
-          800: '#25292e',
-          900: '#17191d',
-          950: '#0c0d10',
+        // Warm graphite — the structure
+        carbon: {
+          50:  '#f7f6f4',
+          100: '#eceae6',
+          200: '#d6d3cc',
+          300: '#b5b1a6',
+          400: '#8e897c',
+          500: '#706b5f',
+          600: '#57534a',
+          700: '#423f38',
+          800: '#2d2b26',
+          900: '#1d1b18',
+          950: '#121110',
         },
-        // Poured concrete neutrals
-        concrete: {
-          50:  '#fafaf8',
-          100: '#f2f1ed',
-          200: '#e4e2da',
-          300: '#cfccbf',
-          400: '#aaa696',
+        // Plaster whites — the light
+        bone: {
+          50:  '#fbfaf7',
+          100: '#f5f3ee',
+          200: '#eae6dd',
+          300: '#d8d2c3',
+          400: '#bdb5a0',
         },
-        // Signal orange — jobsite accent
-        signal: {
-          300: '#ffb266',
-          400: '#ff9438',
-          500: '#f97b16',
-          600: '#e05f06',
-          700: '#b84a08',
+        // Smoked brass — used sparingly, never shouted
+        brass: {
+          100: '#f2ecdd',
+          200: '#e3d7b9',
+          300: '#cdb98b',
+          400: '#b49c63',
+          500: '#997f47',
+          600: '#7a6538',
+          700: '#5e4e2e',
         },
       },
       fontFamily: {
-        display: ['var(--font-display)', 'Arial Black', 'sans-serif'],
+        display: ['var(--font-display)', 'Georgia', 'serif'],
         body: ['var(--font-body)', 'system-ui', 'sans-serif'],
       },
       letterSpacing: {
-        'headline': '-0.015em',
-        'tag': '0.22em',
+        'display': '0.01em',
+        'eyebrow': '0.28em',
+        'button': '0.18em',
       },
       backgroundImage: {
-        'blueprint': 'linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)',
-        'iron-fade': 'linear-gradient(180deg, #0c0d10 0%, #17191d 60%, #25292e 100%)',
+        'carbon-depth': 'linear-gradient(165deg, #121110 0%, #1d1b18 55%, #2d2b26 100%)',
+        'bone-wash': 'linear-gradient(180deg, #fbfaf7 0%, #f5f3ee 100%)',
       },
       boxShadow: {
-        'plate': '0 1px 0 rgba(12,13,16,0.08), 0 16px 44px -18px rgba(12,13,16,0.3)',
+        'gallery': '0 1px 0 rgba(18,17,16,0.05), 0 24px 60px -28px rgba(18,17,16,0.25)',
       },
     },
   },

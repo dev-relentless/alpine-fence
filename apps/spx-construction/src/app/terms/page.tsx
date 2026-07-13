@@ -8,10 +8,10 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <section className="container-site py-20 md:py-28 max-w-3xl">
-      <div className="tag mb-4">Terms</div>
-      <h1 className="h-display text-4xl md:text-5xl text-iron-950 mb-8">Terms of use.</h1>
-      <p className="text-iron-600 leading-relaxed">
+    <section className="container-site py-24 md:py-32 max-w-3xl">
+      <div className="eyebrow mb-5">Terms</div>
+      <h1 className="h-display text-4xl md:text-5xl text-carbon-950 mb-8">Terms of use.</h1>
+      <p className="text-carbon-600 leading-relaxed">
         Use of this site is provided as-is. Project agreements are governed by the contract executed between {BRAND.name} and the client for the specific project. Content and project descriptions on this site are the property of {BRAND.name}.
       </p>
     </section>

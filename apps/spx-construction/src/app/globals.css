@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --color-ink: 12 13 16;        /* iron-950 */
-  --color-paper: 250 250 248;   /* concrete-50 */
+  --color-ink: 18 17 16;        /* carbon-950 */
+  --color-paper: 251 250 247;   /* bone-50 */
 }
 
 html {
@@ -20,27 +20,30 @@ body {
 }
 
 ::selection {
-  background: #f97b16;
-  color: #0c0d10;
+  background: #b49c63;
+  color: #121110;
 }
 
 @layer components {
   .h-display {
-    @apply font-display uppercase tracking-headline font-extrabold;
+    @apply font-display font-normal tracking-display;
   }
-  .tag {
-    @apply uppercase tracking-tag text-xs text-iron-500 font-semibold;
+  .eyebrow {
+    @apply text-[11px] uppercase tracking-eyebrow font-medium text-carbon-500;
   }
   .container-site {
     @apply mx-auto w-full max-w-[1240px] px-6 md:px-10;
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-signal-500 text-iron-950 font-semibold uppercase tracking-wide px-7 py-3.5 text-sm hover:bg-signal-400 transition-colors;
-  }
-  .btn-dark {
-    @apply inline-flex items-center justify-center bg-iron-900 text-concrete-50 font-semibold uppercase tracking-wide px-7 py-3.5 text-sm hover:bg-iron-800 transition-colors;
+    @apply inline-flex items-center justify-center bg-carbon-950 text-bone-50 text-xs font-medium uppercase tracking-button px-8 py-4 transition-colors hover:bg-brass-500 hover:text-carbon-950;
   }
   .btn-ghost {
-    @apply inline-flex items-center justify-center border border-iron-300 text-iron-800 font-semibold uppercase tracking-wide px-7 py-3.5 text-sm hover:border-iron-800 transition-colors;
+    @apply inline-flex items-center justify-center border border-carbon-300 text-carbon-800 text-xs font-medium uppercase tracking-button px-8 py-4 transition-colors hover:border-carbon-950 hover:text-carbon-950;
+  }
+  .btn-light {
+    @apply inline-flex items-center justify-center border border-bone-50/30 text-bone-50 text-xs font-medium uppercase tracking-button px-8 py-4 transition-colors hover:bg-bone-50 hover:text-carbon-950;
+  }
+  .rule-brass {
+    @apply h-px w-16 bg-brass-400;
   }
 }

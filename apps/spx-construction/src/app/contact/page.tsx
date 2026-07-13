@@ -3,45 +3,45 @@ import { BRAND } from '@/data/brand';
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: `Contact ${BRAND.name} — residential general contractor, Wasatch Front, Utah.`,
+  description: `Contact ${BRAND.name} — design·build studio, Wasatch Front, Utah.`,
 };
 
 const smsHref = `sms:${BRAND.phoneRaw}?&body=${encodeURIComponent(BRAND.smsBody)}`;
 
 export default function ContactPage() {
   return (
-    <section className="container-site py-20 md:py-28 grid lg:grid-cols-12 gap-12">
+    <section className="container-site py-24 md:py-32 grid lg:grid-cols-12 gap-12">
       <div className="lg:col-span-5 space-y-6">
-        <div className="tag text-signal-600">Contact</div>
-        <h1 className="h-display text-4xl md:text-6xl text-iron-950 leading-tight">
-          Talk to a builder.
+        <div className="eyebrow">Contact</div>
+        <h1 className="h-display text-4xl md:text-6xl text-carbon-950 leading-tight">
+          Speak with <span className="italic text-carbon-500">a builder.</span>
         </h1>
-        <p className="text-iron-500 leading-relaxed">
-          For project pricing, the bid form gives us what we need to show up prepared.
-          For everything else — call or text. A builder answers, not a call center.
+        <p className="text-carbon-500 leading-relaxed">
+          For projects, the conversation form gives us what we need to arrive prepared.
+          For everything else — call or text. A principal answers, not a call center.
         </p>
       </div>
       <div className="lg:col-span-7 space-y-10">
         <div>
-          <div className="tag mb-2">Call</div>
-          <a href={`tel:${BRAND.phoneRaw}`} className="font-display font-bold text-2xl text-iron-950 hover:text-signal-600">
+          <div className="eyebrow mb-3">Call</div>
+          <a href={`tel:${BRAND.phoneRaw}`} className="font-display text-3xl text-carbon-950 hover:text-brass-600 transition-colors">
             {BRAND.phone}
           </a>
         </div>
         <div>
-          <div className="tag mb-2">Text</div>
-          <a href={smsHref} className="font-display font-bold text-2xl text-iron-950 hover:text-signal-600">
-            {BRAND.phone} <span className="text-iron-400 text-base font-normal">— SMS</span>
+          <div className="eyebrow mb-3">Text</div>
+          <a href={smsHref} className="font-display text-3xl text-carbon-950 hover:text-brass-600 transition-colors">
+            {BRAND.phone} <span className="text-carbon-400 text-base font-body">— SMS</span>
           </a>
         </div>
         <div>
-          <div className="tag mb-2">Service area</div>
-          <p className="font-display font-bold text-2xl text-iron-950">{BRAND.address.region}</p>
-          <p className="text-iron-500 text-sm mt-1">Serving {BRAND.address.cities.slice(0, 8).join(', ')} and the broader Wasatch Front.</p>
+          <div className="eyebrow mb-3">Where we work</div>
+          <p className="font-display text-3xl text-carbon-950">{BRAND.address.region}</p>
+          <p className="text-carbon-500 text-sm mt-2">Serving {BRAND.address.cities.slice(0, 8).join(', ')} and the broader Wasatch Front.</p>
         </div>
         <div className="pt-6 flex flex-wrap gap-3">
-          <a href="/quote" className="btn-primary">Get a bid</a>
-          <a href={smsHref} className="btn-ghost">Text us</a>
+          <a href="/quote" className="btn-primary">Start a conversation</a>
+          <a href={smsHref} className="btn-ghost">Text the studio</a>
         </div>
       </div>
     </section>

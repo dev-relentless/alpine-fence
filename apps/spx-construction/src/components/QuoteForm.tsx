@@ -23,7 +23,7 @@ export default function QuoteForm() {
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || 'Something went wrong.');
       setStatus('sent');
-      setMessage('Got it. We will get back to you within one business day.');
+      setMessage('Received. A principal will be in touch within one business day.');
       (e.target as HTMLFormElement).reset();
     } catch (err) {
       setStatus('error');
@@ -44,27 +44,27 @@ export default function QuoteForm() {
       </div>
 
       <div>
-        <label className="tag block mb-3">Project type</label>
-        <div className="grid sm:grid-cols-2 gap-2">
-          {['Home addition', 'Basement finish', 'Basement walkout / egress', 'Structural / concrete', 'Garage / shop', 'Other'].map((v) => (
-            <label key={v} className="flex items-center gap-3 text-sm text-iron-700">
-              <input type="checkbox" name="scope" value={v} className="accent-signal-500" />
+        <label className="eyebrow block mb-3">The project</label>
+        <div className="grid sm:grid-cols-2 gap-2.5">
+          {['New custom residence', 'Whole-home renovation', 'Addition / second story', 'Lower level / walkout', 'Structural / site work', 'Something else'].map((v) => (
+            <label key={v} className="flex items-center gap-3 text-sm text-carbon-700">
+              <input type="checkbox" name="scope" value={v} className="accent-brass-500" />
               {v}
             </label>
           ))}
         </div>
       </div>
 
-      <Field label="Budget range" name="budget" as="select"
-        options={['Under $25k', '$25k – $75k', '$75k – $150k', '$150k – $300k', '$300k+']} />
+      <Field label="Budget territory" name="budget" as="select"
+        options={['Under $100k', '$100k – $250k', '$250k – $500k', '$500k – $1M', '$1M+']} />
 
       <div>
-        <label className="tag block mb-3" htmlFor="notes">Tell us about the project</label>
+        <label className="eyebrow block mb-3" htmlFor="notes">Tell us what you&rsquo;re imagining</label>
         <textarea
           id="notes"
           name="notes"
           rows={5}
-          className="w-full border border-iron-200 bg-concrete-50 px-4 py-3 text-iron-900 focus:border-signal-500 focus:outline-none"
+          className="w-full border border-bone-300 bg-bone-50 px-4 py-3 text-carbon-900 focus:border-brass-500 focus:outline-none"
         />
       </div>
 
@@ -73,11 +73,11 @@ export default function QuoteForm() {
         disabled={status === 'sending'}
         className="btn-primary disabled:opacity-60"
       >
-        {status === 'sending' ? 'Sending…' : 'Request a bid'}
+        {status === 'sending' ? 'Sending…' : 'Begin the conversation'}
       </button>
 
       {message && (
-        <p className={`text-sm ${status === 'error' ? 'text-red-700' : 'text-iron-800'}`}>{message}</p>
+        <p className={`text-sm ${status === 'error' ? 'text-red-700' : 'text-carbon-800'}`}>{message}</p>
       )}
     </form>
   );
@@ -98,11 +98,11 @@ function Field({
   as?: 'select';
   options?: string[];
 }) {
-  const baseClass = 'w-full border border-iron-200 bg-concrete-50 px-4 py-3 text-iron-900 focus:border-signal-500 focus:outline-none';
+  const baseClass = 'w-full border border-bone-300 bg-bone-50 px-4 py-3 text-carbon-900 focus:border-brass-500 focus:outline-none';
   return (
     <div>
-      <label className="tag block mb-2" htmlFor={name}>
-        {label}{required && <span className="text-signal-600"> *</span>}
+      <label className="eyebrow block mb-2" htmlFor={name}>
+        {label}{required && <span className="text-brass-600"> *</span>}
       </label>
       {as === 'select' && options ? (
         <select id={name} name={name} className={baseClass} defaultValue="">

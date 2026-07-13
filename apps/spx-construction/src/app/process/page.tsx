@@ -2,65 +2,66 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Process',
-  description: 'How an SPX Construction project runs — walk the site, engineer it, build it, close it out.',
+  title: 'Approach',
+  description: 'How an SPX project unfolds — conversation, design & engineering, the build, and a documented hand-over.',
 };
 
 const steps = [
   {
     n: '01',
-    title: 'Walk the site',
-    body: 'We meet at the house, measure, and talk through what you want and what the structure will allow. You get straight answers about feasibility, ballpark cost, and timeline before anyone draws anything.',
+    title: 'The conversation',
+    body: 'We walk the site or the house together and listen — what you want, how you live, what the structure will allow. You leave with an honest read on feasibility, budget territory, and timing before anyone draws a line.',
   },
   {
     n: '02',
-    title: 'Engineer & permit',
-    body: 'Plans, stamped structural engineering where loads are involved, and the full permit package handled by us. The bid you sign is itemized — allowances called out, exclusions in writing.',
+    title: 'Design & engineering',
+    body: 'Design development with the builders in the room — so every detail is drawn once and priced honestly. Stamped structural engineering where loads are involved, and the full permit package carried by us. The agreement you sign is itemized: allowances named, exclusions in writing.',
   },
   {
     n: '03',
-    title: 'Build',
-    body: 'Our crews perform the concrete, framing, and finish work; licensed trade partners run mechanical, electrical, and plumbing on our schedule. You get one point of contact and a weekly progress note.',
+    title: 'The build',
+    body: 'Our crews perform the concrete, framing, and finish work; licensed trade partners run mechanical, electrical, and plumbing on our schedule. One point of contact, a weekly note, and a jobsite kept like it belongs to someone.',
   },
   {
     n: '04',
-    title: 'Close out',
-    body: 'Final inspections, punch list walked together, and a close-out packet with permits, engineering, inspection records, and photos of what is inside the walls.',
+    title: 'The hand-over',
+    body: 'Final inspections, a punch list walked together, and a close-out portfolio — permits, engineering, inspection records, and photographs of everything inside the walls.',
   },
 ];
 
 export default function ProcessPage() {
   return (
     <>
-      <section className="container-site py-20 md:py-28 max-w-3xl">
-        <div className="tag text-signal-600 mb-4">Process</div>
-        <h1 className="h-display text-4xl md:text-6xl text-iron-950 leading-tight mb-8">
-          No surprises. That&rsquo;s the process.
+      <section className="container-site py-24 md:py-32 max-w-3xl">
+        <div className="eyebrow mb-5">Approach</div>
+        <h1 className="h-display text-4xl md:text-6xl text-carbon-950 leading-tight mb-8">
+          Unhurried. <span className="italic text-carbon-500">Unsurprising.</span>
         </h1>
-        <p className="text-iron-500 leading-relaxed text-lg">
-          Construction goes sideways in the gaps — between the bid and the build, the GC and the subs,
-          what was said and what was written. We close the gaps.
+        <p className="text-carbon-500 leading-relaxed text-lg">
+          Projects lose their way in the gaps — between designer and builder, bid and build,
+          what was said and what was written. Our approach closes the gaps before they open.
         </p>
       </section>
 
-      <section className="bg-concrete-100 border-y border-iron-200">
-        <div className="container-site divide-y divide-iron-200">
+      <section className="bg-bone-100 border-y border-bone-200">
+        <div className="container-site divide-y divide-bone-200">
           {steps.map((s) => (
-            <div key={s.n} className="grid lg:grid-cols-12 gap-10 py-14">
+            <div key={s.n} className="grid lg:grid-cols-12 gap-10 py-16">
               <div className="lg:col-span-3">
-                <div className="font-display font-extrabold text-6xl text-signal-500">{s.n}</div>
+                <div className="font-display text-6xl text-bone-300">{s.n}</div>
               </div>
               <div className="lg:col-span-9 space-y-4 max-w-2xl">
-                <h2 className="font-display font-bold uppercase tracking-headline text-2xl text-iron-950">{s.title}</h2>
-                <p className="text-iron-600 leading-relaxed text-lg">{s.body}</p>
+                <h2 className="font-display text-3xl text-carbon-950">{s.title}</h2>
+                <p className="text-carbon-600 leading-relaxed text-lg">{s.body}</p>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="container-site py-20 md:py-28 text-center">
-        <Link href="/quote" className="btn-primary">Get a bid</Link>
+      <section className="container-site py-24 md:py-32 text-center">
+        <div className="eyebrow mb-5">Step one</div>
+        <Link href="/quote" className="btn-primary">Start a conversation</Link>
       </section>
     </>
   );

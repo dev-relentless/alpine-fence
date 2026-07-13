@@ -8,51 +8,51 @@ export interface SpxService {
 
 export const spxServices: SpxService[] = [
   {
-    slug: 'general-contracting',
-    title: 'Residential General Contracting',
-    shortTitle: 'General Contracting',
-    blurb: 'One licensed GC holding the schedule, the trades, and the inspections — start to finish.',
+    slug: 'design-build',
+    title: 'Design · Build Delivery',
+    shortTitle: 'Design · Build',
+    blurb: 'One team from first sketch to final walk-through — design, engineering, budget, and build under a single roof.',
     detail:
-      'Full-scope residential construction management: permits, engineering coordination, scheduling, trade supervision, and inspections. One contract, one accountable builder, one number to call — from the first site walk to the final punch list.',
+      'Architecture and interiors coordinated with the people who will actually build them. Design development, stamped engineering, transparent budgets, permits, scheduling, and construction — one contract, one accountable team, and no gap between the drawing and the jobsite.',
   },
   {
-    slug: 'home-additions',
-    title: 'Home Additions',
+    slug: 'custom-homes',
+    title: 'New Custom Residences',
+    shortTitle: 'Custom Homes',
+    blurb: 'Ground-up homes built the way they were drawn — quietly, precisely, on schedule.',
+    detail:
+      'Site work, foundation, frame, envelope, and finish — self-performed where it matters most, supervised everywhere else. We build a small number of residences at a time, so each one carries a principal\u2019s attention from excavation to keys.',
+  },
+  {
+    slug: 'renovations',
+    title: 'Whole-Home Renovations',
+    shortTitle: 'Renovations',
+    blurb: 'Structural reconfigurations that make an existing house live like it was designed this decade.',
+    detail:
+      'Wall removals, reframed floor plans, new kitchens and primary suites, and systems brought quietly to current code. Every structural move carries stamped engineering; every finish is matched or deliberately contrasted — never approximated.',
+  },
+  {
+    slug: 'additions',
+    title: 'Additions & Second Stories',
     shortTitle: 'Additions',
-    blurb: 'Main-level additions, second stories, and bump-outs that read like they were always there.',
+    blurb: 'Expansions that read like original construction — from footings to matched rooflines.',
     detail:
-      'Footings to finish: excavation, foundation, framing, roofline tie-ins, mechanical extensions, and matched exterior finishes. We engineer the connection to the existing structure properly so the addition performs — and looks — like original construction.',
+      'Excavation, foundation, framing, roofline tie-ins, mechanical extensions, and exterior finishes matched in material and shadow line. The connection to the existing structure is engineered properly, so the addition performs — and reads — as if it were always there.',
   },
   {
-    slug: 'basement-finishing',
-    title: 'Basement Finishing',
-    shortTitle: 'Basements',
-    blurb: 'Code-compliant basement builds — bedrooms, baths, kitchens, theaters, and rental suites.',
+    slug: 'lower-levels',
+    title: 'Lower Levels & Walkouts',
+    shortTitle: 'Lower Levels',
+    blurb: 'Daylight lower levels — theaters, wine rooms, guest suites, and engineered walkout entrances.',
     detail:
-      'Complete basement finishes: framing, electrical, plumbing, HVAC extension, insulation, drywall, trim, and flooring. Egress compliance, moisture detailing, and sound isolation handled as construction basics — not upgrades. Rental-suite and ADU configurations available where zoning allows.',
+      'Complete lower-level design and build: framing, systems, moisture detailing, sound isolation, and finish work — plus the structural scope most firms decline: foundation cuts, engineered walkout stairwells, egress, and separate entrances for suites and ADUs where zoning allows.',
   },
   {
-    slug: 'basement-walkouts',
-    title: 'Basement Walkouts & Entrances',
-    shortTitle: 'Walkouts',
-    blurb: 'Cut-in walkout doors, stairwells, and egress windows — engineered, excavated, and finished.',
+    slug: 'structures',
+    title: 'Garages, Structures & Site',
+    shortTitle: 'Structures',
+    blurb: 'Detached garages, pavilions, and structural site work — slab to roofline, drawn and delivered.',
     detail:
-      'We cut and reinforce the foundation, excavate and retain the grade, set drainage, and build the stairwell, areaway, and door system — engineered and permitted. A walkout turns a dark basement into a daylight level and adds a separate entrance for suites and ADUs.',
-  },
-  {
-    slug: 'structural-concrete',
-    title: 'Structural & Concrete Work',
-    shortTitle: 'Structural',
-    blurb: 'Foundation cuts, beam and post replacement, wall removals, and flatwork done to the letter of the engineering.',
-    detail:
-      'Load-bearing wall removals, steel and LVL beam installs, foundation repair and underpinning, window well cuts, and structural concrete. Stamped engineering on every structural scope, inspected and documented.',
-  },
-  {
-    slug: 'garages-shops',
-    title: 'Garages & Detached Structures',
-    shortTitle: 'Garages',
-    blurb: 'Attached and detached garages, shops, and accessory buildings — slab to roof.',
-    detail:
-      'Site prep, flatwork, framing, roofing, electrical service, and finishes for garages, shops, and accessory structures — built on proper footings with the same permit-and-inspection discipline as the house itself.',
+      'Accessory buildings and the heavy site scopes that support them: flatwork, retaining, structural concrete, steel and LVL installs, and load-path corrections — engineered, permitted, and inspected with the same discipline as the main house.',
   },
 ];
