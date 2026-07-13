@@ -18,7 +18,7 @@ export default function Logo({
   const accentClass = variant === 'light' ? 'text-bronze-300' : 'text-bronze-500';
   const dim = size === 'lg' ? 'h-10 w-10' : size === 'sm' ? 'h-7 w-7' : 'h-9 w-9';
   const textSize = size === 'lg' ? 'text-[1.45rem]' : size === 'sm' ? 'text-sm' : 'text-lg';
-  const filter = variant === 'light' ? 'brightness-0 invert' : '';
+  const markSrc = variant === 'light' ? '/harlow/monogram-light.svg' : '/harlow/monogram.svg';
 
   return (
     <Link
@@ -28,9 +28,9 @@ export default function Logo({
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/harlow/logo.png"
+        src={markSrc}
         alt=""
-        className={`${dim} object-contain shrink-0 ${filter}`}
+        className={`${dim} object-contain shrink-0`}
       />
       {showWordmark && (
         <span

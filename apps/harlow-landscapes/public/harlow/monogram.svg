@@ -9,6 +9,4 @@
     <!-- L -->
     <text x="43" y="50" font-size="34" font-weight="400">L</text>
   </g>
-  <!-- footer micro-type -->
-  <text x="40" y="70" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="4" textLength="54" lengthAdjust="spacingAndGlyphs" fill="#1a1714" opacity="0.55">HARLOW LANDSCAPES</text>
 </svg>

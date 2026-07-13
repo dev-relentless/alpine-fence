@@ -9,14 +9,14 @@ export default function Footer() {
       {/* logo watermark */}
       <div className="pointer-events-none absolute -right-16 -bottom-24 opacity-[0.14] hidden md:block">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/harlow/logo.png" alt="" className="w-[480px] h-[480px] object-contain invert brightness-200" />
+        <img src="/harlow/monogram-light.svg" alt="" className="w-[480px] h-[480px] object-contain" />
       </div>
 
       <div className="relative container-editorial py-20 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2 space-y-5">
           <div className="flex items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/harlow/logo.png" alt="" className="h-12 w-12 object-contain invert brightness-200" />
+            <img src="/harlow/monogram-light.svg" alt="" className="h-12 w-12 object-contain" />
             <div className="font-display text-3xl tracking-display-tight">
               Harlow <span className="italic text-bronze-300">Landscapes</span>
             </div>
