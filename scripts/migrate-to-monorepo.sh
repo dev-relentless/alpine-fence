@@ -4,7 +4,7 @@
 #
 #   /                     ← workspace root (this repo)
 #   /apps/alpine-fence    ← existing Alpine Next.js app (moved here)
-#   /apps/harlow-stone    ← already scaffolded
+#   /apps/harlow-landscapes    ← already scaffolded
 #
 # Run ONCE from the repo root:
 #
@@ -14,9 +14,9 @@
 #   1. In the existing Alpine Vercel project, set
 #        Settings → General → Root Directory = apps/alpine-fence
 #      and redeploy.
-#   2. Create a NEW Vercel project for Harlow & Stone with
-#        Root Directory = apps/harlow-stone
-#      and attach the harlowandstonelandscapes.com domain.
+#   2. Create a NEW Vercel project for Harlow Landscapes with
+#        Root Directory = apps/harlow-landscapes
+#      and attach the harlowlandscapes.com domain.
 # ---------------------------------------------------------------------------
 set -euo pipefail
 
@@ -62,7 +62,7 @@ Two independent Next.js sites in one repo, deployed as two Vercel projects.
 | App                          | Path                  | Domain                                | Stack              |
 | ---------------------------- | --------------------- | ------------------------------------- | ------------------ |
 | Alpine Fence & Deck          | `apps/alpine-fence`   | `alpinefenceanddeck.com`              | Next 14, Tailwind  |
-| Harlow & Stone Landscapes    | `apps/harlow-stone`   | `harlowandstonelandscapes.com`        | Next 14, Tailwind  |
+| Harlow Landscapes    | `apps/harlow-landscapes`   | `harlowlandscapes.com`        | Next 14, Tailwind  |
 
 ## Develop
 
@@ -71,7 +71,7 @@ Two independent Next.js sites in one repo, deployed as two Vercel projects.
 npm install                        # installs both workspaces
 
 npm run dev --workspace=apps/alpine-fence   # http://localhost:3000
-npm run dev --workspace=apps/harlow-stone   # http://localhost:3001
+npm run dev --workspace=apps/harlow-landscapes   # http://localhost:3001
 ```
 
 ## Vercel
@@ -87,9 +87,9 @@ cat > package.json <<'EOF'
   "workspaces": ["apps/*", "packages/*"],
   "scripts": {
     "dev:alpine": "npm run dev --workspace=apps/alpine-fence",
-    "dev:harlow": "npm run dev --workspace=apps/harlow-stone",
+    "dev:harlow": "npm run dev --workspace=apps/harlow-landscapes",
     "build:alpine": "npm run build --workspace=apps/alpine-fence",
-    "build:harlow": "npm run build --workspace=apps/harlow-stone",
+    "build:harlow": "npm run build --workspace=apps/harlow-landscapes",
     "lint": "npm run lint --workspaces --if-present"
   }
 }
@@ -102,5 +102,5 @@ echo "✓ Migration complete."
 echo "  Next steps:"
 echo "    1. rm -rf node_modules && npm install"
 echo "    2. Update Vercel project Root Directory for the Alpine project → apps/alpine-fence"
-echo "    3. Create a new Vercel project for Harlow with Root Directory → apps/harlow-stone"
-echo "    4. Commit: git commit -m 'chore: migrate to monorepo (apps/alpine-fence + apps/harlow-stone)'"
+echo "    3. Create a new Vercel project for Harlow with Root Directory → apps/harlow-landscapes"
+echo "    4. Commit: git commit -m 'chore: migrate to monorepo (apps/alpine-fence + apps/harlow-landscapes)'"

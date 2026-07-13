@@ -193,12 +193,12 @@ export default function Footer() {
         </div>
         <div className="section-container pb-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-stone-500">
           <a
-            href="https://harlowandstonelandscapes.com"
+            href="https://harlowlandscapes.com"
             className="hover:text-white transition-colors"
             target="_blank"
             rel="noopener"
           >
-            Sister studio: Harlow &amp; Stone Landscapes
+            Sister studio: Harlow Landscapes
           </a>
           <a
             href="https://spravek.com"
