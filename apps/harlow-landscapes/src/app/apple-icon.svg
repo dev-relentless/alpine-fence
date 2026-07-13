@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
   <rect width="180" height="180" rx="32" fill="#1a1714"/>
-  <text x="42" y="120" font-family="Georgia, 'Cormorant Garamond', serif" font-size="100" font-weight="400" fill="#fdfbf6" letter-spacing="-3">H</text>
+  <text x="84" y="120" text-anchor="end" font-family="Georgia, 'Cormorant Garamond', serif" font-size="100" font-weight="400" fill="#fdfbf6">H</text>
   <line x1="90" y1="40" x2="90" y2="125" stroke="#cfae6a" stroke-width="2"/>
-  <text x="138" y="120" text-anchor="middle" font-family="Georgia, 'Cormorant Garamond', serif" font-size="100" font-weight="400" fill="#fdfbf6" letter-spacing="-3">L</text>
-  <text x="90" y="160" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" letter-spacing="4" fill="#fdfbf6" opacity="0.65">HARLOW LANDSCAPES</text>
+  <text x="96" y="120" font-family="Georgia, 'Cormorant Garamond', serif" font-size="100" font-weight="400" fill="#fdfbf6">L</text>
+  <text x="90" y="160" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" textLength="128" lengthAdjust="spacingAndGlyphs" fill="#fdfbf6" opacity="0.65">HARLOW LANDSCAPES</text>
 </svg>
