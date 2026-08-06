@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { BRAND } from '@/data/brand';
 import { serviceCategories } from '@/data/services';
 
@@ -9,10 +10,14 @@ export default function Footer() {
       <div className="h-2 bg-joints" aria-hidden />
       <div className="container-slab py-16 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2 space-y-5">
-          <div className="flex items-center gap-2.5">
-            <span className="grid h-10 w-10 place-items-center bg-signal-500 font-display text-cement-50 text-xl">
-              B
-            </span>
+          <div className="flex items-center gap-3">
+            <Image
+              src="/braddock/logo.png"
+              alt={BRAND.name}
+              width={1000}
+              height={867}
+              className="h-16 w-auto rounded-sm"
+            />
             <div className="font-display uppercase tracking-display text-2xl">
               Braddock <span className="text-signal-500">Concrete</span>
             </div>

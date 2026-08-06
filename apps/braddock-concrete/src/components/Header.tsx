@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { BRAND } from '@/data/brand';
 
@@ -20,11 +21,16 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-iron-950 text-cement-50 border-b-2 border-signal-500">
       <div className="container-slab flex h-[68px] items-center justify-between gap-6">
-        <Link href="/" aria-label={BRAND.name} className="flex items-center gap-2.5 leading-none">
-          <span className="grid h-9 w-9 place-items-center bg-signal-500 font-display text-cement-50 text-lg">
-            B
-          </span>
-          <span className="font-display uppercase tracking-display text-lg">
+        <Link href="/" aria-label={BRAND.name} className="flex items-center gap-3 leading-none">
+          <Image
+            src="/braddock/logo.png"
+            alt=""
+            width={1000}
+            height={867}
+            priority
+            className="h-12 w-auto rounded-sm"
+          />
+          <span className="font-display uppercase tracking-display text-lg max-sm:hidden">
             Braddock <span className="text-signal-500">Concrete</span>
           </span>
         </Link>

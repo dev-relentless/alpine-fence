@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { BRAND } from '@/data/brand';
 
@@ -20,11 +21,16 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-timber-950 text-linen-50 border-b-2 border-sky-500">
       <div className="container-patio flex h-[68px] items-center justify-between gap-6">
-        <Link href="/" aria-label={BRAND.name} className="flex items-center gap-2.5 leading-none">
-          <span className="grid h-9 w-9 place-items-center bg-sky-500 font-display font-bold text-linen-50 text-lg">
-            P
-          </span>
-          <span className="font-display font-semibold tracking-display text-lg">
+        <Link href="/" aria-label={BRAND.name} className="flex items-center gap-3 leading-none">
+          <Image
+            src="/pergola/logo.png"
+            alt=""
+            width={687}
+            height={577}
+            priority
+            className="h-12 w-auto rounded-md"
+          />
+          <span className="font-display font-semibold tracking-display text-lg max-sm:hidden">
             Utah Pergola <span className="text-sky-400">Experts</span>
           </span>
         </Link>
