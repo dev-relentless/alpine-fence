@@ -7,10 +7,12 @@
     "dev:harlow": "npm run dev --workspace=apps/harlow-landscapes",
     "dev:spx": "npm run dev --workspace=apps/spx-construction",
     "dev:relentless": "npm run dev --workspace=apps/relentless-equipment",
+    "dev:braddock": "npm run dev --workspace=apps/braddock-concrete",
     "build:alpine": "npm run build --workspace=apps/alpine-fence",
     "build:harlow": "npm run build --workspace=apps/harlow-landscapes",
     "build:spx": "npm run build --workspace=apps/spx-construction",
     "build:relentless": "npm run build --workspace=apps/relentless-equipment",
+    "build:braddock": "npm run build --workspace=apps/braddock-concrete",
     "lint": "npm run lint --workspaces --if-present"
   }
 }

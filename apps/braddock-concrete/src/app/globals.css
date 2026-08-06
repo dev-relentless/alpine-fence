@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ink: 14 16 19;        /* iron-950 */
+  --color-paper: 247 247 245;   /* cement-50 */
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: rgb(var(--color-paper));
+  color: rgb(var(--color-ink));
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+::selection {
+  background: #f26a10;
+  color: #f7f7f5;
+}
+
+@layer components {
+  .h-display {
+    @apply font-display uppercase tracking-display;
+  }
+  .tag {
+    @apply uppercase tracking-tag text-xs text-iron-500 font-semibold;
+  }
+  .container-slab {
+    @apply mx-auto w-full max-w-[1240px] px-6 md:px-10;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center bg-signal-500 text-cement-50 font-bold uppercase tracking-wide px-7 py-3.5 text-sm hover:bg-signal-600 transition-colors;
+  }
+  .btn-dark {
+    @apply inline-flex items-center justify-center bg-iron-900 text-cement-50 font-bold uppercase tracking-wide px-7 py-3.5 text-sm hover:bg-iron-800 transition-colors;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center border border-iron-300 text-iron-800 font-bold uppercase tracking-wide px-7 py-3.5 text-sm hover:border-iron-800 transition-colors;
+  }
+}
