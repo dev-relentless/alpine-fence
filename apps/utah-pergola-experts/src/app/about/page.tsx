@@ -12,10 +12,10 @@ export default function AboutPage() {
     <>
       <section className="container-patio py-20 md:py-28 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5 space-y-6">
-          <div className="tag text-sky-600">Company</div>
+          <div className="tag">The Company</div>
           <h1 className="h-display text-4xl md:text-6xl text-timber-950 leading-tight">
             Shade builders <br />
-            <span className="text-timber-400">from a building family.</span>
+            <span className="text-timber-500">from a building family.</span>
           </h1>
         </div>
         <div className="lg:col-span-7 space-y-6 text-timber-600 leading-relaxed text-lg">
@@ -33,7 +33,7 @@ export default function AboutPage() {
           </p>
           <p>
             Pergola Experts is part of a family of companies anchored by{' '}
-            <a href={BRAND.parent.url} className="underline decoration-sky-500 underline-offset-4 hover:text-timber-950">{BRAND.parent.name}</a>{' '}
+            <a href={BRAND.parent.url} className="underline decoration-sienna-400 underline-offset-4 hover:text-timber-950">{BRAND.parent.name}</a>{' '}
             — a Spravek company — alongside SPX Construction, Harlow Landscapes, Braddock
             Concrete, and Relentless Equipment. Twenty years of Wasatch Front construction,
             one accountability line.
@@ -41,23 +41,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-timber-950 text-linen-50">
+      <section className="bg-walnut-depth text-linen-50">
         <div className="container-patio py-20 md:py-28 grid lg:grid-cols-3 gap-10">
           {[
             { k: 'Structures, not kits', v: 'Concrete footings, engineered spans, bolted connections. Built to be inherited with the house, not replaced with it.' },
-            { k: 'Quotes in writing', v: 'Drawings, materials, and price on paper before work starts — options priced separately so you decide what\u2019s worth it.' },
+            { k: 'Proposals in writing', v: 'Drawings, materials, and price on paper before work starts — options priced separately so you decide what\u2019s worth it.' },
             { k: 'Family-backed', v: 'Two decades of Wasatch Front construction stand behind the work. If something is wrong, one call fixes it.' },
           ].map((v) => (
-            <div key={v.k} className="border-t-4 border-sky-500 pt-6 space-y-3">
-              <div className="h-display text-xl text-sky-400">{v.k}</div>
-              <p className="text-timber-300 leading-relaxed text-sm">{v.v}</p>
+            <div key={v.k} className="border-t border-timber-600 pt-6 space-y-3">
+              <div className="h-display text-xl text-linen-50">{v.k}</div>
+              <p className="text-timber-300 leading-relaxed text-[15px]">{v.v}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section className="container-patio py-20 md:py-28 text-center">
-        <Link href="/quote" className="btn-primary">Get a quote</Link>
+        <h2 className="h-display text-3xl md:text-4xl text-timber-950 mb-4">Begin with a walk of the yard.</h2>
+        <p className="text-timber-600 mb-8">A consultation costs nothing and obliges nothing.</p>
+        <Link href="/quote" className="btn-primary">Request a consultation</Link>
       </section>
     </>
   );

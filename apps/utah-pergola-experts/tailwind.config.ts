@@ -1,9 +1,10 @@
 import type { Config } from 'tailwindcss';
 
 /**
- * Utah Pergola Experts — outdoor-living brand.
- * Palette: warm timber browns, linen lights, dusk-sky blue.
- * Typography: slab-serif display (beams) + friendly grotesque body.
+ * Utah Pergola Experts — heritage outdoor-living brand.
+ * Palette drawn from the logo: parchment field, walnut timbers,
+ * terracotta sienna, golden sun. Old-money register: garamond
+ * serifs, hairline rules, generous whitespace.
  */
 const config: Config = {
   content: [
@@ -13,54 +14,55 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Timber — the structure
+        // Walnut — the timbers
         timber: {
-          50:  '#faf8f4',
-          100: '#f3eee4',
-          200: '#e4dac6',
-          300: '#cfbd9d',
-          400: '#b39a72',
-          500: '#977c55',
-          600: '#7b6243',
-          700: '#604c36',
-          800: '#423428',
-          900: '#2b221b',
-          950: '#191410',
+          50:  '#faf6ed',
+          100: '#f4ecda',
+          200: '#e7d7b6',
+          300: '#d4ba8b',
+          400: '#bb9660',
+          500: '#9f7742',
+          600: '#855e31',
+          700: '#6a4a27',
+          800: '#52391f',
+          900: '#3c2a17',
+          950: '#281b0e',
         },
-        // Linen — sun-washed lights
+        // Parchment — the logo field
         linen: {
-          50:  '#fcfaf5',
-          100: '#f7f2e8',
-          200: '#ede4d1',
-          300: '#dcccab',
+          50:  '#fbf7ec',
+          100: '#f7efda',
+          200: '#eee1c2',
+          300: '#e0cc9e',
         },
-        // Sky — dusk blue through the slats
-        sky: {
-          300: '#9ec7dd',
-          400: '#64a3c4',
-          500: '#3b82a8',
-          600: '#2b6689',
-          700: '#234f6a',
+        // Sienna — the terracotta arc, used like a wax seal
+        sienna: {
+          100: '#f5dcd2',
+          200: '#e9b8a5',
+          300: '#d98d72',
+          400: '#c66549',
+          500: '#b04a2f',
+          600: '#933a24',
+          700: '#74301f',
         },
       },
       fontFamily: {
         display: ['var(--font-display)', 'Georgia', 'serif'],
-        body: ['var(--font-body)', 'system-ui', 'sans-serif'],
+        body: ['var(--font-body)', 'Georgia', 'serif'],
       },
       letterSpacing: {
-        'display': '0.01em',
-        'tag': '0.22em',
+        'display': '0.005em',
+        'tag': '0.2em',
+        'button': '0.22em',
       },
       backgroundImage: {
-        // Evening timber with depth
-        'timber-depth': 'linear-gradient(168deg, #191410 0%, #2b221b 55%, #423428 100%)',
-        // Sun through the rafters — angled slat shadows on dark surfaces
-        'slats': 'repeating-linear-gradient(105deg, rgba(252,250,245,0.045) 0px, rgba(252,250,245,0.045) 3px, transparent 3px, transparent 42px)',
-        // Sky panels broken by rafter lines — the brand stripe
-        'rafters': 'repeating-linear-gradient(90deg, #3b82a8 0px, #3b82a8 72px, #191410 72px, #191410 84px)',
+        // Soft parchment light, like the logo's arch
+        'parchment-glow': 'radial-gradient(90% 70% at 50% 0%, #f7efda 0%, #fbf7ec 100%)',
+        // Espresso walnut for grounded sections
+        'walnut-depth': 'linear-gradient(180deg, #281b0e 0%, #3c2a17 100%)',
       },
       boxShadow: {
-        'pergola': '0 1px 0 rgba(25,20,16,0.06), 0 20px 50px -22px rgba(25,20,16,0.3)',
+        'plate': '0 1px 0 rgba(40,27,14,0.05), 0 18px 44px -24px rgba(40,27,14,0.22)',
       },
     },
   },

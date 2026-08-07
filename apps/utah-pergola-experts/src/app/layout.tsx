@@ -1,19 +1,19 @@
 import type { Metadata, Viewport } from 'next';
-import { Zilla_Slab, Work_Sans } from 'next/font/google';
+import { Cormorant_Garamond, EB_Garamond } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { BRAND } from '@/data/brand';
 import './globals.css';
 
-const display = Zilla_Slab({
+const display = Cormorant_Garamond({
   subsets: ['latin'],
   weight: ['500', '600', '700'],
   display: 'swap',
   variable: '--font-display',
 });
 
-const body = Work_Sans({
+const body = EB_Garamond({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-body',
@@ -87,8 +87,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#fcfaf5' },
-    { media: '(prefers-color-scheme: dark)', color: '#191410' },
+    { media: '(prefers-color-scheme: light)', color: '#fbf7ec' },
+    { media: '(prefers-color-scheme: dark)', color: '#281b0e' },
   ],
   width: 'device-width',
   initialScale: 1,

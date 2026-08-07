@@ -48,7 +48,7 @@ export default function QuoteForm() {
         <div className="grid sm:grid-cols-2 gap-2">
           {['Timber pergola', 'Louvered / motorized roof', 'Pavilion or gazebo', 'Attached to the house', 'Freestanding', 'Lighting / fans / heaters', 'Privacy walls / screens', 'Other / not sure'].map((v) => (
             <label key={v} className="flex items-center gap-3 text-sm text-timber-700">
-              <input type="checkbox" name="structure" value={v} className="accent-sky-500" />
+              <input type="checkbox" name="structure" value={v} className="accent-sienna-500" />
               {v}
             </label>
           ))}
@@ -67,7 +67,7 @@ export default function QuoteForm() {
           id="notes"
           name="notes"
           rows={4}
-          className="w-full border border-timber-200 bg-linen-50 px-4 py-3 text-timber-900 focus:border-sky-500 focus:outline-none"
+          className="w-full border border-timber-200 bg-linen-50 px-4 py-3 text-timber-900 focus:border-timber-600 focus:outline-none"
         />
       </div>
 
@@ -76,7 +76,7 @@ export default function QuoteForm() {
         disabled={status === 'sending'}
         className="btn-primary disabled:opacity-60"
       >
-        {status === 'sending' ? 'Sending…' : 'Request a quote'}
+        {status === 'sending' ? 'Sending…' : 'Request consultation'}
       </button>
 
       {message && (
@@ -103,11 +103,11 @@ function Field({
   as?: 'select';
   options?: string[];
 }) {
-  const baseClass = 'w-full border border-timber-200 bg-linen-50 px-4 py-3 text-timber-900 focus:border-sky-500 focus:outline-none';
+  const baseClass = 'w-full border border-timber-200 bg-linen-50 px-4 py-3 text-timber-900 focus:border-timber-600 focus:outline-none';
   return (
     <div>
       <label className="tag block mb-2" htmlFor={name}>
-        {label}{required && <span className="text-sky-600"> *</span>}
+        {label}{required && <span className="text-sienna-600"> *</span>}
       </label>
       {as === 'select' && options ? (
         <select id={name} name={name} className={baseClass} defaultValue="">
