@@ -32,9 +32,11 @@ export default function PergolasPage() {
         <div className="container-patio divide-y divide-timber-200">
           {structureCategories.map((c, i) => (
             <article key={c.slug} id={c.slug} className="grid lg:grid-cols-12 gap-10 lg:gap-14 py-16 md:py-20 scroll-mt-28 items-start">
-              <div className="lg:col-span-5">
+              <div className="lg:col-span-5 lg:sticky lg:top-28">
                 <StructurePlate
                   slug={c.slug as 'timber' | 'louvered' | 'pavilions'}
+                  photo={`/pergola/projects/${c.slug}.jpg`}
+                  alt={`${c.title} — project photograph`}
                   caption={`Plate ${numerals[i]} — ${c.shortTitle}`}
                   className="shadow-plate"
                 />

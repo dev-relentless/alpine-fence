@@ -47,6 +47,8 @@ export default function HomePage() {
             <Link key={c.slug} href={`/pergolas#${c.slug}`} className="group block">
               <StructurePlate
                 slug={c.slug as 'timber' | 'louvered' | 'pavilions'}
+                photo={`/pergola/projects/${c.slug}.jpg`}
+                alt={`${c.title} — project photograph`}
                 caption={`Plate ${numerals[i]} — ${c.shortTitle}`}
                 className="shadow-plate transition-transform duration-300 group-hover:-translate-y-1"
               />

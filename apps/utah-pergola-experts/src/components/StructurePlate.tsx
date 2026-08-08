@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const WALNUT = '#52391f';
 const WALNUT_LIGHT = '#85603a';
 const SUN = '#ecb84a';
@@ -68,25 +70,39 @@ const drawings: Record<'timber' | 'louvered' | 'pavilions', JSX.Element> = {
 };
 
 /**
- * Engraved-plate architectural drawings, framed like plates in an old
- * builder's folio. Stand-ins with intent — swap for photography by
- * replacing usages with next/image.
+ * Framed plates in the manner of an old builder's folio — photographs
+ * when we have them, engraved elevations when we don't.
  */
 export default function StructurePlate({
   slug,
   caption,
   className = '',
+  photo,
+  alt,
 }: {
   slug: 'timber' | 'louvered' | 'pavilions';
   caption?: string;
   className?: string;
+  photo?: string;
+  alt?: string;
 }) {
   return (
     <figure className={`bg-linen-100 border border-timber-200 p-2.5 ${className}`}>
       <div className="border border-timber-200/80 px-4 pt-6 pb-4">
-        <svg viewBox="0 0 400 250" role="img" aria-label={caption ?? 'Architectural drawing'} className="w-full h-auto">
-          {drawings[slug]}
-        </svg>
+        {photo ? (
+          <Image
+            src={photo}
+            alt={alt ?? caption ?? 'Project photograph'}
+            width={735}
+            height={945}
+            className="w-full h-auto aspect-[3/4] object-cover"
+            sizes="(min-width: 1024px) 400px, 90vw"
+          />
+        ) : (
+          <svg viewBox="0 0 400 250" role="img" aria-label={caption ?? 'Architectural drawing'} className="w-full h-auto">
+            {drawings[slug]}
+          </svg>
+        )}
         {caption && (
           <figcaption className="mt-3 text-center tag text-timber-500">{caption}</figcaption>
         )}

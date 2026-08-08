@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { BRAND } from '@/data/brand';
 import { serviceCategories } from '@/data/services';
 
@@ -8,31 +9,42 @@ export default function HomePage() {
   return (
     <>
       {/* ─────────── HERO ─────────── */}
-      <section className="relative overflow-hidden bg-iron-depth text-cement-50">
-        <div className="absolute inset-0 bg-formwork" aria-hidden />
+      <section className="relative overflow-hidden bg-forge-depth text-cement-50">
         <div className="absolute inset-x-0 top-0 h-2 bg-joints" aria-hidden />
-        <div className="relative container-slab py-24 md:py-36">
-          <div className="tag text-signal-400 mb-6">Concrete · Excavation — Wasatch Front, UT</div>
-          <h1 className="h-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.2rem] leading-[0.98] max-w-5xl">
-            We move the dirt.
-            <br />
-            <span className="text-signal-500">We set the concrete.</span>
-          </h1>
-          <p className="mt-8 text-iron-300 text-lg leading-relaxed max-w-2xl">
-            Flatwork, foundations, and dirt work from one crew under one contract — no
-            finger-pointing between the excavator and the concrete guy. Compacted base,
-            air-entrained mixes for Utah winters, and a bid in writing before a bucket moves.
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
-            <Link href="/bid" className="btn-primary w-full sm:w-auto text-center">
-              Get a bid
-            </Link>
-            <a href={smsHref} className="btn-ghost border-cement-50/30 text-cement-50 hover:border-cement-50 w-full sm:w-auto text-center">
-              Text the crew
-            </a>
-            <a href={`tel:${BRAND.phoneRaw}`} className="text-sm tracking-wide text-iron-300 hover:text-cement-50 sm:ml-2">
-              {BRAND.phone}
-            </a>
+        <div className="relative container-slab py-24 md:py-32 grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-7">
+            <div className="tag text-signal-400 mb-6">Concrete · Excavation — Wasatch Front, UT</div>
+            <h1 className="h-display text-5xl sm:text-6xl md:text-7xl leading-[0.98] max-w-5xl">
+              We move the dirt.
+              <br />
+              <span className="text-steel">We set the concrete.</span>
+            </h1>
+            <p className="mt-8 text-iron-300 text-lg leading-relaxed max-w-2xl">
+              Flatwork, foundations, and dirt work from one crew under one contract — no
+              finger-pointing between the excavator and the concrete guy. Compacted base,
+              air-entrained mixes for Utah winters, and a bid in writing before a bucket moves.
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+              <Link href="/bid" className="btn-primary w-full sm:w-auto text-center">
+                Get a bid
+              </Link>
+              <a href={smsHref} className="btn-ghost border-cement-50/30 text-cement-50 hover:border-cement-50 w-full sm:w-auto text-center">
+                Text the crew
+              </a>
+              <a href={`tel:${BRAND.phoneRaw}`} className="text-sm tracking-wide text-iron-300 hover:text-cement-50 sm:ml-2">
+                {BRAND.phone}
+              </a>
+            </div>
+          </div>
+          <div className="hidden lg:block lg:col-span-5">
+            <Image
+              src="/braddock/logo.png"
+              alt="Braddock Concrete — forged badge"
+              width={1000}
+              height={867}
+              priority
+              className="w-full max-w-[26rem] ml-auto rounded-sm shadow-slab"
+            />
           </div>
         </div>
         <div className="relative border-t border-iron-800">
@@ -79,7 +91,7 @@ export default function HomePage() {
       </section>
 
       {/* ─────────── WHY BRADDOCK ─────────── */}
-      <section className="bg-iron-950 text-cement-50">
+      <section className="bg-forge-depth text-cement-50">
         <div className="container-slab py-20 md:py-28">
           <div className="tag text-signal-400 mb-3">Why Braddock</div>
           <h2 className="h-display text-4xl md:text-5xl mb-12 max-w-3xl">

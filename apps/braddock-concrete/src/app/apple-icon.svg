@@ -1,6 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
-  <rect width="180" height="180" rx="28" fill="#0e1013"/>
-  <rect x="34" y="38" width="112" height="86" fill="#f26a10"/>
-  <text x="90" y="106" text-anchor="middle" font-family="'Archivo Black', 'Arial Black', sans-serif" font-size="64" font-weight="700" fill="#f7f7f5">B</text>
-  <text x="90" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" letter-spacing="4" fill="#f7f7f5" opacity="0.7">BRADDOCK</text>
+  <defs>
+    <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f2f4f6"/>
+      <stop offset=".45" stop-color="#c3c8ce"/>
+      <stop offset=".55" stop-color="#8d939a"/>
+      <stop offset=".75" stop-color="#e3e6ea"/>
+      <stop offset="1" stop-color="#aeb5bc"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" rx="28" fill="#131518"/>
+  <rect x="13" y="13" width="154" height="154" rx="18" fill="none" stroke="#ef8b1c" stroke-width="4"/>
+  <text x="90" y="104" text-anchor="middle" font-family="'Arial Black', Arial, sans-serif" font-size="76" font-weight="900" fill="url(#steel)">B</text>
+  <rect x="48" y="118" width="84" height="10" fill="#ef8b1c"/>
+  <text x="90" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" letter-spacing="5" fill="#c3c8ce">BRADDOCK</text>
 </svg>

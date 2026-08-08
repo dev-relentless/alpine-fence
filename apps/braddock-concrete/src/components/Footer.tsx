@@ -6,7 +6,7 @@ import { serviceCategories } from '@/data/services';
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="bg-iron-950 text-cement-100 mt-24">
+    <footer className="bg-forge-depth text-cement-100 mt-24">
       <div className="h-2 bg-joints" aria-hidden />
       <div className="container-slab py-16 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2 space-y-5">

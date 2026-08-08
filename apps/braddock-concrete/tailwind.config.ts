@@ -1,9 +1,9 @@
 import type { Config } from 'tailwindcss';
 
 /**
- * Braddock Concrete — concrete & excavation brand.
- * Palette: iron near-blacks, poured-cement grays, signal orange.
- * Typography: monolithic black grotesque display + sturdy grotesque body.
+ * Braddock Concrete — forged-steel industrial brand.
+ * Palette drawn from the badge logo: charcoal iron, chrome steel,
+ * amber signal orange. Chamfered plates, steel sheen, joint stripes.
  */
 const config: Config = {
   content: [
@@ -13,7 +13,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Iron — the structure
+        // Iron — the charcoal field of the badge
         iron: {
           50:  '#f5f6f7',
           100: '#e9ebed',
@@ -23,9 +23,9 @@ const config: Config = {
           500: '#626b74',
           600: '#4e565e',
           700: '#3f454c',
-          800: '#2a2e33',
-          900: '#1b1e22',
-          950: '#0e1013',
+          800: '#2b2f34',
+          900: '#1d2024',
+          950: '#131518',
         },
         // Cement — cured-concrete neutrals
         cement: {
@@ -34,13 +34,21 @@ const config: Config = {
           200: '#dfddd6',
           300: '#c6c3b8',
         },
-        // Signal — excavation-marker orange
+        // Steel — the chrome lettering
+        steel: {
+          100: '#eef0f2',
+          200: '#dde0e4',
+          300: '#c3c8ce',
+          400: '#a6adb5',
+          500: '#8d939a',
+        },
+        // Signal — the badge's amber trim
         signal: {
-          300: '#ffb37d',
-          400: '#ff8c42',
-          500: '#f26a10',
-          600: '#c9520a',
-          700: '#9c3f0a',
+          300: '#ffb95c',
+          400: '#fa9e33',
+          500: '#ef8b1c',
+          600: '#cf6f10',
+          700: '#a3560d',
         },
       },
       fontFamily: {
@@ -52,15 +60,15 @@ const config: Config = {
         'tag': '0.22em',
       },
       backgroundImage: {
-        // Dark pour with depth
-        'iron-depth': 'linear-gradient(170deg, #0e1013 0%, #1b1e22 55%, #2a2e33 100%)',
-        // Board-form tie lines on dark surfaces
-        'formwork': 'repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 56px)',
-        // Orange slabs broken by expansion joints — the brand stripe
-        'joints': 'repeating-linear-gradient(90deg, #f26a10 0px, #f26a10 88px, #0e1013 88px, #0e1013 100px)',
+        // The badge's vignetted charcoal
+        'forge-depth': 'radial-gradient(120% 90% at 50% 0%, #2b2f34 0%, #1d2024 48%, #131518 100%)',
+        // Chrome sheen for display text
+        'steel-sheen': 'linear-gradient(180deg, #f2f4f6 0%, #ccd1d7 40%, #9aa1a9 55%, #e3e6ea 72%, #aeb5bc 100%)',
+        // Amber slabs broken by expansion joints — the brand stripe
+        'joints': 'repeating-linear-gradient(90deg, #ef8b1c 0px, #ef8b1c 88px, #131518 88px, #131518 100px)',
       },
       boxShadow: {
-        'slab': '0 1px 0 rgba(14,16,19,0.06), 0 20px 50px -22px rgba(14,16,19,0.35)',
+        'slab': '0 1px 0 rgba(19,21,24,0.06), 0 20px 50px -22px rgba(19,21,24,0.4)',
       },
     },
   },

@@ -39,7 +39,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-iron-950 text-cement-50">
+      <section className="bg-forge-depth text-cement-50">
         <div className="container-slab py-20 md:py-28 grid lg:grid-cols-3 gap-10">
           {[
             { k: 'Own iron, own crews', v: 'No waiting on a rented excavator or a sub who took a better job. Our machines, our people, your schedule.' },

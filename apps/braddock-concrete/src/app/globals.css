@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --color-ink: 14 16 19;        /* iron-950 */
+  --color-ink: 19 21 24;        /* iron-950 */
   --color-paper: 247 247 245;   /* cement-50 */
 }
 
@@ -20,13 +20,17 @@ body {
 }
 
 ::selection {
-  background: #f26a10;
-  color: #f7f7f5;
+  background: #ef8b1c;
+  color: #131518;
 }
 
 @layer components {
   .h-display {
     @apply font-display uppercase tracking-display;
+  }
+  /* Chrome lettering, like the badge */
+  .text-steel {
+    @apply bg-steel-sheen bg-clip-text text-transparent;
   }
   .tag {
     @apply uppercase tracking-tag text-xs text-iron-500 font-semibold;
