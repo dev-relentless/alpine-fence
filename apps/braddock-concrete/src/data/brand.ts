@@ -8,8 +8,8 @@ export const BRAND = {
     'Concrete & excavation on the Wasatch Front — flatwork, foundations, and dirt work by one crew, one contract. Bids in writing.',
   domain: 'braddockconcrete.com',
   url: 'https://braddockconcrete.com',
-  phone: '(801) 471-3148',
-  phoneRaw: '+18014713148',
+  phone: '(385) 336-3385',
+  phoneRaw: '+13853363385',
   smsBody: "Hi Braddock Concrete — I'd like a bid on a project.",
   address: {
     region: 'Utah — Wasatch Front',

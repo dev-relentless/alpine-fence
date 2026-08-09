@@ -8,8 +8,8 @@ export const BRAND = {
     'Pergolas, louvered roofs & pavilions on the Wasatch Front — engineered for Utah sun, wind, and snow. Design-build, quotes in writing.',
   domain: 'utahpergolaexperts.com',
   url: 'https://utahpergolaexperts.com',
-  phone: '(801) 471-3148',
-  phoneRaw: '+18014713148',
+  phone: '(385) 336-4207',
+  phoneRaw: '+13853364207',
   smsBody: "Hi Utah Pergola Experts — I'd like a quote on a pergola.",
   address: {
     region: 'Utah — Wasatch Front',
