@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ink: 14 41 55;      /* pool-950 */
+  --color-paper: 248 250 252; /* deck-50 */
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: rgb(var(--color-paper));
+  color: rgb(var(--color-ink));
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+::selection {
+  background: #99f6e4;
+  color: #0e2937;
+}
+
+@layer components {
+  .h-display {
+    @apply font-display font-semibold tracking-tight;
+  }
+  .tag {
+    @apply uppercase tracking-tag text-[11px] font-semibold text-pool-500;
+  }
+  .container-deck {
+    @apply mx-auto w-full max-w-[1180px] px-6 md:px-10;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-pool-600 text-white font-semibold tracking-button px-8 py-3.5 text-sm hover:bg-pool-700 transition-colors;
+  }
+  .btn-sun {
+    @apply inline-flex items-center justify-center rounded-full bg-sun-400 text-pool-950 font-semibold tracking-button px-8 py-3.5 text-sm hover:bg-sun-500 transition-colors;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full border border-pool-300 text-pool-800 font-semibold tracking-button px-8 py-3.5 text-sm hover:border-pool-600 hover:text-pool-950 transition-colors;
+  }
+  .card-tile {
+    @apply rounded-tile bg-white border border-deck-200 shadow-float;
+  }
+}
