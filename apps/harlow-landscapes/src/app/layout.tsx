@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Cormorant_Garamond, Inter } from 'next/font/google';
+import { Cormorant_Garamond, EB_Garamond } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SchemaMarkup from '@/components/SchemaMarkup';
@@ -8,12 +8,12 @@ import './globals.css';
 
 const display = Cormorant_Garamond({
   subsets: ['latin'],
-  weight: ['300', '400', '500'],
+  weight: ['400', '500', '600'],
   display: 'swap',
   variable: '--font-display',
 });
 
-const body = Inter({
+const body = EB_Garamond({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-body',

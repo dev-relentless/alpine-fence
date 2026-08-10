@@ -1,9 +1,10 @@
 import type { Config } from 'tailwindcss';
 
 /**
- * Harlow Landscapes — premium design-build brand.
- * Palette: warm earthen neutrals, deep moss, bronze accent.
- * Typography: editorial serif display + refined sans body.
+ * Harlow Landscapes — a design-build firm in the old-money register.
+ * Palette: warm ivory field, dark moss anchor, bronze reserved as a wax-seal
+ * accent. Typography: Garamond throughout — display and body — with hairline
+ * eyebrows, generous whitespace, and no ornament that isn't quiet.
  */
 const config: Config = {
   content: [
@@ -64,25 +65,29 @@ const config: Config = {
       },
       fontFamily: {
         display: ['var(--font-display)', 'Georgia', 'serif'],
-        body: ['var(--font-body)', 'system-ui', 'sans-serif'],
+        body: ['var(--font-body)', 'Georgia', 'serif'],
       },
       letterSpacing: {
-        'display-tight': '-0.02em',
-        'eyebrow': '0.18em',
+        'display': '0.005em',
+        'display-tight': '-0.015em',
+        'eyebrow': '0.22em',
+        'tag': '0.22em',
+        'button': '0.24em',
       },
       backgroundImage: {
-        'moss-deep': 'linear-gradient(135deg, #101810 0%, #1f2c1c 50%, #283823 100%)',
-        'ivory-soft': 'linear-gradient(180deg, #fdfbf6 0%, #faf6ec 100%)',
+        'moss-deep': 'linear-gradient(180deg, #101810 0%, #1f2c1c 100%)',
+        'ivory-soft': 'radial-gradient(90% 70% at 50% 0%, #faf6ec 0%, #fdfbf6 100%)',
+        'stone-deep': 'linear-gradient(180deg, #0d0b09 0%, #1a1714 100%)',
       },
       boxShadow: {
-        'editorial': '0 1px 0 rgba(26,23,20,0.06), 0 12px 40px -16px rgba(26,23,20,0.18)',
+        'editorial': '0 1px 0 rgba(26,23,20,0.05), 0 18px 44px -24px rgba(26,23,20,0.22)',
       },
       animation: {
         'fade-up': 'fadeUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both',
       },
       keyframes: {
         fadeUp: {
-          '0%': { opacity: '0', transform: 'translateY(12px)' },
+          '0%': { opacity: '0', transform: 'translateY(8px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },

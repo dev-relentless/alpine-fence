@@ -44,11 +44,11 @@ export default function InquiryForm() {
       </div>
 
       <div>
-        <label className="eyebrow block mb-3">Project scope</label>
+        <label className="tag block mb-3">Project scope</label>
         <div className="grid sm:grid-cols-2 gap-2">
           {['Master plan / design', 'Hardscape & masonry', 'Planting design', 'Outdoor lighting', 'Water feature', 'Full design-build'].map((v) => (
-            <label key={v} className="flex items-center gap-3 text-sm text-stone-700">
-              <input type="checkbox" name="scope" value={v} className="accent-moss-700" />
+            <label key={v} className="flex items-center gap-3 text-[15px] text-stone-700">
+              <input type="checkbox" name="scope" value={v} className="accent-moss-800" />
               {v}
             </label>
           ))}
@@ -59,12 +59,12 @@ export default function InquiryForm() {
         options={['Under $50k', '$50k – $100k', '$100k – $250k', '$250k – $500k', '$500k+']} />
 
       <div>
-        <label className="eyebrow block mb-3" htmlFor="notes">Tell us about the project</label>
+        <label className="tag block mb-3" htmlFor="notes">Tell us about the project</label>
         <textarea
           id="notes"
           name="notes"
           rows={5}
-          className="w-full rounded-md border border-stone-300 bg-ivory-50 px-4 py-3 text-stone-900 focus:border-moss-700 focus:outline-none"
+          className="w-full border border-stone-300 bg-ivory-50 px-4 py-3 text-stone-900 focus:border-moss-800 focus:outline-none"
         />
       </div>
 
@@ -77,7 +77,7 @@ export default function InquiryForm() {
       </button>
 
       {message && (
-        <p className={`text-sm ${status === 'error' ? 'text-red-700' : 'text-moss-700'}`}>{message}</p>
+        <p className={`text-sm ${status === 'error' ? 'text-red-700' : 'text-moss-800'}`}>{message}</p>
       )}
     </form>
   );
@@ -98,11 +98,11 @@ function Field({
   as?: 'select';
   options?: string[];
 }) {
-  const baseClass = 'w-full rounded-md border border-stone-300 bg-ivory-50 px-4 py-3 text-stone-900 focus:border-moss-700 focus:outline-none';
+  const baseClass = 'w-full border border-stone-300 bg-ivory-50 px-4 py-3 text-stone-900 focus:border-moss-800 focus:outline-none';
   return (
     <div>
-      <label className="eyebrow block mb-2" htmlFor={name}>
-        {label}{required && <span className="text-bronze-500"> *</span>}
+      <label className="tag block mb-2" htmlFor={name}>
+        {label}{required && <span className="text-stone-500"> *</span>}
       </label>
       {as === 'select' && options ? (
         <select id={name} name={name} className={baseClass} defaultValue="">
