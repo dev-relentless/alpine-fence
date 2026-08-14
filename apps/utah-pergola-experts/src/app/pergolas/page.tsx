@@ -35,8 +35,6 @@ export default function PergolasPage() {
               <div className="lg:col-span-5 lg:sticky lg:top-28">
                 <StructurePlate
                   slug={c.slug as 'timber' | 'louvered' | 'pavilions'}
-                  photo={`/pergola/projects/${c.slug}.jpg`}
-                  alt={`${c.title} — project photograph`}
                   caption={`Plate ${numerals[i]} — ${c.shortTitle}`}
                   className="shadow-plate"
                 />
