@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Cormorant_Garamond, EB_Garamond } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SiteChrome from '@/components/SiteChrome';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { BRAND } from '@/data/brand';
 import './globals.css';
@@ -103,9 +104,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SchemaMarkup />
       </head>
       <body className="min-h-screen flex flex-col bg-linen-50 text-timber-950">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <SiteChrome header={<Header />} footer={<Footer />}>
+          {children}
+        </SiteChrome>
       </body>
     </html>
   );

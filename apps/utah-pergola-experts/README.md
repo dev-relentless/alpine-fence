@@ -34,3 +34,7 @@ Drop production logo + favicon files in `public/pergola/`. See `public/pergola/R
 ## Quote form
 
 The endpoint at `src/app/api/quote/route.ts` currently logs submissions server-side. Wire it to the office inbox / CRM before launch.
+
+## Ad landing page
+
+`/lp/pergola` is the Facebook-ad landing page: no site nav/footer (see `src/components/SiteChrome.tsx`), `noindex`, and a Go High Level inline form. To go live, paste the GHL form embed URL into `src/data/landing.ts` — until then the page shows a placeholder with a call fallback. The CSP in `next.config.js` already allows the GHL iframe and `form_embed.js`.
