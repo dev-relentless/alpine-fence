@@ -50,4 +50,13 @@ npm run new:pergola-state -- --all      # re-propagate template changes to every
 
 ## Vercel
 
-Each app is a separate Vercel project with its **Root Directory** set to its `apps/*` folder.
+Each app is a separate Vercel project with its **Root Directory** set to its `apps/*` folder. Vercel does **not** create projects for new folders automatically — a new app needs a project before its first deploy.
+
+`scripts/vercel-projects.mjs` creates/links the projects (root directory, framework, GitHub link, production domain) and triggers a first production deployment from `main`:
+
+```bash
+VERCEL_TOKEN=<token from vercel.com/account/tokens> node scripts/vercel-projects.mjs            # all new apps
+VERCEL_TOKEN=... VERCEL_TEAM=<team slug or id> node scripts/vercel-projects.mjs ats colorado   # subset, under a team
+```
+
+Or manually in the dashboard: **Add New → Project → Import `dev-relentless/alpine-fence`**, set Root Directory to the app folder, Framework = Next.js, then add the domain under Settings → Domains.
