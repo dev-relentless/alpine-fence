@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ink: 23 20 15;      /* ink-950 */
+  --color-paper: 250 248 244; /* bone-50 */
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: rgb(var(--color-paper));
+  color: rgb(var(--color-ink));
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 1.0625rem;
+}
+
+::selection {
+  background: #ecd9a3;
+  color: #17140f;
+}
+
+@layer components {
+  .h-display {
+    @apply font-display font-medium tracking-display;
+  }
+  .tag {
+    @apply uppercase tracking-tag text-[11px] font-medium text-ink-500;
+  }
+  .tag-brass {
+    @apply uppercase tracking-tag text-[11px] font-medium text-brass-400;
+  }
+  .container-site {
+    @apply mx-auto w-full max-w-site px-6 md:px-10;
+  }
+  .container-prose {
+    @apply mx-auto w-full max-w-3xl px-6 md:px-10;
+  }
+  .rule {
+    @apply h-px w-14 bg-brass-400;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center bg-ink-950 text-bone-50 uppercase tracking-button px-7 py-3.5 text-xs font-medium hover:bg-cedar-800 transition-colors;
+  }
+  .btn-cedar {
+    @apply inline-flex items-center justify-center bg-cedar-700 text-bone-50 uppercase tracking-button px-7 py-3.5 text-xs font-medium hover:bg-cedar-600 transition-colors;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center border border-ink-300 text-ink-800 uppercase tracking-button px-7 py-3.5 text-xs font-medium hover:border-ink-900 hover:text-ink-950 transition-colors;
+  }
+  .btn-light {
+    @apply inline-flex items-center justify-center border border-bone-50/60 text-bone-50 uppercase tracking-button px-7 py-3.5 text-xs font-medium hover:bg-bone-50 hover:text-ink-950 transition-colors;
+  }
+  /* Cinematic gradient so headlines stay legible over photography. */
+  .overlay-cinematic::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(23,20,15,0.25) 0%, rgba(23,20,15,0.10) 35%, rgba(23,20,15,0.65) 100%),
+      linear-gradient(90deg, rgba(23,20,15,0.35) 0%, rgba(23,20,15,0) 60%);
+    pointer-events: none;
+  }
+  .plate {
+    @apply overflow-hidden bg-bone-200 shadow-plate;
+  }
+  .field {
+    @apply w-full border border-ink-200 bg-bone-50 px-4 py-3 text-ink-900 placeholder:text-ink-300 focus:border-cedar-600 focus:outline-none;
+  }
+}

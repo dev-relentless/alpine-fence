@@ -10,6 +10,7 @@
     "dev:braddock": "npm run dev --workspace=apps/braddock-concrete",
     "dev:pergola": "npm run dev --workspace=apps/utah-pergola-experts",
     "dev:pool": "npm run dev --workspace=apps/utah-pool-experts",
+    "dev:ats": "npm run dev --workspace=apps/american-timber-shade",
     "build:alpine": "npm run build --workspace=apps/alpine-fence",
     "build:harlow": "npm run build --workspace=apps/harlow-landscapes",
     "build:spx": "npm run build --workspace=apps/spx-construction",
@@ -17,6 +18,7 @@
     "build:braddock": "npm run build --workspace=apps/braddock-concrete",
     "build:pergola": "npm run build --workspace=apps/utah-pergola-experts",
     "build:pool": "npm run build --workspace=apps/utah-pool-experts",
+    "build:ats": "npm run build --workspace=apps/american-timber-shade",
     "lint": "npm run lint --workspaces --if-present"
   }
 }
