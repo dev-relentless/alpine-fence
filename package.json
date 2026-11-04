@@ -19,6 +19,17 @@
     "build:pergola": "npm run build --workspace=apps/utah-pergola-experts",
     "build:pool": "npm run build --workspace=apps/utah-pool-experts",
     "build:ats": "npm run build --workspace=apps/american-timber-shade",
+    "dev:arizona": "npm run dev --workspace=apps/arizona-pergola-experts",
+    "dev:idaho": "npm run dev --workspace=apps/idaho-pergola-experts",
+    "dev:nevada": "npm run dev --workspace=apps/nevada-pergola-experts",
+    "dev:washington": "npm run dev --workspace=apps/washington-pergola-experts",
+    "dev:colorado": "npm run dev --workspace=apps/colorado-pergola-experts",
+    "build:arizona": "npm run build --workspace=apps/arizona-pergola-experts",
+    "build:idaho": "npm run build --workspace=apps/idaho-pergola-experts",
+    "build:nevada": "npm run build --workspace=apps/nevada-pergola-experts",
+    "build:washington": "npm run build --workspace=apps/washington-pergola-experts",
+    "build:colorado": "npm run build --workspace=apps/colorado-pergola-experts",
+    "new:pergola-state": "node scripts/new-pergola-state.mjs",
     "lint": "npm run lint --workspaces --if-present"
   }
 }
