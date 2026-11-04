@@ -225,10 +225,15 @@ ${list(c.cities, '      ')}
 }
 
 function packageJson(key, c) {
+  // Preserve an existing version so re-stamping never rolls back a deploy bump.
+  let version = '0.1.0';
+  try {
+    version = JSON.parse(fs.readFileSync(path.join(ROOT, 'apps', slugOf(key), 'package.json'), 'utf8')).version || version;
+  } catch {}
   return JSON.stringify(
     {
       name: slugOf(key),
-      version: '0.1.0',
+      version,
       private: true,
       scripts: {
         dev: `next dev -p ${c.port}`,
