@@ -25,6 +25,7 @@ const APPS = {
   nevada:     { name: 'nevada-pergola-experts',     dir: 'apps/nevada-pergola-experts',     domain: 'nevadapergolaexperts.com' },
   washington: { name: 'washington-pergola-experts', dir: 'apps/washington-pergola-experts', domain: 'washingtonpergolaexperts.com' },
   colorado:   { name: 'colorado-pergola-experts',   dir: 'apps/colorado-pergola-experts',   domain: 'coloradopergolaexperts.com' },
+  apex:       { name: 'apex-concrete',              dir: 'apps/apex-concrete',              domain: 'apexconcreteutah.com' },
 };
 
 const token = process.env.VERCEL_TOKEN;

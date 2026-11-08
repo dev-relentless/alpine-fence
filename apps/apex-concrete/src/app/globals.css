@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ink: 14 17 20;        /* basalt-950 */
+  --color-paper: 247 246 242;   /* slab-50 */
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: rgb(var(--color-paper));
+  color: rgb(var(--color-ink));
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+::selection {
+  background: #e8431f;
+  color: #f7f6f2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker,
+  .animate-rise {
+    animation: none !important;
+  }
+}
+
+@layer components {
+  .h-display {
+    @apply font-display uppercase tracking-display leading-[0.92];
+  }
+  .tag {
+    @apply uppercase tracking-tag text-[11px] text-basalt-500 font-semibold;
+  }
+  .container-apex {
+    @apply mx-auto w-full max-w-[1280px] px-6 md:px-10;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-semibold uppercase tracking-[0.08em] text-[13px] px-6 py-3.5 transition-colors;
+  }
+  .btn-primary {
+    @apply btn bg-flag-500 text-slab-50 hover:bg-flag-600;
+  }
+  .btn-dark {
+    @apply btn bg-basalt-950 text-slab-50 hover:bg-basalt-800;
+  }
+  .btn-ghost {
+    @apply btn border border-basalt-300 text-basalt-900 hover:border-basalt-950;
+  }
+  .btn-ghost-light {
+    @apply btn border border-slab-50/30 text-slab-50 hover:border-slab-50;
+  }
+  /* Peak-cut bottom edge for dark sections */
+  .cut-peak {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 48px), 50% 100%, 0 calc(100% - 48px));
+  }
+  /* Vermilion underline, drawn like a form board */
+  .rule-flag {
+    @apply block h-1 w-14 bg-flag-500;
+  }
+  .input {
+    @apply w-full border border-basalt-200 bg-slab-50 px-4 py-3 text-basalt-900 placeholder:text-basalt-400 focus:border-flag-500 focus:outline-none focus:ring-2 focus:ring-flag-500/20;
+  }
+  .num {
+    @apply font-display text-flag-500 text-5xl leading-none tabular-nums;
+  }
+}

@@ -29,6 +29,8 @@
     "build:nevada": "npm run build --workspace=apps/nevada-pergola-experts",
     "build:washington": "npm run build --workspace=apps/washington-pergola-experts",
     "build:colorado": "npm run build --workspace=apps/colorado-pergola-experts",
+    "dev:apex": "npm run dev --workspace=apps/apex-concrete",
+    "build:apex": "npm run build --workspace=apps/apex-concrete",
     "new:pergola-state": "node scripts/new-pergola-state.mjs",
     "lint": "npm run lint --workspaces --if-present"
   }
