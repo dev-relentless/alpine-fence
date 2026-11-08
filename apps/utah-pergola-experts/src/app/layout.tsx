@@ -23,7 +23,7 @@ const body = EB_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL(BRAND.url),
   title: {
-    default: `${BRAND.name} | Pergolas, Louvered Roofs & Pavilions · Utah`,
+    default: `${BRAND.name} | Pergolas, Louvered Roofs & Pavilions · ${BRAND.state}`,
     template: `%s | ${BRAND.shortName}`,
   },
   description: BRAND.shortDescription,
@@ -32,31 +32,28 @@ export const metadata: Metadata = {
   authors: [{ name: BRAND.name, url: BRAND.url }],
   creator: BRAND.name,
   publisher: BRAND.name,
-  alternates: {
-    canonical: BRAND.url,
-  },
+  // Canonicals are set per page — a root-level canonical would mark every
+  // subpage as a duplicate of the homepage.
   keywords: [
     // Service-led
-    'pergola builder Utah',
-    'pergola contractor Utah',
-    'cedar pergola Utah',
-    'louvered pergola Utah',
-    'motorized pergola Utah',
-    'pavilion builder Utah',
-    'gazebo builder Utah',
-    'patio cover Utah',
-    'attached pergola Utah',
-    'freestanding pergola Utah',
-    'pergola with lighting Utah',
+    `pergola builder ${BRAND.state}`,
+    `pergola contractor ${BRAND.state}`,
+    `cedar pergola ${BRAND.state}`,
+    `louvered pergola ${BRAND.state}`,
+    `motorized pergola ${BRAND.state}`,
+    `pavilion builder ${BRAND.state}`,
+    `gazebo builder ${BRAND.state}`,
+    `patio cover ${BRAND.state}`,
+    `attached pergola ${BRAND.state}`,
+    `freestanding pergola ${BRAND.state}`,
+    `pergola with lighting ${BRAND.state}`,
     // Geo
-    'pergola builder Lehi',
-    'pergola Salt Lake City',
-    'pergola Utah County',
-    'backyard shade Wasatch Front',
+    ...BRAND.address.cities.slice(0, 4).map((c) => `pergola builder ${c}`),
+    `backyard shade ${BRAND.region}`,
     // Intent
-    'pergola cost Utah',
-    'custom pergola design Utah',
-    'snow rated pergola Utah',
+    `pergola cost ${BRAND.state}`,
+    `custom pergola design ${BRAND.state}`,
+    BRAND.climate.keyword,
   ],
   openGraph: {
     type: 'website',
@@ -65,13 +62,11 @@ export const metadata: Metadata = {
     siteName: BRAND.name,
     title: `${BRAND.name} | Pergolas, Louvered Roofs & Pavilions`,
     description: BRAND.shortDescription,
-    images: [{ url: '/pergola/og.jpg', width: 1200, height: 630, alt: BRAND.name }],
   },
   twitter: {
     card: 'summary_large_image',
     title: BRAND.name,
     description: BRAND.tagline,
-    images: ['/pergola/og.jpg'],
   },
   robots: {
     index: true,
@@ -79,10 +74,10 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 },
   },
   other: {
-    'geo.region': 'US-UT',
-    'geo.placename': 'Wasatch Front, Utah',
-    'geo.position': '40.3916;-111.8508',
-    ICBM: '40.3916, -111.8508',
+    'geo.region': BRAND.geo.region,
+    'geo.placename': BRAND.geo.placename,
+    'geo.position': `${BRAND.geo.lat};${BRAND.geo.lng}`,
+    ICBM: `${BRAND.geo.lat}, ${BRAND.geo.lng}`,
   },
 };
 

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
+import { BrandMark } from '@/components/Logo';
 import Link from 'next/link';
 import { BRAND } from '@/data/brand';
 import { structureCategories } from '@/data/structures';
@@ -9,7 +9,7 @@ import LeadFormEmbed from '@/components/LeadFormEmbed';
 export const metadata: Metadata = {
   title: 'Free Pergola Consultation & Written Quote',
   description:
-    'Timber pergolas, motorized louvered roofs & pavilions on the Wasatch Front. Free in-yard design consultation and a written quote — drawings, materials, price.',
+    `Timber pergolas, motorized louvered roofs & pavilions across ${BRAND.state}. Free in-yard design consultation and a written quote — drawings, materials, price.`,
   robots: { index: false, follow: false },
   alternates: { canonical: `${BRAND.url}/lp/pergola` },
 };
@@ -18,13 +18,13 @@ const numerals = ['I', 'II', 'III'];
 
 const proof = [
   'Free on-site consultation and a written quote — drawings, materials, and price',
-  'Snow-load engineered, with footings below frost line',
-  'Licensed & insured · A Utah construction family, two decades on the Wasatch Front',
+  `${BRAND.climate.engineeredTag}, with ${BRAND.climate.footings}`,
+  'Licensed & insured · A Western construction family, two decades of building behind it',
 ];
 
 const trust = [
   'Licensed & insured',
-  'Snow-load engineered',
+  BRAND.climate.engineeredTag,
   'Written proposals',
   'Design-build, one crew',
 ];
@@ -43,12 +43,12 @@ const steps = [
 
 const faqs = [
   {
-    q: 'How much does a pergola cost in Utah?',
+    q: `How much does a pergola cost in ${BRAND.state}?`,
     a: 'It depends on size, material (rough-sawn timber vs. powder-coated aluminum louvers), attached vs. freestanding, and extras like lighting or heaters. That\u2019s why we don\u2019t quote from the phone \u2014 we look at the space and put a real number in writing, with options priced separately so you can decide what\u2019s worth it.',
   },
   {
-    q: 'Will it hold up to Utah snow and wind?',
-    a: 'Yes. Spans are sized for local snow loads, posts sit in concrete footings below frost line, and connections are thru-bolted rather than kit brackets. Louvered roofs close watertight and shed snow like a solid roof.',
+    q: BRAND.climate.durabilityQ,
+    a: BRAND.climate.durabilityA,
   },
   {
     q: 'Do I need a permit?',
@@ -60,7 +60,7 @@ const faqs = [
   },
   {
     q: 'Where do you build?',
-    a: `${BRAND.address.serviceArea.join(', ')} \u2014 including ${BRAND.address.cities.slice(0, 8).join(', ')}, and the rest of the Wasatch Front.`,
+    a: `${BRAND.address.serviceArea.join(', ')} \u2014 including ${BRAND.address.cities.slice(0, 8).join(', ')}, and the rest of ${BRAND.state}.`,
   },
 ];
 
@@ -88,7 +88,7 @@ export default function PergolaLandingPage() {
       <div className="border-b border-timber-200 bg-linen-50">
         <div className="container-patio flex h-[68px] items-center justify-between gap-6">
           <div className="flex items-center gap-3 leading-none">
-            <Image src="/pergola/logo.png" alt="" width={687} height={577} priority className="h-12 w-auto" />
+            <BrandMark heightClass="h-11" className="shrink-0" priority />
             <span className="font-display font-semibold text-lg md:text-xl">{BRAND.name}</span>
           </div>
           <a href={`tel:${BRAND.phoneRaw}`} className="text-right leading-tight">
@@ -102,9 +102,9 @@ export default function PergolaLandingPage() {
       <section className="bg-parchment-glow">
         <div className="container-patio pt-14 md:pt-20 pb-16 md:pb-24 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-6 xl:col-span-7">
-            <div className="tag mb-6">Free design consultation · Wasatch Front, Utah</div>
+            <div className="tag mb-6">Free design consultation · {BRAND.regionLine}</div>
             <h1 className="h-display text-4xl sm:text-5xl lg:text-6xl leading-[1.06] text-timber-950">
-              A pergola built for Utah &mdash; designed in your yard, priced in writing.
+              A pergola built for {BRAND.state} &mdash; designed in your yard, priced in writing.
             </h1>
             <div className="h-px w-16 bg-timber-300 my-8" aria-hidden />
             <p className="text-timber-700 text-lg md:text-xl leading-relaxed max-w-xl">
@@ -192,8 +192,8 @@ export default function PergolaLandingPage() {
         <div className="container-patio py-20 md:py-28 text-center">
           <div className="tag text-timber-400 mb-6">Why Us</div>
           <p className="h-display text-3xl md:text-4xl lg:text-[2.75rem] leading-snug max-w-3xl mx-auto">
-            A pergola is a structure, not furniture &mdash; footings below frost line, spans that
-            carry the snow, and shade set where the sun actually falls.
+            A pergola is a structure, not furniture &mdash; {BRAND.climate.footings}, {BRAND.climate.spans},
+            and shade set where the sun actually falls.
           </p>
           <div className="mx-auto h-px w-16 bg-timber-600 my-10" aria-hidden />
           <div className="grid md:grid-cols-3 gap-10 max-w-4xl mx-auto text-left">

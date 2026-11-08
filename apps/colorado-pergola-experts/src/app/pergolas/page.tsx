@@ -7,6 +7,7 @@ import StructurePlate from '@/components/StructurePlate';
 export const metadata: Metadata = {
   title: 'The Structures',
   description: `Timber pergolas, motorized louvered roofs, and solid-roof pavilions across ${BRAND.state} — engineered for ${BRAND.climate.elements}.`,
+  alternates: { canonical: `${BRAND.url}/pergolas` },
 };
 
 const numerals = ['I', 'II', 'III'];

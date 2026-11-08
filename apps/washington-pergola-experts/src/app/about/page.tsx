@@ -1,13 +1,16 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BRAND } from '@/data/brand';
+import { NETWORK_PARENT, NETWORK_STATES } from '@/data/network';
 
 export const metadata: Metadata = {
   title: 'Company',
-  description: `About ${BRAND.name} — a ${BRAND.state} pergola and outdoor-living builder in the Alpine Fence & Deck family. A Spravek company.`,
+  description: `About ${BRAND.name} — the ${BRAND.state} arm of ${NETWORK_PARENT.name}, building pergolas, louvered roofs, and pavilions across ${BRAND.state}. A Spravek company.`,
+  alternates: { canonical: `${BRAND.url}/about` },
 };
 
 export default function AboutPage() {
+  const siblings = NETWORK_STATES.filter((s) => s.state !== BRAND.state);
   return (
     <>
       <section className="container-patio py-20 md:py-28 grid lg:grid-cols-12 gap-12">
@@ -32,11 +35,13 @@ export default function AboutPage() {
             all-weather cover.
           </p>
           <p>
-            Pergola Experts is part of a family of companies anchored by{' '}
-            <a href={BRAND.parent.url} className="underline decoration-sienna-400 underline-offset-4 hover:text-timber-950">{BRAND.parent.name}</a>{' '}
-            — a Spravek company — alongside Utah Pergola Experts, American Timber Shade, SPX
-            Construction, Harlow Landscapes, Braddock Concrete, and Relentless Equipment. Twenty
-            years of construction, one accountability line.
+            {BRAND.shortName} is the {BRAND.state} arm of{' '}
+            <a href={NETWORK_PARENT.url} className="underline decoration-sienna-400 underline-offset-4 hover:text-timber-950" target="_blank" rel="noopener">{NETWORK_PARENT.name}</a>
+            {' '}— the national design-build brand for premium outdoor spaces, a Spravek company.
+            The same crews and the same engineering standards build under the Pergola Experts
+            name in {siblings.map((s) => s.state).join(', ')} — see{' '}
+            <Link href="/locations" className="underline decoration-sienna-400 underline-offset-4 hover:text-timber-950">all locations</Link>.
+            Twenty years of construction, one accountability line.
           </p>
         </div>
       </section>

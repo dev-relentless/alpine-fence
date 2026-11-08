@@ -1,7 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BRAND } from '@/data/brand';
 import { structureCategories } from '@/data/structures';
 import StructurePlate from '@/components/StructurePlate';
+
+export const metadata: Metadata = {
+  alternates: { canonical: BRAND.url },
+};
 
 const numerals = ['I', 'II', 'III', 'IV'];
 
@@ -11,7 +16,7 @@ export default function HomePage() {
       {/* ─────────── HERO ─────────── */}
       <section className="bg-parchment-glow">
         <div className="container-patio pt-24 md:pt-32 pb-20 md:pb-24 text-center">
-          <div className="tag mb-7">Pergolas · Pavilions — Wasatch Front, Utah</div>
+          <div className="tag mb-7">Pergolas · Pavilions — {BRAND.regionLine}</div>
           <h1 className="h-display text-5xl md:text-6xl lg:text-7xl leading-[1.06] max-w-4xl mx-auto text-timber-950">
             The best room in the house isn&rsquo;t in the house.
           </h1>
@@ -31,7 +36,7 @@ export default function HomePage() {
         </div>
         <div className="border-t border-timber-200">
           <div className="container-patio py-4 text-center tag">
-            Licensed &amp; insured · Snow-load engineered · A Spravek company
+            Licensed &amp; insured · {BRAND.climate.engineeredTag} · A Spravek company
           </div>
         </div>
       </section>
@@ -63,15 +68,15 @@ export default function HomePage() {
         <div className="container-patio py-20 md:py-28 text-center">
           <div className="tag text-timber-400 mb-6">Our Conviction</div>
           <p className="h-display text-3xl md:text-4xl lg:text-[2.75rem] leading-snug max-w-3xl mx-auto">
-            A pergola is a structure, not furniture — footings below frost line, spans that
-            carry the snow, and shade set where the sun actually falls.
+            A pergola is a structure, not furniture — {BRAND.climate.footings}, {BRAND.climate.spans},
+            and shade set where the sun actually falls.
           </p>
           <div className="mx-auto h-px w-16 bg-timber-600 my-10" aria-hidden />
           <div className="grid md:grid-cols-3 gap-10 max-w-4xl mx-auto text-left">
             {[
               { k: 'Built like a building', v: 'Concrete footings, engineered spans, thru-bolted connections. Kits blow over; ours get handed down.' },
               { k: 'Designed around the sun', v: 'We map how light crosses the yard through the seasons, then set rafters to shade the hours you keep.' },
-              { k: 'One crew, start to finish', v: 'Design, footings, timber, and finish by the same hands — a family trade, twenty years on the Wasatch Front.' },
+              { k: 'One crew, start to finish', v: 'Design, footings, timber, and finish by the same hands — a family trade with two decades of building behind it.' },
             ].map((c) => (
               <div key={c.k}>
                 <h3 className="h-display text-xl mb-2.5 text-linen-50">{c.k}</h3>

@@ -32,9 +32,8 @@ export const metadata: Metadata = {
   authors: [{ name: BRAND.name, url: BRAND.url }],
   creator: BRAND.name,
   publisher: BRAND.name,
-  alternates: {
-    canonical: BRAND.url,
-  },
+  // Canonicals are set per page — a root-level canonical would mark every
+  // subpage as a duplicate of the homepage.
   keywords: [
     // Service-led
     `pergola builder ${BRAND.state}`,

@@ -7,6 +7,7 @@ import { BRAND } from '@/data/brand';
 
 const nav = [
   { href: '/pergolas', label: 'The Structures' },
+  { href: '/locations', label: 'Locations' },
   { href: '/about', label: 'The Company' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -16,6 +17,25 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 bg-linen-50/95 backdrop-blur-sm text-timber-900 border-b border-timber-200">
+      {/* National-brand bar: transparent disclosure that this is a state arm of the parent. */}
+      <div className="bg-walnut-depth text-timber-200">
+        <div className="container-patio flex h-8 items-center justify-between gap-4 text-[12px] tracking-wide">
+          <span className="truncate">
+            {BRAND.shortName} is the {BRAND.state} arm of{' '}
+            <a
+              href={BRAND.parent.url}
+              className="text-linen-50 underline decoration-timber-500 underline-offset-2 hover:decoration-linen-50"
+              target="_blank"
+              rel="noopener"
+            >
+              {BRAND.parent.name}
+            </a>
+          </span>
+          <Link href="/locations" className="shrink-0 hover:text-linen-50">
+            Other states &rarr;
+          </Link>
+        </div>
+      </div>
       <div className="container-patio flex h-[76px] items-center justify-between gap-6">
         <Logo />
         <nav className="hidden lg:flex items-center gap-9">

@@ -39,14 +39,41 @@ npm run dev:washington   # http://localhost:3011
 npm run dev:colorado     # http://localhost:3012
 ```
 
-## State pergola sites
+## American Timber Shade + Pergola Experts (the site family)
 
-`apps/arizona-pergola-experts` is the parameterized template for the "<State> Pergola Experts" family; Idaho, Nevada, Washington, and Colorado are stamped from it. Every geo/climate phrase reads from `src/data/brand.ts`, which is generated. To add or update a state, edit the config table in `scripts/new-pergola-state.mjs` and run:
+`apps/american-timber-shade` is the **national brand**; the six `apps/<state>-pergola-experts`
+sites are its state arms — the SynLawn model (synlawn.com → synlawnutah.com): one national
+hub with a `/locations` directory, and a full standalone site per state (own phone, service
+area, quote flow) that shares the brand and links back.
+
+`apps/arizona-pergola-experts` is the parameterized template; **Utah**, Idaho, Nevada, Washington,
+and Colorado are stamped from it. Every geo/climate phrase reads from `src/data/brand.ts`, and
+the list of every site in the family lives in `src/data/network.ts` — both are generated into
+each state app *and* into ATS. To add or update a state, edit the config table in
+`scripts/new-pergola-state.mjs` and run:
 
 ```bash
 npm run new:pergola-state -- colorado   # one state
-npm run new:pergola-state -- --all      # re-propagate template changes to every state
+npm run new:pergola-state -- --all      # re-propagate template changes to every state + ATS network.ts
 ```
+
+How the sites link (kept deliberately within Google's spam policies — no keyword-rich
+sitewide footer blasts, no funnelling to one page, nothing hidden):
+
+| Where | State site | ATS |
+| --- | --- | --- |
+| Header | thin bar: "Pergola Experts is the *State* arm of **American Timber Shade**" + "Other states →" | `Locations` nav item |
+| `/locations` | you-are-here card, sibling states (region, cities, phone, link), ATS block; `ItemList` JSON-LD | every state site with region/cities/phone; `ItemList` JSON-LD |
+| Footer | "Pergola Experts" column — state names only, current state unlinked; ATS + Spravek in the bottom bar | "Pergola Experts" column — state names + "All locations" |
+| JSON-LD | `Organization.parentOrganization` → `https://americantimbershade.com#organization` | `Organization.subOrganization` → each `https://<state>pergolaexperts.com#organization` |
+| `llms.txt` | generated route; names ATS + sister states | generated route; lists all state sites |
+
+Each state site also carries its own genuinely state-specific content (climate engineering,
+counties, cities, FAQ) and per-page canonicals, so the family reads as one business with real
+local arms rather than a doorway network.
+
+Before launch, the five new state phones (`555-01xx`) are placeholders — fake NAP data across
+multiple sites is itself a spam signal, so replace them in the script before the sites index.
 
 ## Vercel
 

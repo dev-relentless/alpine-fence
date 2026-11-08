@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { BRAND } from '@/data/brand';
 
 export const runtime = 'nodejs';
 
@@ -36,7 +37,7 @@ export async function POST(req: NextRequest) {
 
   // TODO: wire to the office inbox / CRM (Resend, Postmark, webhook, etc.).
   // For now we log on the server so deploys can verify the route is reachable.
-  console.log('[utah-pergola-experts:quote]', {
+  console.log(`[${BRAND.domain}:quote]`, {
     receivedAt: new Date().toISOString(),
     ...data,
   });

@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { BRAND } from '@/data/brand';
 import { structureCategories } from '@/data/structures';
 import StructurePlate from '@/components/StructurePlate';
 
 export const metadata: Metadata = {
   title: 'The Structures',
-  description: 'Timber pergolas, motorized louvered roofs, and solid-roof pavilions on the Wasatch Front — engineered for Utah sun, wind, and snow.',
+  description: `Timber pergolas, motorized louvered roofs, and solid-roof pavilions across ${BRAND.state} — engineered for ${BRAND.climate.elements}.`,
+  alternates: { canonical: `${BRAND.url}/pergolas` },
 };
 
 const numerals = ['I', 'II', 'III'];

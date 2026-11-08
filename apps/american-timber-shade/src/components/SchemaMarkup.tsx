@@ -1,10 +1,15 @@
 import { BRAND } from '@/data/brand';
 import { pergolaStyles, pergolaFaqs } from '@/data/pergolas';
 import { spaces } from '@/data/spaces';
+import { NETWORK_STATES } from '@/data/network';
 
 /**
  * JSON-LD structured data for SEO + GEO. Organization + LocalBusiness +
  * WebSite + Service nodes + FAQPage. Server-only.
+ *
+ * ATS is the national brand: each "<State> Pergola Experts" site is listed
+ * under `subOrganization` with the same `@id` that site publishes for itself
+ * (and each of them points back here via `parentOrganization`).
  */
 export default function SchemaMarkup() {
   const orgId = `${BRAND.url}#organization`;
@@ -27,6 +32,14 @@ export default function SchemaMarkup() {
         name: BRAND.parent.name,
         url: BRAND.parent.url,
       },
+      subOrganization: NETWORK_STATES.map((s) => ({
+        '@type': 'Organization',
+        '@id': `${s.url}#organization`,
+        name: s.name,
+        url: s.url,
+        telephone: s.phoneRaw,
+        areaServed: { '@type': 'State', name: s.state },
+      })),
       areaServed: BRAND.address.states.map((state) => ({
         '@type': 'State',
         name: state,
@@ -63,7 +76,6 @@ export default function SchemaMarkup() {
         '@type': 'City',
         name: city,
       })),
-      sameAs: [BRAND.parent.url],
       parentOrganization: { '@id': orgId },
     },
     {

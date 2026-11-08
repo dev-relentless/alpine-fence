@@ -25,10 +25,14 @@ export const BRAND = {
       'Jackson', 'Reno', 'Las Vegas', 'Scottsdale', 'Flagstaff',
     ],
   },
+  /**
+   * ATS is the national brand; the "<State> Pergola Experts" sites (see
+   * src/data/network.ts) are its state arms. Spravek is the holding company.
+   */
   parent: {
-    name: 'Alpine Fence & Deck',
-    note: 'Part of a construction family with two decades on the Wasatch Front. A Spravek company.',
-    url: 'https://alpinefenceanddeck.com',
+    name: 'Spravek',
+    note: 'The national brand behind the Pergola Experts state sites. A Spravek company — two decades of construction on the Wasatch Front.',
+    url: 'https://spravek.com',
   },
   spravekUrl: 'https://spravek.com',
   founded: '2026',

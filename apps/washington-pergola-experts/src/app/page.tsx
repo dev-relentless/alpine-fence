@@ -1,7 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BRAND } from '@/data/brand';
 import { structureCategories } from '@/data/structures';
 import StructurePlate from '@/components/StructurePlate';
+
+export const metadata: Metadata = {
+  alternates: { canonical: BRAND.url },
+};
 
 const numerals = ['I', 'II', 'III', 'IV'];
 

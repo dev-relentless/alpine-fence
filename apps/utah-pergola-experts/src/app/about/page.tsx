@@ -1,13 +1,16 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BRAND } from '@/data/brand';
+import { NETWORK_PARENT, NETWORK_STATES } from '@/data/network';
 
 export const metadata: Metadata = {
   title: 'Company',
-  description: 'About Utah Pergola Experts — a Wasatch Front pergola and outdoor-living builder in the Alpine Fence & Deck family. A Spravek company.',
+  description: `About ${BRAND.name} — the ${BRAND.state} arm of ${NETWORK_PARENT.name}, building pergolas, louvered roofs, and pavilions across ${BRAND.state}. A Spravek company.`,
+  alternates: { canonical: `${BRAND.url}/about` },
 };
 
 export default function AboutPage() {
+  const siblings = NETWORK_STATES.filter((s) => s.state !== BRAND.state);
   return (
     <>
       <section className="container-patio py-20 md:py-28 grid lg:grid-cols-12 gap-12">
@@ -22,21 +25,23 @@ export default function AboutPage() {
           <p>
             {BRAND.name} grew out of two decades of deck and outdoor work: the requests kept
             coming for pergolas, and the market kept answering with wobbly kits and crews who
-            had never set a footing. So we made it a specialty.
+            had never set a footing. So we made it a specialty — and brought it to {BRAND.state}.
           </p>
           <p>
             We build shade structures the way the rest of our family builds fences, decks, and
-            homes — real footings below frost line, spans engineered for snow, connections that
-            are bolted instead of hoped, and finishes chosen for high-altitude sun. Timber when
+            homes — {BRAND.climate.footings}, {BRAND.climate.spans}, connections that
+            are bolted instead of hoped, and finishes chosen for {BRAND.climate.sun}. Timber when
             you want warmth, motorized aluminum when you want control, solid roofs when you want
             all-weather cover.
           </p>
           <p>
-            Pergola Experts is part of a family of companies anchored by{' '}
-            <a href={BRAND.parent.url} className="underline decoration-sienna-400 underline-offset-4 hover:text-timber-950">{BRAND.parent.name}</a>{' '}
-            — a Spravek company — alongside SPX Construction, Harlow Landscapes, Braddock
-            Concrete, and Relentless Equipment. Twenty years of Wasatch Front construction,
-            one accountability line.
+            {BRAND.shortName} is the {BRAND.state} arm of{' '}
+            <a href={NETWORK_PARENT.url} className="underline decoration-sienna-400 underline-offset-4 hover:text-timber-950" target="_blank" rel="noopener">{NETWORK_PARENT.name}</a>
+            {' '}— the national design-build brand for premium outdoor spaces, a Spravek company.
+            The same crews and the same engineering standards build under the Pergola Experts
+            name in {siblings.map((s) => s.state).join(', ')} — see{' '}
+            <Link href="/locations" className="underline decoration-sienna-400 underline-offset-4 hover:text-timber-950">all locations</Link>.
+            Twenty years of construction, one accountability line.
           </p>
         </div>
       </section>
@@ -46,7 +51,7 @@ export default function AboutPage() {
           {[
             { k: 'Structures, not kits', v: 'Concrete footings, engineered spans, bolted connections. Built to be inherited with the house, not replaced with it.' },
             { k: 'Proposals in writing', v: 'Drawings, materials, and price on paper before work starts — options priced separately so you decide what\u2019s worth it.' },
-            { k: 'Family-backed', v: 'Two decades of Wasatch Front construction stand behind the work. If something is wrong, one call fixes it.' },
+            { k: 'Family-backed', v: 'Two decades of construction stand behind the work. If something is wrong, one call fixes it.' },
           ].map((v) => (
             <div key={v.k} className="border-t border-timber-600 pt-6 space-y-3">
               <div className="h-display text-xl text-linen-50">{v.k}</div>

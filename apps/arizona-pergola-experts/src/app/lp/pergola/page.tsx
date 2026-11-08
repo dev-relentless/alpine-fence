@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Mark } from '@/components/Logo';
+import { BrandMark } from '@/components/Logo';
 import Link from 'next/link';
 import { BRAND } from '@/data/brand';
 import { structureCategories } from '@/data/structures';
@@ -88,7 +88,7 @@ export default function PergolaLandingPage() {
       <div className="border-b border-timber-200 bg-linen-50">
         <div className="container-patio flex h-[68px] items-center justify-between gap-6">
           <div className="flex items-center gap-3 leading-none">
-            <Mark className="h-11 w-11 shrink-0" />
+            <BrandMark heightClass="h-11" className="shrink-0" priority />
             <span className="font-display font-semibold text-lg md:text-xl">{BRAND.name}</span>
           </div>
           <a href={`tel:${BRAND.phoneRaw}`} className="text-right leading-tight">

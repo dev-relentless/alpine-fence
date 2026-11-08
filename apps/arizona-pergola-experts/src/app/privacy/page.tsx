@@ -4,6 +4,7 @@ import { BRAND } from '@/data/brand';
 export const metadata: Metadata = {
   title: 'Privacy',
   description: `Privacy policy for ${BRAND.name}.`,
+  alternates: { canonical: `${BRAND.url}/privacy` },
 };
 
 export default function PrivacyPage() {

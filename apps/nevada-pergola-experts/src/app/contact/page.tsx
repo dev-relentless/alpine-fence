@@ -4,6 +4,7 @@ import { BRAND } from '@/data/brand';
 export const metadata: Metadata = {
   title: 'Contact',
   description: `Contact ${BRAND.name} — pergolas, louvered roofs & pavilions across ${BRAND.state}.`,
+  alternates: { canonical: `${BRAND.url}/contact` },
 };
 
 const smsHref = `sms:${BRAND.phoneRaw}?&body=${encodeURIComponent(BRAND.smsBody)}`;

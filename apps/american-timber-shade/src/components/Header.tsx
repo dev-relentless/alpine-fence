@@ -11,6 +11,7 @@ const nav = [
   { href: '/pergolas', label: 'Pergolas' },
   { href: '/outdoor-living', label: 'Outdoor Living' },
   { href: '/gallery', label: 'Gallery' },
+  { href: '/locations', label: 'Locations' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ];

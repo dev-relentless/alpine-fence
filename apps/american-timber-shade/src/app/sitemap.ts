@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/pergolas', priority: 0.9 },
     { path: '/outdoor-living', priority: 0.8 },
     { path: '/gallery', priority: 0.8 },
+    { path: '/locations', priority: 0.8 },
     { path: '/about', priority: 0.6 },
     { path: '/contact', priority: 0.6 },
     { path: '/quote', priority: 0.7 },

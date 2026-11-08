@@ -3,7 +3,8 @@ import { BRAND } from '@/data/brand';
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: `Contact ${BRAND.name} — pergolas, louvered roofs & pavilions, Wasatch Front, Utah.`,
+  description: `Contact ${BRAND.name} — pergolas, louvered roofs & pavilions across ${BRAND.state}.`,
+  alternates: { canonical: `${BRAND.url}/contact` },
 };
 
 const smsHref = `sms:${BRAND.phoneRaw}?&body=${encodeURIComponent(BRAND.smsBody)}`;
@@ -38,7 +39,7 @@ export default function ContactPage() {
         <div>
           <div className="tag mb-2">Service area</div>
           <p className="h-display text-2xl text-timber-950">{BRAND.address.region}</p>
-          <p className="text-timber-500 text-sm mt-1">Based in Utah County · building in {BRAND.address.cities.slice(0, 6).join(', ')} and the broader Wasatch Front.</p>
+          <p className="text-timber-500 text-sm mt-1">Based in {BRAND.address.locality} · building in {BRAND.address.cities.slice(0, 6).join(', ')} and across {BRAND.state}.</p>
         </div>
         <div className="pt-6 flex flex-wrap gap-4">
           <a href="/quote" className="btn-primary">Request a consultation</a>

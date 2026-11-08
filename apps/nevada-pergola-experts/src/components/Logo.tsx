@@ -1,12 +1,13 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import clsx from 'clsx';
 import { BRAND } from '@/data/brand';
 
 /**
  * Brand mark: the arch, sun, and pergola motif shared across the Pergola
  * Experts family, with the state wordmark set in the display serif. Inline
- * SVG so no asset is needed — swap for /pergola/logo.svg when the state's
- * production logo arrives.
+ * SVG so no asset is needed — a state with a production raster logo sets
+ * `logo` in its generator config and the image is used instead of the mark.
  */
 export function Mark({ className }: { className?: string }) {
   return (
@@ -24,6 +25,32 @@ export function Mark({ className }: { className?: string }) {
   );
 }
 
+/** Mark or production logo, sized to match. `heightClass` is a Tailwind h-* class. */
+export function BrandMark({
+  heightClass,
+  className,
+  priority = false,
+}: {
+  heightClass: string;
+  className?: string;
+  priority?: boolean;
+}) {
+  const logo = BRAND.logo;
+  if (logo) {
+    return (
+      <Image
+        src={logo.src}
+        alt=""
+        width={logo.width}
+        height={logo.height}
+        priority={priority}
+        className={clsx(heightClass, 'w-auto', className)}
+      />
+    );
+  }
+  return <Mark className={clsx(heightClass, 'aspect-square', className)} />;
+}
+
 export default function Logo({
   variant = 'dark',
   size = 'md',
@@ -32,11 +59,11 @@ export default function Logo({
   size?: 'sm' | 'md' | 'lg';
 }) {
   const color = variant === 'light' ? 'text-linen-50' : 'text-timber-950';
-  const dim = size === 'lg' ? 'h-14 w-14' : size === 'sm' ? 'h-9 w-9' : 'h-11 w-11';
+  const dim = size === 'lg' ? 'h-14' : size === 'sm' ? 'h-9' : 'h-11';
   const text = size === 'lg' ? 'text-2xl' : size === 'sm' ? 'text-base' : 'text-xl';
   return (
     <Link href="/" aria-label={BRAND.name} className={clsx('inline-flex items-center gap-3 leading-none', color)}>
-      <Mark className={clsx(dim, 'shrink-0')} />
+      <BrandMark heightClass={dim} className="shrink-0" priority={size === 'md'} />
       <span className={clsx('font-display font-semibold whitespace-nowrap', text)}>
         {BRAND.name}
       </span>

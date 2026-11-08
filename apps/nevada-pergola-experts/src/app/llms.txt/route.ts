@@ -1,5 +1,6 @@
 import { BRAND } from '@/data/brand';
 import { structureCategories } from '@/data/structures';
+import { NETWORK_PARENT, NETWORK_STATES } from '@/data/network';
 
 export const dynamic = 'force-static';
 
@@ -9,6 +10,9 @@ export function GET() {
   const sections = structureCategories
     .map((c) => `## ${c.title}\n\n${c.items.map((i) => `- ${i}`).join('\n')}`)
     .join('\n\n');
+  const siblings = NETWORK_STATES.filter((s) => s.state !== state)
+    .map((s) => `- ${s.name}: ${s.url} (${s.regionLine})`)
+    .join('\n');
 
   const body = `# ${BRAND.name}
 
@@ -21,9 +25,9 @@ export function GET() {
 ${BRAND.name} builds shade structures like structures, not furniture:
 ${climate.footings}, ${climate.spans}, thru-bolted connections, and UV-stable
 finishes. Structures are designed around how the sun actually crosses your
-yard. A Spravek company, alongside Alpine Fence & Deck, Utah Pergola Experts,
-American Timber Shade, SPX Construction, Harlow Landscapes, Braddock Concrete,
-and Relentless Equipment.
+yard. ${BRAND.name} is the ${state} arm of ${NETWORK_PARENT.name}
+(${NETWORK_PARENT.url}), the national design-build brand for premium outdoor
+spaces across the Mountain West. A Spravek company.
 
 - Region: ${address.region} (based in ${address.locality}, ${address.state})
 - Cities served: ${address.cities.join(', ')}
@@ -31,6 +35,14 @@ and Relentless Equipment.
 - Price tier: residential ($$)
 
 ${sections}
+
+## Locations
+
+Pergola Experts sites in other states (each with its own crew and phone):
+
+${siblings}
+
+National brand: ${NETWORK_PARENT.name} — ${NETWORK_PARENT.locationsUrl}
 
 ## Contact
 
@@ -47,9 +59,9 @@ drawings, materials, and price in writing — before any work starts.
 ${climate.durabilityA}
 
 ### Are you part of a larger company?
-Yes. ${BRAND.name} is part of the Alpine Fence & Deck family of companies —
-a Spravek company — two decades of construction craft under one
-accountability line.
+Yes. ${BRAND.name} is the ${state} arm of ${NETWORK_PARENT.name} — a Spravek
+company — with sister Pergola Experts sites in ${NETWORK_STATES.filter((s) => s.state !== state).map((s) => s.state).join(', ')}.
+Two decades of construction craft under one accountability line.
 `;
 
   return new Response(body, {

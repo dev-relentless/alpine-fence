@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import QuoteForm from '@/components/QuoteForm';
+import { BRAND } from '@/data/brand';
 
 export const metadata: Metadata = {
   title: 'Request a consultation',
   description: 'Tell us the space, the structure, and the timeline — we walk the yard and leave you with a written proposal: drawings, materials, and price.',
+  alternates: { canonical: `${BRAND.url}/quote` },
 };
 
 export default function QuotePage() {

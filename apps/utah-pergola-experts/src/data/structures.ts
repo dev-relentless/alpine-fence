@@ -1,3 +1,5 @@
+import { BRAND } from '@/data/brand';
+
 export interface StructureCategory {
   slug: string;
   title: string;
@@ -7,6 +9,8 @@ export interface StructureCategory {
   items: string[];
 }
 
+const { state, climate } = BRAND;
+
 export const structureCategories: StructureCategory[] = [
   {
     slug: 'timber',
@@ -14,7 +18,7 @@ export const structureCategories: StructureCategory[] = [
     shortTitle: 'Timber',
     blurb: 'Rough-sawn cedar and fir with oversized posts and beams — shade structures that look like they grew there.',
     detail:
-      'Classic timber pergolas, attached or freestanding, built like structures instead of furniture: posts set in concrete footings below frost line, spans sized to carry Utah snow, and connections thru-bolted — not kit brackets. Rafter and lattice spacing is designed around your sun exposure, and finishes are UV-stable stains that age gracefully instead of graying out.',
+      `Classic timber pergolas, attached or freestanding, built like structures instead of furniture: ${climate.footings}, ${climate.spans}, and connections thru-bolted — not kit brackets. Rafter and lattice spacing is designed around your sun exposure, and finishes are UV-stable stains made for ${climate.sun} that age gracefully instead of graying out.`,
     items: [
       'Attached & freestanding pergolas',
       'Rough-sawn cedar & doug fir',
@@ -30,7 +34,7 @@ export const structureCategories: StructureCategory[] = [
     shortTitle: 'Louvered',
     blurb: 'Adjustable louvered roofs in powder-coated aluminum — open for sun, closed before the storm.',
     detail:
-      'Motorized louvered systems that turn a patio into a room you can tune: louvers rotate for sun or shade, close watertight for rain, and shed snow like a solid roof. Powder-coated aluminum frames sized for Utah wind, with integrated LED lighting, ceiling fans, and rain and wind sensors that close the roof before you get to it.',
+      `Motorized louvered systems that turn a patio into a room you can tune: louvers rotate for sun or shade, then ${climate.roofNote}. Powder-coated aluminum frames sized for ${state} wind, with integrated LED lighting, ceiling fans, and rain and wind sensors that close the roof before you get to it.`,
     items: [
       'Motorized louvered roofs',
       'Powder-coated aluminum frames',

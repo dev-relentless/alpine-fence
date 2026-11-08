@@ -1,6 +1,6 @@
-# Utah Pergola Experts — brand assets
+# Pergola Experts — brand assets
 
-Drop production brand assets in this folder. The site auto-references them by these filenames:
+Drop production brand assets in this folder. Until they exist the site uses an inline SVG mark (`src/components/Logo.tsx`) and a generated Open Graph card (`src/app/opengraph-image.tsx`).
 
 | File                   | Purpose                   | Notes             |
 | ---------------------- | ------------------------- | ----------------- |
