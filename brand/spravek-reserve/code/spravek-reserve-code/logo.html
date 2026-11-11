@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spravek Reserve — Logo</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap">
+<style>
+  :root { --accent: #C9CCD1; /* silver; try #C8A96A for champagne gold */ }
+  body { margin: 0; background: #000; min-height: 100vh; display: grid; place-items: center; font-family: Montserrat, sans-serif; }
+  .lockup { display: flex; flex-direction: column; align-items: center; gap: 60px; padding: 64px 16px; }
+  .mark { width: min(480px, 80vw); height: auto; }
+  .words { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+  .spravek {
+    font-size: clamp(48px, 10vw, 104px); font-weight: 600; letter-spacing: .06em; line-height: 1;
+    background: linear-gradient(180deg, #FFF 0%, #D9DCE0 45%, #9EA3AA 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .reserve-row { display: flex; align-items: center; gap: 28px; }
+  .rule { width: clamp(40px, 10vw, 120px); height: 2px; background: var(--accent); }
+  .reserve { font-size: clamp(16px, 3.2vw, 34px); font-weight: 500; letter-spacing: .62em; padding-left: .62em; color: var(--accent); line-height: 1; }
+  .tagline { margin-top: 18px; font-size: clamp(11px, 1.9vw, 20px); font-weight: 500; letter-spacing: .32em; padding-left: .32em; color: #8A8F96; text-align: center; }
+</style>
+</head>
+<body>
+<div class="lockup">
+  <svg class="mark" viewBox="0 0 320 220" role="img" aria-label="Spravek V mark">
+    <defs>
+      <linearGradient id="LL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9A9EA4"/><stop offset="1" stop-color="#55595F"/></linearGradient>
+      <linearGradient id="LR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4F5F6"/><stop offset="1" stop-color="#A8ACB1"/></linearGradient>
+      <linearGradient id="RI" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9CCD0"/><stop offset="1" stop-color="#7E8288"/></linearGradient>
+      <linearGradient id="RO" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#60646A"/><stop offset="1" stop-color="#2E3034"/></linearGradient>
+    </defs>
+    <polygon points="18,8 86,8 58,22" fill="#F7F8F9"/>
+    <polygon points="18,8 58,22 145,198 126,200" fill="url(#LL)"/>
+    <polygon points="86,8 160,196 145,198 58,22" fill="url(#LR)"/>
+    <polygon points="126,200 145,198 146,214" fill="#3E4146"/>
+    <polygon points="145,198 160,196 146,214" fill="#6A6E74"/>
+    <polygon points="302,8 234,8 262,22" fill="#D8DADD"/>
+    <polygon points="234,8 262,22 175,198 160,196" fill="url(#RI)"/>
+    <polygon points="302,8 194,200 175,198 262,22" fill="url(#RO)"/>
+    <polygon points="160,196 175,198 174,214" fill="#4A4D52"/>
+    <polygon points="175,198 194,200 174,214" fill="#26282B"/>
+  </svg>
+  <div class="words">
+    <div class="spravek">SPRAVEK</div>
+    <div class="reserve-row"><div class="rule"></div><div class="reserve">RESERVE</div><div class="rule"></div></div>
+    <div class="tagline">LUXURY VEHICLE RENTALS · UTAH</div>
+  </div>
+</div>
+</body>
+</html>

@@ -3,3 +3,10 @@ node_modules
 out
 *.tsbuildinfo
 gh200-snapshot/
+
+# Original brand photography is too large for git (web-optimized copies live in apps/*/public)
+brand/**/vehicles/*.jpeg
+brand/**/vehicles/*.jpg
+brand/**/vehicles/*.heic
+brand/**/vehicles/*.mov
+brand/**/vehicles/*.mp4

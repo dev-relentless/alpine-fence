@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spravek Reserve — The Allocation</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap">
+<style>
+  :root { --accent: #C8A96A; --muted: #8A8F96; --line: #2A2C30; }
+  body { margin: 0; background: #0b0b0c; display: grid; place-items: center; min-height: 100vh; font-family: Montserrat, sans-serif; }
+  /* 1080 x 1350 = Instagram 4:5 */
+  .poster { width: 1080px; height: 1350px; box-sizing: border-box; background: #000; padding: 96px 96px 80px; display: flex; flex-direction: column; justify-content: space-between; }
+  .top, .foot { display: flex; justify-content: space-between; align-items: center; }
+  .brand { display: flex; align-items: center; gap: 18px; font-size: 16px; font-weight: 600; letter-spacing: .42em; color: var(--accent); }
+  .alloc { font-size: 15px; font-weight: 500; letter-spacing: .3em; color: var(--muted); }
+  .hero { display: flex; flex-direction: column; gap: 44px; }
+  .bar { width: 80px; height: 2px; background: var(--accent); }
+  h1 {
+    margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 132px; font-weight: 500; line-height: .98; letter-spacing: -.01em;
+    background: linear-gradient(180deg, #FFF 0%, #D9DCE0 50%, #9EA3AA 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  h1 em { font-style: italic; }
+  .lede { margin: 0; font-size: 26px; line-height: 1.55; color: #B4B8BE; max-width: 720px; }
+  .fleet { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; background: var(--line); border-block: 1px solid var(--line); }
+  .car { background: #000; padding: 24px 0 24px 28px; display: flex; flex-direction: column; gap: 8px; }
+  .car:first-child { padding-left: 0; }
+  .role { font-size: 13px; letter-spacing: .3em; color: var(--muted); }
+  .name { font-size: 22px; font-weight: 600; line-height: 1.3; color: #F2F3F4; }
+  .option { font-size: 12px; font-weight: 600; letter-spacing: .22em; color: var(--accent); margin-top: 4px; }
+  .foot div { font-size: 15px; font-weight: 500; }
+  .cta { letter-spacing: .34em; color: var(--accent); }
+  .url { letter-spacing: .2em; color: var(--muted); }
+</style>
+</head>
+<body>
+<article class="poster">
+  <header class="top">
+    <div class="brand">
+      <svg width="58" height="40" viewBox="0 0 320 220" aria-hidden="true">
+        <polygon points="18,8 86,8 160,196 146,214 126,200" fill="#C8A96A"/>
+        <polygon points="302,8 234,8 160,196 174,214 194,200" fill="#C8A96A"/>
+      </svg>
+      SPRAVEK RESERVE
+    </div>
+    <div class="alloc">ALLOCATION Nº 001</div>
+  </header>
+
+  <section class="hero">
+    <div class="bar"></div>
+    <h1>Some things<br>are best kept<br><em>in reserve.</em></h1>
+    <p class="lede">A private fleet. Released by allocation, never by availability. When they're spoken for, they're spoken for.</p>
+  </section>
+
+  <footer style="display:flex;flex-direction:column;gap:36px">
+    <div class="fleet">
+      <div class="car"><div class="role">THE ROADSTER</div><div class="name">AMG SL 63 S<br>E Performance</div></div>
+      <div class="car"><div class="role">THE ARRIVAL</div><div class="name">Mercedes-Benz<br>S 580</div><div class="option">SELF-DRIVE OR CHAUFFEURED</div></div>
+      <div class="car"><div class="role">THE STATEMENT</div><div class="name">F-350 Platinum Plus<br>Dually</div></div>
+    </div>
+    <div class="foot">
+      <div class="cta">BY RESERVATION ONLY · UTAH</div>
+      <div class="url">[YOUR URL]</div>
+    </div>
+  </footer>
+</article>
+</body>
+</html>
