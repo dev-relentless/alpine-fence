@@ -31,6 +31,8 @@
     "build:colorado": "npm run build --workspace=apps/colorado-pergola-experts",
     "dev:apex": "npm run dev --workspace=apps/apex-concrete",
     "build:apex": "npm run build --workspace=apps/apex-concrete",
+    "dev:reserve": "npm run dev --workspace=apps/spravek-reserve",
+    "build:reserve": "npm run build --workspace=apps/spravek-reserve",
     "new:pergola-state": "node scripts/new-pergola-state.mjs",
     "lint": "npm run lint --workspaces --if-present"
   }

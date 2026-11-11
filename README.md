@@ -18,6 +18,7 @@ Independent Next.js sites in one repo, each deployed as its own Vercel project.
 | Washington Pergola Experts | `apps/washington-pergola-experts`| `washingtonpergolaexperts.com` | Next 14, Tailwind |
 | Colorado Pergola Experts | `apps/colorado-pergola-experts`| `coloradopergolaexperts.com` | Next 14, Tailwind |
 | Apex Concrete        | `apps/apex-concrete`        | — (placeholder `apexconcreteutah.com`) | Next 14, Tailwind |
+| Spravek Reserve      | `apps/spravek-reserve`      | — (placeholder `spravekreserve.com`) | Next 14, Tailwind |
 
 ## Develop
 
@@ -39,6 +40,7 @@ npm run dev:nevada       # http://localhost:3010
 npm run dev:washington   # http://localhost:3011
 npm run dev:colorado     # http://localhost:3012
 npm run dev:apex         # http://localhost:3013
+npm run dev:reserve      # http://localhost:3014
 ```
 
 ## American Timber Shade + Pergola Experts (the site family)

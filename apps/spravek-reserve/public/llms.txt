@@ -1,0 +1,33 @@
+# Spravek Reserve
+
+> A curated fleet of luxury vehicles in Utah, released by allocation and
+> delivered to the client. Mercedes-AMG SL 63 S E Performance, Mercedes-Benz
+> S 580 (self-drive or chauffeured), and Ford F-350 Platinum Plus Dually.
+
+## About
+
+Spravek Reserve is a DBA of Relentless Equipment LLC and part of the Spravek
+family of Utah companies. The fleet is owned, detailed, insured commercially,
+and delivered by hand along the Wasatch Front, to Park City / Deer Valley, and
+to Salt Lake City International Airport. Bookings are called "allocations"
+and are confirmed personally within one business day.
+
+- Region: Utah — Wasatch Front, Park City, SLC airport
+- Price tier: luxury ($$$$), quoted by allocation
+- Contact: see /allocation
+
+## The Fleet
+
+- The Roadster — Mercedes-AMG SL 63 S E Performance (805 hp plug-in hybrid roadster; weddings, anniversaries, canyon drives)
+- The Arrival — Mercedes-Benz S 580 4MATIC (flagship sedan; self-drive or chauffeured; airport, Park City, client dinners, weddings)
+- The Statement — Ford F-350 Platinum Plus Dually (6.7L High Output Power Stroke; boats, horse trailers, toy haulers)
+
+## Pages
+
+- / — overview and The Allocation concept
+- /fleet — all vehicles
+- /fleet/sl-63, /fleet/s-580, /fleet/f-350 — vehicle detail with specs and gallery
+- /chauffeur — chauffeured S 580 service
+- /allocation — request form
+- /about — the company
+- /terms, /privacy
