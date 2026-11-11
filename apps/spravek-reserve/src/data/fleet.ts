@@ -113,7 +113,7 @@ export const FLEET: Vehicle[] = [
     make: 'Ford',
     model: 'F-350 Platinum Plus Dually',
     badge: 'F-350 PLATINUM · 6.7L POWER STROKE · FX4',
-    year: '2024',
+    year: '2026',
     color: 'Star White Metallic Tri-Coat',
     interior: 'Platinum Plus two-tone leather, massaging front seats, B&O Unleashed',
     oneLiner: 'For when the trailer costs more than their car.',
