@@ -1,5 +1,18 @@
 export type VehicleSlug = 'sl-63' | 's-580' | 'f-350';
 
+export interface Rates {
+  daily: number;             // starting daily rate, USD, before taxes/fees
+  weekly: number;            // 7-day rate
+  deposit: number;           // refundable security hold
+  milesPerDay: number;       // included mileage
+  extraMile: number;         // USD per mile over allowance
+  minDays: number;           // minimum self-drive rental
+  minAge: number;            // minimum driver age for this vehicle
+  chauffeurHourly?: number;  // chauffeured rate per hour
+  chauffeurMinHours?: number;
+  airportTransfer?: number;  // flat chauffeured SLC ↔ Wasatch Front / Park City
+}
+
 export interface Vehicle {
   slug: VehicleSlug;
   role: string;            // "The Roadster"
@@ -7,14 +20,23 @@ export interface Vehicle {
   make: string;
   model: string;           // display model name
   badge: string;           // exact badge text
+  category: string;        // "Convertible roadster"
   year: string;
   color: string;
   interior: string;
+  body: string;
+  transmission: string;
+  engine: string;
+  drivetrain: string;
+  fuel: string;
+  doors: number;
   oneLiner: string;        // ad line
   intro: string;
   bestFor: string[];
   specs: { label: string; value: string }[];
   options: string[];       // service options
+  included: string[];      // what comes with every rental of this vehicle
+  rates: Rates;
   chauffeur: boolean;
   seats: number;
   dir: string;             // /reserve/<dir>
@@ -22,6 +44,24 @@ export interface Vehicle {
   gallery: { file: string; alt: string }[];
   verifyNote?: string;
 }
+
+/**
+ * RATE CARD — PLACEHOLDER VALUES.
+ * These are starting-point numbers so the site can present a complete rate
+ * structure (daily, weekly, deposit, mileage, minimums). Confirm every figure
+ * against the signed rate card before launch — see README "Before launch".
+ */
+export const RATE_NOTE =
+  'Starting rates before taxes and fees. Weekend, holiday and peak-season (ski season, wedding season) pricing varies. Every quote is confirmed in writing before any dates are held.';
+
+const SHARED_INCLUDED = [
+  'Delivery and collection within the Wasatch Front service area',
+  'Full tank of fuel or full charge at handoff',
+  'Hand detail and video condition report before every rental',
+  'In-person walkthrough of the vehicle at delivery',
+  '24/7 roadside assistance and a direct line to the Reserve',
+  'One additional named driver at no charge (spouse or partner)',
+];
 
 export const FLEET: Vehicle[] = [
   {
@@ -31,9 +71,16 @@ export const FLEET: Vehicle[] = [
     make: 'Mercedes-AMG',
     model: 'SL 63 S E Performance',
     badge: 'SL 63 S E PERFORMANCE',
+    category: 'Convertible roadster',
     year: '2025',
     color: 'Matte Graphite Grey Magno',
     interior: 'Macchiato Beige Nappa, AMG Performance seats',
+    body: '2-door roadster, fabric soft top',
+    transmission: 'AMG SPEEDSHIFT MCT 9-speed automatic',
+    engine: '4.0L V8 biturbo + electric motor (plug-in hybrid)',
+    drivetrain: 'AMG Performance 4MATIC+ all-wheel drive',
+    fuel: 'Premium gasoline + electric',
+    doors: 2,
     oneLiner: 'Top down. Expectations up.',
     intro:
       'An 805-horsepower plug-in hybrid roadster with a soft top, white leather, and a wing that rises on its own. It is the car for the wedding exit, the anniversary, and the canyon drive you have been promising yourself.',
@@ -47,7 +94,9 @@ export const FLEET: Vehicle[] = [
       { label: 'Seating', value: '2 + 2' },
       { label: 'Drive modes', value: 'Electric · Comfort · Sport · Sport+ · Race' },
     ],
-    options: ['Self-drive', 'Delivered to your door or hotel', 'Multi-day & weekend allocations'],
+    options: ['Self-drive', 'Delivered to your door or hotel', 'Multi-day & weekend rentals'],
+    included: [...SHARED_INCLUDED, 'Soft-top and drive-mode orientation at handoff'],
+    rates: { daily: 1499, weekly: 8995, deposit: 5000, milesPerDay: 100, extraMile: 3, minDays: 1, minAge: 30 },
     chauffeur: false,
     seats: 2,
     dir: 'sl63',
@@ -72,9 +121,16 @@ export const FLEET: Vehicle[] = [
     make: 'Mercedes-Benz',
     model: 'S 580 4MATIC',
     badge: 'S 580 4MATIC',
+    category: 'Luxury sedan · self-drive or chauffeured',
     year: '2024',
     color: 'Designo Diamond White',
     interior: 'Black Nappa, diamond quilting, 64-color ambient lighting',
+    body: '4-door long-wheelbase sedan',
+    transmission: '9G-TRONIC 9-speed automatic',
+    engine: '4.0L V8 biturbo, EQ Boost mild hybrid',
+    drivetrain: '4MATIC all-wheel drive, AIRMATIC air suspension',
+    fuel: 'Premium gasoline',
+    doors: 4,
     oneLiner: 'Be picked up like you are the reason for the meeting.',
     intro:
       'The flagship Mercedes sedan, available two ways: drive it yourself, or let us drive you. Rear-seat comfort package, panoramic roof, Burmester 3D sound, and ambient light that changes the mood of the cabin. The airport, the closing, the dinner — arrive accordingly.',
@@ -89,6 +145,11 @@ export const FLEET: Vehicle[] = [
       { label: 'Seating', value: '4 passengers (chauffeured) · 5 total' },
     ],
     options: ['Self-drive', 'Chauffeured — hourly, point-to-point, or full day', 'SLC airport meet & greet', 'Delivered to your door or hotel'],
+    included: [...SHARED_INCLUDED, 'Bottled water and device chargers in the rear cabin'],
+    rates: {
+      daily: 699, weekly: 3995, deposit: 2500, milesPerDay: 150, extraMile: 2, minDays: 1, minAge: 25,
+      chauffeurHourly: 165, chauffeurMinHours: 3, airportTransfer: 395,
+    },
     chauffeur: true,
     seats: 5,
     dir: 's580',
@@ -113,9 +174,16 @@ export const FLEET: Vehicle[] = [
     make: 'Ford',
     model: 'F-350 Platinum Plus Dually',
     badge: 'F-350 PLATINUM · 6.7L POWER STROKE · FX4',
+    category: 'Heavy-duty crew cab · dual rear wheel',
     year: '2026',
     color: 'Star White Metallic Tri-Coat',
     interior: 'Platinum Plus two-tone leather, massaging front seats, B&O Unleashed',
+    body: 'Crew Cab, 8-ft bed, dual rear wheel',
+    transmission: 'TorqShift 10-speed automatic',
+    engine: '6.7L High Output Power Stroke V8 turbodiesel',
+    drivetrain: '4×4 with FX4 Off-Road Package',
+    fuel: 'Diesel (DEF)',
+    doors: 4,
     oneLiner: 'For when the trailer costs more than their car.',
     intro:
       'Very few rental fleets anywhere have one of these. A crew-cab, dual-rear-wheel Super Duty in the top Platinum Plus trim: massaging leather thrones, a panoramic moonroof, a 12-inch screen, and a High Output Power Stroke built to move a boat, a horse trailer, or a toy hauler without noticing.',
@@ -130,6 +198,8 @@ export const FLEET: Vehicle[] = [
       { label: 'Seating', value: '5 adults' },
     ],
     options: ['Self-drive', 'Gooseneck & fifth-wheel ready', 'Delivered to your door, marina, or ranch'],
+    included: [...SHARED_INCLUDED, 'Gooseneck ball, fifth-wheel prep and 7-pin / 4-pin connectors', 'Trailer brake controller and Pro Trailer Backup Assist walkthrough'],
+    rates: { daily: 499, weekly: 2795, deposit: 2500, milesPerDay: 150, extraMile: 1.5, minDays: 1, minAge: 25 },
     chauffeur: false,
     seats: 5,
     dir: 'f350',
@@ -160,4 +230,25 @@ export function heroSrc(v: Vehicle) {
 
 export function imgSrc(v: Vehicle, file: string) {
   return `/reserve/${v.dir}/${file}`;
+}
+
+export function usd(n: number) {
+  return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: Number.isInteger(n) ? 0 : 2 });
+}
+
+export function detailRows(v: Vehicle): { label: string; value: string }[] {
+  return [
+    { label: 'Year', value: v.year },
+    { label: 'Make', value: v.make },
+    { label: 'Model', value: v.model },
+    { label: 'Body', value: v.body },
+    { label: 'Engine', value: v.engine },
+    { label: 'Transmission', value: v.transmission },
+    { label: 'Drivetrain', value: v.drivetrain },
+    { label: 'Fuel', value: v.fuel },
+    { label: 'Exterior', value: v.color },
+    { label: 'Interior', value: v.interior },
+    { label: 'Seats', value: `${v.seats}` },
+    { label: 'Doors', value: `${v.doors}` },
+  ];
 }

@@ -7,10 +7,12 @@ import Lockup from './Lockup';
 import { BRAND } from '@/data/brand';
 
 const nav = [
-  { href: '/fleet', label: 'The Fleet' },
+  { href: '/fleet', label: 'Fleet' },
+  { href: '/rates', label: 'Rates' },
   { href: '/chauffeur', label: 'Chauffeur' },
-  { href: '/#allocation', label: 'The Allocation' },
-  { href: '/about', label: 'The Reserve' },
+  { href: '/locations', label: 'Locations' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/about', label: 'About' },
 ];
 
 export default function Header() {
@@ -36,14 +38,14 @@ export default function Header() {
           <Lockup id="hdr" />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {nav.map((item) => (
-            <Link key={item.href} href={item.href} className="font-sans text-[11px] uppercase tracking-[0.22em] text-obsidian-200 transition-colors hover:text-champagne-300">
+            <Link key={item.href} href={item.href} className="font-sans text-[11px] uppercase tracking-[0.2em] text-obsidian-200 transition-colors hover:text-champagne-300">
               {item.label}
             </Link>
           ))}
           <span className="h-4 w-px bg-obsidian-700" />
-          <a href={`tel:${BRAND.phoneRaw}`} className="font-sans text-[11px] tracking-[0.18em] text-obsidian-300 transition-colors hover:text-bone-50">
+          <a href={`tel:${BRAND.phoneRaw}`} className="hidden font-sans text-[11px] tracking-[0.18em] text-obsidian-300 transition-colors hover:text-bone-50 xl:block">
             {BRAND.phone}
           </a>
           <Link href="/allocation" className="btn-gold !px-5 !py-2.5">

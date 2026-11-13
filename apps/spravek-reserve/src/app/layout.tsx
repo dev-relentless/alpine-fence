@@ -36,6 +36,8 @@ export const metadata: Metadata = {
   alternates: { canonical: BRAND.url },
   keywords: [
     'luxury car rental Utah',
+    'luxury car rental Lehi',
+    'exotic car rental Salt Lake City',
     'luxury car rental Salt Lake City',
     'luxury car rental Park City',
     'exotic car rental Utah',

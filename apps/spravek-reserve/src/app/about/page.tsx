@@ -29,8 +29,8 @@ export default function AboutPage() {
           </p>
           <p>
             So we kept the fleet small and the standard high. Three vehicles, each the best of its kind, each owned,
-            detailed, and delivered by us. Nobody rents from the Reserve; they request an allocation, and every
-            allocation is numbered and handed over in person.
+            detailed, and delivered by us. Rates, mileage, deposits and requirements are published up front, every
+            request is confirmed in writing by a person, and every car is handed over in person.
           </p>
           <p>
             The Reserve is operated by {BRAND.legalEntity}, the company behind{' '}

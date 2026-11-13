@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BRAND } from '@/data/brand';
-import { getVehicle, imgSrc } from '@/data/fleet';
+import { getVehicle, imgSrc, usd } from '@/data/fleet';
 
 export const metadata: Metadata = {
   title: 'Chauffeur Service — Mercedes-Benz S 580',
@@ -60,13 +60,28 @@ export default function ChauffeurPage() {
             <Image src={imgSrc(v, '06-rear-cabin.jpg')} alt={v.gallery[5].alt} fill sizes="(min-width:768px) 40vw, 100vw" className="object-cover" />
           </div>
           <div className="card p-8">
+            <h2 className="eyebrow">Chauffeur rates</h2>
+            <dl className="mt-5 divide-y divide-obsidian-800 text-sm">
+              {[
+                ['Hourly', `${usd(v.rates.chauffeurHourly!)} / hr · ${v.rates.chauffeurMinHours}-hr minimum`],
+                ['SLC airport transfer', `${usd(v.rates.airportTransfer!)} flat`],
+                ['Full day (10 hrs)', usd(v.rates.chauffeurHourly! * 10)],
+                ['Includes', 'Driver, fuel, flight tracking, meet & greet, water & chargers'],
+              ].map(([k, val]) => (
+                <div key={k} className="grid grid-cols-[130px_1fr] gap-4 py-3"><dt className="text-obsidian-400">{k}</dt><dd className="text-obsidian-100">{val}</dd></div>
+              ))}
+            </dl>
+            <p className="mt-4 text-xs text-obsidian-500">Gratuity at your discretion. Waiting time billed at the hourly rate after 15 minutes; airport pickups are flight-tracked and never charged for delays.</p>
+          </div>
+          <div className="card p-8">
             <h2 className="eyebrow">Good to know</h2>
             <ul className="mt-5 space-y-3 text-sm text-obsidian-200">
               {[
                 'Up to 4 passengers in chauffeured service',
                 'Luggage for four in the trunk; ski bags on request',
                 'Water, chargers, and a quiet driver by default',
-                'Minimums apply for hourly and airport service',
+                'No license, insurance or deposit required — this is a ground-transportation service',
+                'Fully refundable up to 48 hours before service',
                 'Serving SLC, the Wasatch Front, Park City, Deer Valley & Heber',
               ].map((t) => <li key={t} className="flex items-start gap-3"><span className="mt-2 h-px w-4 shrink-0 bg-champagne-500" />{t}</li>)}
             </ul>

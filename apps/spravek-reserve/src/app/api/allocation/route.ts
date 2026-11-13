@@ -9,9 +9,11 @@ interface AllocationPayload {
   name?: string;
   email?: string;
   phone?: string;
+  zone?: string;
   location?: string;
   startDate?: string;
-  duration?: string;
+  endDate?: string;
+  pickupTime?: string;
   occasion?: string;
   notes?: string;
   company?: string; // honeypot
@@ -43,12 +45,22 @@ export async function POST(req: NextRequest) {
   if (data.service === 'chauffeured' && !vehicle.chauffeur) {
     return NextResponse.json({ error: 'Chauffeur service is only offered on the S 580.' }, { status: 400 });
   }
-  if (!data.startDate) {
-    return NextResponse.json({ error: 'Please choose a start date.' }, { status: 400 });
+  if (!data.phone) {
+    return NextResponse.json({ error: 'Please provide a mobile phone number.' }, { status: 400 });
+  }
+  if (!data.startDate || Number.isNaN(Date.parse(data.startDate))) {
+    return NextResponse.json({ error: 'Please choose a pickup date.' }, { status: 400 });
+  }
+  const selfDrive = data.service !== 'chauffeured';
+  if (selfDrive && (!data.endDate || Number.isNaN(Date.parse(data.endDate)))) {
+    return NextResponse.json({ error: 'Please choose a return date.' }, { status: 400 });
+  }
+  if (data.endDate && Date.parse(data.endDate) < Date.parse(data.startDate)) {
+    return NextResponse.json({ error: 'Return date must be on or after the pickup date.' }, { status: 400 });
   }
 
-  // Short request reference for the confirmation screen. The real allocation
-  // number (Nº 001, 002…) is issued by hand once the agreement is signed.
+  // Short request reference for the confirmation screen. The allocation
+  // number is issued once the agreement is signed and the deposit placed.
   const reference = `R-${Date.now().toString(36).toUpperCase().slice(-5)}`;
 
   // TODO: wire to inbox / CRM (Resend, Postmark, webhook, etc.).

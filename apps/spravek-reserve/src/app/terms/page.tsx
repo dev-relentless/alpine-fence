@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { BRAND } from '@/data/brand';
+import { BRAND, CANCELLATION } from '@/data/brand';
 
 export const metadata: Metadata = {
-  title: 'Rental Terms',
-  description: 'Summary of allocation, driver, insurance, deposit, and chauffeur terms for Spravek Reserve.',
+  title: 'Rental Terms & Cancellation Policy',
+  description: 'Rental terms, driver and insurance requirements, deposits, permitted use, delivery, and the cancellation and refund policy for Spravek Reserve luxury car rentals in Utah.',
   alternates: { canonical: '/terms' },
-  robots: { index: false, follow: true },
+  robots: { index: true, follow: true },
 };
 
 const SECTIONS: [string, string][] = [
@@ -15,7 +15,6 @@ const SECTIONS: [string, string][] = [
   ['Use', 'Vehicles may not be used for racing, track days, off-road use beyond maintained roads, towing beyond posted ratings or without our approval, ride-share or commercial hire, or by anyone not named on the agreement. Smoking is prohibited. Mileage allowances are stated on the agreement.'],
   ['Chauffeur Service', 'Chauffeured service is offered on the S 580 only and is provided as a ground-transportation service rather than a rental. Hourly minimums, waiting time, and airport fees apply as quoted. Passengers may not consume anything that would damage the cabin, and the chauffeur may end service for unsafe conduct.'],
   ['Delivery & Return', 'Delivery and collection are included within the stated service area; farther locations are quoted. Vehicles are returned at the agreed time and place in the condition received. Late returns are billed in hourly increments.'],
-  ['Cancellation', 'Cancellation terms depend on notice given and are stated on each agreement. Deposits are refunded in full for cancellations within the stated window.'],
 ];
 
 export default function TermsPage() {
@@ -34,6 +33,25 @@ export default function TermsPage() {
             <p className="mt-3 text-sm leading-relaxed text-obsidian-200">{b}</p>
           </div>
         ))}
+      </div>
+      <div id="cancellation" className="mt-14 scroll-mt-28 border-t border-obsidian-800 pt-10">
+        <h2 className="font-sans text-xs font-semibold uppercase tracking-[0.22em] text-champagne-500">Cancellation & Refunds</h2>
+        <p className="mt-3 text-sm leading-relaxed text-obsidian-200">{CANCELLATION.summary}</p>
+        <h3 className="eyebrow-muted mt-8">Self-drive rentals</h3>
+        <dl className="mt-3 divide-y divide-obsidian-800 text-sm">
+          {CANCELLATION.selfDrive.map((c) => (
+            <div key={c.window} className="grid grid-cols-[1fr_1.4fr] gap-4 py-3"><dt className="text-obsidian-300">{c.window}</dt><dd className="text-obsidian-100">{c.outcome}</dd></div>
+          ))}
+        </dl>
+        <h3 className="eyebrow-muted mt-8">Chauffeured service</h3>
+        <dl className="mt-3 divide-y divide-obsidian-800 text-sm">
+          {CANCELLATION.chauffeur.map((c) => (
+            <div key={c.window} className="grid grid-cols-[1fr_1.4fr] gap-4 py-3"><dt className="text-obsidian-300">{c.window}</dt><dd className="text-obsidian-100">{c.outcome}</dd></div>
+          ))}
+        </dl>
+        <ul className="mt-6 space-y-2 text-sm text-obsidian-300">
+          {CANCELLATION.notes.map((n) => <li key={n} className="flex items-start gap-3"><span className="mt-2 h-px w-4 shrink-0 bg-champagne-500" />{n}</li>)}
+        </ul>
       </div>
       <p className="mt-14 text-xs text-obsidian-500">Questions: <a href={`mailto:${BRAND.email}`} className="text-obsidian-300 hover:text-champagne-300">{BRAND.email}</a></p>
     </section>

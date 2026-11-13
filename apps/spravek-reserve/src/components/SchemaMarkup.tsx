@@ -16,6 +16,9 @@ export default function SchemaMarkup() {
     image: `${BRAND.url}/reserve/og.jpg`,
     logo: `${BRAND.url}/reserve/v-mark.svg`,
     priceRange: BRAND.priceRange,
+    openingHours: BRAND.hours.schema,
+    currenciesAccepted: 'USD',
+    paymentAccepted: 'Credit Card',
     foundingDate: BRAND.founded,
     parentOrganization: { '@type': 'Organization', name: BRAND.parent.name, url: BRAND.parent.url },
     address: {
@@ -38,6 +41,9 @@ export default function SchemaMarkup() {
         url: `${BRAND.url}/fleet/${v.slug}`,
       },
       availability: 'https://schema.org/LimitedAvailability',
+      priceCurrency: 'USD',
+      price: v.rates.daily,
+      priceSpecification: { '@type': 'UnitPriceSpecification', price: v.rates.daily, priceCurrency: 'USD', unitCode: 'DAY', unitText: 'per day' },
     })),
   };
 

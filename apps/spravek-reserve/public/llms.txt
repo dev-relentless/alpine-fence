@@ -13,7 +13,10 @@ to Salt Lake City International Airport. Bookings are called "allocations"
 and are confirmed personally within one business day.
 
 - Region: Utah — Wasatch Front, Park City, SLC airport
-- Price tier: luxury ($$$$), quoted by allocation
+- Price tier: luxury ($$$$). Starting daily rates: SL 63 $1,499, S 580 $699 (chauffeured from $165/hr, 3-hr min; SLC transfer $395), F-350 $499. Weekly rates, mileage (100–150 mi/day) and refundable deposits ($2,500–$5,000) listed on /rates.
+- Requirements: drivers 25+ (30+ for SL 63), valid license 3+ yrs, full-coverage personal auto insurance, credit-card deposit.
+- Delivery: included on the Wasatch Front (Lehi–Salt Lake City); Park City / Deer Valley / Utah Valley from $95 each way; SLC airport $75 self-drive, included with chauffeur.
+- Cancellation: full refund 14+ days out; chauffeur 48 hrs; one free reschedule.
 - Contact: see /allocation
 
 ## The Fleet
@@ -24,10 +27,14 @@ and are confirmed personally within one business day.
 
 ## Pages
 
-- / — overview and The Allocation concept
-- /fleet — all vehicles
+- / — overview, availability check, fleet with rates, how it works, FAQ
+- /fleet — all vehicles with comparison table
+- /rates — rate card, delivery fees, driver requirements, other fees, cancellation
+- /locations — delivery zones, destinations, SLC airport
+- /faq — frequently asked questions
 - /fleet/sl-63, /fleet/s-580, /fleet/f-350 — vehicle detail with specs and gallery
 - /chauffeur — chauffeured S 580 service
 - /allocation — request form
 - /about — the company
-- /terms, /privacy
+- /terms — rental terms and cancellation & refund policy
+- /privacy

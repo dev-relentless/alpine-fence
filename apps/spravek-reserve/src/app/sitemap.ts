@@ -4,7 +4,7 @@ import { FLEET } from '@/data/fleet';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const routes = ['', '/fleet', '/chauffeur', '/allocation', '/about', ...FLEET.map((v) => `/fleet/${v.slug}`)];
+  const routes = ['', '/fleet', '/rates', '/chauffeur', '/locations', '/faq', '/allocation', '/about', '/terms', ...FLEET.map((v) => `/fleet/${v.slug}`)];
   return routes.map((path) => ({
     url: `${BRAND.url}${path}`,
     lastModified: now,
