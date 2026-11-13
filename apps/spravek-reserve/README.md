@@ -47,7 +47,7 @@ Separate Vercel project from this repo (or `VERCEL_TOKEN=… node scripts/vercel
 
 ## Before launch
 
-- [ ] Phone/email in `brand.ts` currently reuse Relentless Equipment's number — set the Reserve line.
+- [x] Phone in `brand.ts` is the Reserve line, (801) 663-7935. Confirm `allocations@spravekreserve.com` is a live inbox.
 - [ ] Confirm F-350 tow rating against the door-jamb label (see `verifyNote` in `fleet.ts`).
 - [ ] Confirm model years and paint names for all three vehicles.
 - [ ] Wire `api/allocation` to a real inbox (Resend/Postmark) or CRM.
