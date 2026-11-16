@@ -23,7 +23,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-bone-50/92 backdrop-blur-md border-b border-ink-100">
       <div className="container-site flex h-[76px] items-center justify-between gap-6">
-        <Logo />
+        <Logo priority />
         <nav className="hidden lg:flex items-center gap-8">
           {nav.map((item) => {
             const active = pathname === item.href || pathname?.startsWith(`${item.href}/`);

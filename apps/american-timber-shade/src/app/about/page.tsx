@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Photo from '@/components/Photo';
+import Emblem from '@/components/Emblem';
 import { BRAND } from '@/data/brand';
 import { NETWORK_STATES } from '@/data/network';
 
@@ -20,6 +21,7 @@ export default function AboutPage() {
             Builders first.<br />
             <span className="text-cedar-700">Then designers of shade.</span>
           </h1>
+          <Emblem className="w-32 md:w-44 pt-4" />
         </div>
         <div className="lg:col-span-7 space-y-6 text-ink-600 leading-relaxed text-lg">
           <p>

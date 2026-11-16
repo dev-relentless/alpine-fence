@@ -70,12 +70,20 @@ These are the hero and editorial placements. Choose your strongest images.
 Slot paths are set in `src/data/pergolas.ts`, `src/data/spaces.ts`, and the
 page files — rename there if your files are named differently.
 
-## 3. Brand assets (optional)
+## 3. Brand assets
 
-| Path | Purpose |
+Logos live in `ats/brand/` (transparent, trimmed, web-ready). Originals as
+delivered are in the repo root at `brand/american-timber-shade/logos/`.
+
+| Path | Used where |
 | --- | --- |
-| `ats/og.jpg` | 1200 × 630 social card. Until this exists the site generates one (`src/app/opengraph-image.tsx`). To use the photo, add `images: ['/ats/og.jpg']` to `openGraph` in `src/app/layout.tsx`. |
-| `ats/logo.svg` | Production logo. The site currently uses an inline SVG mark in `src/components/Logo.tsx` — swap it there. |
+| `ats/brand/logo-horizontal.png` | Header (dark on light). Derived from the reversed lockup. |
+| `ats/brand/logo-horizontal-reversed.png` | Footer and the generated Open Graph card. |
+| `ats/brand/logo-primary.png` | Stacked lockup, not placed yet — available for print/social. |
+| `ats/brand/emblem.png` | Homepage statement, /about, favicon (`src/app/icon.png`) and `apple-icon.png`. |
+| `ats/og.jpg` | Optional 1200 × 630 photo card. Until it exists the site generates one (`src/app/opengraph-image.tsx`). To use the photo, add `images: ['/ats/og.jpg']` to `openGraph` in `src/app/layout.tsx`. |
+
+Rendering is centralised in `src/components/Logo.tsx` and `src/components/Emblem.tsx`.
 
 ## Register
 

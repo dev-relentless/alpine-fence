@@ -10,7 +10,12 @@ export const contentType = 'image/png';
  * Generated Open Graph card. Replace by dropping a 1200×630 photograph at
  * public/ats/og.jpg and pointing metadata.openGraph.images at it.
  */
-export default function OpenGraphImage() {
+export default async function OpenGraphImage() {
+  const logo = await fetch(new URL('../../public/ats/brand/logo-horizontal-reversed.png', import.meta.url)).then((r) =>
+    r.arrayBuffer()
+  );
+  const logoSrc = `data:image/png;base64,${Buffer.from(logo).toString('base64')}`;
+
   return new ImageResponse(
     (
       <div
@@ -26,19 +31,9 @@ export default function OpenGraphImage() {
           fontFamily: 'Georgia, serif',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-          <svg width="56" height="56" viewBox="0 0 32 32" fill="#faf8f4">
-            <rect x="2" y="4" width="3" height="4" />
-            <rect x="8.75" y="4" width="3" height="4" />
-            <rect x="15.5" y="4" width="3" height="4" />
-            <rect x="22.25" y="4" width="3" height="4" />
-            <rect x="29" y="4" width="3" height="4" />
-            <rect x="0" y="9.5" width="32" height="3.5" />
-            <rect x="6" y="13" width="3.5" height="17" />
-            <rect x="22.5" y="13" width="3.5" height="17" />
-            <rect x="14.75" y="15" width="2.5" height="2.5" fill="#cfa548" />
-          </svg>
-          <div style={{ fontSize: 34, fontWeight: 600, letterSpacing: '-0.01em' }}>{BRAND.name}</div>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logoSrc} alt="" width={346} height={90} />
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
           <div style={{ fontSize: 84, lineHeight: 1.02, letterSpacing: '-0.02em', maxWidth: 980 }}>
@@ -49,7 +44,7 @@ export default function OpenGraphImage() {
             Timber pergolas, pavilions, kitchens, fire &amp; light — designed and built across the Mountain West.
           </div>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 22, color: 'rgba(250,248,244,0.6)', letterSpacing: '0.18em', textTransform: 'uppercase' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', gap: 48, fontSize: 18, color: 'rgba(250,248,244,0.6)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
           <div>{BRAND.domain}</div>
           <div>{BRAND.address.states.join(' · ')}</div>
         </div>

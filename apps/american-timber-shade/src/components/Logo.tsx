@@ -1,58 +1,35 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import clsx from 'clsx';
 import { BRAND } from '@/data/brand';
+import logoHorizontal from '../../public/ats/brand/logo-horizontal.png';
+import logoHorizontalReversed from '../../public/ats/brand/logo-horizontal-reversed.png';
 
 /**
- * Brand mark: a beam with rafter ends over two posts — a pergola reduced
- * to its silhouette. Inline SVG so it needs no asset file and inherits
- * color. Swap for the production logo in one place when it arrives.
+ * Horizontal brand lockup. Source files live in /public/ats/brand (web) and
+ * /brand/american-timber-shade/logos (originals).
  */
-export function Mark({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 32 32" aria-hidden className={className} fill="currentColor">
-      {/* rafter ends */}
-      <rect x="2" y="4" width="3" height="4" />
-      <rect x="8.75" y="4" width="3" height="4" />
-      <rect x="15.5" y="4" width="3" height="4" />
-      <rect x="22.25" y="4" width="3" height="4" />
-      <rect x="29" y="4" width="3" height="4" />
-      {/* beam */}
-      <rect x="0" y="9.5" width="32" height="3.5" />
-      {/* posts */}
-      <rect x="6" y="13" width="3.5" height="17" />
-      <rect x="22.5" y="13" width="3.5" height="17" />
-      {/* brass peg */}
-      <rect x="14.75" y="15" width="2.5" height="2.5" className="text-brass-400" fill="currentColor" />
-    </svg>
-  );
-}
-
 export default function Logo({
   variant = 'dark',
   size = 'md',
-  showTagline = false,
+  priority = false,
 }: {
   variant?: 'dark' | 'light';
   size?: 'sm' | 'md' | 'lg';
-  showTagline?: boolean;
+  priority?: boolean;
 }) {
-  const color = variant === 'light' ? 'text-bone-50' : 'text-ink-950';
-  const markDim = size === 'lg' ? 'h-10 w-10' : size === 'sm' ? 'h-7 w-7' : 'h-8 w-8';
-  const textSize = size === 'lg' ? 'text-2xl' : size === 'sm' ? 'text-base' : 'text-lg';
+  const src = variant === 'light' ? logoHorizontalReversed : logoHorizontal;
+  const height = size === 'lg' ? 'h-16' : size === 'sm' ? 'h-9' : 'h-12';
 
   return (
-    <Link href="/" aria-label={BRAND.name} className={clsx('inline-flex items-center gap-3 leading-none', color)}>
-      <Mark className={clsx(markDim, 'shrink-0')} />
-      <span className="flex flex-col">
-        <span className={clsx('font-display font-semibold tracking-display whitespace-nowrap', textSize)}>
-          American Timber Shade
-        </span>
-        {showTagline && (
-          <span className={clsx('tag mt-1.5', variant === 'light' ? '!text-bone-100/60' : '!text-ink-500')}>
-            {BRAND.tagline}
-          </span>
-        )}
-      </span>
+    <Link href="/" aria-label={BRAND.name} className="inline-flex items-center leading-none">
+      <Image
+        src={src}
+        alt={BRAND.name}
+        priority={priority}
+        sizes="(min-width: 1024px) 260px, 190px"
+        className={clsx(height, 'w-auto')}
+      />
     </Link>
   );
 }

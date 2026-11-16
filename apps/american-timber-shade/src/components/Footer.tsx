@@ -11,7 +11,7 @@ export default function Footer() {
     <footer className="bg-ink-depth text-bone-100 mt-28">
       <div className="container-site py-16 grid gap-12 md:grid-cols-12">
         <div className="md:col-span-4 space-y-6">
-          <Logo variant="light" size="lg" showTagline />
+          <Logo variant="light" size="lg" />
           <p className="text-ink-300 max-w-md leading-relaxed text-[15px]">{BRAND.description}</p>
           <p className="text-ink-400 text-[14px]">{BRAND.parent.note}</p>
           <div className="pt-2">

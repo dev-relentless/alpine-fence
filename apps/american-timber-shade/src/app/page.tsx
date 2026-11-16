@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Photo from '@/components/Photo';
+import Emblem from '@/components/Emblem';
 import { BRAND } from '@/data/brand';
 import { pergolaStyles } from '@/data/pergolas';
 import { spaces } from '@/data/spaces';
@@ -76,6 +77,7 @@ export default function HomePage() {
       {/* ─────────── STATEMENT ─────────── */}
       <section className="bg-bone-glow">
         <div className="container-prose py-24 md:py-32 text-center">
+          <Emblem className="w-28 md:w-36 mx-auto mb-10" />
           <div className="tag mb-8">Premium Outdoor Spaces</div>
           <p className="h-display text-3xl md:text-4xl lg:text-[2.75rem] leading-[1.2] text-ink-900">
             The best square footage you&rsquo;ll ever add is the kind without walls.
