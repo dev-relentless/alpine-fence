@@ -65,8 +65,8 @@ export const NETWORK_STATES = [
     locality: "Henderson",
     domain: "nevadapergolaexperts.com",
     url: "https://nevadapergolaexperts.com",
-    phone: "(702) 555-0103",
-    phoneRaw: "+17025550103",
+    phone: "(725) 361-0971",
+    phoneRaw: "+17253610971",
     cities: ["Henderson", "Las Vegas", "Summerlin", "North Las Vegas", "Boulder City", "Mesquite"],
   },
   {
@@ -93,8 +93,8 @@ export const NETWORK_STATES = [
     locality: "Bellevue",
     domain: "washingtonpergolaexperts.com",
     url: "https://washingtonpergolaexperts.com",
-    phone: "(425) 555-0104",
-    phoneRaw: "+14255550104",
+    phone: "(425) 699-8100",
+    phoneRaw: "+14256998100",
     cities: ["Bellevue", "Seattle", "Kirkland", "Redmond", "Sammamish", "Issaquah"],
   },
   {
@@ -107,8 +107,8 @@ export const NETWORK_STATES = [
     locality: "Jackson",
     domain: "wyomingpergolaexperts.com",
     url: "https://wyomingpergolaexperts.com",
-    phone: "(307) 555-0106",
-    phoneRaw: "+13075550106",
+    phone: "(307) 317-4043",
+    phoneRaw: "+13073174043",
     cities: ["Jackson", "Wilson", "Teton Village", "Cheyenne", "Casper", "Laramie"],
   },
 ] as const;

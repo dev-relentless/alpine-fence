@@ -20,9 +20,8 @@ export const BRAND = {
     "Pergolas, louvered roofs & pavilions in Washington — engineered for rain, wind, and snow. Design-build, quotes in writing.",
   domain: "washingtonpergolaexperts.com",
   url: "https://washingtonpergolaexperts.com",
-  // TODO: replace placeholder with the production number before launch.
-  phone: "(425) 555-0104",
-  phoneRaw: "+14255550104",
+  phone: "(425) 699-8100",
+  phoneRaw: "+14256998100",
   smsBody: "Hi Washington Pergola Experts — I'd like a quote on a pergola.",
   /** Production raster logo in /public; when null the shared inline SVG mark is used. */
   logo: null as BrandLogo | null,

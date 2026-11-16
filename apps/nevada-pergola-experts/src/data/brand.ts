@@ -20,9 +20,8 @@ export const BRAND = {
     "Pergolas, louvered roofs & pavilions in Nevada — engineered for sun, heat, and wind. Design-build, quotes in writing.",
   domain: "nevadapergolaexperts.com",
   url: "https://nevadapergolaexperts.com",
-  // TODO: replace placeholder with the production number before launch.
-  phone: "(702) 555-0103",
-  phoneRaw: "+17025550103",
+  phone: "(725) 361-0971",
+  phoneRaw: "+17253610971",
   smsBody: "Hi Nevada Pergola Experts — I'd like a quote on a pergola.",
   /** Production raster logo in /public; when null the shared inline SVG mark is used. */
   logo: null as BrandLogo | null,

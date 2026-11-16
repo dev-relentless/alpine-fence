@@ -34,7 +34,6 @@ npm run dev:washington      # http://localhost:3011
 
 ## Before launch
 
-- Phone in `scripts/new-pergola-state.mjs` → `washington.phone` is a **placeholder**.
 - Drop the production logo in `public/pergola/` and set `washington.logo` in the script (the shared inline SVG mark is used until then).
 - Wire `src/app/api/quote/route.ts` to the inbox / CRM.
 - `/lp/pergola` is the ad landing page — paste the GHL form URL into `src/data/landing.ts`.
