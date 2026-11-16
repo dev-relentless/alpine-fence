@@ -17,7 +17,9 @@ export interface GalleryCaption {
 }
 
 export const galleryCaptions: Record<string, GalleryCaption> = {
-  // 'cedar-pergola-draper.jpg': { title: 'Cedar Pergola', location: 'Draper, UT', tag: 'pergolas' },
+  '01-cedar-pergola-dining-terrace.jpg': { title: 'Cedar Pergola, Dining Terrace', tag: 'pergolas' },
+  '02-timber-pavilion-poolside.jpg': { title: 'Timber Pavilion, Poolside', tag: 'pavilions' },
+  '03-attached-louvered-pergola.jpg': { title: 'Attached Louvered Pergola', tag: 'pergolas' },
 };
 
 export const galleryTags: { slug: NonNullable<GalleryCaption['tag']>; label: string }[] = [
