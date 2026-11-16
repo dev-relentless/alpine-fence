@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { BRAND } from '@/data/brand';
 import { structureCategories } from '@/data/structures';
 import StructurePlate from '@/components/StructurePlate';
+import GalleryStrip from '@/components/GalleryStrip';
 
 export const metadata: Metadata = {
   title: 'The Structures',
@@ -37,6 +38,8 @@ export default function PergolasPage() {
               <div className="lg:col-span-5 lg:sticky lg:top-28">
                 <StructurePlate
                   slug={c.slug as 'timber' | 'louvered' | 'pavilions'}
+                photo={c.photo}
+                alt={c.photoAlt}
                   caption={`Plate ${numerals[i]} — ${c.shortTitle}`}
                   className="shadow-plate"
                 />
@@ -60,6 +63,8 @@ export default function PergolasPage() {
           ))}
         </div>
       </section>
+
+      <GalleryStrip />
 
       <section className="container-patio py-20 md:py-28 text-center">
         <h2 className="h-display text-3xl md:text-5xl text-timber-950 mb-4">Picture it over your patio.</h2>

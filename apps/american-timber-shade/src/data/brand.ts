@@ -17,7 +17,7 @@ export const BRAND = {
     state: 'UT',
     country: 'US',
     headquarters: 'Wasatch Front, Utah',
-    states: ['Utah', 'Idaho', 'Colorado', 'Wyoming', 'Nevada', 'Arizona'],
+    states: ['Utah', 'Idaho', 'Colorado', 'Wyoming', 'Nevada', 'Arizona', 'Washington'],
     cities: [
       'Salt Lake City', 'Park City', 'Lehi', 'Draper', 'St. George',
       'Boise', 'Coeur d\u2019Alene', 'Denver', 'Boulder', 'Fort Collins',

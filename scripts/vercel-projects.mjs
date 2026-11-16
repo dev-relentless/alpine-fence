@@ -25,6 +25,7 @@ const APPS = {
   nevada:     { name: 'nevada-pergola-experts',     dir: 'apps/nevada-pergola-experts',     domain: 'nevadapergolaexperts.com' },
   washington: { name: 'washington-pergola-experts', dir: 'apps/washington-pergola-experts', domain: 'washingtonpergolaexperts.com' },
   colorado:   { name: 'colorado-pergola-experts',   dir: 'apps/colorado-pergola-experts',   domain: 'coloradopergolaexperts.com' },
+  wyoming:    { name: 'wyoming-pergola-experts',    dir: 'apps/wyoming-pergola-experts',    domain: 'wyomingpergolaexperts.com' },
   apex:       { name: 'apex-concrete',              dir: 'apps/apex-concrete',              domain: 'apexconcreteutah.com' },
   reserve:    { name: 'spravek-reserve',            dir: 'apps/spravek-reserve',            domain: 'spravekreserve.com' },
 };

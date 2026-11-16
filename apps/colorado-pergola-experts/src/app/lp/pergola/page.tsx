@@ -167,6 +167,8 @@ export default function PergolaLandingPage() {
             <div key={c.slug} className="flex flex-col">
               <StructurePlate
                 slug={c.slug as 'timber' | 'louvered' | 'pavilions'}
+                photo={c.photo}
+                alt={c.photoAlt}
                 caption={`Plate ${numerals[i]} — ${c.shortTitle}`}
                 className="shadow-plate"
               />

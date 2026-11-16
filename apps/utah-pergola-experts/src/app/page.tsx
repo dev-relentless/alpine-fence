@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { BRAND } from '@/data/brand';
 import { structureCategories } from '@/data/structures';
 import StructurePlate from '@/components/StructurePlate';
+import GalleryStrip from '@/components/GalleryStrip';
 
 export const metadata: Metadata = {
   alternates: { canonical: BRAND.url },
@@ -52,6 +53,8 @@ export default function HomePage() {
             <Link key={c.slug} href={`/pergolas#${c.slug}`} className="group block">
               <StructurePlate
                 slug={c.slug as 'timber' | 'louvered' | 'pavilions'}
+                photo={c.photo}
+                alt={c.photoAlt}
                 caption={`Plate ${numerals[i]} — ${c.shortTitle}`}
                 className="shadow-plate transition-transform duration-300 group-hover:-translate-y-1"
               />
@@ -62,6 +65,8 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      <GalleryStrip limit={5} />
 
       {/* ─────────── PHILOSOPHY ─────────── */}
       <section className="bg-walnut-depth text-linen-100">

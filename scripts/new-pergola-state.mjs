@@ -175,6 +175,28 @@ const STATES = {
       keyword: 'snow rated pergola Colorado',
     },
   },
+  wyoming: {
+    port: 3015,
+    state: 'Wyoming', abbr: 'WY',
+    region: 'Jackson Hole & the Front Range', regionLine: 'Jackson · Cheyenne · Casper',
+    locality: 'Jackson',
+    phone: '(307) 555-0106',
+    geo: { lat: 43.4799, lng: -110.7624 },
+    counties: ['Teton County', 'Laramie County', 'Natrona County', 'Sheridan County', 'Park County', 'Sublette County'],
+    cities: ['Jackson', 'Wilson', 'Teton Village', 'Cheyenne', 'Casper', 'Laramie', 'Sheridan', 'Cody', 'Gillette', 'Rock Springs', 'Pinedale', 'Star Valley', 'Alpine', 'Lander', 'Riverton'],
+    climate: {
+      snow: true,
+      elements: 'sun, wind, and heavy snow',
+      sun: 'high-altitude sun',
+      engineeredTag: 'Heavy snow-load engineered',
+      footings: 'footings below frost line',
+      spans: 'spans that carry a Wyoming snow year',
+      roofNote: 'close watertight for rain and shed snow like a solid roof',
+      durabilityQ: 'Will it hold up to Wyoming snow and wind?',
+      durabilityA: 'Yes. Spans are sized for Teton and high-plains snow loads, posts sit in concrete footings below frost line, frames are braced for sustained wind, and connections are thru-bolted rather than kit brackets. Louvered roofs close watertight and shed snow like a solid roof.',
+      keyword: 'snow rated pergola Wyoming',
+    },
+  },
 };
 
 /**

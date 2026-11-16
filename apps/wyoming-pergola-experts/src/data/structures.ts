@@ -1,0 +1,72 @@
+import { BRAND } from '@/data/brand';
+
+export interface StructureCategory {
+  slug: string;
+  title: string;
+  shortTitle: string;
+  blurb: string;
+  detail: string;
+  items: string[];
+  /** Project photograph shown on the plate (3:4). */
+  photo: string;
+  photoAlt: string;
+}
+
+const { state, climate } = BRAND;
+
+export const structureCategories: StructureCategory[] = [
+  {
+    slug: 'timber',
+    title: 'Timber Pergolas',
+    photo: '/pergola/projects/timber.jpg',
+    photoAlt: 'Cedar pergola with knee braces built over a composite deck',
+    shortTitle: 'Timber',
+    blurb: 'Rough-sawn cedar and fir with oversized posts and beams — shade structures that look like they grew there.',
+    detail:
+      `Classic timber pergolas, attached or freestanding, built like structures instead of furniture: ${climate.footings}, ${climate.spans}, and connections thru-bolted — not kit brackets. Rafter and lattice spacing is designed around your sun exposure, and finishes are UV-stable stains made for ${climate.sun} that age gracefully instead of graying out.`,
+    items: [
+      'Attached & freestanding pergolas',
+      'Rough-sawn cedar & doug fir',
+      'Oversized posts, beams & corbels',
+      'Custom rafter & lattice spacing',
+      'UV-stable stains & finishes',
+      'Privacy walls & screens',
+    ],
+  },
+  {
+    slug: 'louvered',
+    title: 'Louvered & Motorized',
+    photo: '/pergola/projects/louvered.jpg',
+    photoAlt: 'Modern attached patio cover with slatted roof',
+    shortTitle: 'Louvered',
+    blurb: 'Adjustable louvered roofs in powder-coated aluminum — open for sun, closed before the storm.',
+    detail:
+      `Motorized louvered systems that turn a patio into a room you can tune: louvers rotate for sun or shade, then ${climate.roofNote}. Powder-coated aluminum frames sized for ${state} wind, with integrated LED lighting, ceiling fans, and rain and wind sensors that close the roof before you get to it.`,
+    items: [
+      'Motorized louvered roofs',
+      'Powder-coated aluminum frames',
+      'Rain & wind sensors',
+      'Integrated LED lighting',
+      'Ceiling fans & infrared heaters',
+      'Wind-rated anchoring',
+    ],
+  },
+  {
+    slug: 'pavilions',
+    title: 'Pavilions & Solid Roofs',
+    photo: '/pergola/projects/pavilions.jpg',
+    photoAlt: 'Hip-roof timber pavilion on stone columns',
+    shortTitle: 'Pavilions',
+    blurb: 'Solid-roof pavilions and gazebos for full weather cover — outdoor kitchens, hot tubs, and gathering space.',
+    detail:
+      'When the plan calls for full cover — outdoor kitchens, dining space, hot tubs — a pavilion carries a real roof on timber framing: shingled or metal roofing over engineered spans, tied into footings that treat it like the small building it is. Electrical rough-ins for lighting, fans, and heaters are planned from the first drawing, not fished in later.',
+    items: [
+      'Timber-frame pavilions',
+      'Gazebos & garden structures',
+      'Shingle & metal roofing',
+      'Outdoor kitchen & hot tub cover',
+      'Lighting, fans & heater wiring',
+      'Concrete pads & footings',
+    ],
+  },
+];

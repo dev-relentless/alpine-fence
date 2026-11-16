@@ -7,6 +7,9 @@ export interface StructureCategory {
   blurb: string;
   detail: string;
   items: string[];
+  /** Project photograph shown on the plate (3:4). */
+  photo: string;
+  photoAlt: string;
 }
 
 const { state, climate } = BRAND;
@@ -15,6 +18,8 @@ export const structureCategories: StructureCategory[] = [
   {
     slug: 'timber',
     title: 'Timber Pergolas',
+    photo: '/pergola/projects/timber.jpg',
+    photoAlt: 'Cedar pergola with knee braces built over a composite deck',
     shortTitle: 'Timber',
     blurb: 'Rough-sawn cedar and fir with oversized posts and beams — shade structures that look like they grew there.',
     detail:
@@ -31,6 +36,8 @@ export const structureCategories: StructureCategory[] = [
   {
     slug: 'louvered',
     title: 'Louvered & Motorized',
+    photo: '/pergola/projects/louvered.jpg',
+    photoAlt: 'Modern attached patio cover with slatted roof',
     shortTitle: 'Louvered',
     blurb: 'Adjustable louvered roofs in powder-coated aluminum — open for sun, closed before the storm.',
     detail:
@@ -47,6 +54,8 @@ export const structureCategories: StructureCategory[] = [
   {
     slug: 'pavilions',
     title: 'Pavilions & Solid Roofs',
+    photo: '/pergola/projects/pavilions.jpg',
+    photoAlt: 'Hip-roof timber pavilion on stone columns',
     shortTitle: 'Pavilions',
     blurb: 'Solid-roof pavilions and gazebos for full weather cover — outdoor kitchens, hot tubs, and gathering space.',
     detail:

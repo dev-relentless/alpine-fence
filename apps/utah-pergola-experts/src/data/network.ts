@@ -97,6 +97,20 @@ export const NETWORK_STATES = [
     phoneRaw: "+14255550104",
     cities: ["Bellevue", "Seattle", "Kirkland", "Redmond", "Sammamish", "Issaquah"],
   },
+  {
+    key: "wyoming",
+    name: "Wyoming Pergola Experts",
+    state: "Wyoming",
+    stateAbbr: "WY",
+    region: "Jackson Hole & the Front Range",
+    regionLine: "Jackson · Cheyenne · Casper",
+    locality: "Jackson",
+    domain: "wyomingpergolaexperts.com",
+    url: "https://wyomingpergolaexperts.com",
+    phone: "(307) 555-0106",
+    phoneRaw: "+13075550106",
+    cities: ["Jackson", "Wilson", "Teton Village", "Cheyenne", "Casper", "Laramie"],
+  },
 ] as const;
 
 export type NetworkState = (typeof NETWORK_STATES)[number];
