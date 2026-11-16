@@ -23,8 +23,8 @@ export const NETWORK_STATES = [
     locality: "Scottsdale",
     domain: "arizonapergolaexperts.com",
     url: "https://arizonapergolaexperts.com",
-    phone: "(602) 555-0101",
-    phoneRaw: "+16025550101",
+    phone: "(623) 352-1781",
+    phoneRaw: "+16233521781",
     cities: ["Scottsdale", "Phoenix", "Paradise Valley", "Mesa", "Chandler", "Gilbert"],
   },
   {
@@ -37,8 +37,8 @@ export const NETWORK_STATES = [
     locality: "Denver",
     domain: "coloradopergolaexperts.com",
     url: "https://coloradopergolaexperts.com",
-    phone: "(303) 555-0105",
-    phoneRaw: "+13035550105",
+    phone: "(983) 444-1807",
+    phoneRaw: "+19834441807",
     cities: ["Denver", "Boulder", "Fort Collins", "Colorado Springs", "Castle Rock", "Highlands Ranch"],
   },
   {
@@ -51,8 +51,8 @@ export const NETWORK_STATES = [
     locality: "Boise",
     domain: "idahopergolaexperts.com",
     url: "https://idahopergolaexperts.com",
-    phone: "(208) 555-0102",
-    phoneRaw: "+12085550102",
+    phone: "(208) 314-9095",
+    phoneRaw: "+12083149095",
     cities: ["Boise", "Meridian", "Eagle", "Nampa", "Caldwell", "Kuna"],
   },
   {

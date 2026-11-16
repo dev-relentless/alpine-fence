@@ -34,7 +34,6 @@ npm run dev:idaho      # http://localhost:3009
 
 ## Before launch
 
-- Phone in `scripts/new-pergola-state.mjs` → `idaho.phone` is a **placeholder**.
 - Drop the production logo in `public/pergola/` and set `idaho.logo` in the script (the shared inline SVG mark is used until then).
 - Wire `src/app/api/quote/route.ts` to the inbox / CRM.
 - `/lp/pergola` is the ad landing page — paste the GHL form URL into `src/data/landing.ts`.

@@ -20,9 +20,8 @@ export const BRAND = {
     "Pergolas, louvered roofs & pavilions in Arizona — engineered for sun, heat, and monsoon wind. Design-build, quotes in writing.",
   domain: "arizonapergolaexperts.com",
   url: "https://arizonapergolaexperts.com",
-  // TODO: replace placeholder with the production number before launch.
-  phone: "(602) 555-0101",
-  phoneRaw: "+16025550101",
+  phone: "(623) 352-1781",
+  phoneRaw: "+16233521781",
   smsBody: "Hi Arizona Pergola Experts — I'd like a quote on a pergola.",
   /** Production raster logo in /public; when null the shared inline SVG mark is used. */
   logo: null as BrandLogo | null,
