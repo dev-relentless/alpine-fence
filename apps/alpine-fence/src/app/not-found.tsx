@@ -2,14 +2,12 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <main className="px-6 text-center">
-      <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">Alpine Fence &amp; Deck</h1>
-      <p className="mt-4 text-stone-500">
-        Page not found.{' '}
-        <Link href="/" className="underline hover:text-stone-800">
-          Return home
-        </Link>
-      </p>
-    </main>
+    <section className="mx-auto max-w-6xl px-6 py-32 text-center">
+      <p className="text-sm font-semibold tracking-widest text-emerald-700">404</p>
+      <h1 className="mt-2 text-3xl font-bold tracking-tight text-stone-900">Page not found</h1>
+      <Link href="/" className="mt-6 inline-block rounded-md bg-emerald-800 px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-900">
+        Return home
+      </Link>
+    </section>
   );
 }

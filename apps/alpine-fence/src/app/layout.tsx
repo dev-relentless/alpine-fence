@@ -1,8 +1,14 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
 import './globals.css';
+
+const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 export const metadata: Metadata = {
   title: 'Alpine Fence & Deck',
+  description: 'Fence and deck construction.',
   robots: {
     index: false,
     follow: false,
@@ -20,9 +26,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen flex items-center justify-center bg-white text-stone-800 antialiased">
-        {children}
+    <html lang="en" className={`scroll-smooth ${inter.className}`}>
+      <body className="flex min-h-screen flex-col bg-white text-stone-800 antialiased">
+        <SiteHeader />
+        <main className="flex-1">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );
