@@ -27,11 +27,6 @@ export default function SchemaMarkup() {
       telephone: BRAND.phoneRaw,
       description: BRAND.description,
       foundingDate: BRAND.founded,
-      parentOrganization: {
-        '@type': 'Organization',
-        name: BRAND.parent.name,
-        url: BRAND.parent.url,
-      },
       subOrganization: NETWORK_STATES.map((s) => ({
         '@type': 'Organization',
         '@id': `${s.url}#organization`,

@@ -69,7 +69,7 @@ export default function HomePage() {
             <span className="max-sm:hidden">·</span>
             <span>Building across the {BRAND.address.region}</span>
             <span className="max-sm:hidden">·</span>
-            <span>A Spravek company</span>
+            <span>Design-build, one crew</span>
           </div>
         </div>
       </section>

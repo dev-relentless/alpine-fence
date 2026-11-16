@@ -7,7 +7,7 @@ import { NETWORK_STATES } from '@/data/network';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: `About ${BRAND.name} — the premium outdoor-living design-build firm behind the Pergola Experts state sites, building timber pergolas and complete outdoor spaces across the Mountain West. A Spravek company.`,
+  description: `About ${BRAND.name} — the premium outdoor-living design-build firm behind the Pergola Experts state sites, building timber pergolas and complete outdoor spaces across the Mountain West.`,
   alternates: { canonical: `${BRAND.url}/about` },
 };
 
@@ -40,9 +40,8 @@ export default function AboutPage() {
             {BRAND.name} is the national brand; on the ground, we build under the{' '}
             <Link href="/locations" className="underline decoration-brass-400 underline-offset-4 hover:text-ink-950">Pergola Experts</Link>{' '}
             name in {NETWORK_STATES.map((s) => s.state).join(', ')} — a crew, a phone line, and
-            climate-specific engineering for each state. We&rsquo;re a Spravek company, alongside
-            Harlow Landscapes, SPX Construction, Braddock Concrete, and Relentless Equipment.
-            Twenty years of construction, one accountability line.
+            climate-specific engineering for each state. Twenty years of construction, one
+            accountability line.
           </p>
         </div>
       </section>

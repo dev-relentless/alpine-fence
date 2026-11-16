@@ -38,6 +38,9 @@ body {
   .rule {
     @apply mx-auto h-px w-16 bg-timber-300;
   }
+  .btn-light {
+    @apply inline-flex items-center justify-center bg-linen-50 text-timber-950 uppercase tracking-button px-8 py-3.5 text-xs hover:bg-linen-100 transition-colors;
+  }
   .btn-primary {
     @apply inline-flex items-center justify-center bg-timber-900 text-linen-50 uppercase tracking-button px-8 py-3.5 text-xs hover:bg-timber-800 transition-colors;
   }

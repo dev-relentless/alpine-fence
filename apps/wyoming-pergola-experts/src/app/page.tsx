@@ -4,6 +4,7 @@ import { BRAND } from '@/data/brand';
 import { structureCategories } from '@/data/structures';
 import StructurePlate from '@/components/StructurePlate';
 import GalleryStrip from '@/components/GalleryStrip';
+import LocalHero from '@/components/LocalHero';
 
 export const metadata: Metadata = {
   alternates: { canonical: BRAND.url },
@@ -14,33 +15,36 @@ const numerals = ['I', 'II', 'III', 'IV'];
 export default function HomePage() {
   return (
     <>
-      {/* ─────────── HERO ─────────── */}
-      <section className="bg-parchment-glow">
-        <div className="container-patio pt-24 md:pt-32 pb-20 md:pb-24 text-center">
-          <div className="tag mb-7">Pergolas · Pavilions — {BRAND.regionLine}</div>
-          <h1 className="h-display text-5xl md:text-6xl lg:text-7xl leading-[1.06] max-w-4xl mx-auto text-timber-950">
-            The best room in the house isn&rsquo;t in the house.
-          </h1>
-          <div className="rule my-9" aria-hidden />
-          <p className="text-timber-700 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-            Timber pergolas, louvered roofs, and garden pavilions — designed around the way the
-            sun crosses your yard, and built to be inherited with the house.
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
-            <Link href="/quote" className="btn-primary">
-              Request a consultation
-            </Link>
-            <a href={`tel:${BRAND.phoneRaw}`} className="text-timber-700 hover:text-timber-950 text-[15px]">
-              or telephone {BRAND.phone}
-            </a>
+      {/* ─────────── HERO — local landscape ─────────── */}
+      <LocalHero>
+        <div className="flex-1" />
+        <div className="container-patio pb-20 md:pb-28 pt-40">
+          <div className="max-w-3xl">
+            <div className="tag !text-linen-100/75 mb-7">Pergolas · Pavilions — {BRAND.regionLine}</div>
+            <h1 className="h-display text-5xl md:text-6xl lg:text-7xl leading-[1.04] text-linen-50">
+              The best room in the house isn&rsquo;t in the house.
+            </h1>
+            <div className="h-px w-16 bg-sienna-400 my-9" aria-hidden />
+            <p className="text-linen-100/85 text-lg md:text-xl leading-relaxed max-w-xl">
+              Timber pergolas, louvered roofs, and garden pavilions — designed around the way the
+              {' '}{BRAND.climate.sun} crosses your yard, and built to be inherited with the house.
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+              <Link href="/quote" className="btn-light">
+                Request a consultation
+              </Link>
+              <a href={`tel:${BRAND.phoneRaw}`} className="text-linen-100/80 hover:text-linen-50 text-[15px]">
+                or telephone {BRAND.phone}
+              </a>
+            </div>
           </div>
         </div>
-        <div className="border-t border-timber-200">
-          <div className="container-patio py-4 text-center tag">
-            Licensed &amp; insured · {BRAND.climate.engineeredTag} · A Spravek company
+        <div className="relative border-t border-linen-50/15 bg-timber-950/60 backdrop-blur-sm">
+          <div className="container-patio py-4 text-center tag !text-linen-100/65">
+            Licensed &amp; insured · {BRAND.climate.engineeredTag} · Built in {BRAND.state}
           </div>
         </div>
-      </section>
+      </LocalHero>
 
       {/* ─────────── THE STRUCTURES ─────────── */}
       <section className="container-patio py-20 md:py-28">

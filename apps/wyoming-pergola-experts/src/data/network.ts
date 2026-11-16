@@ -114,5 +114,3 @@ export const NETWORK_STATES = [
 ] as const;
 
 export type NetworkState = (typeof NETWORK_STATES)[number];
-
-export const SPRAVEK_URL = 'https://spravek.com';

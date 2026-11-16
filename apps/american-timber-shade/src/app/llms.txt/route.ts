@@ -29,8 +29,7 @@ firm designs the whole outdoor space around it on one plan, built by one crew.
 
 ${BRAND.name} is the national brand. On the ground it builds under the
 "Pergola Experts" name with a dedicated site, crew, and phone line per state
-(see Locations below). A Spravek company, alongside Harlow Landscapes, SPX
-Construction, Braddock Concrete, and Relentless Equipment.
+(see Locations below).
 
 - Region: ${BRAND.address.region} — ${BRAND.address.states.join(', ')}
 - Headquarters: ${BRAND.address.headquarters}

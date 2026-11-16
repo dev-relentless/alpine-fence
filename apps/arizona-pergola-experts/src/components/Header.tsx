@@ -43,13 +43,13 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-[15px] text-timber-700 hover:text-timber-950 transition-colors"
+              className="whitespace-nowrap text-[15px] text-timber-700 hover:text-timber-950 transition-colors"
             >
               {item.label}
             </Link>
           ))}
           <span className="h-5 w-px bg-timber-200" />
-          <a href={`tel:${BRAND.phoneRaw}`} className="text-[15px] text-timber-700 hover:text-timber-950 transition-colors">
+          <a href={`tel:${BRAND.phoneRaw}`} className="whitespace-nowrap tabular-nums text-[15px] text-timber-700 hover:text-timber-950 transition-colors">
             {BRAND.phone}
           </a>
           <Link href="/quote" className="btn-primary !py-2.5 !px-6">

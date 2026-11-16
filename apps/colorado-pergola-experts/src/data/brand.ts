@@ -26,6 +26,13 @@ export const BRAND = {
   smsBody: "Hi Colorado Pergola Experts — I'd like a quote on a pergola.",
   /** Production raster logo in /public; when null the shared inline SVG mark is used. */
   logo: null as BrandLogo | null,
+  /** Local landscape photograph in /public/pergola/local (per-state, not copied from the template). */
+  local: {
+    hero: '/pergola/local/hero.jpg',
+    ogBg: '/pergola/local/og-bg.jpg',
+    place: "Longs Peak, Rocky Mountain National Park",
+    alt: "Longs Peak and the Front Range from the Bear Lake trailhead",
+  },
   address: {
     region: "Colorado — Front Range",
     locality: "Denver",
@@ -82,11 +89,10 @@ export const BRAND = {
   /** National brand this state site rolls up to (see src/data/network.ts). */
   parent: {
     name: "American Timber Shade",
-    note: "Pergola Experts is the local arm of American Timber Shade — premium outdoor spaces across the Mountain West. A Spravek company.",
+    note: "Pergola Experts is the local arm of American Timber Shade — premium outdoor spaces across the Mountain West.",
     url: "https://americantimbershade.com",
     locationsUrl: "https://americantimbershade.com/locations",
   },
-  spravekUrl: 'https://spravek.com',
   founded: '2026',
   priceRange: '$$',
 } as const;

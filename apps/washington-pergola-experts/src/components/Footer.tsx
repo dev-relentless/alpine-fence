@@ -53,7 +53,6 @@ export default function Footer() {
           <div>&copy; {year} {BRAND.name}. All rights reserved.</div>
           <div className="flex flex-wrap gap-6">
             <a href={NETWORK_PARENT.url} className="hover:text-linen-200" target="_blank" rel="noopener">{NETWORK_PARENT.name}</a>
-            <a href={BRAND.spravekUrl} className="hover:text-linen-200" target="_blank" rel="noopener">A Spravek Company</a>
             <Link href="/privacy" className="hover:text-linen-200">Privacy</Link>
             <Link href="/terms" className="hover:text-linen-200">Terms</Link>
           </div>

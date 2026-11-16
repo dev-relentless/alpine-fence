@@ -37,7 +37,7 @@ const PARENT = {
   locationsUrl: 'https://americantimbershade.com/locations',
 };
 
-const parentNote = `Pergola Experts is the local arm of ${PARENT.name} — premium outdoor spaces across the Mountain West. A Spravek company.`;
+const parentNote = `Pergola Experts is the local arm of ${PARENT.name} — premium outdoor spaces across the Mountain West.`;
 
 /** @type {Record<string, StateConfig>} */
 const STATES = {
@@ -46,6 +46,7 @@ const STATES = {
     state: 'Utah', abbr: 'UT',
     region: 'Wasatch Front', regionLine: 'Salt Lake · Utah County · the Wasatch Front',
     locality: 'Lehi',
+    local: { place: 'Wasatch Front foothills above Salt Lake Valley at sunset', alt: 'Fall color on the Wasatch Front foothills above the valley at sunset' },
     phone: '(385) 336-4207',
     geo: { lat: 40.3916, lng: -111.8508 },
     counties: ['Salt Lake County', 'Utah County', 'Summit County', 'Davis County', 'Wasatch County'],
@@ -70,6 +71,7 @@ const STATES = {
     state: 'Arizona', abbr: 'AZ',
     region: 'Valley of the Sun', regionLine: 'Phoenix · Scottsdale · the Valley',
     locality: 'Scottsdale',
+    local: { place: 'Sonoran Desert, Ironwood Forest', alt: 'Saguaro and prickly pear below a desert ridge at dusk, Sonoran Desert' },
     phone: '(602) 555-0101',
     geo: { lat: 33.4942, lng: -111.9261 },
     counties: ['Maricopa County', 'Pinal County', 'Pima County', 'Yavapai County'],
@@ -92,6 +94,7 @@ const STATES = {
     state: 'Idaho', abbr: 'ID',
     region: 'Treasure Valley', regionLine: 'Boise · Treasure Valley · North Idaho',
     locality: 'Boise',
+    local: { place: 'Boise Foothills, Hulls Gulch', alt: 'Trail through sage and autumn grass in the Boise Foothills' },
     phone: '(208) 555-0102',
     geo: { lat: 43.615, lng: -116.2023 },
     counties: ['Ada County', 'Canyon County', 'Kootenai County', 'Bonneville County', 'Twin Falls County', 'Blaine County'],
@@ -114,6 +117,7 @@ const STATES = {
     state: 'Nevada', abbr: 'NV',
     region: 'Las Vegas Valley', regionLine: 'Las Vegas · Henderson · Reno',
     locality: 'Henderson',
+    local: { place: 'Red Rock Canyon, Las Vegas', alt: 'Calico Hills sandstone glowing red at Red Rock Canyon outside Las Vegas' },
     phone: '(702) 555-0103',
     geo: { lat: 36.0395, lng: -114.9817 },
     counties: ['Clark County', 'Washoe County', 'Carson City', 'Douglas County', 'Lyon County', 'Nye County'],
@@ -136,6 +140,7 @@ const STATES = {
     state: 'Washington', abbr: 'WA',
     region: 'Puget Sound', regionLine: 'Seattle · Eastside · Spokane',
     locality: 'Bellevue',
+    local: { place: 'Mount Rainier from Reflection Lake', alt: 'Mount Rainier above Reflection Lake in autumn' },
     phone: '(425) 555-0104',
     geo: { lat: 47.6101, lng: -122.2015 },
     counties: ['King County', 'Snohomish County', 'Pierce County', 'Thurston County', 'Spokane County', 'Clark County', 'Yakima County'],
@@ -158,6 +163,7 @@ const STATES = {
     state: 'Colorado', abbr: 'CO',
     region: 'Front Range', regionLine: 'Denver · Boulder · the Front Range',
     locality: 'Denver',
+    local: { place: 'Longs Peak, Rocky Mountain National Park', alt: 'Longs Peak and the Front Range from the Bear Lake trailhead' },
     phone: '(303) 555-0105',
     geo: { lat: 39.7392, lng: -104.9903 },
     counties: ['Denver County', 'Jefferson County', 'Arapahoe County', 'Douglas County', 'Boulder County', 'Larimer County', 'El Paso County', 'Summit County', 'Eagle County'],
@@ -180,6 +186,7 @@ const STATES = {
     state: 'Wyoming', abbr: 'WY',
     region: 'Jackson Hole & the Front Range', regionLine: 'Jackson · Cheyenne · Casper',
     locality: 'Jackson',
+    local: { place: 'Teton Range, Jackson Hole', alt: 'Sunrise alpenglow on the Teton Range above morning fog in Jackson Hole' },
     phone: '(307) 555-0106',
     geo: { lat: 43.4799, lng: -110.7624 },
     counties: ['Teton County', 'Laramie County', 'Natrona County', 'Sheridan County', 'Park County', 'Sublette County'],
@@ -204,6 +211,7 @@ const STATES = {
  *  port:number, state:string, abbr:string, region:string, regionLine:string, locality:string,
  *  phone:string, geo:{lat:number,lng:number}, counties:string[], cities:string[],
  *  logo?:{src:string,width:number,height:number},
+ *  local:{place:string, alt:string},
  *  climate:{snow:boolean, elements:string, sun:string, engineeredTag:string, footings:string,
  *           spans:string, roofNote:string, durabilityQ:string, durabilityA:string, keyword:string}
  * }} StateConfig
@@ -264,7 +272,14 @@ export const BRAND = {
 ${phoneComment}  phone: ${q(c.phone)},
   phoneRaw: ${q(phoneRaw(c.phone))},
   smsBody: ${q(`Hi ${name} — I'd like a quote on a pergola.`)},
-${logo}  address: {
+${logo}  /** Local landscape photograph in /public/pergola/local (per-state, not copied from the template). */
+  local: {
+    hero: '/pergola/local/hero.jpg',
+    ogBg: '/pergola/local/og-bg.jpg',
+    place: ${q(c.local.place)},
+    alt: ${q(c.local.alt)},
+  },
+  address: {
     region: ${q(`${c.state} — ${c.region}`)},
     locality: ${q(c.locality)},
     state: ${q(c.abbr)},
@@ -302,7 +317,6 @@ ${list(c.cities, '      ')}
     url: ${q(PARENT.url)},
     locationsUrl: ${q(PARENT.locationsUrl)},
   },
-  spravekUrl: 'https://spravek.com',
   founded: '2026',
   priceRange: '$$',
 } as const;
@@ -351,8 +365,6 @@ ${states}
 ] as const;
 
 export type NetworkState = (typeof NETWORK_STATES)[number];
-
-export const SPRAVEK_URL = 'https://spravek.com';
 `;
 }
 
@@ -448,13 +460,18 @@ ${launchNotes.join('\n')}
 `;
 }
 
-function copyDir(src, dst) {
+/** Per-state assets that must never be overwritten by the template copy. */
+const PER_STATE = new Set([path.join('public', 'pergola', 'local')]);
+
+function copyDir(src, dst, rel = '') {
   fs.mkdirSync(dst, { recursive: true });
   for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
     if (SKIP.has(entry.name)) continue;
+    const entryRel = path.join(rel, entry.name);
+    if (PER_STATE.has(entryRel)) continue;
     const s = path.join(src, entry.name);
     const d = path.join(dst, entry.name);
-    if (entry.isDirectory()) copyDir(s, d);
+    if (entry.isDirectory()) copyDir(s, d, entryRel);
     else fs.copyFileSync(s, d);
   }
 }

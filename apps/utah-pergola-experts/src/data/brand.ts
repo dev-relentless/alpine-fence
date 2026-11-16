@@ -25,6 +25,13 @@ export const BRAND = {
   smsBody: "Hi Utah Pergola Experts — I'd like a quote on a pergola.",
   /** Production raster logo in /public; when null the shared inline SVG mark is used. */
   logo: { src: "/pergola/logo.png", width: 687, height: 577 } as BrandLogo | null,
+  /** Local landscape photograph in /public/pergola/local (per-state, not copied from the template). */
+  local: {
+    hero: '/pergola/local/hero.jpg',
+    ogBg: '/pergola/local/og-bg.jpg',
+    place: "Wasatch Front foothills above Salt Lake Valley at sunset",
+    alt: "Fall color on the Wasatch Front foothills above the valley at sunset",
+  },
   address: {
     region: "Utah — Wasatch Front",
     locality: "Lehi",
@@ -77,11 +84,10 @@ export const BRAND = {
   /** National brand this state site rolls up to (see src/data/network.ts). */
   parent: {
     name: "American Timber Shade",
-    note: "Pergola Experts is the local arm of American Timber Shade — premium outdoor spaces across the Mountain West. A Spravek company.",
+    note: "Pergola Experts is the local arm of American Timber Shade — premium outdoor spaces across the Mountain West.",
     url: "https://americantimbershade.com",
     locationsUrl: "https://americantimbershade.com/locations",
   },
-  spravekUrl: 'https://spravek.com',
   founded: '2026',
   priceRange: '$$',
 } as const;

@@ -27,7 +27,7 @@ ${climate.footings}, ${climate.spans}, thru-bolted connections, and UV-stable
 finishes. Structures are designed around how the sun actually crosses your
 yard. ${BRAND.name} is the ${state} arm of ${NETWORK_PARENT.name}
 (${NETWORK_PARENT.url}), the national design-build brand for premium outdoor
-spaces across the Mountain West. A Spravek company.
+spaces across the Mountain West.
 
 - Region: ${address.region} (based in ${address.locality}, ${address.state})
 - Cities served: ${address.cities.join(', ')}
@@ -59,8 +59,7 @@ drawings, materials, and price in writing — before any work starts.
 ${climate.durabilityA}
 
 ### Are you part of a larger company?
-Yes. ${BRAND.name} is the ${state} arm of ${NETWORK_PARENT.name} — a Spravek
-company — with sister Pergola Experts sites in ${NETWORK_STATES.filter((s) => s.state !== state).map((s) => s.state).join(', ')}.
+Yes. ${BRAND.name} is the ${state} arm of ${NETWORK_PARENT.name} — with sister Pergola Experts sites in ${NETWORK_STATES.filter((s) => s.state !== state).map((s) => s.state).join(', ')}.
 Two decades of construction craft under one accountability line.
 `;
 

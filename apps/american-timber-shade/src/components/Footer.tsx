@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="md:col-span-4 space-y-6">
           <Logo variant="light" size="lg" />
           <p className="text-ink-300 max-w-md leading-relaxed text-[15px]">{BRAND.description}</p>
-          <p className="text-ink-400 text-[14px]">{BRAND.parent.note}</p>
+          <p className="text-ink-400 text-[14px]">{BRAND.networkNote}</p>
           <div className="pt-2">
             <a href={`tel:${BRAND.phoneRaw}`} className="font-display text-2xl text-bone-50 hover:text-brass-300 transition-colors">
               {BRAND.phone}
@@ -68,7 +68,6 @@ export default function Footer() {
         <div className="container-site py-6 flex flex-col md:flex-row gap-3 justify-between text-[13px] text-ink-400">
           <div>&copy; {year} {BRAND.name}. {BRAND.tagline}. All rights reserved.</div>
           <div className="flex flex-wrap gap-6">
-            <a href={BRAND.spravekUrl} className="hover:text-bone-100" target="_blank" rel="noopener">A Spravek Company</a>
             <Link href="/privacy" className="hover:text-bone-100">Privacy</Link>
             <Link href="/terms" className="hover:text-bone-100">Terms</Link>
           </div>

@@ -26,14 +26,9 @@ export const BRAND = {
   },
   /**
    * ATS is the national brand; the "<State> Pergola Experts" sites (see
-   * src/data/network.ts) are its state arms. Spravek is the holding company.
+   * src/data/network.ts) are its state arms.
    */
-  parent: {
-    name: 'Spravek',
-    note: 'The national brand behind the Pergola Experts state sites. A Spravek company — two decades of construction on the Wasatch Front.',
-    url: 'https://spravek.com',
-  },
-  spravekUrl: 'https://spravek.com',
+  networkNote: 'The national brand behind the Pergola Experts state sites — two decades of construction on the Wasatch Front.',
   founded: '2026',
   priceRange: '$$$',
 } as const;

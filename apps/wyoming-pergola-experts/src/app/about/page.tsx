@@ -2,10 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BRAND } from '@/data/brand';
 import { NETWORK_PARENT, NETWORK_STATES } from '@/data/network';
+import LocalHero from '@/components/LocalHero';
 
 export const metadata: Metadata = {
   title: 'Company',
-  description: `About ${BRAND.name} — the ${BRAND.state} arm of ${NETWORK_PARENT.name}, building pergolas, louvered roofs, and pavilions across ${BRAND.state}. A Spravek company.`,
+  description: `About ${BRAND.name} — the ${BRAND.state} arm of ${NETWORK_PARENT.name}, building pergolas, louvered roofs, and pavilions across ${BRAND.state}.`,
   alternates: { canonical: `${BRAND.url}/about` },
 };
 
@@ -37,7 +38,7 @@ export default function AboutPage() {
           <p>
             {BRAND.shortName} is the {BRAND.state} arm of{' '}
             <a href={NETWORK_PARENT.url} className="underline decoration-sienna-400 underline-offset-4 hover:text-timber-950" target="_blank" rel="noopener">{NETWORK_PARENT.name}</a>
-            {' '}— the national design-build brand for premium outdoor spaces, a Spravek company.
+            {' '}— the national design-build brand for premium outdoor spaces.
             The same crews and the same engineering standards build under the Pergola Experts
             name in {siblings.map((s) => s.state).join(', ')} — see{' '}
             <Link href="/locations" className="underline decoration-sienna-400 underline-offset-4 hover:text-timber-950">all locations</Link>.
@@ -45,6 +46,15 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
+
+      <LocalHero priority={false} minHeight="min-h-0">
+        <div className="container-patio py-24 md:py-32 text-center">
+          <div className="tag !text-linen-100/70 mb-6">Where We Build</div>
+          <p className="h-display text-3xl md:text-4xl lg:text-[2.75rem] leading-snug max-w-3xl mx-auto text-linen-50">
+            {BRAND.state} is {BRAND.climate.elements}. Every structure we build here is sized for it.
+          </p>
+        </div>
+      </LocalHero>
 
       <section className="bg-walnut-depth text-linen-50">
         <div className="container-patio py-20 md:py-28 grid lg:grid-cols-3 gap-10">
