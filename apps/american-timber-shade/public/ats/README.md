@@ -4,6 +4,11 @@ Every photo slot on the site renders a quiet cedar placeholder until the
 file exists at the path shown on the placeholder itself. Drop the file in,
 rebuild (or restart `npm run dev`), and it appears — no code changes.
 
+**Status (Nov 2026):** every slot below is filled from the first photo
+delivery (14 renders + 12 job-site HEICs). Originals are not in git — the
+web copies here are 2400px long edge, JPEG q85, HEIC → JPEG with EXIF
+rotation applied. To replace a shot, overwrite the file at the same path.
+
 All paths below are relative to `apps/american-timber-shade/public/`.
 
 ## 1. The gallery (drop everything here first)
@@ -81,7 +86,7 @@ delivered are in the repo root at `brand/american-timber-shade/logos/`.
 | `ats/brand/logo-horizontal-reversed.png` | Footer and the generated Open Graph card. |
 | `ats/brand/logo-primary.png` | Stacked lockup, not placed yet — available for print/social. |
 | `ats/brand/emblem.png` | Homepage statement, /about, favicon (`src/app/icon.png`) and `apple-icon.png`. |
-| `ats/og.jpg` | Optional 1200 × 630 photo card. Until it exists the site generates one (`src/app/opengraph-image.tsx`). To use the photo, add `images: ['/ats/og.jpg']` to `openGraph` in `src/app/layout.tsx`. |
+| `ats/og-bg.jpg` | 1200 × 630 crop of the hero, used as the background of the generated Open Graph card (`src/app/opengraph-image.tsx`), under a dark gradient with the reversed logo. |
 
 Rendering is centralised in `src/components/Logo.tsx` and `src/components/Emblem.tsx`.
 

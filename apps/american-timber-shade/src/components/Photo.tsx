@@ -35,9 +35,13 @@ export default function Photo({
   quality = 88,
   tone = 'light',
 }: PhotoProps) {
+  // Callers that pass `absolute inset-0` must not also get `relative`
+  // (Tailwind emits .relative after .absolute, so it would win and collapse the box).
+  const position = /\b(absolute|fixed)\b/.test(className ?? '') ? null : 'relative';
+
   if (photoExists(src)) {
     return (
-      <div className={clsx('relative overflow-hidden', className)}>
+      <div className={clsx(position, 'overflow-hidden', className)}>
         <Image
           src={src}
           alt={alt}
@@ -56,7 +60,8 @@ export default function Photo({
     <div
       data-placeholder={src}
       className={clsx(
-        'relative overflow-hidden',
+        position,
+        'overflow-hidden',
         tone === 'dark' ? 'bg-cedar-depth' : 'bg-gradient-to-br from-bone-200 via-cedar-100 to-cedar-200',
         className
       )}
