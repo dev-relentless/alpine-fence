@@ -81,6 +81,8 @@ multiple sites is itself a spam signal, so replace them in the script before the
 
 Each app is a separate Vercel project with its **Root Directory** set to its `apps/*` folder. Vercel does **not** create projects for new folders automatically — a new app needs a project before its first deploy.
 
+Every app's `vercel.json` has an `ignoreCommand` that skips the build when the app folder is unchanged since the **last successful deployment** (`VERCEL_GIT_PREVIOUS_SHA`, falling back to `HEAD^`). A log line ending in "canceled because the Ignored Build Step command returned exit code 0" means nothing in that folder changed — not a failure. To force a build regardless, use **Redeploy** in the Vercel dashboard with "Use existing Build Cache" unchecked, or push a commit touching the folder.
+
 `scripts/vercel-projects.mjs` creates/links the projects (root directory, framework, GitHub link, production domain) and triggers a first production deployment from `main`:
 
 ```bash
