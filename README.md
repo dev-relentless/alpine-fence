@@ -4,7 +4,7 @@ Independent Next.js sites in one repo, each deployed as its own Vercel project.
 
 | App                  | Path                        | Domain                     | Stack             |
 | -------------------- | --------------------------- | -------------------------- | ----------------- |
-| Alpine Fence & Deck  | `apps/alpine-fence`         | `alpinefenceanddeck.com`   | Next 14, Tailwind |
+| Alpine Fence & Deck  | `apps/alpine-fence`         | `alpinefenceanddeck.com` (closed — noindex placeholder) | Next 14, Tailwind |
 | Harlow Landscapes    | `apps/harlow-landscapes`    | `harlowlandscapes.com`     | Next 14, Tailwind |
 | SPX Construction     | `apps/spx-construction`     | `spxconstruction.com`      | Next 14, Tailwind |
 | Relentless Equipment | `apps/relentless-equipment` | `relentlessequipment.com`  | Next 14, Tailwind |
