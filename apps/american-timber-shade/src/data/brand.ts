@@ -8,9 +8,8 @@ export const BRAND = {
     'Timber pergolas and complete outdoor-living spaces — pavilions, kitchens, fire, lighting — designed and built across the Mountain West. Premium Outdoor Spaces.',
   domain: 'americantimbershade.com',
   url: 'https://americantimbershade.com',
-  // TODO: replace placeholder with the production number before launch.
-  phone: '(800) 555-0199',
-  phoneRaw: '+18005550199',
+  phone: '(385) 444-9201',
+  phoneRaw: '+13854449201',
   smsBody: "Hi American Timber Shade — I'd like to talk about a pergola / outdoor space.",
   address: {
     region: 'Mountain West',
