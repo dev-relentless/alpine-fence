@@ -1,6 +1,40 @@
 import { BRAND } from '@/data/brand';
 import { SERVICES, fromPrice } from '@/data/services';
 import { REVIEWS, RATING } from '@/data/reviews';
+import { FAQS } from '@/data/faq';
+
+export function FaqJsonLd() {
+  const data = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'FAQPage',
+        '@id': `${BRAND.url}/faq#faq`,
+        url: `${BRAND.url}/faq`,
+        inLanguage: 'en',
+        about: { '@id': `${BRAND.url}#organization` },
+        mainEntity: FAQS.map((f) => ({
+          '@type': 'Question',
+          name: f.q.en,
+          acceptedAnswer: { '@type': 'Answer', text: f.a.en },
+        })),
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: BRAND.shortName, item: BRAND.url },
+          { '@type': 'ListItem', position: 2, name: 'FAQ', item: `${BRAND.url}/faq` },
+        ],
+      },
+    ],
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
 
 export function JsonLd() {
   const data = {
@@ -29,6 +63,9 @@ export function JsonLd() {
       postalCode: BRAND.address.zip,
       addressCountry: BRAND.address.country,
     },
+    hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+      `${BRAND.name}, ${BRAND.address.street}, ${BRAND.address.locality}, ${BRAND.address.state} ${BRAND.address.zip}`,
+    )}`,
     openingHoursSpecification: BRAND.hours.schema.map((h) => ({
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: h.days,

@@ -5,6 +5,22 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Gold thumb stays visible over the dark hero, where the default dark thumb disappears */
+    scrollbar-color: theme('colors.gold.500') theme('colors.gold.100');
+  }
+  /* Browsers without scrollbar-color (older Safari) */
+  @supports not (scrollbar-color: auto) {
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+    ::-webkit-scrollbar-track {
+      background: theme('colors.gold.100');
+    }
+    ::-webkit-scrollbar-thumb {
+      background: theme('colors.gold.500');
+      border: 3px solid theme('colors.gold.100');
+      border-radius: 9999px;
+    }
   }
   body {
     @apply bg-cream font-sans text-ink antialiased;
@@ -60,7 +76,19 @@
   }
 }
 .marquee-track {
-  animation: marquee 36s linear infinite;
+  animation: marquee 108s linear infinite;
+}
+
+/* Sections ease in as they scroll into view; browsers without scroll timelines show them as-is */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: fade-up linear both;
+      animation-timeline: view();
+      /* Fixed distance so tall sections don't stay half-faded while being read */
+      animation-range: cover 0% cover 15rem;
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

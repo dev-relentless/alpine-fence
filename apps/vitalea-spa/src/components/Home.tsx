@@ -1,30 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { BRAND } from '@/data/brand';
 import { SERVICES, fromPrice, type Service } from '@/data/services';
 import { REVIEWS, RATING } from '@/data/reviews';
-import { SERVICES_ES, REVIEWS_ES, SMS_BODY } from '@/data/i18n';
-import { LangProvider, LangToggle, useLang } from '@/components/LangContext';
-
-const telHref = `tel:${BRAND.phoneRaw}`;
-
-function useSmsHref() {
-  const { lang } = useLang();
-  return `sms:${BRAND.phoneRaw}?&body=${encodeURIComponent(SMS_BODY[lang])}`;
-}
-
-function useNav() {
-  const { t } = useLang();
-  return [
-    ['#services', t.nav.services],
-    ['#couples', t.nav.couples],
-    ['#about', t.nav.about],
-    ['#reviews', t.nav.reviews],
-    ['#visit', t.nav.visit],
-  ] as const;
-}
+import { SERVICES_ES, REVIEWS_ES } from '@/data/i18n';
+import { LangProvider, useLang } from '@/components/LangContext';
+import { Footer, Header, telHref, useSmsHref } from '@/components/SiteChrome';
 
 function Stars({ className = 'h-4 w-4' }: { className?: string }) {
   return (
@@ -38,55 +20,11 @@ function Stars({ className = 'h-4 w-4' }: { className?: string }) {
   );
 }
 
-function Header() {
-  const nav = useNav();
-  return (
-    <header className="sticky top-0 z-50 border-b border-blush-200/60 bg-cream/85 backdrop-blur-md">
-      <div className="container-site flex h-[4.5rem] items-center justify-between gap-3">
-        <Link href="/" className="flex items-center gap-3">
-          <Image
-            src="/logo.png"
-            alt={`${BRAND.name} logo`}
-            width={44}
-            height={44}
-            className="rounded-full shadow-card"
-            priority
-          />
-          <span className="leading-tight">
-            <span className="block font-serif text-xl tracking-wide text-plum">Vitalea</span>
-            <span className="block text-[0.6rem] font-semibold uppercase tracking-[0.3em] text-gold-600">
-              Spa &amp; Beauty
-            </span>
-          </span>
-        </Link>
-        <nav className="hidden gap-8 text-sm font-medium text-plum lg:flex">
-          {nav.map(([href, label]) => (
-            <a key={href} href={href} className="transition hover:text-gold-600">
-              {label}
-            </a>
-          ))}
-        </nav>
-        <div className="flex items-center gap-3">
-          <LangToggle />
-          <a href={telHref} className="btn-gold hidden !px-5 !py-2.5 sm:inline-flex">
-            {BRAND.phone}
-          </a>
-          <a href={telHref} className="btn-gold !px-4 !py-2.5 sm:hidden" aria-label={`Call ${BRAND.phone}`}>
-            <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden>
-              <path d="M2.3 3.6c0-.7.6-1.3 1.3-1.3h2.3c.6 0 1.2.4 1.3 1l.8 3.1c.1.5-.1 1-.5 1.3l-1.3 1a12.6 12.6 0 005.1 5.1l1-1.3c.3-.4.8-.6 1.3-.5l3.1.8c.6.1 1 .7 1 1.3v2.3c0 .7-.6 1.3-1.3 1.3A14.4 14.4 0 012.3 3.6z" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </header>
-  );
-}
-
 function Hero() {
   const { t } = useLang();
   const smsHref = useSmsHref();
   return (
-    <section className="relative isolate flex min-h-[92svh] items-end overflow-hidden">
+    <section className="relative isolate flex flex-1 items-start overflow-hidden">
       <Image
         src="/photos/couples-room.jpg"
         alt="The Vitalea treatment room — two massage tables beneath hanging garden florals"
@@ -96,10 +34,14 @@ function Hero() {
         className="object-cover object-center"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-t from-plum-deep/90 via-plum-deep/40 to-plum-deep/20"
+        className="absolute inset-0 bg-gradient-to-r from-plum-deep/85 via-plum-deep/55 to-plum-deep/25"
         aria-hidden
       />
-      <div className="container-site relative pb-20 pt-40 sm:pb-28">
+      <div
+        className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-plum-deep/80 to-transparent"
+        aria-hidden
+      />
+      <div className="container-site relative pb-[clamp(2.5rem,6svh,4rem)] pt-[clamp(2rem,8svh,5rem)]">
         <div className="fade-up inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 backdrop-blur">
           <Stars className="h-3.5 w-3.5" />
           <span className="text-xs font-semibold tracking-wide text-white">
@@ -107,7 +49,7 @@ function Hero() {
           </span>
         </div>
         <h1
-          className="fade-up mt-6 max-w-3xl font-serif text-5xl leading-[1.05] text-white sm:text-7xl"
+          className="fade-up mt-5 max-w-3xl font-serif text-[2.5rem] leading-[1.05] text-white sm:mt-6 sm:text-7xl"
           style={{ animationDelay: '0.1s' }}
         >
           {t.hero.h1a}
@@ -115,7 +57,7 @@ function Hero() {
           <span className="italic text-gold-200">{t.hero.h1b}</span>
         </h1>
         <p
-          className="fade-up mt-6 max-w-xl text-lg leading-relaxed text-white/85"
+          className="fade-up mt-5 max-w-xl text-base/relaxed text-white/85 sm:mt-6 sm:text-lg/relaxed"
           style={{ animationDelay: '0.2s' }}
         >
           {t.hero.sub}
@@ -126,16 +68,16 @@ function Hero() {
         >
           {BRAND.tagline} — {BRAND.founder}
         </p>
-        <div className="fade-up mt-9 flex flex-wrap gap-4" style={{ animationDelay: '0.4s' }}>
-          <a href={smsHref} className="btn-gold">
+        <div className="fade-up mt-7 flex flex-wrap gap-3 sm:mt-9 sm:gap-4" style={{ animationDelay: '0.4s' }}>
+          <a href={smsHref} className="btn-gold max-sm:!px-5">
             {t.hero.ctaText}
           </a>
-          <a href={telHref} className="btn-outline-light">
+          <a href={telHref} className="btn-outline-light max-sm:!px-5">
             {t.hero.ctaCall} {BRAND.phone}
           </a>
         </div>
         <p
-          className="fade-up mt-8 text-xs font-medium uppercase tracking-[0.25em] text-white/60"
+          className="fade-up mt-6 text-xs font-medium uppercase tracking-[0.25em] text-white/60 sm:mt-8"
           style={{ animationDelay: '0.5s' }}
         >
           {t.hero.note} · {BRAND.address.street}, Draper
@@ -147,7 +89,8 @@ function Hero() {
 
 function Ribbon() {
   const { t } = useLang();
-  const row = t.ribbon.map((text, i) => (
+  // Each half repeats the phrases so it outspans wide screens and the loop never shows a gap.
+  const row = [...t.ribbon, ...t.ribbon, ...t.ribbon].map((text, i) => (
     <span key={i} className="mx-8 inline-flex items-center gap-8">
       <span className="font-serif text-sm italic tracking-wide text-gold-200">{text}</span>
       <span className="text-gold-500" aria-hidden>
@@ -156,10 +99,12 @@ function Ribbon() {
     </span>
   ));
   return (
-    <div className="overflow-hidden border-y border-gold-800/40 bg-plum-deep py-3" aria-hidden>
-      <div className="marquee-track flex w-max whitespace-nowrap">
-        <div className="flex">{row}</div>
-        <div className="flex">{row}</div>
+    <div className="border-y border-gold-800/40 bg-plum-deep py-3" aria-hidden>
+      <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+        <div className="marquee-track flex w-max whitespace-nowrap">
+          <div className="flex">{row}</div>
+          <div className="flex">{row}</div>
+        </div>
       </div>
     </div>
   );
@@ -213,7 +158,7 @@ function Services() {
   const { t } = useLang();
   return (
     <section id="services" className="py-24">
-      <div className="container-site">
+      <div className="container-site reveal">
         <div className="max-w-2xl">
           <p className="eyebrow">{t.services.eyebrow}</p>
           <h2 className="mt-3 font-serif text-4xl text-plum sm:text-5xl">{t.services.h2}</h2>
@@ -234,7 +179,7 @@ function Couples() {
   const smsHref = useSmsHref();
   return (
     <section id="couples" className="bg-blush-100/70 py-24">
-      <div className="container-site grid items-center gap-12 lg:grid-cols-2">
+      <div className="container-site reveal grid items-center gap-12 lg:grid-cols-2">
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
           <div className="relative aspect-[3/4] overflow-hidden rounded-3xl shadow-soft">
             <Image
@@ -287,7 +232,7 @@ function Experience() {
   ];
   return (
     <section className="py-24">
-      <div className="container-site">
+      <div className="container-site reveal">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="eyebrow">{t.experience.eyebrow}</p>
@@ -322,7 +267,7 @@ function About() {
   const { t } = useLang();
   return (
     <section id="about" className="bg-blush-100/70 py-24">
-      <div className="container-site grid items-center gap-12 lg:grid-cols-2">
+      <div className="container-site reveal grid items-center gap-12 lg:grid-cols-2">
         <div className="order-2 lg:order-1">
           <p className="eyebrow">{t.about.eyebrow}</p>
           <h2 className="mt-3 font-serif text-4xl text-plum sm:text-5xl">{t.about.h2}</h2>
@@ -364,7 +309,7 @@ function Reviews() {
   const [lead, ...rest] = quotes;
   return (
     <section id="reviews" className="bg-plum-deep py-24 text-white">
-      <div className="container-site">
+      <div className="container-site reveal">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="eyebrow-light">{t.reviews.eyebrow}</p>
@@ -429,7 +374,7 @@ function Gallery() {
   ];
   return (
     <section className="py-24">
-      <div className="container-site">
+      <div className="container-site reveal">
         <p className="eyebrow">{t.gallery.eyebrow}</p>
         <h2 className="mt-3 font-serif text-4xl text-plum sm:text-5xl">{t.gallery.h2}</h2>
         <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
@@ -463,7 +408,7 @@ function Visit() {
   );
   return (
     <section id="visit" className="bg-blush-100/70 py-24">
-      <div className="container-site grid gap-12 lg:grid-cols-2">
+      <div className="container-site reveal grid gap-12 lg:grid-cols-2">
         <div>
           <p className="eyebrow">{t.visit.eyebrow}</p>
           <h2 className="mt-3 font-serif text-4xl text-plum sm:text-5xl">{t.visit.h2}</h2>
@@ -533,58 +478,16 @@ function Visit() {
   );
 }
 
-function Footer() {
-  const { t } = useLang();
-  const nav = useNav();
-  return (
-    <footer className="bg-plum-deep py-14 text-white">
-      <div className="container-site flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
-        <div className="flex items-center gap-4">
-          <Image
-            src="/logo.png"
-            alt={`${BRAND.name} logo`}
-            width={56}
-            height={56}
-            className="rounded-full"
-          />
-          <div>
-            <p className="font-serif text-xl">{BRAND.name}</p>
-            <p className="text-sm italic text-gold-300">{BRAND.tagline}</p>
-          </div>
-        </div>
-        <nav className="flex flex-wrap gap-x-7 gap-y-2 text-sm text-white/70">
-          {nav.map(([href, label]) => (
-            <a key={href} href={href} className="hover:text-gold-300">
-              {label}
-            </a>
-          ))}
-        </nav>
-        <div className="text-sm text-white/60">
-          <p>
-            {BRAND.address.street}
-            <br />
-            {BRAND.address.locality}, {BRAND.address.state} {BRAND.address.zip}
-          </p>
-          <a className="mt-2 inline-block font-semibold text-gold-300" href={telHref}>
-            {BRAND.phone}
-          </a>
-        </div>
-      </div>
-      <div className="container-site mt-10 border-t border-white/10 pt-6 text-xs text-white/40">
-        © {new Date().getFullYear()} {BRAND.name} · {t.footer.serving}{' '}
-        {BRAND.areaServed.join(', ')}
-      </div>
-    </footer>
-  );
-}
-
 export function Home() {
   return (
     <LangProvider>
       <Header />
       <main>
-        <Hero />
-        <Ribbon />
+        {/* Hero + ribbon share the first screen below the header (4.5rem + 1px border) */}
+        <div className="flex min-h-[min(100svh_-_4.5rem_-_1px,50rem)] flex-col">
+          <Hero />
+          <Ribbon />
+        </div>
         <Services />
         <Couples />
         <Experience />

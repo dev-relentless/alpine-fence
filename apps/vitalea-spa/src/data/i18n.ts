@@ -19,6 +19,7 @@ export const STRINGS = {
       about: 'About',
       reviews: 'Reviews',
       visit: 'Visit',
+      faq: 'FAQ',
     },
     hero: {
       ratingPill: 'on Google',
@@ -85,6 +86,14 @@ export const STRINGS = {
       book: 'Book',
       cta: 'Text to book',
     },
+    faq: {
+      eyebrow: 'Before you visit',
+      h1: 'Questions, answered.',
+      sub: 'Booking, pricing, couples sessions, and treatments at the studio in Draper.',
+      ctaEyebrow: 'Still wondering?',
+      ctaH2: 'Ask the studio directly.',
+      ctaBody: 'Text or call with your question — or with the treatment and time you have in mind.',
+    },
     footer: {
       serving: 'Serving',
     },
@@ -96,6 +105,7 @@ export const STRINGS = {
       about: 'Nosotros',
       reviews: 'Reseñas',
       visit: 'Visítanos',
+      faq: 'Preguntas',
     },
     hero: {
       ratingPill: 'en Google',
@@ -161,6 +171,14 @@ export const STRINGS = {
       hours2: 'Domingo · con cita previa',
       book: 'Reservas',
       cta: 'Reserva por mensaje',
+    },
+    faq: {
+      eyebrow: 'Antes de tu visita',
+      h1: 'Tus preguntas, respondidas.',
+      sub: 'Reservas, precios, sesiones en pareja y tratamientos en el estudio de Draper.',
+      ctaEyebrow: '¿Aún con dudas?',
+      ctaH2: 'Pregunta directamente al estudio.',
+      ctaBody: 'Escribe o llama con tu pregunta — o con el tratamiento y la hora que tienes en mente.',
     },
     footer: {
       serving: 'Atendemos',
