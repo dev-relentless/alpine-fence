@@ -7,21 +7,70 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-cream text-ink antialiased;
+    @apply bg-cream font-sans text-ink antialiased;
+  }
+  ::selection {
+    @apply bg-gold-200 text-plum-deep;
   }
 }
 
 @layer components {
   .container-site {
-    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
   }
-  .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-sage-700 px-7 py-3 text-sm font-semibold tracking-wide text-cream transition hover:bg-sage-800;
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-gold-400 to-gold-600 px-8 py-3.5 text-sm font-semibold tracking-wide text-white shadow-soft transition hover:from-gold-500 hover:to-gold-700 hover:shadow-card;
   }
-  .btn-ghost {
-    @apply inline-flex items-center justify-center rounded-full border border-sage-700/40 px-7 py-3 text-sm font-semibold tracking-wide text-sage-800 transition hover:bg-sage-100;
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/50 px-8 py-3.5 text-sm font-semibold tracking-wide text-white backdrop-blur transition hover:border-white hover:bg-white/10;
+  }
+  .btn-outline-dark {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-gold-600/40 px-8 py-3.5 text-sm font-semibold tracking-wide text-gold-800 transition hover:border-gold-600 hover:bg-gold-50;
   }
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.2em] text-sage-600;
+    @apply text-xs font-semibold uppercase tracking-[0.28em] text-gold-600;
+  }
+  .eyebrow-light {
+    @apply text-xs font-semibold uppercase tracking-[0.28em] text-gold-300;
+  }
+}
+
+/* Entrance animation (hero) */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Scrolling brand ribbon */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 36s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    animation: none;
+  }
+  .marquee-track {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
   }
 }
