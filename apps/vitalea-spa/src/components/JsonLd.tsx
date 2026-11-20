@@ -46,7 +46,7 @@ export function JsonLd() {
       '@type': 'Review',
       reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
       reviewBody: r.quote,
-      author: { '@type': 'Person', name: 'Verified Google reviewer' },
+      author: { '@type': 'Person', name: r.name },
     })),
     makesOffer: SERVICES.map((s) => ({
       '@type': 'Offer',

@@ -351,9 +351,15 @@ function About() {
 
 function Reviews() {
   const { lang, t } = useLang();
+  const roleEs = (role: string) =>
+    role
+      .replace('Local Guide', 'Guía local')
+      .replace('reviews', 'reseñas')
+      .replace('translated', 'traducida');
   const quotes = REVIEWS.map((r, i) => ({
+    ...r,
     quote: lang === 'es' ? REVIEWS_ES[i] ?? r.quote : r.quote,
-    source: r.source,
+    role: lang === 'es' ? roleEs(r.role) : r.role,
   }));
   const [lead, ...rest] = quotes;
   return (
@@ -382,21 +388,27 @@ function Reviews() {
                 “{lead.quote}”
               </p>
             </div>
-            <footer className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-gold-300">
-              {t.reviews.verified}
+            <footer className="mt-6">
+              <p className="font-semibold text-gold-300">{lead.name}</p>
+              <p className="mt-0.5 text-xs uppercase tracking-[0.15em] text-white/50">
+                {lead.role} · {t.reviews.via}
+              </p>
             </footer>
           </blockquote>
           {rest.map((r) => (
             <blockquote
-              key={r.quote}
+              key={r.name}
               className="flex flex-col justify-between rounded-3xl border border-white/10 bg-white/5 p-7"
             >
               <div>
                 <Stars className="h-3.5 w-3.5" />
                 <p className="mt-4 leading-relaxed text-white/85">“{r.quote}”</p>
               </div>
-              <footer className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-gold-300/80">
-                {t.reviews.verified}
+              <footer className="mt-5">
+                <p className="text-sm font-semibold text-gold-300/90">{r.name}</p>
+                <p className="mt-0.5 text-[0.65rem] uppercase tracking-[0.15em] text-white/45">
+                  {r.role} · {t.reviews.via}
+                </p>
               </footer>
             </blockquote>
           ))}

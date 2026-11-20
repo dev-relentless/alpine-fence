@@ -68,7 +68,7 @@ export const STRINGS = {
       eyebrow: 'In their words',
       h2: 'Guests keep coming back.',
       badge: 'reviews on Google',
-      verified: 'Verified Google review',
+      via: 'via Google',
     },
     gallery: {
       eyebrow: 'Inside the studio',
@@ -145,7 +145,7 @@ export const STRINGS = {
       eyebrow: 'En sus palabras',
       h2: 'Nuestros huéspedes siempre vuelven.',
       badge: 'reseñas en Google',
-      verified: 'Reseña verificada de Google',
+      via: 'vía Google',
     },
     gallery: {
       eyebrow: 'Dentro del estudio',
@@ -206,7 +206,7 @@ export const SERVICES_ES: Record<string, { name: string; blurb: string }> = {
 
 /** Display-only Spanish translations of the Google reviews, index-aligned with REVIEWS. */
 export const REVIEWS_ES: string[] = [
-  'Karol y Karol son maravillosas y muy amables. ¡Mi masaje fue relajante, terapéutico y rejuvenecedor! ¡Totalmente recomendado!',
+  'Qué lugar tan increíble. Karol y Karol son maravillosas y muy amables. ¡Mi masaje fue relajante, terapéutico y rejuvenecedor! ¡Totalmente recomendado!',
   'La mejor experiencia — personal muy amable y con mucho conocimiento. Los precios son accesibles y el servicio es excelente. Recomendado para cualquiera que busque un gran día de spa — perfecto para parejas.',
   'Amo este lugar ♥ el mejor servicio, TOP. Los mejores masajes de Utah.',
   'Un lugar cálido y relajante. La esteticista fue profesional y atenta. El masaje facial fue perfecto, aliviando toda la tensión de mi frente y mis ojos. Productos de alta calidad que marcaron la diferencia.',
