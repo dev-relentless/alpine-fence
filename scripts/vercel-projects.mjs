@@ -17,16 +17,14 @@
 const REPO = 'dev-relentless/alpine-fence';
 const BRANCH = 'main';
 
-/** key → { project name on Vercel, app folder, production domain } */
+/**
+ * key → { project name on Vercel, app folder, production domain }
+ * All previous apps were archived Nov 2026 (see archive/README.md) — pause or
+ * delete their Vercel projects so they stop redeploying. Add each new client
+ * site here when it's ready for a project.
+ */
 const APPS = {
-  ats:        { name: 'american-timber-shade',      dir: 'apps/american-timber-shade',      domain: 'americantimbershade.com' },
-  arizona:    { name: 'arizona-pergola-experts',    dir: 'apps/arizona-pergola-experts',    domain: 'arizonapergolaexperts.com' },
-  idaho:      { name: 'idaho-pergola-experts',      dir: 'apps/idaho-pergola-experts',      domain: 'idahopergolaexperts.com' },
-  nevada:     { name: 'nevada-pergola-experts',     dir: 'apps/nevada-pergola-experts',     domain: 'nevadapergolaexperts.com' },
-  washington: { name: 'washington-pergola-experts', dir: 'apps/washington-pergola-experts', domain: 'washingtonpergolaexperts.com' },
-  colorado:   { name: 'colorado-pergola-experts',   dir: 'apps/colorado-pergola-experts',   domain: 'coloradopergolaexperts.com' },
-  wyoming:    { name: 'wyoming-pergola-experts',    dir: 'apps/wyoming-pergola-experts',    domain: 'wyomingpergolaexperts.com' },
-  reserve:    { name: 'spravek-reserve',            dir: 'apps/spravek-reserve',            domain: 'spravekreserve.com' },
+  vitalea: { name: 'vitalea-spa', dir: 'apps/vitalea-spa', domain: 'vitaleaspa.com' },
 };
 
 const token = process.env.VERCEL_TOKEN;

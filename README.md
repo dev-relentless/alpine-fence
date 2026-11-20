@@ -1,93 +1,41 @@
-# Spravek family monorepo
+# Client sites monorepo
 
-Independent Next.js sites in one repo, each deployed as its own Vercel project.
+A factory for building and deploying client websites — independent Next.js 14 +
+Tailwind sites in one repo, each deployed as its own Vercel project.
 
-| App                  | Path                        | Domain                     | Stack             |
-| -------------------- | --------------------------- | -------------------------- | ----------------- |
-| Relentless Equipment | `apps/relentless-equipment` | `relentlessequipment.com`  | Next 14, Tailwind |
-| Utah Pergola Experts | `apps/utah-pergola-experts` | `utahpergolaexperts.com`   | Next 14, Tailwind |
-| Utah Pool Experts    | `apps/utah-pool-experts`    | —                          | Next 14, Tailwind |
-| American Timber Shade| `apps/american-timber-shade`| `americantimbershade.com`  | Next 14, Tailwind |
-| Arizona Pergola Experts | `apps/arizona-pergola-experts`| `arizonapergolaexperts.com` | Next 14, Tailwind |
-| Idaho Pergola Experts | `apps/idaho-pergola-experts`| `idahopergolaexperts.com`  | Next 14, Tailwind |
-| Nevada Pergola Experts | `apps/nevada-pergola-experts`| `nevadapergolaexperts.com` | Next 14, Tailwind |
-| Washington Pergola Experts | `apps/washington-pergola-experts`| `washingtonpergolaexperts.com` | Next 14, Tailwind |
-| Colorado Pergola Experts | `apps/colorado-pergola-experts`| `coloradopergolaexperts.com` | Next 14, Tailwind |
-| Wyoming Pergola Experts | `apps/wyoming-pergola-experts`| `wyomingpergolaexperts.com` | Next 14, Tailwind |
-| Spravek Reserve      | `apps/spravek-reserve`      | — (placeholder `spravekreserve.com`) | Next 14, Tailwind |
+**The system and rules live in [PLAYBOOK.md](./PLAYBOOK.md).** Read it before
+starting a site. It distills everything learned from the previous site families
+(now in [`archive/`](./archive), kept as reference implementations).
 
-## Archived
+## Active sites
 
-`archive/` holds sites that are no longer deployed or developed — Alpine Fence & Deck,
-Apex Concrete, Braddock Concrete, Harlow Landscapes, SPX Construction. They are excluded from
-the npm workspaces and from `scripts/vercel-projects.mjs`; see `archive/README.md`.
+| App | Path | Domain | Dev |
+| --- | --- | --- | --- |
+| Vitalea Wellness Center | `apps/vitalea-spa` | `vitaleaspa.com` | `npm run dev:vitalea` → http://localhost:3003 |
 
 ## Develop
 
 ```bash
-# From the repo root:
-npm install                        # installs all workspaces
-
-npm run dev:relentless   # http://localhost:3003
-npm run dev:pergola      # http://localhost:3005
-npm run dev:pool         # http://localhost:3006
-npm run dev:ats          # http://localhost:3007
-npm run dev:arizona      # http://localhost:3008
-npm run dev:idaho        # http://localhost:3009
-npm run dev:nevada       # http://localhost:3010
-npm run dev:washington   # http://localhost:3011
-npm run dev:colorado     # http://localhost:3012
-npm run dev:reserve      # http://localhost:3014
-npm run dev:wyoming      # http://localhost:3015
+npm install            # installs all workspaces
+npm run dev:<key>      # see table above
+npm run lint
 ```
 
-## American Timber Shade + Pergola Experts (the site family)
+## Deploy
 
-`apps/american-timber-shade` is the **national brand**; the seven `apps/<state>-pergola-experts`
-sites are its state arms — the SynLawn model (synlawn.com → synlawnutah.com): one national
-hub with a `/locations` directory, and a full standalone site per state (own phone, service
-area, quote flow) that shares the brand and links back.
-
-`apps/arizona-pergola-experts` is the parameterized template; **Utah**, Idaho, Nevada, Washington, Wyoming,
-and Colorado are stamped from it. Every geo/climate phrase reads from `src/data/brand.ts`, and
-the list of every site in the family lives in `src/data/network.ts` — both are generated into
-each state app *and* into ATS. To add or update a state, edit the config table in
-`scripts/new-pergola-state.mjs` and run:
+One Vercel project per app (Root Directory = the app folder). Create/link
+projects and trigger the first deploy with:
 
 ```bash
-npm run new:pergola-state -- colorado   # one state
-npm run new:pergola-state -- --all      # re-propagate template changes to every state + ATS network.ts
+VERCEL_TOKEN=... node scripts/vercel-projects.mjs            # all apps
+VERCEL_TOKEN=... VERCEL_TEAM=... node scripts/vercel-projects.mjs vitalea
 ```
 
-How the sites link (kept deliberately within Google's spam policies — no keyword-rich
-sitewide footer blasts, no funnelling to one page, nothing hidden):
+Details, ignore-step behavior, and DNS are in the [playbook](./PLAYBOOK.md#7-vercel-deployment-system).
 
-| Where | State site | ATS |
-| --- | --- | --- |
-| Header | thin bar: "Pergola Experts is the *State* arm of **American Timber Shade**" + "Other states →" | `Locations` nav item |
-| `/locations` | you-are-here card, sibling states (region, cities, phone, link), ATS block; `ItemList` JSON-LD | every state site with region/cities/phone; `ItemList` JSON-LD |
-| Footer | "Pergola Experts" column — state names only, current state unlinked; ATS + Spravek in the bottom bar | "Pergola Experts" column — state names + "All locations" |
-| JSON-LD | `Organization.parentOrganization` → `https://americantimbershade.com#organization` | `Organization.subOrganization` → each `https://<state>pergolaexperts.com#organization` |
-| `llms.txt` | generated route; names ATS + sister states | generated route; lists all state sites |
+## Archived
 
-Each state site also carries its own genuinely state-specific content (climate engineering,
-counties, cities, FAQ) and per-page canonicals, so the family reads as one business with real
-local arms rather than a doorway network.
-
-Before launch, the five new state phones (`555-01xx`) are placeholders — fake NAP data across
-multiple sites is itself a spam signal, so replace them in the script before the sites index.
-
-## Vercel
-
-Each app is a separate Vercel project with its **Root Directory** set to its `apps/*` folder. Vercel does **not** create projects for new folders automatically — a new app needs a project before its first deploy.
-
-Every app's `vercel.json` has an `ignoreCommand` that skips the build when the app folder is unchanged since the **last successful deployment** (`VERCEL_GIT_PREVIOUS_SHA`, falling back to `HEAD^`). A log line ending in "canceled because the Ignored Build Step command returned exit code 0" means nothing in that folder changed — not a failure. To force a build regardless, use **Redeploy** in the Vercel dashboard with "Use existing Build Cache" unchecked, or push a commit touching the folder.
-
-`scripts/vercel-projects.mjs` creates/links the projects (root directory, framework, GitHub link, production domain) and triggers a first production deployment from `main`:
-
-```bash
-VERCEL_TOKEN=<token from vercel.com/account/tokens> node scripts/vercel-projects.mjs            # all new apps
-VERCEL_TOKEN=... VERCEL_TEAM=<team slug or id> node scripts/vercel-projects.mjs ats colorado   # subset, under a team
-```
-
-Or manually in the dashboard: **Add New → Project → Import `dev-relentless/alpine-fence`**, set Root Directory to the app folder, Framework = Next.js, then add the domain under Settings → Domains.
+`archive/` holds every retired site (the pergola family, American Timber Shade,
+Relentless Equipment, and the older placeholders) plus their generator script
+and brand assets. They're excluded from npm workspaces and from
+`scripts/vercel-projects.mjs`; see `archive/README.md` for the revival steps.
