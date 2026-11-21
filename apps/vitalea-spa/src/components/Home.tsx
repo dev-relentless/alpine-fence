@@ -1,12 +1,13 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { BRAND } from '@/data/brand';
-import { SERVICES, fromPrice, type Service } from '@/data/services';
+import { SERVICES, durationLabel, fromPrice, type Service } from '@/data/services';
 import { REVIEWS, RATING } from '@/data/reviews';
 import { SERVICES_ES, REVIEWS_ES } from '@/data/i18n';
 import { LangProvider, useLang } from '@/components/LangContext';
-import { Footer, Header, telHref, useSmsHref } from '@/components/SiteChrome';
+import { Footer, Header, telHref, useBooking } from '@/components/SiteChrome';
 
 function Stars({ className = 'h-4 w-4' }: { className?: string }) {
   return (
@@ -22,7 +23,7 @@ function Stars({ className = 'h-4 w-4' }: { className?: string }) {
 
 function Hero() {
   const { t } = useLang();
-  const smsHref = useSmsHref();
+  const booking = useBooking();
   return (
     <section className="relative isolate flex flex-1 items-start overflow-hidden">
       <Image
@@ -69,12 +70,15 @@ function Hero() {
           {BRAND.tagline} — {BRAND.founder}
         </p>
         <div className="fade-up mt-7 flex flex-wrap gap-3 sm:mt-9 sm:gap-4" style={{ animationDelay: '0.4s' }}>
-          <a href={smsHref} className="btn-gold max-sm:!px-5">
-            {t.hero.ctaText}
+          <a href={booking.href} className="btn-gold max-sm:!px-5">
+            {booking.label}
           </a>
           <a href={telHref} className="btn-outline-light max-sm:!px-5">
             {t.hero.ctaCall} {BRAND.phone}
           </a>
+          <Link href="/gift-cards" className="btn-outline-light max-sm:!px-5">
+            {t.cta.giftCards}
+          </Link>
         </div>
         <p
           className="fade-up mt-6 text-xs font-medium uppercase tracking-[0.25em] text-white/60 sm:mt-8"
@@ -110,13 +114,9 @@ function Ribbon() {
   );
 }
 
-function durationLabel(min: number) {
-  return min === 60 ? '1 h' : min === 90 ? '1.5 h' : min === 120 ? '2 h' : `${min} min`;
-}
-
 function ServiceCard({ s }: { s: Service }) {
   const { lang, t } = useLang();
-  const smsHref = useSmsHref();
+  const booking = useBooking();
   const es = SERVICES_ES[s.id];
   const name = lang === 'es' && es ? es.name : s.name;
   const blurb = lang === 'es' && es ? es.blurb : s.blurb;
@@ -147,7 +147,7 @@ function ServiceCard({ s }: { s: Service }) {
           ))}
         </tbody>
       </table>
-      <a href={smsHref} className="btn-outline-dark mt-6 !py-2.5 text-center">
+      <a href={booking.href} className="btn-outline-dark mt-6 !py-2.5 text-center">
         {t.services.book} {name} · {t.services.from} ${fromPrice(s)}
       </a>
     </article>
@@ -176,7 +176,7 @@ function Services() {
 
 function Couples() {
   const { t } = useLang();
-  const smsHref = useSmsHref();
+  const booking = useBooking();
   return (
     <section id="couples" className="bg-blush-100/70 py-24">
       <div className="container-site reveal grid items-center gap-12 lg:grid-cols-2">
@@ -214,9 +214,44 @@ function Couples() {
               </li>
             ))}
           </ul>
-          <a href={smsHref} className="btn-gold mt-9">
+          <a href={booking.href} className="btn-gold mt-9">
             {t.couples.cta}
           </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function More() {
+  const { t } = useLang();
+  const cards = [
+    { href: '/gift-cards', ...t.more.giftCards },
+    { href: '/membership', ...t.more.membership },
+    { href: '/packages', ...t.more.packages },
+  ];
+  return (
+    <section id="more" className="bg-plum-deep py-24 text-white">
+      <div className="container-site reveal">
+        <div className="max-w-2xl">
+          <p className="eyebrow-light">{t.more.eyebrow}</p>
+          <h2 className="mt-3 font-serif text-4xl sm:text-5xl">{t.more.h2}</h2>
+          <p className="mt-4 text-lg leading-relaxed text-white/75">{t.more.sub}</p>
+        </div>
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          {cards.map((c) => (
+            <Link
+              key={c.href}
+              href={c.href}
+              className="group flex flex-col rounded-3xl border border-white/10 bg-white/5 p-7 transition hover:border-gold-300/60 hover:bg-white/10"
+            >
+              <h3 className="font-serif text-2xl text-gold-200">{c.title}</h3>
+              <p className="mt-3 flex-1 leading-relaxed text-white/75">{c.body}</p>
+              <span className="mt-6 text-sm font-semibold tracking-wide text-gold-300">
+                {c.link} <span aria-hidden>→</span>
+              </span>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
@@ -317,6 +352,8 @@ function Reviews() {
           </div>
           <div className="flex items-center gap-3 rounded-2xl border border-gold-800/50 bg-plum px-5 py-3">
             <span className="font-serif text-3xl text-gold-300">{RATING.value}</span>
+            {/* Keeps the rating and count from reading as "4.947 reviews" in extracted text */}
+            <span className="sr-only"> · </span>
             <span>
               <Stars />
               <span className="mt-0.5 block text-xs text-white/60">
@@ -402,7 +439,7 @@ function Gallery() {
 
 function Visit() {
   const { t } = useLang();
-  const smsHref = useSmsHref();
+  const booking = useBooking();
   const mapsQuery = encodeURIComponent(
     `${BRAND.name}, ${BRAND.address.street}, ${BRAND.address.locality}, ${BRAND.address.state} ${BRAND.address.zip}`,
   );
@@ -459,8 +496,8 @@ function Visit() {
               </dd>
             </div>
           </dl>
-          <a href={smsHref} className="btn-gold mt-9">
-            {t.visit.cta}
+          <a href={booking.href} className="btn-gold mt-9">
+            {booking.label}
           </a>
         </div>
         <div className="overflow-hidden rounded-3xl shadow-soft">
@@ -490,6 +527,7 @@ export function Home() {
         </div>
         <Services />
         <Couples />
+        <More />
         <Experience />
         <About />
         <Reviews />

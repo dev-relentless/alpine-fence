@@ -29,3 +29,11 @@ export const BRAND = {
   priceRange: '$$',
   areaServed: ['Draper', 'Sandy', 'South Jordan', 'Riverton', 'Lehi', 'Salt Lake City'],
 } as const;
+
+// Paste the Mangomint (or GHL) URLs here. While a link is empty, its buttons open a prefilled text to the studio.
+export const LINKS: Record<'booking' | 'giftCards' | 'membership' | 'packages', string> = {
+  booking: '',
+  giftCards: '',
+  membership: '',
+  packages: '',
+};

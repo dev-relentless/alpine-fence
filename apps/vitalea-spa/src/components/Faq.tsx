@@ -1,13 +1,11 @@
 'use client';
 
-import { BRAND } from '@/data/brand';
 import { FAQS } from '@/data/faq';
 import { LangProvider, useLang } from '@/components/LangContext';
-import { Footer, Header, telHref, useSmsHref } from '@/components/SiteChrome';
+import { ContactBand, Footer, Header } from '@/components/SiteChrome';
 
 function FaqBody() {
   const { lang, t } = useLang();
-  const smsHref = useSmsHref();
   return (
     <main>
       <section className="py-16 sm:py-24">
@@ -35,21 +33,7 @@ function FaqBody() {
           </div>
         </div>
       </section>
-      <section className="bg-plum-deep py-20 text-white">
-        <div className="container-site max-w-3xl text-center">
-          <p className="eyebrow-light">{t.faq.ctaEyebrow}</p>
-          <h2 className="mt-3 font-serif text-4xl sm:text-5xl">{t.faq.ctaH2}</h2>
-          <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-white/75">{t.faq.ctaBody}</p>
-          <div className="mt-9 flex flex-wrap justify-center gap-4">
-            <a href={smsHref} className="btn-gold">
-              {t.hero.ctaText}
-            </a>
-            <a href={telHref} className="btn-outline-light">
-              {t.hero.ctaCall} {BRAND.phone}
-            </a>
-          </div>
-        </div>
-      </section>
+      <ContactBand />
     </main>
   );
 }

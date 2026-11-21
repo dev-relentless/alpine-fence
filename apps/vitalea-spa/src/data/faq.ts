@@ -3,7 +3,7 @@
  * prices, hours, and contact details cannot drift from the rest of the site.
  * English ships in FAQPage JSON-LD and llms.txt; Spanish is display-only.
  */
-import { BRAND } from './brand';
+import { BRAND, LINKS } from './brand';
 import { SERVICES, fromPrice, type PartyKey, type Service } from './services';
 import { RATING } from './reviews';
 import { SERVICES_ES, STRINGS, type Lang } from './i18n';
@@ -55,6 +55,11 @@ const lymph = service('lymphatic');
 const vipCoupleFrom = Math.min(...Object.values(vip.prices.couple));
 const soloPrice = (s: Service) => s.prices.her[s.durations[0]];
 
+const bookOnline = {
+  en: LINKS.booking ? `Book online at ${LINKS.booking}. ` : '',
+  es: LINKS.booking ? `Reserva en línea en ${LINKS.booking}. ` : '',
+};
+
 export const FAQS: Faq[] = [
   {
     id: 'booking',
@@ -63,8 +68,19 @@ export const FAQS: Faq[] = [
       es: '¿Cómo reservo una cita en Vitalea?',
     },
     a: {
-      en: `Text or call ${BRAND.phone} with the treatment and time you would like, or email ${BRAND.email}. Vitalea is by appointment only — there are no walk-ins, because the studio is reserved for one guest or one couple at a time.`,
-      es: `Envía un mensaje de texto o llama al ${BRAND.phone} con el tratamiento y la hora que prefieras, o escribe a ${BRAND.email}. Vitalea atiende solo con cita previa — no se reciben visitas sin cita, porque el estudio se reserva para un huésped o una pareja a la vez.`,
+      en: `${bookOnline.en}Text or call ${BRAND.phone} with the treatment and time you would like, or email ${BRAND.email}. Vitalea is by appointment only — there are no walk-ins, because the studio is reserved for one guest or one couple at a time.`,
+      es: `${bookOnline.es}Envía un mensaje de texto o llama al ${BRAND.phone} con el tratamiento y la hora que prefieras, o escribe a ${BRAND.email}. Vitalea atiende solo con cita previa — no se reciben visitas sin cita, porque el estudio se reserva para un huésped o una pareja a la vez.`,
+    },
+  },
+  {
+    id: 'gift-cards',
+    q: {
+      en: 'Does Vitalea sell gift cards?',
+      es: '¿Vitalea vende tarjetas de regalo?',
+    },
+    a: {
+      en: `Yes. A Vitalea gift card is good toward any treatment on the menu, solo or as a couples session. Details are at ${BRAND.url}/gift-cards.`,
+      es: `Sí. Una tarjeta de regalo de Vitalea es válida para cualquier tratamiento del menú, individual o en pareja. Los detalles están en ${BRAND.url}/gift-cards.`,
     },
   },
   {

@@ -124,3 +124,7 @@ export const SERVICES: Service[] = [
 export function fromPrice(s: Service): number {
   return Math.min(...Object.values(s.prices.her));
 }
+
+export function durationLabel(min: number) {
+  return min === 60 ? '1 h' : min === 90 ? '1.5 h' : min === 120 ? '2 h' : `${min} min`;
+}

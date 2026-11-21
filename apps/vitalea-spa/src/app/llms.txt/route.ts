@@ -1,9 +1,11 @@
-import { BRAND } from '@/data/brand';
+import { BRAND, LINKS } from '@/data/brand';
 import { SERVICES, fromPrice } from '@/data/services';
 import { RATING } from '@/data/reviews';
 import { FAQS } from '@/data/faq';
 
 export const dynamic = 'force-static';
+
+const soon = (link: string) => (link ? '' : ' (coming soon)');
 
 export function GET() {
   const lines = [
@@ -16,7 +18,7 @@ export function GET() {
     `- Email: ${BRAND.email}`,
     `- Hours: ${BRAND.hours.display}`,
     `- Founder: ${BRAND.founder}`,
-    `- Booking: by appointment only — text or call ${BRAND.phone}`,
+    `- Booking: by appointment only — ${LINKS.booking ? `book online at ${LINKS.booking}, or ` : ''}text or call ${BRAND.phone}`,
     `- Rating: ${RATING.value} stars on ${RATING.source} (${RATING.count} reviews)`,
     `- Service area: ${BRAND.areaServed.join(', ')}`,
     `- Languages: English, Spanish`,
@@ -24,6 +26,9 @@ export function GET() {
     '## Pages',
     '',
     `- [Home — services, pricing, reviews, directions](${BRAND.url})`,
+    `- [Gift cards — good toward any treatment, solo or couples](${BRAND.url}/gift-cards)`,
+    `- [Membership — a monthly 1-hour VIP Massage with member pricing on extras${soon(LINKS.membership)}](${BRAND.url}/membership)`,
+    `- [Packages & add-ons — VIP Massage 3-pack and 5-pack; hot stone, paraffin hands, aromatherapy${soon(LINKS.packages)}](${BRAND.url}/packages)`,
     `- [FAQ — booking, pricing, couples sessions](${BRAND.url}/faq)`,
     '',
     '## Services',
